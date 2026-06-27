@@ -1,0 +1,37 @@
+name: mandamus-collector
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'   # every 30 minutes
+  workflow_dispatch: {}      # lets you click "Run workflow" manually on GitHub
+
+concurrency:
+  group: mandamus-collector
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run collector (time-boxed to 25 min so it always checkpoints before the job is killed)
+        env:
+          COURTLISTENER_TOKEN: ${{ secrets.COURTLISTENER_TOKEN }}
+        run: timeout 1500 python mandamus_collector.py || true
+
+      - name: Commit progress back to the repo
+        run: |
+          git config user.name "mandamus-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add mandamus_checkpoint.json mandamus_phase15_raw.json mandamus_phase15_timing.xlsx 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "progress update"
+          git push
