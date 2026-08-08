@@ -5,6 +5,9 @@ on:
     - cron: "0 3 * * *"   # 03:00 UTC daily
   workflow_dispatch: {}    # allows manual "Run workflow" trigger, no code needed
 
+permissions:
+  contents: write   # needed for the final "commit data back to the repo" step
+
 jobs:
   collect:
     runs-on: ubuntu-latest
