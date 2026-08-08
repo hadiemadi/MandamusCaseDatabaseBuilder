@@ -108,7 +108,7 @@ def test_days_to_resolution():
 
 def test_full_record_build_and_validation():
     docket = {
-        "id": 111,
+        "docket_id": 111,
         "caseName": "Doe v. Blinken",
         "court_id": "cand",
         "docketNumber": "3:23-cv-01234",

@@ -23,7 +23,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "scripts"))
 FAKE_DOCKETS = {
     "results": [
         {
-            "id": 1001,
+            "docket_id": 1001,
             "caseName": "Doe v. Blinken",
             "court_id": "cand",
             "docketNumber": "3:23-cv-00001",
@@ -31,7 +31,7 @@ FAKE_DOCKETS = {
             "dateTerminated": "2023-08-01",
         },
         {
-            "id": 1002,
+            "docket_id": 1002,
             "caseName": "Roe v. Rubio",
             "court_id": "dcd",
             "docketNumber": "1:23-cv-00002",

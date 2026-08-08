@@ -27,6 +27,7 @@ jobs:
       - name: Run collector
         env:
           COURTLISTENER_TOKEN: ${{ secrets.COURTLISTENER_TOKEN }}
+          PYTHONUNBUFFERED: "1"
         run: python scripts/collector.py
 
       - name: Build dashboard

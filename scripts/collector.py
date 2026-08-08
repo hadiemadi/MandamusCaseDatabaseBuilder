@@ -152,8 +152,11 @@ def run():
         _log_run(run_started, 0, "daily_cap_reached_before_search")
         return
 
+    print(f"Search returned {len(search_results.get('results', []))} dockets "
+          f"(offset={checkpoint['last_search_offset']}).")
+
     for docket in search_results.get("results", []):
-        docket_id = docket.get("id")
+        docket_id = docket.get("docket_id")
         if docket_id in seen_ids or not docket.get("dateTerminated"):
             continue  # only mine terminated dockets — see SPEC.md section 5
 
@@ -161,6 +164,10 @@ def run():
         if not complete:
             stopped_reason = "daily_cap_reached_mid_run"
             break
+
+        print(f"[{new_cases_this_run + 1}] mined docket {docket_id} "
+              f"({len(entries)} entries, requests_made_today="
+              f"{checkpoint['requests_made_today']})")
 
         record = build_case_record(docket, entries, has_full_opinion_text=False)
         record_issues = validate_record(record, seen_ids)

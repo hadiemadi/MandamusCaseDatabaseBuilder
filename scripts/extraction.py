@@ -128,7 +128,7 @@ def build_case_record(docket, entries, has_full_opinion_text=False):
     date_terminated = docket.get("dateTerminated")
 
     record = {
-        "docket_id": docket.get("id"),
+        "docket_id": docket.get("docket_id"),
         "case_name": docket.get("caseName"),
         "court": docket.get("court_id"),
         "docket_number": docket.get("docketNumber"),
@@ -137,7 +137,7 @@ def build_case_record(docket, entries, has_full_opinion_text=False):
         "days_to_resolution": compute_days_to_resolution(date_filed, date_terminated),
         "citation": f"{docket.get('caseName', 'Unknown')}, No. {docket.get('docketNumber', '?')} "
                     f"({docket.get('court_id', '?')})",
-        "source_url": f"https://www.courtlistener.com/docket/{docket.get('id')}/",
+        "source_url": f"https://www.courtlistener.com/docket/{docket.get('docket_id')}/",
 
         "procedural_posture": determine_procedural_posture(entries_text_blob),
         "outcome": determine_outcome(entries_text_blob),
