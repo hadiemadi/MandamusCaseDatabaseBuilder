@@ -23,7 +23,12 @@ from pathlib import Path
 import requests
 
 sys.path.insert(0, os.path.dirname(__file__))
-from extraction import build_case_record, validate_record
+from extraction import (
+    build_case_record,
+    build_open_docket_record,
+    compute_priority_score,
+    validate_record,
+)
 
 # ---------------------------------------------------------------------------
 # SPEC.md section 5 — data source and scope
@@ -46,6 +51,7 @@ FILED_AFTER = "2020-01-01"
 
 FLOOR_THROTTLE_SECONDS = 13
 DAILY_REQUEST_CAP = 120
+MAX_SEARCH_PAGES_PER_RUN = 5  # SPEC.md section 8 — use most of the daily budget
 
 TOKEN = os.environ.get("COURTLISTENER_TOKEN")
 if not TOKEN:
@@ -130,11 +136,36 @@ def search_dockets(offset, checkpoint):
         "q": SEARCH_QUERY,
         "type": "d",
         "filed_after": FILED_AFTER,
-        "order_by": "dateFiled asc",
+        "order_by": "dateFiled desc",  # SPEC.md section 5 — newest filings first
     }
     if offset:
         params["offset"] = offset
     return throttled_get(SEARCH_ENDPOINT, params, checkpoint)
+
+
+def gather_candidates(offset, checkpoint):
+    """Fetch up to MAX_SEARCH_PAGES_PER_RUN consecutive search pages.
+    Returns (candidates, next_offset, reached_end, hit_cap)."""
+    candidates = []
+    pages_fetched = 0
+    reached_end = False
+    hit_cap = False
+
+    while pages_fetched < MAX_SEARCH_PAGES_PER_RUN:
+        search_results = search_dockets(offset, checkpoint)
+        if search_results is None:
+            hit_cap = True
+            break
+        results = search_results.get("results", [])
+        print(f"Search page at offset={offset} returned {len(results)} dockets.")
+        candidates.extend(results)
+        pages_fetched += 1
+        offset += len(results)
+        if not search_results.get("next"):
+            reached_end = True
+            break
+
+    return candidates, offset, reached_end, hit_cap
 
 
 def run():
@@ -145,20 +176,45 @@ def run():
 
     run_started = datetime.now(timezone.utc).isoformat()
     new_cases_this_run = 0
-    stopped_reason = "completed_search_results"
+    new_open_records_this_run = 0
 
-    search_results = search_dockets(checkpoint["last_search_offset"], checkpoint)
-    if search_results is None:
+    candidates, next_offset, reached_end, hit_cap_during_search = gather_candidates(
+        checkpoint["last_search_offset"], checkpoint
+    )
+
+    if not candidates and hit_cap_during_search:
         _log_run(run_started, 0, "daily_cap_reached_before_search")
         return
 
-    print(f"Search returned {len(search_results.get('results', []))} dockets "
-          f"(offset={checkpoint['last_search_offset']}).")
+    # SPEC.md 5.1 — mine highest-priority candidates first, not raw search order
+    unseen = [d for d in candidates if d.get("docket_id") not in seen_ids]
+    unseen.sort(key=compute_priority_score, reverse=True)
 
-    for docket in search_results.get("results", []):
+    stopped_reason = "daily_cap_reached_during_search" if hit_cap_during_search else "completed_search_results"
+
+    for docket in unseen:
         docket_id = docket.get("docket_id")
-        if docket_id in seen_ids or not docket.get("dateTerminated"):
-            continue  # only mine terminated dockets — see SPEC.md section 5
+        if docket_id in seen_ids:
+            continue  # can appear twice across overlapping pages
+
+        if not docket.get("dateTerminated"):
+            # Open docket — lightweight record only, no entries fetch. SPEC.md section 5/6.1.
+            record = build_open_docket_record(docket)
+            record_issues = validate_record(record, seen_ids)
+            if record_issues:
+                issues_log.append({
+                    "docket_id": docket_id,
+                    "issues": record_issues,
+                    "flagged_at": datetime.now(timezone.utc).isoformat(),
+                })
+            cases.append(record)
+            seen_ids.add(docket_id)
+            checkpoint["processed_docket_ids"] = list(seen_ids)
+            new_open_records_this_run += 1
+            save_json(CASES_FILE, cases)
+            save_json(ISSUES_FILE, issues_log)
+            save_checkpoint(checkpoint)
+            continue
 
         entries, complete = fetch_docket_entries(docket_id, checkpoint)
         if not complete:
@@ -188,26 +244,30 @@ def run():
         save_json(ISSUES_FILE, issues_log)
         save_checkpoint(checkpoint)
 
-    if stopped_reason == "completed_search_results" and search_results.get("next"):
-        checkpoint["last_search_offset"] += len(search_results.get("results", []))
-        save_checkpoint(checkpoint)
+    # SPEC.md section 5 — reset to 0 at the true end so future filings
+    # (which appear at the top of a newest-first list) are never permanently missed.
+    checkpoint["last_search_offset"] = 0 if reached_end else next_offset
+    save_checkpoint(checkpoint)
 
     _log_run(run_started, new_cases_this_run, stopped_reason,
-              total_cases=len(cases), total_issues=len(issues_log))
+              total_cases=len(cases), total_issues=len(issues_log),
+              new_open_records=new_open_records_this_run)
 
 
-def _log_run(started_at, new_cases, stopped_reason, total_cases=None, total_issues=None):
+def _log_run(started_at, new_cases, stopped_reason, total_cases=None, total_issues=None, new_open_records=0):
     log = load_json(RUN_LOG_FILE, [])
     log.append({
         "started_at": started_at,
         "finished_at": datetime.now(timezone.utc).isoformat(),
         "new_cases_this_run": new_cases,
+        "new_open_records_this_run": new_open_records,
         "stopped_reason": stopped_reason,
         "total_cases": total_cases,
         "total_issues": total_issues,
     })
     save_json(RUN_LOG_FILE, log[-90:])
-    print(f"Run finished: {new_cases} new cases. Reason: {stopped_reason}.")
+    print(f"Run finished: {new_cases} new mined cases, {new_open_records} new open records. "
+          f"Reason: {stopped_reason}.")
 
 
 if __name__ == "__main__":

@@ -11,7 +11,7 @@ the two must never diverge.
 """
 
 import re
-from datetime import datetime
+from datetime import datetime, timezone
 
 # ---------------------------------------------------------------------------
 # SPEC.md 6.2 — procedural posture and outcome markers
@@ -52,6 +52,11 @@ NINTH_CIRCUIT_DISTRICTS = {
 }
 
 REQUIRED_FIELDS = ["docket_id", "case_name", "court", "docket_number", "citation"]
+
+# SPEC.md 5.1 — pre-mining priority score keyword list
+PRIORITY_CAUSE_KEYWORDS = [
+    "mandamus", "unreasonable delay", "221(g)", "administrative processing",
+]
 
 
 def match_first(text, markers):
@@ -116,6 +121,68 @@ def compute_days_to_resolution(date_filed, date_terminated):
         return None
 
 
+def compute_priority_score(docket, now=None):
+    """SPEC.md 5.1 -- which dockets to mine first, computable from search
+    results alone (no docket-entries fetch needed)."""
+    now = now or datetime.now(timezone.utc)
+    score = 0
+
+    if (docket.get("court_id") or "").lower() in NINTH_CIRCUIT_DISTRICTS:
+        score += 2
+
+    cause = (docket.get("cause") or "").lower()
+    score += min(sum(1 for kw in PRIORITY_CAUSE_KEYWORDS if kw in cause), 3)
+
+    date_filed = docket.get("dateFiled")
+    if date_filed:
+        try:
+            filed = datetime.fromisoformat(date_filed).replace(tzinfo=timezone.utc)
+            age_years = (now - filed).days / 365.25
+            if age_years <= 2:
+                score += 2
+            elif age_years <= 4:
+                score += 1
+        except ValueError:
+            pass
+
+    return score
+
+
+def _citation(docket):
+    return (f"{docket.get('caseName', 'Unknown')}, No. {docket.get('docketNumber', '?')} "
+            f"({docket.get('court_id', '?')})")
+
+
+def build_open_docket_record(docket):
+    """SPEC.md 6.1 -- lightweight record for a not-yet-terminated docket.
+    No docket-entries fetch happens for these; every derived field is a
+    fixed placeholder, not an inference."""
+    return {
+        "docket_id": docket.get("docket_id"),
+        "case_name": docket.get("caseName"),
+        "court": docket.get("court_id"),
+        "docket_number": docket.get("docketNumber"),
+        "date_filed": docket.get("dateFiled"),
+        "date_terminated": None,
+        "days_to_resolution": None,
+        "citation": _citation(docket),
+        "source_url": f"https://www.courtlistener.com/docket/{docket.get('docket_id')}/",
+
+        "procedural_posture": "open_not_yet_mined",
+        "outcome": "open_not_yet_mined",
+        "disposition_confidence": "unknown",
+        "similarity_to_own_case": False,
+        "has_full_opinion_text": False,
+        "pacer_fetch_needed": False,
+
+        "court_reasoning_summary": "",
+        "trac_factor_details": {},
+
+        "raw_entry_count": 0,
+        "relevance_score": 0,
+    }
+
+
 def build_case_record(docket, entries, has_full_opinion_text=False):
     """docket: dict from CourtListener docket search result.
     entries: list of dicts with 'description' / 'short_description' keys."""
@@ -135,8 +202,7 @@ def build_case_record(docket, entries, has_full_opinion_text=False):
         "date_filed": date_filed,
         "date_terminated": date_terminated,
         "days_to_resolution": compute_days_to_resolution(date_filed, date_terminated),
-        "citation": f"{docket.get('caseName', 'Unknown')}, No. {docket.get('docketNumber', '?')} "
-                    f"({docket.get('court_id', '?')})",
+        "citation": _citation(docket),
         "source_url": f"https://www.courtlistener.com/docket/{docket.get('docket_id')}/",
 
         "procedural_posture": determine_procedural_posture(entries_text_blob),
@@ -177,7 +243,7 @@ def validate_record(record, seen_docket_ids):
         except ValueError:
             issues.append("unparseable_date")
 
-    if record.get("raw_entry_count", 0) == 0:
+    if record.get("date_terminated") and record.get("raw_entry_count", 0) == 0:
         issues.append("no_docket_entries_retrieved")
 
     return issues

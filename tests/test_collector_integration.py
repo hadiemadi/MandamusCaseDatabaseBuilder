@@ -4,9 +4,15 @@ Integration test for scripts/collector.py using a mocked API — no real
 network calls, no CourtListener quota consumed, no token required.
 
 Verifies:
-  1. A full run against fake search results produces correct case records
-  2. The checkpoint file correctly records what's been processed
-  3. Re-running with the same checkpoint does NOT reprocess the same cases
+  1. A full run pages through multiple search pages (up to
+     MAX_SEARCH_PAGES_PER_RUN) in one go, not just one page
+  2. Terminated dockets get fully mined; open (non-terminated) dockets get
+     a lightweight identifier-only record instead of being dropped
+  3. The checkpoint file correctly records what's been processed
+  4. Once the true end of search results is reached, the offset resets to
+     0 (so future filings, which sort to the top of a newest-first list,
+     are never permanently missed)
+  5. Re-running with the same checkpoint does NOT reprocess the same cases
      (this is the "resume after being killed" guarantee the whole
      architecture depends on)
 """
@@ -20,26 +26,45 @@ from unittest import mock
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "scripts"))
 
-FAKE_DOCKETS = {
+RECENT_DATE = "2026-06-01"  # keeps recency scoring simple/high for all fakes
+
+FAKE_SEARCH_PAGE_1 = {
     "results": [
         {
             "docket_id": 1001,
             "caseName": "Doe v. Blinken",
-            "court_id": "cand",
+            "court_id": "cand",  # 9th Circuit -> +2 priority
+            "cause": "Writ of Mandamus to Adjudicate Visa Petition",
             "docketNumber": "3:23-cv-00001",
-            "dateFiled": "2023-01-01",
-            "dateTerminated": "2023-08-01",
+            "dateFiled": RECENT_DATE,
+            "dateTerminated": "2026-07-01",
         },
         {
             "docket_id": 1002,
             "caseName": "Roe v. Rubio",
             "court_id": "dcd",
+            "cause": "Writ of Mandamus",
             "docketNumber": "1:23-cv-00002",
-            "dateFiled": "2023-02-01",
-            "dateTerminated": None,  # not terminated -> should be skipped
+            "dateFiled": RECENT_DATE,
+            "dateTerminated": None,  # open -> lightweight record, not mined
         },
     ],
-    "next": None,
+    "next": "https://www.courtlistener.com/api/rest/v4/search/?offset=2",
+}
+
+FAKE_SEARCH_PAGE_2 = {
+    "results": [
+        {
+            "docket_id": 1003,
+            "caseName": "Lin v. Noem",
+            "court_id": "dcd",  # not 9th Circuit
+            "cause": "08:1329 unreasonable delay administrative processing",
+            "docketNumber": "1:23-cv-00003",
+            "dateFiled": RECENT_DATE,
+            "dateTerminated": "2026-07-15",
+        },
+    ],
+    "next": None,  # true end of results -> offset should reset to 0
 }
 
 FAKE_ENTRIES = {
@@ -62,7 +87,12 @@ def make_fake_response(payload):
 
 def fake_requests_get(url, headers=None, params=None, timeout=None):
     if "search" in url:
-        return make_fake_response(FAKE_DOCKETS)
+        offset = (params or {}).get("offset", 0)
+        if offset == 0:
+            return make_fake_response(FAKE_SEARCH_PAGE_1)
+        if offset == 2:
+            return make_fake_response(FAKE_SEARCH_PAGE_2)
+        return make_fake_response({"results": [], "next": None})
     if "docket-entries" in url:
         return make_fake_response(FAKE_ENTRIES)
     raise ValueError(f"Unexpected URL in test: {url}")
@@ -88,24 +118,32 @@ def run_test():
         cases = json.loads(collector.CASES_FILE.read_text())
         checkpoint = json.loads(collector.CHECKPOINT_FILE.read_text())
 
-        assert len(cases) == 1, f"Expected exactly 1 case (only terminated dockets mined), got {len(cases)}"
-        assert cases[0]["docket_id"] == 1001, "Wrong docket was mined"
-        assert cases[0]["outcome"] == "settled", "Extraction logic didn't run correctly end-to-end"
-        assert 1001 in checkpoint["processed_docket_ids"], "Checkpoint didn't record the processed docket"
-        assert 1002 not in checkpoint["processed_docket_ids"], "Non-terminated docket should never be marked processed"
-        print("PASS: first run collected the correct single case and checkpointed it")
+        assert len(cases) == 3, f"Expected 2 mined + 1 open record, got {len(cases)}"
 
-        # --- Second run: same fake API results, but checkpoint now has 1001 already processed ---
+        by_id = {c["docket_id"]: c for c in cases}
+        assert by_id[1001]["outcome"] == "settled", "Terminated docket 1001 should be fully mined"
+        assert by_id[1003]["outcome"] == "settled", "Terminated docket 1003 should be fully mined"
+        assert by_id[1002]["outcome"] == "open_not_yet_mined", "Open docket should get placeholder outcome"
+        assert by_id[1002]["date_terminated"] is None
+        assert by_id[1002]["raw_entry_count"] == 0
+
+        assert {1001, 1002, 1003} <= set(checkpoint["processed_docket_ids"]), \
+            "All three dockets (mined + open) should be marked processed"
+        assert checkpoint["last_search_offset"] == 0, \
+            "Offset should reset to 0 after reaching the true end of search results"
+        print("PASS: multi-page run mined terminated dockets, recorded the open docket, and reset the offset")
+
+        # --- Second run: same fake pages, but checkpoint now has all 3 docket_ids already processed ---
         with mock.patch("collector.requests.get", side_effect=fake_requests_get), \
              mock.patch("collector.time.sleep", return_value=None):
             collector.run()
 
         cases_after_second_run = json.loads(collector.CASES_FILE.read_text())
-        assert len(cases_after_second_run) == 1, (
-            f"Re-running should NOT duplicate an already-processed case, "
+        assert len(cases_after_second_run) == 3, (
+            f"Re-running from the reset offset should NOT duplicate already-processed dockets, "
             f"got {len(cases_after_second_run)} records"
         )
-        print("PASS: second run correctly skipped the already-processed case (resume logic works)")
+        print("PASS: second run correctly skipped all already-processed dockets (resume logic works)")
 
         print("\nALL INTEGRATION TESTS PASSED")
 

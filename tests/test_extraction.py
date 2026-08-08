@@ -10,6 +10,7 @@ this phrasing) — not synthetic nonsense — so a pass here is meaningful.
 
 import sys
 import os
+from datetime import datetime, timezone
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "scripts"))
 
 from extraction import (
@@ -19,7 +20,9 @@ from extraction import (
     determine_similarity_flag,
     compute_relevance_score,
     compute_days_to_resolution,
+    compute_priority_score,
     build_case_record,
+    build_open_docket_record,
     validate_record,
 )
 
@@ -151,6 +154,63 @@ def test_validation_catches_missing_fields():
     check("missing case_name flagged", "missing_required_field:case_name" in issues, True)
     check("date order violation flagged", "date_terminated_before_date_filed" in issues, True)
     check("zero entries flagged", "no_docket_entries_retrieved" in issues, True)
+
+
+def test_priority_score_high_signal_recent_ninth_circuit():
+    now = datetime(2026, 1, 1, tzinfo=timezone.utc)
+    docket = {
+        "court_id": "cand",
+        "cause": "Writ of Mandamus for unreasonable delay under 221(g)",
+        "dateFiled": "2025-06-01",  # ~0.6 years old -> <=2yr bonus
+    }
+    # 9th circuit (+2) + 3 keyword hits capped at +3 + recent <=2y (+2) = 7
+    check("priority score: 9th circuit + 3 keywords + recent",
+          compute_priority_score(docket, now=now), 7)
+
+
+def test_priority_score_no_signal_old_case():
+    now = datetime(2026, 1, 1, tzinfo=timezone.utc)
+    docket = {"court_id": "dcd", "cause": "", "dateFiled": "2020-01-01"}
+    check("priority score: no signals, case >4 years old",
+          compute_priority_score(docket, now=now), 0)
+
+
+def test_priority_score_moderate_age_bonus():
+    now = datetime(2026, 1, 1, tzinfo=timezone.utc)
+    docket = {"court_id": "dcd", "cause": "", "dateFiled": "2023-01-01"}  # ~3 years old
+    check("priority score: 3-year-old case gets +1 not +2",
+          compute_priority_score(docket, now=now), 1)
+
+
+def test_priority_score_keyword_cap():
+    now = datetime(2026, 1, 1, tzinfo=timezone.utc)
+    docket = {
+        "court_id": "dcd",
+        "cause": "mandamus unreasonable delay 221(g) administrative processing",  # all 4 keywords
+        "dateFiled": "2020-01-01",  # old -> no recency bonus
+    }
+    check("priority score: keyword bonus capped at +3 even with 4 matches",
+          compute_priority_score(docket, now=now), 3)
+
+
+def test_open_docket_record():
+    docket = {
+        "docket_id": 555,
+        "caseName": "Doe v. Noem",
+        "court_id": "dcd",
+        "docketNumber": "1:26-cv-00099",
+        "dateFiled": "2026-01-01",
+        "dateTerminated": None,
+    }
+    record = build_open_docket_record(docket)
+    check("open record: outcome placeholder", record["outcome"], "open_not_yet_mined")
+    check("open record: procedural_posture placeholder", record["procedural_posture"], "open_not_yet_mined")
+    check("open record: date_terminated is None", record["date_terminated"], None)
+    check("open record: raw_entry_count is 0", record["raw_entry_count"], 0)
+    check("open record: relevance_score is 0", record["relevance_score"], 0)
+
+    issues = validate_record(record, seen_docket_ids=set())
+    check("open record has no issues (entry-count check exempted for open dockets)", issues, [])
 
 
 def run_all():

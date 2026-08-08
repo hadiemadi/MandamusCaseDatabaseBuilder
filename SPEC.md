@@ -80,7 +80,55 @@ CourtListener API  <---- (scheduled fetch) ----  GitHub Actions (the "harness")
   Phase 0 spec already on file in this project)
 - **Both open and closed (terminated) dockets are collected**, but only
   terminated dockets get the deeper "mining" pass (§6), since procedural
-  posture / outcome / timing only exist for closed cases.
+  posture / outcome / timing only exist for closed cases. Open dockets get
+  a lightweight identifier-only record (§6.1) — no docket-entries fetch,
+  since that data isn't yet meaningful and it saves API budget for
+  terminated cases.
+- **Search order: newest-filed-first** (`order_by=dateFiled desc`), not
+  chronological-forward. Revised 2026-08-08 — the original chronological
+  design under-served the goal of tracking the government's *current*
+  litigation posture (e.g. today's motion-to-dismiss arguments), which
+  requires recent cases, not a slow historical backfill from 2020.
+- **Multiple search pages per run.** Each run fetches consecutive pages
+  (advancing the checkpoint offset) up to `MAX_SEARCH_PAGES_PER_RUN` or
+  until the daily request cap is reached — using most of the available
+  budget instead of one page/run, so the ~1,300-docket backlog is covered
+  in weeks, not months.
+- **Known limitation:** a docket recorded as "open" is not automatically
+  re-checked later for termination. Once its search page has been passed,
+  it will not resurface on its own. A periodic re-check pass for
+  previously-seen open dockets is a deliberate future enhancement, not yet
+  built.
+- **Offset resets to 0 once a run reaches the true end of search
+  results** (no more `next` page). Since new filings appear at the *top*
+  of a newest-first list, an offset that only ever advances would
+  eventually stop seeing new cases entirely once the backlog is fully
+  walked. Resetting periodically re-scans from the top; already-seen
+  dockets are skipped cheaply (by `docket_id`) before any per-docket
+  entries fetch, so this costs only a few search-page requests, not
+  full re-mining.
+
+### 5.1 Pre-mining priority score — which dockets get mined first
+
+Within a run's fetched batch, terminated dockets are mined in **priority
+order**, not raw search order. This is a separate score from
+`relevance_score` (§6.4) — it must be computable from search-result fields
+alone, *before* any docket-entries fetch, since its purpose is deciding
+what to spend API budget on next. Fully rule-based, no AI:
+
+Starts at 0. Add:
+- **+2** if `court_id` is in the 9th Circuit district list (same list as
+  §6.4)
+- **+1** for each of these strings found in the docket's `cause` field
+  (case-insensitive), capped at +3: `"mandamus"`, `"unreasonable delay"`,
+  `"221(g)"`, `"administrative processing"`
+- **+2** if `dateFiled` is within the last 2 years (as of run time)
+- **+1** if `dateFiled` is within the last 4 years (and not already +2)
+
+Highest score mined first within the run. Ties broken by search order
+(effectively newest-first, given §5's base ordering). This score is not
+stored on the final record — it only controls processing order within a
+single run.
 
 ## 6. Data schema
 
@@ -99,6 +147,14 @@ entry text** — no field is an AI judgment call.
 | `date_terminated` | date or null | API |
 | `citation` | string | constructed: `{case_name}, No. {docket_number} ({court})` |
 | `source_url` | string | constructed: `https://www.courtlistener.com/docket/{docket_id}/` |
+
+**Open dockets** (no `date_terminated`) get only these identifier fields
+populated, plus placeholder values for every §6.2 derived field:
+`procedural_posture` and `outcome` are set to the literal string
+`"open_not_yet_mined"`, `disposition_confidence` to `"unknown"`,
+`similarity_to_own_case` to `false`, `relevance_score` to `0`, and
+`raw_entry_count` to `0` — no docket-entries fetch happens for these
+records (see §5).
 
 ### 6.2 Derived fields (rule-based, from docket entry text)
 | Field | Type | Derivation rule |
@@ -150,7 +206,7 @@ Run automatically after every record is built. Rule-based only.
 | Any of `docket_id`, `case_name`, `court`, `docket_number`, `citation` missing | `missing_required_field:{name}` |
 | `docket_id` already seen this run or in checkpoint | `duplicate_docket_id` |
 | `date_terminated` earlier than `date_filed` | `date_terminated_before_date_filed` |
-| Zero docket entries retrieved for a case | `no_docket_entries_retrieved` |
+| Zero docket entries retrieved for a **terminated** case (open dockets are exempt — they never fetch entries by design, see §5/§6.1) | `no_docket_entries_retrieved` |
 
 Flagged issues are written to `issues.json`, never silently dropped or
 auto-corrected.
@@ -161,6 +217,9 @@ auto-corrected.
   5/minute cap)
 - Daily cap: stop cleanly at 120 requests/run (under the 125/day limit,
   leaving headroom for retries)
+- Each run fetches up to `MAX_SEARCH_PAGES_PER_RUN` (5) consecutive search
+  pages before mining, using most of the 120-request budget rather than
+  stopping after one page (see §5)
 - HTTP 429: back off using the `Retry-After` header, then continue
 - All of the above is enforced in one single function that every API call
   goes through — there is no code path that can bypass it
@@ -221,3 +280,7 @@ repository.** Reasoning for the change:
 | Where does state live between runs | A checkpoint file committed to the GitHub repo, not local disk, not chat memory |
 | Storage: GitHub vs. Drive vs. both | Both — GitHub is the source of truth, Drive is the convenience copy |
 | How many shortlist candidates | No fixed number — `relevance_score` + manual review decide later; nothing is excluded from raw collection based on this |
+| Search order (2026-08-08) | Newest-filed-first, not chronological-forward from 2020 — user needs current government MTD litigation posture, not a slow historical backfill |
+| Mining order within a run (2026-08-08) | Priority-scored (§5.1: venue + cause-text + recency), not raw search order — spends limited daily API budget on the most likely-relevant cases first |
+| Open dockets (2026-08-08) | Recorded with identifier-only fields, not dropped — but not automatically re-checked later for termination; that's a known, deliberate gap for now |
+| Pages per run (2026-08-08) | Up to `MAX_SEARCH_PAGES_PER_RUN`, using most of the daily budget — original one-page-per-run design covered the backlog too slowly (~65 days) |
