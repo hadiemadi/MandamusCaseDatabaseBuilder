@@ -64,14 +64,14 @@ RUN_LOG_FILE = DATA_DIR / "run_log.json"
 def load_json(path, default):
     if path.exists():
         try:
-            return json.loads(path.read_text())
+            return json.loads(path.read_text(encoding="utf-8"))
         except json.JSONDecodeError:
             return default
     return default
 
 
 def save_json(path, data):
-    path.write_text(json.dumps(data, indent=2, default=str))
+    path.write_text(json.dumps(data, indent=2, default=str), encoding="utf-8")
 
 
 def load_checkpoint():

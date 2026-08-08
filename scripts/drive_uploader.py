@@ -21,7 +21,7 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 
-SCOPES = ["https://www.googleapis.com/auth/drive.file"]
+SCOPES = ["https://www.googleapis.com/auth/drive"]
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 FILES_TO_SYNC = [
     ("cases.json", "application/json"),

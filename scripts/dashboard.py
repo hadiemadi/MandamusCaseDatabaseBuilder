@@ -16,7 +16,7 @@ OUTPUT_FILE = DATA_DIR / "dashboard.html"
 
 
 def load(path, default):
-    return json.loads(path.read_text()) if path.exists() else default
+    return json.loads(path.read_text(encoding="utf-8")) if path.exists() else default
 
 
 def build_dashboard():
@@ -169,7 +169,7 @@ def build_dashboard():
 </body>
 </html>
 """
-    OUTPUT_FILE.write_text(html)
+    OUTPUT_FILE.write_text(html, encoding="utf-8")
     print(f"Dashboard written to {OUTPUT_FILE}")
 
 
