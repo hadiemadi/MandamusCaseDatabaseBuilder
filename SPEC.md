@@ -241,6 +241,12 @@ auto-corrected.
 - HTTP 429: back off using the `Retry-After` header, then continue
 - All of the above is enforced in one single function that every API call
   goes through — there is no code path that can bypass it
+- Workflow job timeout: 90 minutes. A single bad-luck `Retry-After` (one
+  hit 1600 seconds / ~27 minutes in testing) combined with ~120 requests
+  at the 13-second floor throttle (~26 minutes) can legitimately exceed
+  60 minutes even with nothing broken — 90 minutes gives a run room to
+  reach its own natural stopping point (the request cap) instead of being
+  cut off early by an arbitrary shorter ceiling.
 
 ## 9. Storage locations — exact roles
 
