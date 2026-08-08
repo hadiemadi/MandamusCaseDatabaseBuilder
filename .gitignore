@@ -1,2 +1,7 @@
 __pycache__/
 *.pyc
+
+# Local-only credential storage — never commit service account keys or tokens.
+# These belong in GitHub Actions secrets (see SPEC.md section 12), not in git.
+secrets/*
+!secrets/.gitkeep
