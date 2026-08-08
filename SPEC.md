@@ -2,7 +2,7 @@
 
 Status: **authoritative**. This document supersedes:
 - the earlier `mandamus_cloud_bundle/mandamus-cloud/` code found in the
-  `hadiemadi/mandamus-collector` repo (partial run, undocumented origin,
+  `hadiemadi/MandamusCaseDatabaseBulider` repo (partial run, undocumented origin,
   stalled mid-collection ~7 weeks ago)
 - the first draft built earlier in this same chat session
 

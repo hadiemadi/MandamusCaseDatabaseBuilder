@@ -4,7 +4,7 @@ Everything below is clicking in a browser. You never need to open or edit
 any code.
 
 ## 1. Clean out the repository, then upload the new content
-You already have a repo: `hadiemadi/mandamus-collector`. It currently has
+You already have a repo: `hadiemadi/MandamusCaseDatabaseBulider`. It currently has
 old content in it (`mandamus_cloud_bundle/` and possibly other leftover
 files) that should NOT stay — see SPEC.md section 10 for why.
 
