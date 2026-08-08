@@ -1,0 +1,47 @@
+name: Daily mandamus case collection
+
+on:
+  schedule:
+    - cron: "0 3 * * *"   # 03:00 UTC daily
+  workflow_dispatch: {}    # allows manual "Run workflow" trigger, no code needed
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run unit + integration tests before touching the real API
+        run: |
+          python tests/test_extraction.py
+          python tests/test_collector_integration.py
+
+      - name: Run collector
+        env:
+          COURTLISTENER_TOKEN: ${{ secrets.COURTLISTENER_TOKEN }}
+        run: python scripts/collector.py
+
+      - name: Build dashboard
+        run: python scripts/dashboard.py
+
+      - name: Upload results to Google Drive
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          GDRIVE_FOLDER_ID: ${{ secrets.GDRIVE_FOLDER_ID }}
+        run: python scripts/drive_uploader.py
+
+      - name: Commit data back to the repo
+        run: |
+          git config user.name "mandamus-collector-bot"
+          git config user.email "actions@github.com"
+          git add data/
+          git diff --quiet --cached || git commit -m "Automated data collection run"
+          git push
