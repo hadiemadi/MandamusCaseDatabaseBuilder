@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mandamus Case Dataset — Dashboard</title>
+<style>
+  body { font-family: -apple-system, Segoe UI, Roboto, sans-serif; margin: 0; padding: 24px;
+          background: #f7f7f5; color: #1a1a1a; }
+  h1 { font-size: 20px; margin-bottom: 4px; }
+  .subtitle { color: #666; font-size: 13px; margin-bottom: 20px; }
+  .banner { padding: 12px 16px; border-radius: 8px; margin-bottom: 16px; font-size: 14px; }
+  .banner.warn { background: #fdecea; color: #9c1f0e; border: 1px solid #f3b4ab; }
+  .banner.ok { background: #eaf7ec; color: #1e6b2e; border: 1px solid #b7e0bd; }
+  .stats { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+  .stat-card { background: white; border: 1px solid #e3e3e0; border-radius: 10px;
+                padding: 14px 18px; min-width: 140px; }
+  .stat-card .num { font-size: 24px; font-weight: 600; }
+  .stat-card .label { font-size: 12px; color: #666; margin-top: 2px; }
+  .controls { margin-bottom: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+  input, select { padding: 6px 10px; border-radius: 6px; border: 1px solid #ccc; font-size: 13px; }
+  table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px;
+           overflow: hidden; font-size: 13px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #eee; }
+  th { background: #efefec; cursor: pointer; position: sticky; top: 0; }
+  tr:hover { background: #fafafa; }
+  .badge { padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; }
+  .badge.settled { background: #e6f4ea; color: #1e6b2e; }
+  .badge.mtd_denied { background: #e8f0fe; color: #1a56db; }
+  .badge.mtd_granted { background: #fdecea; color: #9c1f0e; }
+  .badge.unknown { background: #f1f1ee; color: #666; }
+  .badge.review { background: #fff4e5; color: #9a5b00; }
+  a { color: #1a56db; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  footer { margin-top: 16px; font-size: 11px; color: #999; }
+</style>
+</head>
+<body>
+
+<h1>Mandamus Case Dataset</h1>
+<div class="subtitle">Built per SPEC.md — auto-generated 2026-08-08 20:40 UTC</div>
+
+<div class="banner ok">Pipeline running normally.</div>
+
+<div class="stats">
+  <div class="stat-card"><div class="num">9</div><div class="label">Total cases collected</div></div>
+  <div class="stat-card"><div class="num">0</div><div class="label">Flagged data issues</div></div>
+  <div class="stat-card"><div class="num">9</div><div class="label">Need PACER purchase for full text</div></div>
+  <div class="stat-card"><div class="num">0</div><div class="label">Settlement/mootness needs manual review</div></div>
+  <div class="stat-card"><div class="num">0</div><div class="label">New cases in last run</div></div>
+</div>
+
+<div class="controls">
+  <input type="text" id="searchBox" placeholder="Search case name, court, docket #..." onkeyup="filterTable()" style="flex:1; min-width:240px;">
+  <select id="outcomeFilter" onchange="filterTable()">
+    <option value="">All outcomes</option>
+    <option value="mtd_granted">mtd_granted (1)</option><option value="possibly_moot">possibly_moot (1)</option><option value="settled">settled (2)</option><option value="unknown">unknown (5)</option>
+  </select>
+  <select id="sortBy" onchange="sortTable()">
+    <option value="relevance_score">Sort: relevance score</option>
+    <option value="days_to_resolution">Sort: days to resolution</option>
+    <option value="date_filed">Sort: date filed</option>
+  </select>
+</div>
+
+<table id="caseTable">
+  <thead>
+    <tr>
+      <th>Case</th><th>Court</th><th>Filed</th><th>Terminated</th><th>Days</th>
+      <th>Posture</th><th>Outcome</th><th>Relevance</th><th>Flags</th><th>Link</th>
+    </tr>
+  </thead>
+  <tbody id="tableBody"></tbody>
+</table>
+
+<footer>Schema and rules defined in SPEC.md. No AI is used to generate any field in this table.</footer>
+
+<script>
+  const CASES = [{"docket_id": 71939276, "case_name": "Concepcion Concepcion v. Noem", "court": "casd", "docket_number": "3:25-cv-03221", "date_filed": "2025-11-19", "date_terminated": "2026-07-15", "days_to_resolution": 238, "citation": "Concepcion Concepcion v. Noem, No. 3:25-cv-03221 (casd)", "source_url": "https://www.courtlistener.com/docket/71939276/", "procedural_posture": "settled_stipulated_dismissal", "outcome": "settled", "disposition_confidence": "high", "similarity_to_own_case": false, "has_full_opinion_text": false, "pacer_fetch_needed": true, "court_reasoning_summary": "", "trac_factor_details": {}, "raw_entry_count": 24, "relevance_score": 2}, {"docket_id": 71983841, "case_name": "Pimpalkhute v. Edlow", "court": "wawd", "docket_number": "2:25-cv-02433", "date_filed": "2025-12-02", "date_terminated": "2026-05-11", "days_to_resolution": 160, "citation": "Pimpalkhute v. Edlow, No. 2:25-cv-02433 (wawd)", "source_url": "https://www.courtlistener.com/docket/71983841/", "procedural_posture": "judgment_entered", "outcome": "mtd_granted", "disposition_confidence": "unknown", "similarity_to_own_case": false, "has_full_opinion_text": false, "pacer_fetch_needed": true, "court_reasoning_summary": "", "trac_factor_details": {}, "raw_entry_count": 29, "relevance_score": 4}, {"docket_id": 73190438, "case_name": "Beltran v. Mullin", "court": "mad", "docket_number": "1:26-cv-11732", "date_filed": "2026-04-14", "date_terminated": "2026-04-30", "days_to_resolution": 16, "citation": "Beltran v. Mullin, No. 1:26-cv-11732 (mad)", "source_url": "https://www.courtlistener.com/docket/73190438/", "procedural_posture": "unknown", "outcome": "unknown", "disposition_confidence": "unknown", "similarity_to_own_case": false, "has_full_opinion_text": false, "pacer_fetch_needed": true, "court_reasoning_summary": "", "trac_factor_details": {}, "raw_entry_count": 15, "relevance_score": 0}, {"docket_id": 73128808, "case_name": "Qazi v. Rubio", "court": "nysd", "docket_number": "1:26-cv-02668", "date_filed": "2026-03-31", "date_terminated": "2026-06-03", "days_to_resolution": 64, "citation": "Qazi v. Rubio, No. 1:26-cv-02668 (nysd)", "source_url": "https://www.courtlistener.com/docket/73128808/", "procedural_posture": "judgment_entered", "outcome": "unknown", "disposition_confidence": "unknown", "similarity_to_own_case": false, "has_full_opinion_text": false, "pacer_fetch_needed": true, "court_reasoning_summary": "", "trac_factor_details": {}, "raw_entry_count": 55, "relevance_score": 0}, {"docket_id": 72278942, "case_name": "Ahmed v. Rubio", "court": "vawd", "docket_number": "5:26-cv-00020", "date_filed": "2026-02-13", "date_terminated": "2026-03-31", "days_to_resolution": 46, "citation": "Ahmed v. Rubio, No. 5:26-cv-00020 (vawd)", "source_url": "https://www.courtlistener.com/docket/72278942/", "procedural_posture": "unknown", "outcome": "unknown", "disposition_confidence": "unknown", "similarity_to_own_case": false, "has_full_opinion_text": false, "pacer_fetch_needed": true, "court_reasoning_summary": "", "trac_factor_details": {}, "raw_entry_count": 13, "relevance_score": 0}, {"docket_id": 72244766, "case_name": "Ortega Cortez v. EDLOW", "court": "flsd", "docket_number": "1:26-cv-20813", "date_filed": "2026-02-06", "date_terminated": "2026-07-15", "days_to_resolution": 159, "citation": "Ortega Cortez v. EDLOW, No. 1:26-cv-20813 (flsd)", "source_url": "https://www.courtlistener.com/docket/72244766/", "procedural_posture": "motion_to_dismiss_filed", "outcome": "possibly_moot", "disposition_confidence": "unknown", "similarity_to_own_case": false, "has_full_opinion_text": false, "pacer_fetch_needed": true, "court_reasoning_summary": "", "trac_factor_details": {}, "raw_entry_count": 34, "relevance_score": 0}, {"docket_id": 71396196, "case_name": "Ataie v. Rubio", "court": "flsd", "docket_number": "1:25-cv-24322", "date_filed": "2025-09-19", "date_terminated": "2025-10-28", "days_to_resolution": 39, "citation": "Ataie v. Rubio, No. 1:25-cv-24322 (flsd)", "source_url": "https://www.courtlistener.com/docket/71396196/", "procedural_posture": "settled_voluntary_dismissal", "outcome": "settled", "disposition_confidence": "high", "similarity_to_own_case": false, "has_full_opinion_text": false, "pacer_fetch_needed": true, "court_reasoning_summary": "", "trac_factor_details": {}, "raw_entry_count": 18, "relevance_score": 1}, {"docket_id": 70953462, "case_name": "VALEFI v. RUBIO", "court": "dcd", "docket_number": "1:25-cv-02452", "date_filed": "2025-07-23", "date_terminated": "2025-12-01", "days_to_resolution": 131, "citation": "VALEFI v. RUBIO, No. 1:25-cv-02452 (dcd)", "source_url": "https://www.courtlistener.com/docket/70953462/", "procedural_posture": "unknown", "outcome": "unknown", "disposition_confidence": "unknown", "similarity_to_own_case": false, "has_full_opinion_text": false, "pacer_fetch_needed": true, "court_reasoning_summary": "", "trac_factor_details": {}, "raw_entry_count": 16, "relevance_score": 0}, {"docket_id": 73423938, "case_name": "Gonzalez Gonzalez v. Warden", "court": "txsd", "docket_number": "5:26-cv-01008", "date_filed": "2026-05-29", "date_terminated": "2026-06-29", "days_to_resolution": 31, "citation": "Gonzalez Gonzalez v. Warden, No. 5:26-cv-01008 (txsd)", "source_url": "https://www.courtlistener.com/docket/73423938/", "procedural_posture": "judgment_entered", "outcome": "unknown", "disposition_confidence": "unknown", "similarity_to_own_case": false, "has_full_opinion_text": false, "pacer_fetch_needed": true, "court_reasoning_summary": "", "trac_factor_details": {}, "raw_entry_count": 21, "relevance_score": 0}];
+
+  function badgeClass(outcome) {
+    if (["mtd_denied","mtd_granted","settled"].includes(outcome)) return outcome;
+    return "unknown";
+  }
+
+  function renderTable(data) {
+    const body = document.getElementById('tableBody');
+    body.innerHTML = data.map(c => `
+      <tr>
+        <td>${c.case_name || ''}</td>
+        <td>${c.court || ''}</td>
+        <td>${c.date_filed || ''}</td>
+        <td>${c.date_terminated || ''}</td>
+        <td>${c.days_to_resolution ?? ''}</td>
+        <td>${c.procedural_posture || ''}</td>
+        <td><span class="badge ${badgeClass(c.outcome)}">${c.outcome || 'unknown'}</span></td>
+        <td>${c.relevance_score ?? 0}</td>
+        <td>
+          ${c.pacer_fetch_needed ? '<span class="badge review">PACER needed</span>' : ''}
+          ${c.disposition_confidence === 'needs_manual_review' ? '<span class="badge review">review</span>' : ''}
+          ${c.similarity_to_own_case ? '<span class="badge mtd_denied">similar pattern</span>' : ''}
+        </td>
+        <td><a href="${c.source_url}" target="_blank">view →</a></td>
+      </tr>
+    `).join('');
+  }
+
+  function filterTable() {
+    const q = document.getElementById('searchBox').value.toLowerCase();
+    const outcome = document.getElementById('outcomeFilter').value;
+    const filtered = CASES.filter(c => {
+      const matchesText = !q || JSON.stringify(c).toLowerCase().includes(q);
+      const matchesOutcome = !outcome || c.outcome === outcome;
+      return matchesText && matchesOutcome;
+    });
+    renderTable(filtered);
+  }
+
+  function sortTable() {
+    const key = document.getElementById('sortBy').value;
+    const sorted = [...CASES].sort((a, b) => (b[key] ?? -Infinity) - (a[key] ?? -Infinity));
+    renderTable(sorted);
+  }
+
+  renderTable(CASES);
+</script>
+
+</body>
+</html>
