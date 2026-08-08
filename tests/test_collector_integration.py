@@ -152,5 +152,122 @@ def run_test():
         shutil.rmtree(tmpdir, ignore_errors=True)
 
 
+def run_crash_resilience_test():
+    """A run can be killed between saving cases.json and checkpoint.json.
+    Simulates that exact desync and confirms the next run does NOT
+    duplicate the case that was already recorded but never checkpointed."""
+    tmpdir = tempfile.mkdtemp()
+    try:
+        os.environ["COURTLISTENER_TOKEN"] = "fake-token-for-testing"
+
+        import collector
+        collector.DATA_DIR = __import__("pathlib").Path(tmpdir)
+        collector.CASES_FILE = collector.DATA_DIR / "cases.json"
+        collector.ISSUES_FILE = collector.DATA_DIR / "issues.json"
+        collector.CHECKPOINT_FILE = collector.DATA_DIR / "checkpoint.json"
+        collector.RUN_LOG_FILE = collector.DATA_DIR / "run_log.json"
+
+        # Pre-seed cases.json as if a prior run mined docket 1001 successfully,
+        # but was killed before checkpoint.json got written to reflect it.
+        pre_existing_record = {
+            "docket_id": 1001, "case_name": "Doe v. Blinken", "court": "cand",
+            "docket_number": "3:23-cv-00001", "citation": "Doe v. Blinken, No. 3:23-cv-00001 (cand)",
+            "date_filed": RECENT_DATE, "date_terminated": "2026-07-01", "raw_entry_count": 3,
+            "outcome": "settled",
+        }
+        collector.CASES_FILE.write_text(json.dumps([pre_existing_record]), encoding="utf-8")
+        collector.CHECKPOINT_FILE.write_text(json.dumps({
+            "last_search_offset": 0, "processed_docket_ids": [], "requests_made_today": 0,
+            "date_of_counter": None,
+        }), encoding="utf-8")
+
+        with mock.patch("collector.requests.get", side_effect=fake_requests_get), \
+             mock.patch("collector.time.sleep", return_value=None):
+            collector.run()
+
+        cases = json.loads(collector.CASES_FILE.read_text())
+        docket_1001_copies = [c for c in cases if c["docket_id"] == 1001]
+        assert len(docket_1001_copies) == 1, (
+            f"Desynced checkpoint should not cause a re-mine/duplicate of an "
+            f"already-recorded case, but found {len(docket_1001_copies)} copies"
+        )
+        print("PASS: a checkpoint desynced from cases.json does not cause duplicate mining")
+
+    finally:
+        shutil.rmtree(tmpdir, ignore_errors=True)
+
+
+def run_multi_cycle_test():
+    """Simulates many sequential daily runs (not just two) against a backlog
+    that spans more pages than fit in one run, including a full offset-reset
+    cycle followed by continued forward progress -- catches state corruption
+    that only shows up after repeated cycles, not a single resume."""
+    tmpdir = tempfile.mkdtemp()
+    try:
+        os.environ["COURTLISTENER_TOKEN"] = "fake-token-for-testing"
+
+        import collector
+        collector.DATA_DIR = __import__("pathlib").Path(tmpdir)
+        collector.CASES_FILE = collector.DATA_DIR / "cases.json"
+        collector.ISSUES_FILE = collector.DATA_DIR / "issues.json"
+        collector.CHECKPOINT_FILE = collector.DATA_DIR / "checkpoint.json"
+        collector.RUN_LOG_FILE = collector.DATA_DIR / "run_log.json"
+        original_max_pages = collector.MAX_SEARCH_PAGES_PER_RUN
+        collector.MAX_SEARCH_PAGES_PER_RUN = 1  # force each run to only see one page
+
+        pages = {
+            0: {"results": [{
+                "docket_id": 2001, "caseName": "A v. State", "court_id": "dcd", "cause": "mandamus",
+                "docketNumber": "1:1", "dateFiled": RECENT_DATE, "dateTerminated": "2026-07-01",
+            }], "next": "next-page-1"},
+            1: {"results": [{
+                "docket_id": 2002, "caseName": "B v. State", "court_id": "dcd", "cause": "mandamus",
+                "docketNumber": "1:2", "dateFiled": RECENT_DATE, "dateTerminated": "2026-07-05",
+            }], "next": "next-page-2"},
+            2: {"results": [{
+                "docket_id": 2003, "caseName": "C v. State", "court_id": "dcd", "cause": "mandamus",
+                "docketNumber": "1:3", "dateFiled": RECENT_DATE, "dateTerminated": "2026-07-10",
+            }], "next": None},  # true end
+        }
+
+        def multi_cycle_fake_get(url, headers=None, params=None, timeout=None):
+            if "search" in url:
+                offset = (params or {}).get("offset", 0)
+                return make_fake_response(pages.get(offset, {"results": [], "next": None}))
+            if "docket-entries" in url:
+                return make_fake_response(FAKE_ENTRIES)
+            raise ValueError(f"Unexpected URL in test: {url}")
+
+        with mock.patch("collector.requests.get", side_effect=multi_cycle_fake_get), \
+             mock.patch("collector.time.sleep", return_value=None):
+            for i in range(1, 4):
+                collector.run()
+                cp = json.loads(collector.CHECKPOINT_FILE.read_text())
+                cases = json.loads(collector.CASES_FILE.read_text())
+                assert len(cases) == i, f"After run {i}, expected {i} cases, got {len(cases)}"
+
+            cp_after_run3 = json.loads(collector.CHECKPOINT_FILE.read_text())
+            assert cp_after_run3["last_search_offset"] == 0, \
+                "Offset should reset to 0 after run 3 reaches the true end of the backlog"
+            print("PASS: 3 sequential runs each mined exactly one new case and reset the offset at the end")
+
+            # Run 4: offset reset to 0 -> re-fetches page 0, docket 2001 already seen -> no new cases,
+            # but should still advance forward again (not get stuck re-fetching page 0 forever)
+            collector.run()
+            cases_after_run4 = json.loads(collector.CASES_FILE.read_text())
+            cp_after_run4 = json.loads(collector.CHECKPOINT_FILE.read_text())
+            assert len(cases_after_run4) == 3, "Run 4 should mine nothing new (everything already seen)"
+            assert cp_after_run4["last_search_offset"] == 1, \
+                "Run 4 should advance past page 0 again, not get stuck at the reset position"
+            print("PASS: post-reset run correctly resumes forward progress instead of looping in place")
+
+    finally:
+        collector.MAX_SEARCH_PAGES_PER_RUN = original_max_pages
+        shutil.rmtree(tmpdir, ignore_errors=True)
+
+
 if __name__ == "__main__":
     run_test()
+    run_crash_resilience_test()
+    run_multi_cycle_test()
+    print("\nALL COLLECTOR INTEGRATION TESTS PASSED (including crash-resilience and multi-cycle)")

@@ -174,7 +174,11 @@ def run():
     checkpoint = load_checkpoint()
     cases = load_json(CASES_FILE, [])
     issues_log = load_json(ISSUES_FILE, [])
-    seen_ids = set(checkpoint["processed_docket_ids"])
+    # Derive seen_ids from cases.json itself, not just the checkpoint. cases.json
+    # is written before checkpoint.json on every iteration (see below), so if a
+    # run is killed between those two writes, trusting the checkpoint alone would
+    # cause that case to be silently re-mined and duplicated next run.
+    seen_ids = set(checkpoint["processed_docket_ids"]) | {c["docket_id"] for c in cases}
 
     run_started = datetime.now(timezone.utc).isoformat()
     new_cases_this_run = 0

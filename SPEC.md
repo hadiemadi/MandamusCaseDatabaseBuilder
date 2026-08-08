@@ -59,7 +59,19 @@ CourtListener API  <---- (scheduled fetch) ----  GitHub Actions (the "harness")
   no persistent server, no continuous process.
 - **State across runs:** a checkpoint file, committed back to the GitHub
   repo after every run. This is what lets independent, temporary runs behave
-  like one continuous collection process.
+  like one continuous collection process. `seen_ids` is derived from both
+  the checkpoint *and* the actual `docket_id`s already present in
+  `cases.json` (union of the two) — `cases.json` is written before
+  `checkpoint.json` on every save, so if a run is killed between those two
+  writes, trusting the checkpoint alone would let a case be silently
+  re-mined and duplicated on the next run.
+- **Workflow steps after collection run independently of each other's
+  success** (`if: always()` on dashboard build, Drive upload, and the
+  repo commit). A transient Drive API failure must never block the
+  GitHub commit — GitHub is the source of truth (below); losing it because
+  a convenience-copy step hiccuped would defeat the whole point of that
+  distinction. The pre-API test gate is unaffected by this — it still
+  blocks the collector step outright on failure.
 - **Source of truth for data:** the GitHub repo (git gives free version
   history / audit trail).
 - **User-facing copy:** the same data files + a self-contained HTML

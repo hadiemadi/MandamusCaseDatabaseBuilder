@@ -26,6 +26,7 @@ jobs:
         run: |
           python tests/test_extraction.py
           python tests/test_collector_integration.py
+          python tests/test_dashboard.py
 
       - name: Run collector
         env:
@@ -34,15 +35,18 @@ jobs:
         run: python scripts/collector.py
 
       - name: Build dashboard
+        if: always()
         run: python scripts/dashboard.py
 
       - name: Upload results to Google Drive
+        if: always()
         env:
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
           GDRIVE_FOLDER_ID: ${{ secrets.GDRIVE_FOLDER_ID }}
         run: python scripts/drive_uploader.py
 
       - name: Commit data back to the repo
+        if: always()
         run: |
           git config user.name "mandamus-collector-bot"
           git config user.email "actions@github.com"

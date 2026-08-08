@@ -18,7 +18,8 @@ scripts/
   drive_uploader.py            <- syncs results to Google Drive
 tests/
   test_extraction.py           <- unit tests for every derived field
-  test_collector_integration.py <- proves checkpoint/resume actually works
+  test_collector_integration.py <- proves checkpoint/resume/crash-recovery actually work
+  test_dashboard.py            <- proves the dashboard reflects real data, not just the empty case
 .github/workflows/collect.yml  <- the daily automation; runs tests first
 data/                          <- output lands here (empty until first run)
 ```
