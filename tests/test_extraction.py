@@ -22,7 +22,6 @@ from extraction import (
     compute_days_to_resolution,
     compute_priority_score,
     build_case_record,
-    build_open_docket_record,
     validate_record,
 )
 
@@ -83,17 +82,26 @@ def test_similarity_flag():
           determine_similarity_flag("Plaintiff filed this action pro se."), False)
 
 
-def test_relevance_score_all_four_criteria():
+def test_relevance_score_mtd_denied_outweighs_settled():
     record = {"outcome": "mtd_denied", "court": "cand", "similarity_to_own_case": True}
-    # mtd_denied (+1) + cand is 9th circuit (+1) + similarity (+1) = 3
-    # (outcome can't be both mtd_denied and settled at once, so max realistic is 3)
+    # mtd_denied (+3) + cand is 9th circuit (+1) + similarity (+1) = 5
     check("relevance_score: mtd_denied + 9th circuit + similarity",
-          compute_relevance_score(record), 3)
+          compute_relevance_score(record), 5)
+
+
+def test_relevance_score_mtd_granted_also_high_value():
+    record = {"outcome": "mtd_granted", "court": "dcd", "similarity_to_own_case": False}
+    check("relevance_score: mtd_granted alone", compute_relevance_score(record), 3)
+
+
+def test_relevance_score_summary_judgment_bonus():
+    record = {"outcome": "unknown", "procedural_posture": "summary_judgment_stage", "court": "dcd"}
+    check("relevance_score: summary judgment stage reached", compute_relevance_score(record), 2)
 
 
 def test_relevance_score_settled_case():
     record = {"outcome": "settled", "court": "dcd", "similarity_to_own_case": False}
-    check("relevance_score: settled only, non-9th-circuit court",
+    check("relevance_score: settled weighted lower than mtd_denied/granted",
           compute_relevance_score(record), 1)
 
 
@@ -156,29 +164,29 @@ def test_validation_catches_missing_fields():
     check("zero entries flagged", "no_docket_entries_retrieved" in issues, True)
 
 
-def test_priority_score_high_signal_recent_ninth_circuit():
+def test_priority_score_high_signal_recently_concluded_ninth_circuit():
     now = datetime(2026, 1, 1, tzinfo=timezone.utc)
     docket = {
         "court_id": "cand",
         "cause": "Writ of Mandamus for unreasonable delay under 221(g)",
-        "dateFiled": "2025-06-01",  # ~0.6 years old -> <=2yr bonus
+        "dateTerminated": "2025-06-01",  # ~0.6 years since conclusion -> <=2yr bonus
     }
-    # 9th circuit (+2) + 3 keyword hits capped at +3 + recent <=2y (+2) = 7
-    check("priority score: 9th circuit + 3 keywords + recent",
+    # 9th circuit (+2) + 3 keyword hits capped at +3 + recently concluded <=2y (+2) = 7
+    check("priority score: 9th circuit + 3 keywords + recently concluded",
           compute_priority_score(docket, now=now), 7)
 
 
-def test_priority_score_no_signal_old_case():
+def test_priority_score_no_signal_long_concluded_case():
     now = datetime(2026, 1, 1, tzinfo=timezone.utc)
-    docket = {"court_id": "dcd", "cause": "", "dateFiled": "2020-01-01"}
-    check("priority score: no signals, case >4 years old",
+    docket = {"court_id": "dcd", "cause": "", "dateTerminated": "2020-01-01"}
+    check("priority score: no signals, concluded >4 years ago",
           compute_priority_score(docket, now=now), 0)
 
 
 def test_priority_score_moderate_age_bonus():
     now = datetime(2026, 1, 1, tzinfo=timezone.utc)
-    docket = {"court_id": "dcd", "cause": "", "dateFiled": "2023-01-01"}  # ~3 years old
-    check("priority score: 3-year-old case gets +1 not +2",
+    docket = {"court_id": "dcd", "cause": "", "dateTerminated": "2023-01-01"}  # ~3 years ago
+    check("priority score: concluded ~3 years ago gets +1 not +2",
           compute_priority_score(docket, now=now), 1)
 
 
@@ -187,30 +195,10 @@ def test_priority_score_keyword_cap():
     docket = {
         "court_id": "dcd",
         "cause": "mandamus unreasonable delay 221(g) administrative processing",  # all 4 keywords
-        "dateFiled": "2020-01-01",  # old -> no recency bonus
+        "dateTerminated": "2020-01-01",  # long concluded -> no recency bonus
     }
     check("priority score: keyword bonus capped at +3 even with 4 matches",
           compute_priority_score(docket, now=now), 3)
-
-
-def test_open_docket_record():
-    docket = {
-        "docket_id": 555,
-        "caseName": "Doe v. Noem",
-        "court_id": "dcd",
-        "docketNumber": "1:26-cv-00099",
-        "dateFiled": "2026-01-01",
-        "dateTerminated": None,
-    }
-    record = build_open_docket_record(docket)
-    check("open record: outcome placeholder", record["outcome"], "open_not_yet_mined")
-    check("open record: procedural_posture placeholder", record["procedural_posture"], "open_not_yet_mined")
-    check("open record: date_terminated is None", record["date_terminated"], None)
-    check("open record: raw_entry_count is 0", record["raw_entry_count"], 0)
-    check("open record: relevance_score is 0", record["relevance_score"], 0)
-
-    issues = validate_record(record, seen_docket_ids=set())
-    check("open record has no issues (entry-count check exempted for open dockets)", issues, [])
 
 
 def run_all():

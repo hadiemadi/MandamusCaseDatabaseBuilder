@@ -25,7 +25,6 @@ import requests
 sys.path.insert(0, os.path.dirname(__file__))
 from extraction import (
     build_case_record,
-    build_open_docket_record,
     compute_priority_score,
     validate_record,
 )
@@ -38,12 +37,16 @@ API_ROOT = "https://www.courtlistener.com/api/rest/v4"
 SEARCH_ENDPOINT = f"{API_ROOT}/search/"
 DOCKET_ENTRIES_ENDPOINT = f"{API_ROOT}/docket-entries/"
 
+TERMINATED_AFTER = "2020-01-01"
+# dateTerminated is a query-string range filter, not an order_by option (confirmed
+# against the live API -- see SPEC.md section 13 decision log). This guarantees
+# every result is already concluded, regardless of when it was originally filed.
 SEARCH_QUERY = (
     '("writ of mandamus" OR "mandamus" OR "unreasonable delay") '
     'AND ("221(g)" OR "administrative processing" OR "consular") '
-    'AND ("visa")'
+    'AND ("visa") '
+    f'AND dateTerminated:[{TERMINATED_AFTER} TO *]'
 )
-FILED_AFTER = "2020-01-01"
 
 # ---------------------------------------------------------------------------
 # SPEC.md section 8 — rate limiting (single choke point, nothing bypasses it)
@@ -135,8 +138,7 @@ def search_dockets(offset, checkpoint):
     params = {
         "q": SEARCH_QUERY,
         "type": "d",
-        "filed_after": FILED_AFTER,
-        "order_by": "dateFiled desc",  # SPEC.md section 5 — newest filings first
+        "order_by": "dateFiled desc",  # stable pagination order only, see SPEC.md section 5
     }
     if offset:
         params["offset"] = offset
@@ -176,7 +178,6 @@ def run():
 
     run_started = datetime.now(timezone.utc).isoformat()
     new_cases_this_run = 0
-    new_open_records_this_run = 0
 
     candidates, next_offset, reached_end, hit_cap_during_search = gather_candidates(
         checkpoint["last_search_offset"], checkpoint
@@ -198,22 +199,8 @@ def run():
             continue  # can appear twice across overlapping pages
 
         if not docket.get("dateTerminated"):
-            # Open docket — lightweight record only, no entries fetch. SPEC.md section 5/6.1.
-            record = build_open_docket_record(docket)
-            record_issues = validate_record(record, seen_ids)
-            if record_issues:
-                issues_log.append({
-                    "docket_id": docket_id,
-                    "issues": record_issues,
-                    "flagged_at": datetime.now(timezone.utc).isoformat(),
-                })
-            cases.append(record)
-            seen_ids.add(docket_id)
-            checkpoint["processed_docket_ids"] = list(seen_ids)
-            new_open_records_this_run += 1
-            save_json(CASES_FILE, cases)
-            save_json(ISSUES_FILE, issues_log)
-            save_checkpoint(checkpoint)
+            # Defensive only -- the search query filters on dateTerminated (SPEC.md
+            # section 5), so this shouldn't normally happen. Skip, don't record.
             continue
 
         entries, complete = fetch_docket_entries(docket_id, checkpoint)
@@ -250,24 +237,21 @@ def run():
     save_checkpoint(checkpoint)
 
     _log_run(run_started, new_cases_this_run, stopped_reason,
-              total_cases=len(cases), total_issues=len(issues_log),
-              new_open_records=new_open_records_this_run)
+              total_cases=len(cases), total_issues=len(issues_log))
 
 
-def _log_run(started_at, new_cases, stopped_reason, total_cases=None, total_issues=None, new_open_records=0):
+def _log_run(started_at, new_cases, stopped_reason, total_cases=None, total_issues=None):
     log = load_json(RUN_LOG_FILE, [])
     log.append({
         "started_at": started_at,
         "finished_at": datetime.now(timezone.utc).isoformat(),
         "new_cases_this_run": new_cases,
-        "new_open_records_this_run": new_open_records,
         "stopped_reason": stopped_reason,
         "total_cases": total_cases,
         "total_issues": total_issues,
     })
     save_json(RUN_LOG_FILE, log[-90:])
-    print(f"Run finished: {new_cases} new mined cases, {new_open_records} new open records. "
-          f"Reason: {stopped_reason}.")
+    print(f"Run finished: {new_cases} new cases. Reason: {stopped_reason}.")
 
 
 if __name__ == "__main__":

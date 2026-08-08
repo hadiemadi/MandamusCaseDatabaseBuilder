@@ -6,13 +6,15 @@ network calls, no CourtListener quota consumed, no token required.
 Verifies:
   1. A full run pages through multiple search pages (up to
      MAX_SEARCH_PAGES_PER_RUN) in one go, not just one page
-  2. Terminated dockets get fully mined; open (non-terminated) dockets get
-     a lightweight identifier-only record instead of being dropped
-  3. The checkpoint file correctly records what's been processed
-  4. Once the true end of search results is reached, the offset resets to
-     0 (so future filings, which sort to the top of a newest-first list,
-     are never permanently missed)
-  5. Re-running with the same checkpoint does NOT reprocess the same cases
+  2. Terminated dockets get fully mined, in priority-score order
+  3. A candidate without dateTerminated is defensively skipped, not
+     recorded (the search query is supposed to filter these out entirely
+     -- see SPEC.md section 5 -- so this only guards against index lag)
+  4. The checkpoint file correctly records what's been processed
+  5. Once the true end of search results is reached, the offset resets to
+     0 (so a case filed long ago that concludes recently is never
+     permanently missed)
+  6. Re-running with the same checkpoint does NOT reprocess the same cases
      (this is the "resume after being killed" guarantee the whole
      architecture depends on)
 """
@@ -46,7 +48,7 @@ FAKE_SEARCH_PAGE_1 = {
             "cause": "Writ of Mandamus",
             "docketNumber": "1:23-cv-00002",
             "dateFiled": RECENT_DATE,
-            "dateTerminated": None,  # open -> lightweight record, not mined
+            "dateTerminated": None,  # shouldn't happen given the query filter -> defensive skip
         },
     ],
     "next": "https://www.courtlistener.com/api/rest/v4/search/?offset=2",
@@ -118,28 +120,27 @@ def run_test():
         cases = json.loads(collector.CASES_FILE.read_text())
         checkpoint = json.loads(collector.CHECKPOINT_FILE.read_text())
 
-        assert len(cases) == 3, f"Expected 2 mined + 1 open record, got {len(cases)}"
+        assert len(cases) == 2, f"Expected exactly 2 mined cases (1002 defensively skipped), got {len(cases)}"
 
         by_id = {c["docket_id"]: c for c in cases}
         assert by_id[1001]["outcome"] == "settled", "Terminated docket 1001 should be fully mined"
         assert by_id[1003]["outcome"] == "settled", "Terminated docket 1003 should be fully mined"
-        assert by_id[1002]["outcome"] == "open_not_yet_mined", "Open docket should get placeholder outcome"
-        assert by_id[1002]["date_terminated"] is None
-        assert by_id[1002]["raw_entry_count"] == 0
+        assert 1002 not in by_id, "Docket without dateTerminated should be skipped, not recorded"
 
-        assert {1001, 1002, 1003} <= set(checkpoint["processed_docket_ids"]), \
-            "All three dockets (mined + open) should be marked processed"
+        assert {1001, 1003} <= set(checkpoint["processed_docket_ids"])
+        assert 1002 not in checkpoint["processed_docket_ids"], \
+            "Skipped docket should not be marked processed either"
         assert checkpoint["last_search_offset"] == 0, \
             "Offset should reset to 0 after reaching the true end of search results"
-        print("PASS: multi-page run mined terminated dockets, recorded the open docket, and reset the offset")
+        print("PASS: multi-page run mined terminated dockets, skipped the non-terminated one, and reset the offset")
 
-        # --- Second run: same fake pages, but checkpoint now has all 3 docket_ids already processed ---
+        # --- Second run: same fake pages, but checkpoint now has both mined docket_ids already processed ---
         with mock.patch("collector.requests.get", side_effect=fake_requests_get), \
              mock.patch("collector.time.sleep", return_value=None):
             collector.run()
 
         cases_after_second_run = json.loads(collector.CASES_FILE.read_text())
-        assert len(cases_after_second_run) == 3, (
+        assert len(cases_after_second_run) == 2, (
             f"Re-running from the reset offset should NOT duplicate already-processed dockets, "
             f"got {len(cases_after_second_run)} records"
         )

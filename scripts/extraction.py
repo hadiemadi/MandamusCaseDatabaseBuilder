@@ -98,9 +98,15 @@ def determine_similarity_flag(entries_text_blob):
 
 
 def compute_relevance_score(record):
+    """SPEC.md 6.4 -- a real ruling on the government's defense outweighs
+    a plain settlement, which usually carries no substantive reasoning."""
     score = 0
     if record.get("outcome") == "mtd_denied":
-        score += 1
+        score += 3
+    if record.get("outcome") == "mtd_granted":
+        score += 3
+    if record.get("procedural_posture") == "summary_judgment_stage":
+        score += 2
     if (record.get("court") or "").lower() in NINTH_CIRCUIT_DISTRICTS:
         score += 1
     if record.get("outcome") == "settled":
@@ -123,7 +129,10 @@ def compute_days_to_resolution(date_filed, date_terminated):
 
 def compute_priority_score(docket, now=None):
     """SPEC.md 5.1 -- which dockets to mine first, computable from search
-    results alone (no docket-entries fetch needed)."""
+    results alone (no docket-entries fetch needed). Every candidate here is
+    already guaranteed terminated (the search query filters on
+    dateTerminated, see SPEC.md section 5), so recency is measured from
+    the real conclusion date, not the filing date."""
     now = now or datetime.now(timezone.utc)
     score = 0
 
@@ -133,11 +142,11 @@ def compute_priority_score(docket, now=None):
     cause = (docket.get("cause") or "").lower()
     score += min(sum(1 for kw in PRIORITY_CAUSE_KEYWORDS if kw in cause), 3)
 
-    date_filed = docket.get("dateFiled")
-    if date_filed:
+    date_terminated = docket.get("dateTerminated")
+    if date_terminated:
         try:
-            filed = datetime.fromisoformat(date_filed).replace(tzinfo=timezone.utc)
-            age_years = (now - filed).days / 365.25
+            terminated = datetime.fromisoformat(date_terminated).replace(tzinfo=timezone.utc)
+            age_years = (now - terminated).days / 365.25
             if age_years <= 2:
                 score += 2
             elif age_years <= 4:
@@ -151,36 +160,6 @@ def compute_priority_score(docket, now=None):
 def _citation(docket):
     return (f"{docket.get('caseName', 'Unknown')}, No. {docket.get('docketNumber', '?')} "
             f"({docket.get('court_id', '?')})")
-
-
-def build_open_docket_record(docket):
-    """SPEC.md 6.1 -- lightweight record for a not-yet-terminated docket.
-    No docket-entries fetch happens for these; every derived field is a
-    fixed placeholder, not an inference."""
-    return {
-        "docket_id": docket.get("docket_id"),
-        "case_name": docket.get("caseName"),
-        "court": docket.get("court_id"),
-        "docket_number": docket.get("docketNumber"),
-        "date_filed": docket.get("dateFiled"),
-        "date_terminated": None,
-        "days_to_resolution": None,
-        "citation": _citation(docket),
-        "source_url": f"https://www.courtlistener.com/docket/{docket.get('docket_id')}/",
-
-        "procedural_posture": "open_not_yet_mined",
-        "outcome": "open_not_yet_mined",
-        "disposition_confidence": "unknown",
-        "similarity_to_own_case": False,
-        "has_full_opinion_text": False,
-        "pacer_fetch_needed": False,
-
-        "court_reasoning_summary": "",
-        "trac_factor_details": {},
-
-        "raw_entry_count": 0,
-        "relevance_score": 0,
-    }
 
 
 def build_case_record(docket, entries, has_full_opinion_text=False):
@@ -243,7 +222,7 @@ def validate_record(record, seen_docket_ids):
         except ValueError:
             issues.append("unparseable_date")
 
-    if record.get("date_terminated") and record.get("raw_entry_count", 0) == 0:
+    if record.get("raw_entry_count", 0) == 0:
         issues.append("no_docket_entries_retrieved")
 
     return issues

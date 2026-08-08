@@ -78,43 +78,45 @@ CourtListener API  <---- (scheduled fetch) ----  GitHub Actions (the "harness")
 - **Exclusions:** USCIS adjustment-of-status cases, asylum cases,
   naturalization cases, plain visa denials with no delay claim (per the
   Phase 0 spec already on file in this project)
-- **Both open and closed (terminated) dockets are collected**, but only
-  terminated dockets get the deeper "mining" pass (§6), since procedural
-  posture / outcome / timing only exist for closed cases. Open dockets get
-  a lightweight identifier-only record (§6.1) — no docket-entries fetch,
-  since that data isn't yet meaningful and it saves API budget for
-  terminated cases.
-- **Search order: newest-filed-first** (`order_by=dateFiled desc`), not
-  chronological-forward. Revised 2026-08-08 — the original chronological
-  design under-served the goal of tracking the government's *current*
-  litigation posture (e.g. today's motion-to-dismiss arguments), which
-  requires recent cases, not a slow historical backfill from 2020.
+- **Only concluded (terminated) dockets are collected.** Revised
+  2026-08-08 (second revision) — open dockets have no analyzable content
+  (no outcome, no reasoning, no MTD ruling to learn from) and are
+  explicitly not useful for this project's purpose. Rather than collecting
+  them and filtering later, they are excluded at the query level: the
+  search query includes a `dateTerminated:[2020-01-01 TO *]` range clause,
+  so every result the API returns is already terminated, regardless of
+  when it was originally filed. This also fixes an earlier problem with
+  sorting by filing date: a case filed in 2021 that concluded last week
+  would be buried deep in a filed-date ordering and effectively never
+  seen. Filtering by conclusion date instead makes filing date irrelevant
+  to discoverability.
+- **Base search order: newest-filed-first** (`order_by=dateFiled desc`)
+  *within* the terminated-only result set — this is just a stable
+  pagination order; actual mining priority is decided locally (§5.1) using
+  the real `dateTerminated` value, which every result now has.
 - **Multiple search pages per run.** Each run fetches consecutive pages
   (advancing the checkpoint offset) up to `MAX_SEARCH_PAGES_PER_RUN` or
   until the daily request cap is reached — using most of the available
-  budget instead of one page/run, so the ~1,300-docket backlog is covered
-  in weeks, not months.
-- **Known limitation:** a docket recorded as "open" is not automatically
-  re-checked later for termination. Once its search page has been passed,
-  it will not resurface on its own. A periodic re-check pass for
-  previously-seen open dockets is a deliberate future enhancement, not yet
-  built.
+  budget instead of one page/run.
 - **Offset resets to 0 once a run reaches the true end of search
-  results** (no more `next` page). Since new filings appear at the *top*
-  of a newest-first list, an offset that only ever advances would
-  eventually stop seeing new cases entirely once the backlog is fully
-  walked. Resetting periodically re-scans from the top; already-seen
+  results** (no more `next` page). A case filed long ago that concludes
+  recently would otherwise be missed forever once the offset has advanced
+  past its position in the filed-date ordering. Resetting periodically
+  re-scans the full terminated-only set from the top; already-seen
   dockets are skipped cheaply (by `docket_id`) before any per-docket
-  entries fetch, so this costs only a few search-page requests, not
-  full re-mining.
+  entries fetch, so this costs only a few search-page requests, not full
+  re-mining.
+- **Defensive skip:** if a result somehow lacks `dateTerminated` despite
+  the query filter (e.g. search-index lag), it is silently skipped, not
+  recorded. This should not normally happen.
 
 ### 5.1 Pre-mining priority score — which dockets get mined first
 
-Within a run's fetched batch, terminated dockets are mined in **priority
-order**, not raw search order. This is a separate score from
-`relevance_score` (§6.4) — it must be computable from search-result fields
-alone, *before* any docket-entries fetch, since its purpose is deciding
-what to spend API budget on next. Fully rule-based, no AI:
+Within a run's fetched batch, dockets are mined in **priority order**, not
+raw search order. This is a separate score from `relevance_score` (§6.4)
+— it must be computable from search-result fields alone, *before* any
+docket-entries fetch, since its purpose is deciding what to spend API
+budget on next. Fully rule-based, no AI:
 
 Starts at 0. Add:
 - **+2** if `court_id` is in the 9th Circuit district list (same list as
@@ -122,13 +124,12 @@ Starts at 0. Add:
 - **+1** for each of these strings found in the docket's `cause` field
   (case-insensitive), capped at +3: `"mandamus"`, `"unreasonable delay"`,
   `"221(g)"`, `"administrative processing"`
-- **+2** if `dateFiled` is within the last 2 years (as of run time)
-- **+1** if `dateFiled` is within the last 4 years (and not already +2)
+- **+2** if `dateTerminated` is within the last 2 years (as of run time)
+- **+1** if `dateTerminated` is within the last 4 years (and not already
+  +2)
 
-Highest score mined first within the run. Ties broken by search order
-(effectively newest-first, given §5's base ordering). This score is not
-stored on the final record — it only controls processing order within a
-single run.
+Highest score mined first within the run. This score is not stored on the
+final record — it only controls processing order within a single run.
 
 ## 6. Data schema
 
@@ -148,13 +149,9 @@ entry text** — no field is an AI judgment call.
 | `citation` | string | constructed: `{case_name}, No. {docket_number} ({court})` |
 | `source_url` | string | constructed: `https://www.courtlistener.com/docket/{docket_id}/` |
 
-**Open dockets** (no `date_terminated`) get only these identifier fields
-populated, plus placeholder values for every §6.2 derived field:
-`procedural_posture` and `outcome` are set to the literal string
-`"open_not_yet_mined"`, `disposition_confidence` to `"unknown"`,
-`similarity_to_own_case` to `false`, `relevance_score` to `0`, and
-`raw_entry_count` to `0` — no docket-entries fetch happens for these
-records (see §5).
+`date_terminated` is never null in stored records — the search query
+(§5) only ever returns already-terminated dockets, so every record gets
+the full §6.2 mining pass.
 
 ### 6.2 Derived fields (rule-based, from docket entry text)
 | Field | Type | Derivation rule |
@@ -176,15 +173,24 @@ these. Any case matching both a settlement marker and a mootness marker is
 flagged `needs_manual_review` rather than silently guessed either way.
 
 ### 6.4 Relevance score — exact rule (fully auditable, not a model output)
-Starts at 0. +1 for each of:
-1. `outcome == "mtd_denied"`
-2. court is in the 9th Circuit district list (see code)
-3. `outcome == "settled"`
-4. `similarity_to_own_case == true`
+Revised 2026-08-08 — weights now reflect that a real ruling on the
+government's defense is far more useful than a plain settlement, which
+usually has no substantive reasoning at all (see decision log, §13).
 
-Max score: 4. This is a sort/filter aid only — it does not gate what gets
-collected. **Every case matching the search query is stored regardless of
-score.**
+Starts at 0. Add:
+1. **+3** if `outcome == "mtd_denied"` (government's defense failed —
+   shows what argument works against it)
+2. **+3** if `outcome == "mtd_granted"` (government's defense succeeded —
+   shows what to prepare for or distinguish)
+3. **+2** if `procedural_posture == "summary_judgment_stage"` (reached
+   substantive argument, regardless of final outcome)
+4. **+1** if court is in the 9th Circuit district list (see code)
+5. **+1** if `outcome == "settled"` (lower weight — usually no real
+   reasoning; the government relented before any ruling)
+6. **+1** if `similarity_to_own_case == true`
+
+This is a sort/filter aid only — it does not gate what gets collected.
+**Every case matching the search query is stored regardless of score.**
 
 ### 6.5 Fields explicitly left blank at collection time
 | Field | Why |
@@ -206,7 +212,7 @@ Run automatically after every record is built. Rule-based only.
 | Any of `docket_id`, `case_name`, `court`, `docket_number`, `citation` missing | `missing_required_field:{name}` |
 | `docket_id` already seen this run or in checkpoint | `duplicate_docket_id` |
 | `date_terminated` earlier than `date_filed` | `date_terminated_before_date_filed` |
-| Zero docket entries retrieved for a **terminated** case (open dockets are exempt — they never fetch entries by design, see §5/§6.1) | `no_docket_entries_retrieved` |
+| Zero docket entries retrieved for a case | `no_docket_entries_retrieved` |
 
 Flagged issues are written to `issues.json`, never silently dropped or
 auto-corrected.
@@ -280,7 +286,9 @@ repository.** Reasoning for the change:
 | Where does state live between runs | A checkpoint file committed to the GitHub repo, not local disk, not chat memory |
 | Storage: GitHub vs. Drive vs. both | Both — GitHub is the source of truth, Drive is the convenience copy |
 | How many shortlist candidates | No fixed number — `relevance_score` + manual review decide later; nothing is excluded from raw collection based on this |
-| Search order (2026-08-08) | Newest-filed-first, not chronological-forward from 2020 — user needs current government MTD litigation posture, not a slow historical backfill |
-| Mining order within a run (2026-08-08) | Priority-scored (§5.1: venue + cause-text + recency), not raw search order — spends limited daily API budget on the most likely-relevant cases first |
-| Open dockets (2026-08-08) | Recorded with identifier-only fields, not dropped — but not automatically re-checked later for termination; that's a known, deliberate gap for now |
-| Pages per run (2026-08-08) | Up to `MAX_SEARCH_PAGES_PER_RUN`, using most of the daily budget — original one-page-per-run design covered the backlog too slowly (~65 days) |
+| Mining order within a run (2026-08-08) | Priority-scored (§5.1: venue + cause-text + recency-of-conclusion), not raw search order — spends limited daily API budget on the most likely-relevant cases first |
+| Pages per run (2026-08-08) | Up to `MAX_SEARCH_PAGES_PER_RUN`, using most of the daily budget — original one-page-per-run design covered the backlog too slowly |
+| Open dockets (2026-08-08, superseded same day) | First tried: record with identifier-only fields. Superseded a few hours later — user clarified open cases have zero content value (no outcome, no reasoning yet); excluding them at the query level (via `dateTerminated` filter, §5) is both simpler and correct, so this was dropped entirely rather than kept as a low-priority record |
+| What counts as "concluded" (2026-08-08) | `date_terminated` is not null (CourtListener's own PACER-close signal) — the only signal available *before* mining. A stricter definition (real substantive ruling, e.g. `outcome != "unknown"`) can't be known until after the entries fetch, so it's used post-hoc for relevance scoring (§6.4) instead |
+| Relevance score weighting (2026-08-08) | `mtd_denied`/`mtd_granted`/summary-judgment-stage outweigh `settled` — a real ruling on the government's defense is far more useful than a plain settlement, which usually has no substantive reasoning (government relented before any ruling) |
+| Sort by termination date directly (2026-08-08) | Not possible — confirmed via live API test that CourtListener's search only supports `order_by` on `score`, `dateFiled`, and `entry_date_filed`; no termination-date sort exists. Worked around by filtering the query on `dateTerminated:[2020-01-01 TO *]` instead of trying to sort by it |
