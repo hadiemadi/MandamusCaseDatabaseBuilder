@@ -6,5 +6,13 @@
     "stopped_reason": "daily_cap_reached_before_search",
     "total_cases": null,
     "total_issues": null
+  },
+  {
+    "started_at": "2026-08-09T13:14:08.520819+00:00",
+    "finished_at": "2026-08-09T13:14:21.673761+00:00",
+    "new_cases_this_run": 0,
+    "stopped_reason": "daily_cap_reached_before_search",
+    "total_cases": null,
+    "total_issues": null
   }
 ]
