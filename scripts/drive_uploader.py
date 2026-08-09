@@ -23,12 +23,27 @@ from googleapiclient.http import MediaFileUpload
 
 SCOPES = ["https://www.googleapis.com/auth/drive"]
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
+OPINIONS_DIR = DATA_DIR / "opinions"
 FILES_TO_SYNC = [
     ("cases.json", "application/json"),
     ("issues.json", "application/json"),
     ("run_log.json", "application/json"),
     ("dashboard.html", "text/html"),
+    # seed_citations.json and every fetched opinion text file are the whole
+    # point of the free-opinion pipeline (SPEC.md section 14) -- without
+    # syncing them here they'd sit in the git repo but never reach Drive,
+    # the user's actual interface (SPEC.md section 9).
+    ("seed_citations.json", "application/json"),
 ]
+
+
+def discover_opinion_files():
+    """Opinion filenames aren't known in advance -- new ones appear as
+    opinion_fetcher.py resolves more seed cases -- so this list is built
+    fresh each run instead of hardcoded like FILES_TO_SYNC."""
+    if not OPINIONS_DIR.exists():
+        return []
+    return sorted(OPINIONS_DIR.glob("*.txt"))
 
 
 def get_drive_service():
@@ -77,6 +92,11 @@ def run():
             print(f"Skipping {filename} (not found yet).")
             continue
         upload_or_update(service, folder_id, local_path, mime_type)
+
+    opinion_files = discover_opinion_files()
+    print(f"Syncing {len(opinion_files)} opinion text file(s).")
+    for path in opinion_files:
+        upload_or_update(service, folder_id, path, "text/plain")
 
 
 if __name__ == "__main__":

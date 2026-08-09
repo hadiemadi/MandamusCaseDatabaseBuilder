@@ -32,6 +32,7 @@ jobs:
           python tests/test_collector_integration.py
           python tests/test_dashboard.py
           python tests/test_opinion_fetcher.py
+          python tests/test_drive_uploader.py
 
       # Runs BEFORE the collector deliberately. Both share one daily request
       # budget (SPEC.md section 8), and a curated seed opinion is worth more
