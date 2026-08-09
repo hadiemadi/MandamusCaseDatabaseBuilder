@@ -377,8 +377,17 @@ exhausted before the next is touched.
 | 1 | Curated practice advisories (NILA / American Immigration Council) | $0 | ~23 consular-processing cases already analyzed by practicing litigators, grouped by which government argument they answer |
 | 2 | CourtListener Opinions API (`type=o` → `plain_text`) | $0 | Full text of *reported* decisions — the actual judicial reasoning |
 | 3 | RECAP documents where `is_available=True` | $0 | Filed documents another user already purchased and donated |
-| 4 | CourtListener Tier 1 membership | ~$10–20 | 300 req/day (2.4×) + PACER API access; enables tier 5 at all |
+| 4 | CourtListener Tier 1 membership | ~$10–20 | **Deferred, not yet purchased.** Buys 300 req/day (2.4×) and opens the PACER *endpoints* — it does NOT unlock any content non-members cannot see, and does NOT make PACER documents free. Only worth buying if tier 5 turns out to be necessary. |
 | 5 | Targeted PACER purchases | ~$25–30 | Only motion-to-dismiss rulings that are (a) 9th Circuit, (b) high relevance, (c) provably absent from tiers 1–3 |
+
+**Why tier 4 is deferred (2026-08-09):** the seed backfill is ~27 cases at
+~2 requests each (~54 requests), and the free tier allows 125/day — so the
+single highest-value piece of work fits inside the free tier at no cost. The
+judicial reasoning this project actually needs comes from the free Opinions
+API, not from membership. Membership buys throughput on lower-value bulk
+discovery plus the *ability* to purchase PACER documents; neither is known to
+be needed until the free tiers are exhausted. Revisit only if a 9th Circuit
+motion-to-dismiss ruling proves genuinely unavailable free.
 
 **Tier 5 is never automatic** (§2, constraint 7). Every purchase requires
 explicit per-document approval, and the running total is tracked in
