@@ -58,6 +58,12 @@ jobs:
 
       - name: Upload results to Google Drive
         if: always()
+        continue-on-error: true  # SPEC.md section 4: a Drive hiccup (e.g. the
+          # service-account storageQuotaExceeded issue, section 13) must never
+          # fail the whole run -- GitHub is the source of truth, this is only
+          # a convenience copy. Without this, a Drive-only failure marks the
+          # entire job "failed" and emails a false alarm even though the real
+          # commit below still succeeds.
         env:
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
           GDRIVE_FOLDER_ID: ${{ secrets.GDRIVE_FOLDER_ID }}
