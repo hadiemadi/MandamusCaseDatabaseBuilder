@@ -30,5 +30,13 @@
     "stopped_reason": "daily_cap_reached_mid_run",
     "total_cases": 46,
     "total_issues": 1
+  },
+  {
+    "started_at": "2026-08-09T20:50:25.349984+00:00",
+    "finished_at": "2026-08-09T20:52:55.701397+00:00",
+    "new_cases_this_run": 4,
+    "stopped_reason": "daily_cap_reached_mid_run",
+    "total_cases": 50,
+    "total_issues": 1
   }
 ]
