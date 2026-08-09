@@ -84,29 +84,49 @@ def test_similarity_flag():
 
 def test_relevance_score_mtd_denied_outweighs_settled():
     record = {"outcome": "mtd_denied", "court": "cand", "similarity_to_own_case": True}
-    # mtd_denied (+3) + cand is 9th circuit (+1) + similarity (+1) = 5
+    # mtd_denied (+3) + cand is 9th circuit (+2) + similarity (+1) = 6
     check("relevance_score: mtd_denied + 9th circuit + similarity",
-          compute_relevance_score(record), 5)
+          compute_relevance_score(record), 6)
 
 
 def test_relevance_score_mtd_granted_also_high_value():
     record = {"outcome": "mtd_granted", "court": "dcd", "similarity_to_own_case": False}
-    check("relevance_score: mtd_granted alone", compute_relevance_score(record), 3)
+    # mtd_granted (+3) + D.D.C. persuasive-venue bonus (+1) = 4
+    check("relevance_score: mtd_granted plus D.D.C. venue", compute_relevance_score(record), 4)
 
 
 def test_relevance_score_summary_judgment_bonus():
-    record = {"outcome": "unknown", "procedural_posture": "summary_judgment_stage", "court": "dcd"}
+    record = {"outcome": "unknown", "procedural_posture": "summary_judgment_stage", "court": "txsd"}
     check("relevance_score: summary judgment stage reached", compute_relevance_score(record), 2)
 
 
+def test_relevance_score_venue_tiers():
+    ninth = {"outcome": "unknown", "court": "cacd"}
+    dc = {"outcome": "unknown", "court": "dcd"}
+    other = {"outcome": "unknown", "court": "txsd"}
+    check("9th Circuit venue scores highest", compute_relevance_score(ninth), 2)
+    check("D.D.C. scores lower but non-zero (persuasive)", compute_relevance_score(dc), 1)
+    check("unrelated district scores zero", compute_relevance_score(other), 0)
+
+
+def test_priority_score_venue_tiers():
+    from datetime import datetime as _dt, timezone as _tz
+    now = _dt(2026, 1, 1, tzinfo=_tz.utc)
+    base = {"cause": "", "dateTerminated": "2020-01-01"}
+    check("pre-mining: 9th Circuit +2",
+          compute_priority_score({**base, "court_id": "casd"}, now=now), 2)
+    check("pre-mining: D.D.C. +1",
+          compute_priority_score({**base, "court_id": "dcd"}, now=now), 1)
+
+
 def test_relevance_score_settled_case():
-    record = {"outcome": "settled", "court": "dcd", "similarity_to_own_case": False}
+    record = {"outcome": "settled", "court": "txsd", "similarity_to_own_case": False}
     check("relevance_score: settled weighted lower than mtd_denied/granted",
           compute_relevance_score(record), 1)
 
 
 def test_relevance_score_zero():
-    record = {"outcome": "unknown", "court": "dcd", "similarity_to_own_case": False}
+    record = {"outcome": "unknown", "court": "txsd", "similarity_to_own_case": False}
     check("relevance_score: no criteria met", compute_relevance_score(record), 0)
 
 
@@ -137,8 +157,8 @@ def test_full_record_build_and_validation():
     check("built record: outcome", record["outcome"], "settled")
     check("built record: days_to_resolution", record["days_to_resolution"], 259)
     check("built record: pacer_fetch_needed (no opinion text)", record["pacer_fetch_needed"], True)
-    check("built record: relevance_score (settled, cand=9th cir, no similarity match)",
-          record["relevance_score"], 2)
+    check("built record: relevance_score (settled +1, cand=9th cir +2)",
+          record["relevance_score"], 3)
     check("built record: source_url uses docket_absolute_url's slug, not a bare ID",
           record["source_url"], "https://www.courtlistener.com/docket/111/doe-v-blinken/")
 
@@ -192,14 +212,14 @@ def test_priority_score_high_signal_recently_concluded_ninth_circuit():
 
 def test_priority_score_no_signal_long_concluded_case():
     now = datetime(2026, 1, 1, tzinfo=timezone.utc)
-    docket = {"court_id": "dcd", "cause": "", "dateTerminated": "2020-01-01"}
+    docket = {"court_id": "txsd", "cause": "", "dateTerminated": "2020-01-01"}
     check("priority score: no signals, concluded >4 years ago",
           compute_priority_score(docket, now=now), 0)
 
 
 def test_priority_score_moderate_age_bonus():
     now = datetime(2026, 1, 1, tzinfo=timezone.utc)
-    docket = {"court_id": "dcd", "cause": "", "dateTerminated": "2023-01-01"}  # ~3 years ago
+    docket = {"court_id": "txsd", "cause": "", "dateTerminated": "2023-01-01"}  # ~3 years ago
     check("priority score: concluded ~3 years ago gets +1 not +2",
           compute_priority_score(docket, now=now), 1)
 
@@ -207,7 +227,7 @@ def test_priority_score_moderate_age_bonus():
 def test_priority_score_keyword_cap():
     now = datetime(2026, 1, 1, tzinfo=timezone.utc)
     docket = {
-        "court_id": "dcd",
+        "court_id": "txsd",
         "cause": "mandamus unreasonable delay 221(g) administrative processing",  # all 4 keywords
         "dateTerminated": "2020-01-01",  # long concluded -> no recency bonus
     }

@@ -13,14 +13,10 @@ USAGE
   python scripts/collector.py
 """
 
-import json
 import os
 import sys
-import time
 from datetime import datetime, timezone
 from pathlib import Path
-
-import requests
 
 sys.path.insert(0, os.path.dirname(__file__))
 from extraction import (
@@ -28,14 +24,24 @@ from extraction import (
     compute_priority_score,
     validate_record,
 )
+# Rate limiting lives in api_client so opinion_fetcher.py shares the exact
+# same choke point and daily budget -- SPEC.md section 8 forbids a second,
+# parallel implementation.
+from api_client import (
+    SEARCH_ENDPOINT,
+    DOCKET_ENTRIES_ENDPOINT,
+    FLOOR_THROTTLE_SECONDS,
+    DAILY_REQUEST_CAP,
+    MAX_BACKOFF_SECONDS,
+    EMPTY_CHECKPOINT,
+    load_json,
+    save_json,
+    throttled_get,
+)
 
 # ---------------------------------------------------------------------------
 # SPEC.md section 5 — data source and scope
 # ---------------------------------------------------------------------------
-
-API_ROOT = "https://www.courtlistener.com/api/rest/v4"
-SEARCH_ENDPOINT = f"{API_ROOT}/search/"
-DOCKET_ENTRIES_ENDPOINT = f"{API_ROOT}/docket-entries/"
 
 TERMINATED_AFTER = "2020-01-01"
 # dateTerminated is a query-string range filter, not an order_by option (confirmed
@@ -48,20 +54,7 @@ SEARCH_QUERY = (
     f'AND dateTerminated:[{TERMINATED_AFTER} TO *]'
 )
 
-# ---------------------------------------------------------------------------
-# SPEC.md section 8 — rate limiting (single choke point, nothing bypasses it)
-# ---------------------------------------------------------------------------
-
-FLOOR_THROTTLE_SECONDS = 13
-DAILY_REQUEST_CAP = 120
 MAX_SEARCH_PAGES_PER_RUN = 5  # SPEC.md section 8 — use most of the daily budget
-MAX_BACKOFF_SECONDS = 1800  # give up cleanly rather than sleep through a huge Retry-After; a later run (every 4h) retries
-
-TOKEN = os.environ.get("COURTLISTENER_TOKEN")
-if not TOKEN:
-    print("FATAL: COURTLISTENER_TOKEN environment variable not set.", file=sys.stderr)
-    sys.exit(1)
-HEADERS = {"Authorization": f"Token {TOKEN}"}
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 DATA_DIR.mkdir(exist_ok=True)
@@ -71,58 +64,12 @@ CHECKPOINT_FILE = DATA_DIR / "checkpoint.json"
 RUN_LOG_FILE = DATA_DIR / "run_log.json"
 
 
-def load_json(path, default):
-    if path.exists():
-        try:
-            return json.loads(path.read_text(encoding="utf-8"))
-        except json.JSONDecodeError:
-            return default
-    return default
-
-
-def save_json(path, data):
-    path.write_text(json.dumps(data, indent=2, default=str), encoding="utf-8")
-
-
 def load_checkpoint():
-    return load_json(CHECKPOINT_FILE, {
-        "last_search_offset": 0,
-        "processed_docket_ids": [],
-        "requests_made_today": 0,
-        "date_of_counter": None,
-    })
+    return load_json(CHECKPOINT_FILE, dict(EMPTY_CHECKPOINT))
 
 
 def save_checkpoint(cp):
     save_json(CHECKPOINT_FILE, cp)
-
-
-def throttled_get(url, params, checkpoint):
-    """The single point of contact with the API. SPEC.md section 8."""
-    today = datetime.now(timezone.utc).date().isoformat()
-    if checkpoint["date_of_counter"] != today:
-        checkpoint["date_of_counter"] = today
-        checkpoint["requests_made_today"] = 0
-
-    if checkpoint["requests_made_today"] >= DAILY_REQUEST_CAP:
-        return None  # signals "stop cleanly, resume next run"
-
-    time.sleep(FLOOR_THROTTLE_SECONDS)
-    resp = requests.get(url, headers=HEADERS, params=params, timeout=30)
-    checkpoint["requests_made_today"] += 1
-
-    if resp.status_code == 429:
-        retry_after = int(resp.headers.get("Retry-After", "60"))
-        if retry_after > MAX_BACKOFF_SECONDS:
-            print(f"429 received, Retry-After={retry_after}s exceeds max tolerated backoff "
-                  f"({MAX_BACKOFF_SECONDS}s) -- stopping cleanly, a later run will retry")
-            return None
-        print(f"429 received, backing off {retry_after}s")
-        time.sleep(retry_after)
-        return throttled_get(url, params, checkpoint)
-
-    resp.raise_for_status()
-    return resp.json()
 
 
 def fetch_docket_entries(docket_id, checkpoint):

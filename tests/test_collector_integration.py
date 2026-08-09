@@ -113,8 +113,8 @@ def run_test():
         collector.CHECKPOINT_FILE = collector.DATA_DIR / "checkpoint.json"
         collector.RUN_LOG_FILE = collector.DATA_DIR / "run_log.json"
 
-        with mock.patch("collector.requests.get", side_effect=fake_requests_get), \
-             mock.patch("collector.time.sleep", return_value=None):
+        with mock.patch("api_client.requests.get", side_effect=fake_requests_get), \
+             mock.patch("api_client.time.sleep", return_value=None):
             collector.run()
 
         cases = json.loads(collector.CASES_FILE.read_text())
@@ -135,8 +135,8 @@ def run_test():
         print("PASS: multi-page run mined terminated dockets, skipped the non-terminated one, and reset the offset")
 
         # --- Second run: same fake pages, but checkpoint now has both mined docket_ids already processed ---
-        with mock.patch("collector.requests.get", side_effect=fake_requests_get), \
-             mock.patch("collector.time.sleep", return_value=None):
+        with mock.patch("api_client.requests.get", side_effect=fake_requests_get), \
+             mock.patch("api_client.time.sleep", return_value=None):
             collector.run()
 
         cases_after_second_run = json.loads(collector.CASES_FILE.read_text())
@@ -181,8 +181,8 @@ def run_crash_resilience_test():
             "date_of_counter": None,
         }), encoding="utf-8")
 
-        with mock.patch("collector.requests.get", side_effect=fake_requests_get), \
-             mock.patch("collector.time.sleep", return_value=None):
+        with mock.patch("api_client.requests.get", side_effect=fake_requests_get), \
+             mock.patch("api_client.time.sleep", return_value=None):
             collector.run()
 
         cases = json.loads(collector.CASES_FILE.read_text())
@@ -238,8 +238,8 @@ def run_multi_cycle_test():
                 return make_fake_response(FAKE_ENTRIES)
             raise ValueError(f"Unexpected URL in test: {url}")
 
-        with mock.patch("collector.requests.get", side_effect=multi_cycle_fake_get), \
-             mock.patch("collector.time.sleep", return_value=None):
+        with mock.patch("api_client.requests.get", side_effect=multi_cycle_fake_get), \
+             mock.patch("api_client.time.sleep", return_value=None):
             for i in range(1, 4):
                 collector.run()
                 cp = json.loads(collector.CHECKPOINT_FILE.read_text())
@@ -275,6 +275,7 @@ def run_max_backoff_test():
         os.environ["COURTLISTENER_TOKEN"] = "fake-token-for-testing"
 
         import collector
+        import api_client
         collector.DATA_DIR = __import__("pathlib").Path(tmpdir)
         collector.CASES_FILE = collector.DATA_DIR / "cases.json"
         collector.ISSUES_FILE = collector.DATA_DIR / "issues.json"
@@ -301,12 +302,12 @@ def run_max_backoff_test():
             raise ValueError(f"Unexpected URL in test: {url}")
 
         sleep_calls = []
-        with mock.patch("collector.requests.get", side_effect=huge_backoff_fake_get), \
-             mock.patch("collector.time.sleep", side_effect=lambda s: sleep_calls.append(s)):
+        with mock.patch("api_client.requests.get", side_effect=huge_backoff_fake_get), \
+             mock.patch("api_client.time.sleep", side_effect=lambda s: sleep_calls.append(s)):
             collector.run()
 
         assert 66019 not in sleep_calls, "Must not sleep through a backoff exceeding MAX_BACKOFF_SECONDS"
-        assert all(s <= collector.MAX_BACKOFF_SECONDS for s in sleep_calls), \
+        assert all(s <= api_client.MAX_BACKOFF_SECONDS for s in sleep_calls), \
             f"No sleep call should exceed the max backoff cap, got {sleep_calls}"
 
         # cases.json is only ever written after a case is successfully mined, so with

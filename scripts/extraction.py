@@ -45,11 +45,18 @@ SIMILARITY_MARKERS = [
     r"\bspouse.{0,20}approved\b",
 ]
 
-# SPEC.md 6.4 — 9th Circuit district court IDs used in relevance scoring
+# SPEC.md 6.4 / 15 — the user's case will be filed in the 9th Circuit, so
+# these districts produce the most useful authority.
 NINTH_CIRCUIT_DISTRICTS = {
     "cand", "caed", "cacd", "casd",
     "azd", "nvd", "ord", "waed", "wawd", "hid", "idd", "mtd", "akd",
+    "gud", "nmid",  # Guam and N. Mariana Islands are also 9th Circuit
 }
+
+# D.D.C. is out of circuit and therefore only persuasive, but most
+# consular-delay litigation is filed there and its TRAC case law is the most
+# developed — so it earns a smaller bonus rather than none. SPEC.md 15.
+HIGH_VALUE_OUT_OF_CIRCUIT = {"dcd"}
 
 REQUIRED_FIELDS = ["docket_id", "case_name", "court", "docket_number", "citation"]
 
@@ -107,7 +114,10 @@ def compute_relevance_score(record):
         score += 3
     if record.get("procedural_posture") == "summary_judgment_stage":
         score += 2
-    if (record.get("court") or "").lower() in NINTH_CIRCUIT_DISTRICTS:
+    court = (record.get("court") or "").lower()
+    if court in NINTH_CIRCUIT_DISTRICTS:
+        score += 2
+    elif court in HIGH_VALUE_OUT_OF_CIRCUIT:
         score += 1
     if record.get("outcome") == "settled":
         score += 1
@@ -136,8 +146,11 @@ def compute_priority_score(docket, now=None):
     now = now or datetime.now(timezone.utc)
     score = 0
 
-    if (docket.get("court_id") or "").lower() in NINTH_CIRCUIT_DISTRICTS:
+    court = (docket.get("court_id") or "").lower()
+    if court in NINTH_CIRCUIT_DISTRICTS:
         score += 2
+    elif court in HIGH_VALUE_OUT_OF_CIRCUIT:
+        score += 1
 
     cause = (docket.get("cause") or "").lower()
     score += min(sum(1 for kw in PRIORITY_CAUSE_KEYWORDS if kw in cause), 3)

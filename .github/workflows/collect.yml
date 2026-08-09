@@ -31,8 +31,21 @@ jobs:
           python tests/test_extraction.py
           python tests/test_collector_integration.py
           python tests/test_dashboard.py
+          python tests/test_opinion_fetcher.py
+
+      # Runs BEFORE the collector deliberately. Both share one daily request
+      # budget (SPEC.md section 8), and a curated seed opinion is worth more
+      # than another arbitrary discovered docket, so the seed gets first claim.
+      # Once all seed cases resolve, this becomes a no-op and the collector
+      # gets the whole budget back.
+      - name: Fetch free full-text opinions for seed cases
+        env:
+          COURTLISTENER_TOKEN: ${{ secrets.COURTLISTENER_TOKEN }}
+          PYTHONUNBUFFERED: "1"
+        run: python scripts/opinion_fetcher.py
 
       - name: Run collector
+        if: always()
         env:
           COURTLISTENER_TOKEN: ${{ secrets.COURTLISTENER_TOKEN }}
           PYTHONUNBUFFERED: "1"

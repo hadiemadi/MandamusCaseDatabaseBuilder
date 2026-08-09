@@ -152,7 +152,7 @@ budget on next. Fully rule-based, no AI:
 
 Starts at 0. Add:
 - **+2** if `court_id` is in the 9th Circuit district list (same list as
-  §6.4)
+  §6.4); **+1** instead if it is `dcd` (persuasive, see §15)
 - **+1** for each of these strings found in the docket's `cause` field
   (case-insensitive), capped at +3: `"mandamus"`, `"unreasonable delay"`,
   `"221(g)"`, `"administrative processing"`
@@ -216,10 +216,13 @@ Starts at 0. Add:
    shows what to prepare for or distinguish)
 3. **+2** if `procedural_posture == "summary_judgment_stage"` (reached
    substantive argument, regardless of final outcome)
-4. **+1** if court is in the 9th Circuit district list (see code)
-5. **+1** if `outcome == "settled"` (lower weight — usually no real
+4. **+2** if court is in the 9th Circuit district list (see code) —
+   raised from +1 on 2026-08-09 once the filing venue was confirmed (§15)
+5. **+1** if court is `dcd` — out of circuit and only persuasive, but most
+   consular-delay law is made there, so it beats a neutral district (§15)
+6. **+1** if `outcome == "settled"` (lower weight — usually no real
    reasoning; the government relented before any ruling)
-6. **+1** if `similarity_to_own_case == true`
+7. **+1** if `similarity_to_own_case == true`
 
 This is a sort/filter aid only — it does not gate what gets collected.
 **Every case matching the search query is stored regardless of score.**
@@ -358,6 +361,9 @@ repository.** Reasoning for the change:
 | Budget ceiling (2026-08-09) | Raised from $0 to $50, but spend order is enforced: exhaust free sources (curated advisories → free full-text opinions → free RECAP documents) before any purchase. Money buys *reasoning*, never data that is already free |
 | CourtListener membership (2026-08-09) | Tier 1 at $10/month — the single highest-leverage spend available. Raises 125→300 requests/day and is the only route to the PACER APIs (closed to free accounts since May 2026). Cancellable once collection completes |
 | Primary substance source (2026-08-09) | Reported decisions via the free Opinions API (`type=o`, `plain_text`), **not** the PACER-gated RECAP dockets used for discovery. This is what closes the "we can see *what* happened but not *why*" gap that limited the original design |
+| Rate limiter location (2026-08-09) | Moved out of collector.py into api_client.py once opinion_fetcher.py became a second consumer. SPEC 8 forbids a second parallel implementation, and both scripts must share one daily budget via the same checkpoint file |
+| Seed vs discovery priority (2026-08-09) | opinion_fetcher runs BEFORE collector in the workflow. A curated seed opinion (already vetted by practicing litigators) outranks another arbitrary discovered docket when they compete for the same request budget. Self-balancing: once the seed resolves, the fetcher no-ops and the collector reclaims the full budget |
+| Wrong-opinion safety (2026-08-09) | opinion_fetcher flags any case-name match below 0.6 word overlap as `needs_manual_match_check` rather than trusting or discarding it. A misattributed opinion feeding a legal filing is a worse failure than a missing one |
 
 ## 14. Budget allocation and spend order (added 2026-08-09)
 
