@@ -1,0 +1,413 @@
+UNITED STATES DISTRICT COURT
+                              FOR THE DISTRICT OF COLUMBIA
+
+
+ATEFEH NOORI et al.,
+
+                Plaintiffs,
+
+        v.                                           Civil Action No. 23-1463 (TJK)
+ANTONY J. BLINKEN et al.,
+
+                Defendants.
+
+
+                                   MEMORANDUM OPINION
+
+        Atefeh Noori seeks to have her foreign national father, Amanollah Noorijoshaghani, join
+
+her in the United States from Iran. So in April 2022, he filed an immigrant visa application. In
+
+February 2023, he received an interview with the relevant U.S. embassy. But his application was
+
+then refused, pending further administrative processing. Three months later, Noori and her father
+
+sued, arguing that Defendants have unreasonably delayed resolving the visa application, and seek-
+
+ing to compel them to complete that processing and issue a final decision. Defendants move to
+
+dismiss on several grounds. For the reasons explained below, the Court will grant the motion and
+
+dismiss the case for failure to state a claim.
+
+I.      Background
+
+        A U.S. citizen who wishes to bring her foreign national relative to the United States must
+
+file a Petition for Alien Relative (Form I-130) with the United States Citizenship and Immigration
+
+Services (“USCIS”). See 8 U.S.C. § 1154; 8 C.F.R. § 204.1(a)(1). Upon approval of the petition,
+
+USCIS sends the application to the State Department’s processing center.           See 8 C.F.R.
+
+§ 204.2(a)(3). The relative then submits another application (Form DS-260) and appears for an
+
+interview at the embassy with jurisdiction over the foreign relative’s residence. See 22 C.F.R.
+§ 42.62. After the interview, “the consular office must [either] issue [or] refuse the visa.” Id.
+
+§ 42.81(a).
+
+       In June 2021, Noori, a U.S. citizen, filed a Form I-130 on behalf of her father, who lives in
+
+Iran. Pet. for Writ of Mandamus (“Pet.”) ¶ 74, ECF No. 1. USCIS approved the application,
+
+leading Noori’s father to file his Form DS-260 in April 2022. Id. ¶ 75–77. In February 2023, a
+
+consular officer at the U.S. Embassy in Yerevan, Armenia interviewed Noori’s father. Id. ¶ 78.
+
+The officer then informed him that the visa application was refused “pending further administrative
+
+processing.” Id. ¶ 80. The application has remained in “administrative processing” ever since. Id.
+
+¶ 84. Among other things, Plaintiffs allege that the delay in adjudicating this application has
+
+caused “severe emotional and financial strain on the Plaintiffs.” Id. ¶ 6.
+
+       About three months after the interview, Noori and her father sued Defendants, the Secretary
+
+of State, the Deputy Assistant Secretary for Visa Services, and the Consul General at the Embassy.
+
+See id. ¶ 28–30. Count One of their Petition seeks to compel Defendants to act on the visa appli-
+
+cation pursuant to the Mandamus Act, 28 U.S.C. § 1361. See Pet. ¶ 112–30. Count Two alleges
+
+that Defendants have unlawfully failed to act on the application in violation of the Administrative
+
+Procedure Act (“APA”), 5 U.S.C. § 706(2). See id. ¶ 131–59. Count Three alleges that Defendants
+
+have unlawfully withheld action in violation of the APA’s § 706(1). See id. ¶ 147–58. And Count
+
+Four alleges that Defendants have unlawfully delayed action, also in violation of the APA’s
+
+§ 706(1). See id. ¶ 159–74. Defendants move to dismiss on several grounds. See ECF No. 7.
+
+II.    Legal Standard
+
+       “A Rule 12(b)(6) motion to dismiss tests the legal sufficiency of a plaintiff’s complaint; it
+
+does not require a court to ‘assess the truth of what is asserted or determine whether a plaintiff has
+
+any evidence to back up what is in the complaint.’” Herron v. Fannie Mae, 861 F.3d 160, 173
+
+(D.C. Cir. 2017) (quoting Browning v. Clinton, 292 F.3d 235, 242 (D.C. Cir. 2002)). “In
+
+
+                                                  2
+evaluating a Rule 12(b)(6) motion, the Court must construe the complaint ‘in favor of the plaintiff,
+
+who must be granted the benefit of all inferences that can be derived from the facts alleged.’”
+
+Hettinga v. United States, 677 F.3d 471, 476 (D.C. Cir. 2012) (quoting Schuler v. United States,
+
+617 F.2d 605, 608 (D.C. Cir. 1979)). But a court is not “bound to accept as true a legal conclusion
+
+couched as a factual allegation.” Ashcroft v. Iqbal, 556 U.S. 662, 678 (2009) (quoting Bell Atl.
+
+Corp. v. Twombly, 550 U.S. 544, 555 (2007)). “While a court generally does not consider matters
+
+beyond the pleadings for a motion to dismiss, it may consider ‘the facts alleged in the complaint,
+
+documents attached as exhibits or incorporated by reference in the complaint, or documents upon
+
+which the plaintiff’s complaint necessarily relies even if the document is produced not by the
+
+plaintiff in the complaint but by the defendant in a motion to dismiss.’” Feng Wang v. Pompeo,
+
+No. 18-cv-1732 (TSC), 2020 WL 1451598, at *3 (D.D.C. Mar. 25, 2020) (citation omitted). A
+
+court may also consider matters of which it can take judicial notice. See EEOC v. St. Francis
+
+Xavier Parochial Sch., 117 F.3d 621, 624 (D.C. Cir. 1997).
+
+III.   Analysis
+
+       For the reasons explained below, Plaintiffs’ Petition does not state a claim that the adjudi-
+
+cation of the visa application at issue has been unlawfully withheld or unreasonably delayed, as
+
+alleged in Counts One, Three and Four. 1 And because the Court will dismiss the Petition on that
+
+
+       1
+          Counts Three and Four, each brought under § 706(1) and seeking to compel agency ac-
+tion, are subject to the same analysis. Section 706(1) provides a cause of action to compel agency
+action “unlawfully withheld or unreasonably delayed.” But Plaintiffs have not “provided any legal
+standard or argument distinguishing between” the two for their purposes here. Tate v. Pompeo,
+513 F. Supp. 3d 132, 147 n.6 (D.D.C. 2021). Thus, the “analysis of [Plaintiffs’] claim that agency
+action was unlawfully delayed . . . addresses the entirety of [their] § 706(1) claims to compel
+agency action.” Id. Similarly, while Count One is brought under the Mandamus Act, courts eval-
+uate that claim under the same framework as those brought under § 706(1). Penn v. Blinken, No.
+21-cv-1055 (TJK), 2022 WL 910525, at *7 (D.D.C. Mar. 29, 2022) (“The standard for reviewing
+agency delay is the same under both § 706(1) of the APA and the Mandamus Act.” (cleaned up)).
+
+
+
+
+                                                 3
+ground, it need not resolve Defendants’ remaining arguments for dismissal. See Dastagir v.
+
+Blinken, 557 F. Supp. 3d 160, 168 n.6 (D.D.C. 2021) (declining to consider Government’s consu-
+
+lar-nonreviewability and redressability arguments after resolving unreasonable-delay case on the
+
+merits); see also Mohammad v. Blinken, 548 F. Supp. 3d 159, 169 n.7 (D.D.C. 2021) (similar).
+
+       The APA authorizes a reviewing court to “compel agency action unlawfully withheld or
+
+unreasonably delayed.” 5 U.S.C. § 706(1). Courts review unreasonable-delay claims in pro-
+
+cessing immigration petitions according to “the same [standard] under both § 706(1) of the APA
+
+and the Mandamus Act.” Skalka v. Kelly, 246 F. Supp. 3d 147, 152 (D.D.C. 2017). “There is ‘no
+
+per se rule as to how long is too long’ to wait for agency action.” In re Am. Rivers & Idaho Rivers
+
+United, 372 F.3d 413, 419 (D.C. Cir. 2004) (quoting In re Int’l Chem Workers Union, 958 F.2d
+
+1144, 1149 (D.C. Cir.1992)). Instead, Courts rely on the six “TRAC factors”:
+
+       (1) the time agencies take to make decisions must be governed by a rule of reason;
+       (2) where Congress has provided a timetable or other indication of the speed with
+           which it expects the agency to proceed in the enabling statute, that statutory
+           scheme may supply content for this rule of reason;
+       (3) delays that might be reasonable in the sphere of economic regulation are less
+           tolerable when human health and welfare are at stake;
+       (4) the effect of expediting delayed action on agency activities of a higher or com-
+           peting priority;
+       (5) the nature and extent of the interests prejudiced by delay; and
+       (6) the court need not find any impropriety lurking behind agency lassitude in order
+           to hold that agency action is unreasonably delayed.
+
+Telecomms. Rsch. & Action Ctr. v. FCC, 750 F.2d 70, 80 (D.C. Cir. 1984) (“TRAC”) (cleaned up).
+
+These factors “are not ‘ironclad,’ but rather are intended to provide ‘useful guidance in assessing
+
+claims of agency delay.’” In re Core Commc’ns, Inc., 531 F.3d 849, 855 (D.C. Cir. 2008) (quoting
+
+
+        Count Two fails to state a claim under § 706(2), but for a different reason. Plaintiffs them-
+selves insist that “[t]here has been no final decision on [their] visa application.” ECF No. 14 at
+15. But to state a claim under that section, “the agency action in question must be final agency
+action.” Am. Anti-Vivisection Soc’y v. USDA, 946 F.3d 615, 620 (D.C. Cir. 2020) (citation omit-
+ted).
+
+
+
+                                                 4
+TRAC, 750 F.2d at 80). Taken together, the TRAC factors strongly weigh in Defendants’ favor.
+
+Thus, even accepting Plaintiffs’ allegations as true, they are insufficient to state a claim for unrea-
+
+sonable delay. 2
+
+         A.     TRAC Factors 1 and 2
+
+         The first two TRAC factors are typically considered together. Milligan v. Pompeo, 502 F.
+
+Supp. 3d 302, 317 (D.D.C. 2020). And the first is often considered the “most important.” In re
+
+Core Commc’ns, Inc., 531 F.3d at 855. These factors ask the Court to determine “whether the
+
+agency’s response time complies with an existing specified schedule and whether it is governed
+
+by an identifiable rationale.” Ctr. for Sci. in the Pub. Int. v. FDA, 74 F. Supp.3d 295, 300 (D.D.C.
+
+2014).
+
+         Both factors favor Defendants. “There is no congressionally imposed timeline” for the
+
+embassy to adjudicate the visa application. Bagherian, 442 F. Supp. 3d at 95. “To the contrary,
+
+Congress has given the agencies wide discretion in the area of immigration processing.” Skalka,
+
+246 F. Supp. 3d at 153–54. 3 Thus, lacking a “set timeline, the Court looks to case law for
+
+
+         2
+          Plaintiffs argue that dismissal would be “premature” at this stage because unreasonable-
+delay claims “require fact-based inquiries.” ECF No. 14 at 22–24. But “[s]o long as a ‘record
+contains enough facts to evaluate the TRAC factors’ at the motion-to-dismiss stage, ‘then a Court
+may appropriately decide to do just that.’” Lee v. Blinken, No. 23-cv-1783 (DLF), 2024 WL
+639635, at *4 (D.D.C. Feb. 15, 2024) (quoting DaCosta v. Immigr. Inv. Program Off., 643 F. Supp.
+3d 1, 12 (D.D.C. 2022)). Thus, in this district, whether an alleged delay is unreasonable is a ques-
+tion routinely decided as a matter of law. See, e.g., Bagherian v. Pompeo, 442 F. Supp. 3d 87, 95
+(D.D.C. 2020); Ghadami v. DHS, No. 19-cv-397 (ABJ), 2020 WL 1308376, at *8 (D.D.C. Mar.
+19, 2020).
+         3
+          The Petition repeatedly references language in the State Department’s Foreign Affairs
+Manual establishing a “policy under which immediate relative . . . visas be processed within 30
+days of receipt of the necessary information from the applicant.” 9 FAM § 504.7-2. But this
+policy is “nonbinding” and “insufficient to displace the significant discretion that Congress pro-
+vided to the federal agencies tasked with processing immigration applicants and vetting them to
+protect the national security.” Pourshakouri v. Pompeo, No. 20-cv-402 (RJL), 2021 WL 3552199,
+at *9 n.11 (D.D.C. Aug. 11, 2021).
+
+
+
+                                                  5
+guidance.” Dastagir, 557 F. Supp. 3d at 165. “District courts have generally found that immigra-
+
+tion delays in excess of five, six, seven years are unreasonable, while those between three to five
+
+years are often not unreasonable.” Lee, 2024 WL 639635, at *5 (quoting Rahman v. Blinken, No.
+
+22-cv-2732 (JEB), 2023 WL 196428, at *4 (D.D.C. Jan. 17, 2023)). And delays of around two
+
+years are usually considered reasonable. See, e.g., Ghadami, 2020 WL 1308376, at *8 (“[M]any
+
+courts evaluating similar delays have declined to find a two-year period to be unreasonable as a
+
+matter of law.”).
+
+       Plaintiffs filed their Petition in May 2023. But they did so only thirteen months after Mr.
+
+Noorijoshaghani’s visa application was submitted, and three months after his interview. “Courts
+
+measure the period of delay from the last government action to the issuance of the opinion.” Nus-
+
+rat v. Blinken, No. 21-cv-2801 (TJK), 2022 WL 4103860, at *6 n.6 (D.D.C. Sept. 8, 2022). Here,
+
+that waiting period comes out to just over a year, which does not approach an unreasonable delay
+
+under the relevant case law. Skalka, 246 F. Supp. 3d at 154 (“[A] delay of [about two years] does
+
+not typically require judicial intervention.”). Factors one and two therefore favor Defendants. 4
+
+       B.      TRAC Factor 4
+
+       The fourth TRAC factor considers the effect of expedition on an agency’s competing pri-
+
+orities. TRAC, 750 F.2d at 80. It often favors the agency and “carries the greatest weight in many
+
+cases.” Milligan, 502 F. Supp. 3d at 319. In fact, so substantial is its weight that “[t]his Circuit
+
+has refused to grant relief” based on the fourth factor “even [when] all the other factors considered
+
+
+
+       4
+          On top of all that, 8 U.S.C. § 1735(a) requires the Secretary of State to make a finding
+that an alien “from a country that is a state sponsor of international terrorism . . . does not pose a
+threat to the safety or national security of the United States.” Iran is such a country. See U.S.
+Dep’t of State, Determination Pursuant to Section 6(i) of the Export Administration Act of 1979—
+Iran, 49 Fed. Reg. 2836, Jan. 23, 1984. This requirement further justifies the waiting period in
+this case.
+
+
+
+                                                  6
+in TRAC favored it.” Id. (cleaned up). That is so because courts “are generally hesitant to direct
+
+agencies which tasks to prioritize, particularly if such intervention would move the petitioner to
+
+‘the head of the queue’ and ‘simply move[] all others back one space.’” Lee, 2024 WL 639635,
+
+at *6 (quoting In re Barr Lab’ys, Inc., 930 F.2d 72, 75–76 (D.C. Cir. 1991)).
+
+        In this case, Plaintiffs “ask[] for just that.” Dastagir, 557 F. Supp. 3d at 167. They seek
+
+to compel Defendants to decide the visa application at issue in thirty days. But because consular
+
+“processing capacity is presently a zero-sum game,” Murway v. Blinken, No. 21-cv-1618 (RJL),
+
+2022 WL 493082, at *4 (D.D.C. Feb. 16, 2022) (cleaned up), their requested relief would amount
+
+to a “judicial reordering[] of agency priorities,” Rahman, 2023 WL 196428, at *4. In other words,
+
+Plaintiffs seek to cut to the front of the line. Cf. Dastagir, 557 F. Supp. 3d at 169 (“Dastagir offers
+
+no basis for judicial line-cutting those also waiting their turn.”). And even though “the effect of
+
+an individual case would be minimal, an accumulation of such individual cases being pushed by
+
+judicial fiat to the front of the line would erode the ability of agencies to determine their priorities.”
+
+Tate, 513 F. Supp. 3d at 150. Therefore, the fourth TRAC factor also favors Defendants.
+
+        C.      TRAC Factors 3 and 5
+
+        These factors involve “the interests prejudiced by delay,” including “human health and
+
+welfare.” TRAC, 750 F.3d at 80; see also Didban v. Pompeo, 435 F. Supp. 3d 168, 177 (D.D.C.
+
+2020) (considering the third and fifth factors in tandem). Plaintiffs allege that their entire family
+
+is suffering “severe emotional distress and psychological harm,” Pet. ¶ 93, and that “[t]he separa-
+
+tion has taken a severe toll on Plaintiffs, mentally and emotionally,” id. ¶ 100. But Plaintiffs are
+
+not alone. “While the Court does not doubt that [Plaintiffs] ha[ve] an interest in prompt adjudica-
+
+tion, so too do many others facing similar circumstances.” Palakuru v. Renaud, 521 F. Supp. 3d
+
+46, 53 (D.D.C. 2021). Plaintiffs’ “allegations, standing alone, do not suggest [they] are in a worse
+
+position” than other visa applicants whose lives have been put on hold by a waiting period. Lee,
+
+
+                                                    7
+2024 WL 639635, at *7. Thus, these factors largely do not weigh in Plaintiffs’ favor because there
+
+is no reason why their private interests in “health and welfare” deserve special treatment relative
+
+to other visa applicants’ interest in the same. In any event, to the extent these TRAC factors weigh
+
+in Plaintiffs’ favor, it is clear “[t]hey do not ‘overcome the other factors that weigh strongly in the
+
+Government’s favor.’” Dastagir, 557 F. Supp. 3d at 168 (quoting Palakuru, 521 F. Supp. 3d at
+
+53).
+
+          D.     TRAC Factor 6
+
+          The sixth TRAC factor, which provides that “the court need not find any impropriety lurk-
+
+ing behind agency lassitude in order to hold that agency action is ‘unreasonably delayed,’” TRAC,
+
+750 F.2d at 80, weighs against Plaintiffs as well. Although they allege an unreasonable delay, they
+
+do not allege that Defendants have engaged in any bad faith or impropriety. See generally Pet.
+
+Therefore, “‘the good faith of the agency in addressing the delay weighs against’ relief.” Tate,
+
+513 F. Supp. 3d at 150 (quoting Liberty Fund, Inc. v. Chao, 394 F. Supp. 2d 105, 120 (D.D.C.
+
+2005)).
+
+                                              *    *    *
+
+          In summary, after weighing the TRAC factors, the Court has little difficulty concluding that
+
+Plaintiffs’ Petition does not state a claim that the adjudication of their visa application has been
+
+unreasonably delayed. In fact—unfortunately—their wait time “pales in comparison to the longer
+
+delays other applicants have unsuccessfully challenged in this district.” Mohammad, 548 F. Supp.
+
+3d at 169. In the end, delays “stemming from resource-allocation decisions simply do not lend
+
+themselves to judicial reordering of agency priorities.” Milligan, 502 F. Supp. 3d at 319 (cleaned
+
+up). And they offer no reason for the Court to bump them to the front of the line.
+
+
+
+
+                                                   8
+IV.    Conclusion
+
+       For all these reasons, the Court will grant Defendants’ motion and dismiss the case. A
+
+separate order will issue.
+
+
+                                                         /s/ Timothy J. Kelly
+                                                         TIMOTHY J. KELLY
+                                                         United States District Judge
+
+Date: March 5, 2024
+
+
+
+
+                                             9

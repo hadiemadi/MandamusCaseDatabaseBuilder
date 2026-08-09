@@ -1,0 +1,790 @@
+UNITED STATES DISTRICT COURT
+                            FOR THE DISTRICT OF COLUMBIA
+
+ NAZANIN MOTTAHEDAN, et al.,
+             Plaintiffs,
+        v.
+ SCOTT M. OUDKIRK, in his official                   Civil Action No. 23-3486 (CKK)
+ capacity, et al.,
+             Defendants.
+
+                                MEMORANDUM OPINION
+                                        (January 11, 2024)
+
+       On November 20, 2023, Plaintiffs Nazanin Mottahedan and Mohammadali Guivehchian
+
+filed a [1] Complaint for Declaratory and Injunctive Relief (the “Complaint”), seeking a judgment
+
+from the Court compelling Defendant Scott Oudkirk, Deputy Chief of Mission at the U.S. Embassy
+
+in Ankara, Turkey, and Defendant Antony Blinken, Secretary of the U.S. Department of State
+
+(“State Department”) (collectively, the “Defendants”) to process their immigrant visa applications,
+
+pursuant to the Administrative Procedure Act’s (“APA’s”) bar on “unreasonabl[e] delay[].”
+
+5 U.S.C. § 706(1). The Court then issued an order stating that the matter was before the Court on
+
+sua sponte review of Plaintiffs’ Complaint. See Order, ECF No. 3. The Court ordered Plaintiffs
+
+to show cause, on or before December 18, 2023, why their Complaint should not be dismissed sua
+
+sponte for failure to state a claim. Id. Plaintiffs then filed the [5] Response to Order to Show
+
+Cause (“Pls.’ Resp.”), and Defendants filed the [9] Reply to Plaintiffs’ Response to Show Cause
+
+Order (“Defs.’ Reply”). Upon review of Plaintiffs’ [1] Complaint, [5] Response, [9] Reply, the
+
+relevant legal authority, and the record as a whole, the Court shall DISMISS Plaintiffs’ [1]
+
+Complaint for Declaratory and Injunctive Relief in its entirety.
+
+
+
+
+                                                 1
+                                        I. BACKGROUND
+
+       This case concerns the EB-5 Immigrant Investor Program, which permits foreign investors
+
+to enter the United States “for the purpose of engaging in a new commercial enterprise” that meets
+
+certain criteria. 8 U.S.C. § 1153(b)(5)(A). To qualify, the investment must “create full-time
+
+employment for not fewer than 10 United States citizens or aliens lawfully admitted for permanent
+
+residence or other immigrants lawfully authorized to be employed in the United States (other than
+
+the immigrant and the immigrant’s spouse [or children]).” Id. § 1153(b)(5)(A)(ii). The investment
+
+must be at or above a certain monetary amount. Id. § 1153(b)(5)(C). Aside from creating jobs
+
+directly by hiring employees, foreign investors can invest in a “regional center” designated by the
+
+United States Citizenship and Immigration Services (“USCIS”) that is designed to create jobs
+
+indirectly through economic growth. See 8 C.F.R. § 204.6(m).
+
+       To obtain lawful permanent resident status through the EB-5 program, a foreign investor
+
+must file a Form I-526 petition with USCIS. Id. § 204.6(a). If USCIS determines that the foreign
+
+investor meets the EB-5 requirements, it will approve the petition. See Nohria v. Renaud, 2021
+
+WL 950511, at *2 (D.D.C. Mar. 14, 2021) (BAH) (describing I-526 process). With an approved
+
+I-526 petition, the foreign investor becomes an “employment-based immigrant” under the EB-5
+
+statute. 8 U.S.C. § 1154(a)(1)(H). An approved petition “makes a petitioner eligible for a visa,
+
+but does not automatically provide a visa.” Nohria, 2021 WL 950511, at *2. The immigrant, if
+
+outside the United States, must then apply for and obtain an immigrant visa from the State
+
+Department at a consular post abroad. 22 C.F.R. § 42.61(a). The State Department processes the
+
+application at its National Visa Center (“NVC”) and ensures that the applicant meets all
+
+prerequisites for visa adjudication. Nohria, 2021 WL 950511, at *2. If the NVC finds that an
+
+applicant is “documentarily qualified,” it will forward the application to the consulate, which
+
+
+
+                                                2
+schedules a visa interview. See 84 Fed. Reg. 35, 756. After the interview, a consular officer must
+
+either issue the visa, refuse the visa under INA § 212(a) or § 221(g) (or other applicable law), or
+
+discontinue the visa application. 22 C.F.R. § 42.81(a). Although a visa application may be
+
+“refused” under INA § 221(g), such a refusal may not be a final decision, as the refusal can be
+
+submitted for “administrative processing” and applicants can be given the opportunity to provide
+
+additional information to establish eligibility. See, e.g., Ibrahim v. U.S. Dep’t of State, 2020 WL
+
+1703892, at *5 (D.D.C. Apr. 8, 2020) (BAH) (discussing how no final decision is rendered when
+
+applications have been “refused” but are “still undergoing administrative processing”).
+
+        Plaintiff Mottahedan is a national and citizen of Iran. Compl. ¶ 9. Her son, Plaintiff
+
+Guivehchian, was born in Iran and is a citizen of Canada. Id. ¶ 10. In 2015, Plaintiff Mottahedan
+
+invested $500,000 in Mariposa Wine Co., LLC, a company associated with California Consortium
+
+for Agricultural Export, which is designated as regional center under the EB-5 program. Id. ¶¶ 46–
+
+47; Pls.’ Resp. at 5. In May 2018, USCIS approved Plaintiff Mottahedan’s Form I-526 petition,
+
+which the agency received in September 2015. Compl. ¶ 43. Subsequently, Plaintiffs “paid the
+
+immigrant visa fees [and] submitted visa applications,” with Plaintiff Guivehchian listed as
+
+Plaintiff Mottahedan’s derivative beneficiary. Id. ¶ 48; Declaration of Matthew McNeil (“McNeil
+
+Decl.”), ECF No. 9-1, ¶ 4. On November 15, 2018, Plaintiffs’ applications became “documentarily
+
+qualified.” McNeil Decl. ¶ 6; Compl. ¶ 50. Plaintiffs were then scheduled for an interview with
+
+a consular officer at the U.S. Embassy in Ankara, Turkey on January 22, 2019, but the interview
+
+did not occur. 1 Compl. ¶¶ 51–52. Subsequently, the U.S. Embassy scheduled an interview for
+
+March 17, 2022, but it was ultimately cancelled because the visas Plaintiffs sought “under the EB-
+
+
+
+1
+ Plaintiffs state that this interview was cancelled on January 17, 2019 by a “cancellation notice.” Compl.
+¶ 52. Defendants claim that Plaintiffs failed to appear for their scheduled interviews on January 22, 2019.
+McNeil Decl. ¶ 9.
+                                                    3
+5 Immigrant Investor Regional Center Program were no longer available due to lapse of the
+
+statutory authorization for the program on June 30, 2021.” McNeil Decl. ¶ 11. Following the
+
+reinstatement of the EB-5 program in 2022, Plaintiffs’ interview was scheduled for and completed
+
+on October 12, 2022. Id. ¶ 12; Compl. ¶¶ 57, 59. That same day, following the interview, the
+
+consular officer refused Plaintiffs’ applications under INA § 221(g) and placed the applications in
+
+administrative processing. Compl. ¶ 60; McNeil Decl. ¶ 13. On October 14, 2022, the U.S.
+
+Embassy in Ankara emailed Form DS-5535 (Supplemental Questions for Visa Applicants) to
+
+Plaintiff Mottahedan. McNeil Decl. ¶ 14. Plaintiff Mottahedan submitted her responses to Form
+
+DS-5535 on or before November 4, 2022. Id. ¶ 15. On November 4, 2022, the consular staff at
+
+the U.S. Embassy in Ankara “initiated a security advisory opinion request because the consular
+
+officer had reason to believe [Plaintiff Mottahedan] may be ineligible for a visa under a security-
+
+related ground for visa ineligibility.”       Id.   Plaintiffs’ visa applications have remained in
+
+administrative processing since then. Compl. ¶ 60.
+
+        Plaintiffs filed the instant action in November 2023. See generally id. Plaintiffs allege that
+
+the delay in adjudicating their visa applications have caused “Plaintiffs tangible harm from the
+
+increased cost, access to capital, and risk to their capital.” Id. ¶ 64. Plaintiffs further state that the
+
+“financial harm is compounded by the human harms from the delays caused by the cancelled
+
+immigrant interviews, lack of transparency from the Embassy on what processing is being
+
+undertaken, and anxiety from the uncertainty due to a lack of any communication.” Id. ¶ 65.
+
+Plaintiffs argue that Defendants’ delay in adjudication is unreasonable under the Administrative
+
+Procedure Act. Id. ¶¶ 71–98.
+
+
+
+
+                                                    4
+                                          II. LEGAL STANDARD
+
+        “Ordinarily, the sufficiency of a complaint is tested by a motion brought under Rule
+
+12(b)(6), which tests whether a plaintiff has properly stated a claim” upon which relief can be
+
+granted. Bauer v. Marmara, 942 F. Supp. 2d 31, 37 (D.D.C. 2013) (RC). However, it is well
+
+settled in the D.C. Circuit that a court may dismiss a complaint sua sponte pursuant to Rule
+
+12(b)(6) where it is “patently obvious” that the plaintiff cannot prevail on the facts alleged in the
+
+complaint. Baker v. Dir., U.S. Parole Comm’n, 916 F.2d 725, 726–27 (D.C. Cir. 1990) (per
+
+curiam).
+
+        Pursuant to Rule 12(b)(6), a party may move to dismiss a complaint on grounds that it
+
+“fail[s] to state a claim upon which relief can be granted.” Fed. R. Civ. P. 12(b)(6). A complaint
+
+is not sufficient if it “tenders ‘naked assertion[s]’ devoid of ‘further factual enhancement.’”
+
+Ashcroft v. Iqbal, 556 U.S. 662, 678 (2009) (quoting Bell Atl. Corp. v. Twombly, 550 U.S. 544, 557
+
+(2007)). To survive a Rule 12(b)(6) motion, a complaint must contain sufficient factual allegations
+
+that, if accepted as true, “state a claim to relief that is plausible on its face.” Twombly, 550 U.S. at
+
+570. “A claim has facial plausibility when the plaintiff pleads factual content that allows the court
+
+to draw the reasonable inference that the defendant is liable for the misconduct alleged.” Iqbal,
+
+556 U.S. at 678. “[T]he Court must accept the factual allegations in the complaint as true and draw
+
+all reasonable inferences in favor of plaintiff.” Nat’l Postal Prof’l Nurses v. U.S. Postal Serv.,
+
+461 F. Supp. 2d 24, 27 (D.D.C. 2006) (PLF).
+
+                                              III. DISCUSSION
+
+        Plaintiffs argue that Defendants’ delay in adjudicating their visa applications is
+
+unreasonable under the APA. 2 Compl. ¶¶ 71–98. Although a court may order an agency “to
+
+
+2
+ Plaintiffs note that the doctrine of consular non-reviewability “does not apply in this case because Plaintiffs
+do not challenge a final decision by a consular officer denying a visa.” Compl. ¶ 19. Plaintiffs are correct
+                                                       5
+perform a [mandatory] act, [i.e.,] to take action upon a matter,” a court may not decide “how [the
+
+agency] shall act.” Norton v. S. Utah Wilderness All., 542 U.S. 55, 62 (2004).
+
+        To determine whether a plaintiff has sufficiently alleged that agency action has been
+
+“unreasonably delayed,” courts apply the familiar “TRAC” factors laid out in Telecommunications
+
+Research & Action Center v. FCC (“TRAC”), 750 F.2d 70, 80 (D.C. Cir. 1984):
+
+           (1) the time agencies take to make decisions must be governed by a rule
+               of reason;
+
+           (2) where Congress has provided a timetable or other indication of the
+               speed with which it expects the agency to proceed in the enabling
+               statute, that statutory scheme may supply content for this rule of
+               reason;
+
+           (3) delays that might be reasonable in the sphere of economic regulation
+               are less tolerable when human health and welfare are at stake;
+
+           (4) the court should consider the effect of expediting delayed action on
+               agency activities of a higher or competing priority;
+
+           (5) the court should also take into account the nature and extent of the
+               interests prejudiced by delay; and
+
+           (6) the court need not find any impropriety lurking behind agency
+               lassitude in order to hold that agency action is unreasonably delayed.
+
+In re United Mine Workers of Am. Int’l Union, 190 F.3d 545, 549 (D.C. Cir. 1999) (quoting TRAC,
+
+750 F.2d at 80) (internal quotation marks omitted). Whether a delay is unreasonable “cannot be
+
+decided in the abstract, by reference to some number of months or years beyond which agency
+
+inaction is presumed to be unlawful, but will depend in large part . . . upon the complexity of the
+
+task at hand, the significance (and permanence) of the outcome, and the resources available to the
+
+
+
+
+in that the doctrine would be inapplicable based on the facts before the Court. See, e.g., Vulupala v. Barr,
+438 F. Supp. 3d 93, 98 (D.D.C. 2020) (ABJ) (recognizing that a 221(g) notification “is not sufficiently final
+to warrant the application of the doctrine of consular nonreviewability”).
+                                                     6
+agency.” Mashpee Wampanoag Tribal Council, Inc. v. Norton, 336 F.3d 1094, 1102 (D.C. Cir.
+
+2003).
+
+         In their response to the Court’s show cause order, Plaintiffs appear to question whether the
+
+TRAC methodology is appropriate at the motion to dismiss stage, stating “[h]ow can the Court
+
+possibly evaluate the allegations in the complaint without the record or discovery as to the manner
+
+and methodology of Defendants’ process, if any[.]” Pls.’ Resp. at 11. Admittedly, some district
+
+courts have concluded that it is inappropriate to decide unreasonable delay claims at the motion to
+
+dismiss stage. See Thomas v. Pompeo, 438 F. Supp. 3d 35, 44 (D.D.C. 2020) (ESH) (concluding
+
+that “any determination of whether defendants have unreasonably delayed adjudication . . . is
+
+premature at this juncture”). However, the majority of authority demonstrates that it is appropriate
+
+to apply the TRAC factors at the motion to dismiss stage. See, e.g., Bagherian v. Pompeo, 442 F.
+
+Supp. 3d 87, 94 (D.D.C. 2020) (JDB) (applying TRAC factors at the motion to dismiss stage);
+
+Didban v. Pompeo, 435 F. Supp. 3d 168, 175 (D.D.C. 2020) (CRC) (same); Sarlak v. Pompeo,
+
+2020 WL 3082018, at *5 (D.D.C. June 10, 2020) (BAH) (same); Skalka v. Kelly, 246 F. Supp. 3d
+
+147, 153–54 (D.D.C. 2017) (RJL) (same); Palakuru v. Renaud, 521 F. Supp. 3d 46, 50 (D.D.C.
+
+2021) (TNM) (same). Accordingly, the Court concludes it is appropriate to consider whether
+
+Plaintiffs’ Complaint meets the Rule 12(b)(6) pleading standards. The Court notes that it is “not
+
+determining whether there has been an unreasonable delay; rather, it is determining whether
+
+plaintiffs’ complaint has alleged facts sufficient to state a plausible claim for unreasonable
+
+administrative delay.” Ghadami v. U.S. Dep’t of Homeland Sec., 2020 WL 1308376, at *7 n.6
+
+(D.D.C. Mar. 19, 2020) (ABJ). The Court now considers the TRAC factors in turn.
+
+
+
+
+                                                  7
+   A. TRAC Factors One and Two
+
+       The D.C. Circuit has explained that the first TRAC factor—the time agencies take to make
+
+decisions must be governed by a “rule of reason”—is the “most important,” although it is generally
+
+reviewed with the second TRAC factor as well. In re Core Commc’ns, Inc., 531 F.3d 849, 855
+
+(D.C. Cir. 2008). The inquiry centers on “whether the agency’s response time . . . is governed by
+
+an identifiable rationale.” Ctr. for Sci. in the Pub. Int. v. FDA, 74 F. Supp. 3d 295, 300 (D.D.C.
+
+2014) (JEB). Because Congress has provided no statutory timeframe indicating how quickly it
+
+requires the State Department to adjudicate and re-adjudicate visa applications, TRAC factor two
+
+is inapplicable. “To the contrary, Congress has given the agencies wide discretion in the area of
+
+immigration processing.” Skalka, 246 F. Supp. at 153–54 (noting that a two-year delay in
+
+processing an immigration visa “does not typically require judicial intervention”).
+
+       In general, courts in this jurisdiction have regularly found that the Government applies a
+
+“rule of reason” to the review of visa petitions by adjudicating applications in the order they were
+
+filed. See, e.g., Muvvala v. Wolf, 2020 WL 5748104, at *3 (D.D.C. Sept. 25, 2020) (CJN) (“Other
+
+federal courts have held that this first-in, first-out method of adjudication constitutes a ‘rule of
+
+reason’ and satisfies the first TRAC factor.”). Courts in this jurisdiction often look to the length
+
+of delay as a rough yardstick to determine whether that “first-in, first-out” rule is, in fact, being
+
+applied.
+
+       Plaintiff Mottahedan filed a Form I-526 petition with USCIS in 2015, which was approved
+
+by the agency in May 2018. Compl. ¶ 43. That petition was received by the State Department’s
+
+NVC, which created a case file for Plaintiffs in July 2018, with Plaintiff Guivehchian listed as a
+
+derivative beneficiary. McNeil Decl. ¶ 5. In November 2018, Plaintiffs’ applications “became
+
+documentarily qualified.” Id. ¶ 6; Compl. ¶ 50. Initially, Plaintiffs had consular interviews
+
+
+
+                                                 8
+scheduled in January 2019 and March 2022, but these interviews were cancelled. Compl. ¶¶ 51–
+
+52, 54, 56. The consular interview was conducted on October 12, 2022. Id. ¶ 59. That same day,
+
+the consular officer “refused” Plaintiffs’ applications under INA § 221(g), and their applications
+
+have remained in administrative processing since then. Id. ¶ 60; McNeil Decl. ¶ 13. Plaintiffs
+
+argue that this delay, which is approximately fourteen (14) months since the October 2022
+
+interview, is unreasonable under the APA. See generally Compl.
+
+       Courts in this jurisdiction, however, routinely find that delays of numerous years are not
+
+unreasonable. See, e.g., Zaman v. U.S. Dep’t of Homeland Sec., 2021 WL 5356284, at *6 (D.D.C.
+
+Nov. 16, 2021) (ABJ) (finding that a delay of forty-two months was “insufficient to warrant
+
+emergency relief in this district”); Pourshakouri v. Pompeo, 2021 WL 3552199, at *8–9 (D.D.C.
+
+Aug. 11, 2021) (RJL) (finding delay of forty-four months not unreasonable); Varghese v. Blinken,
+
+2022 WL 3016741, at *5 (D.D.C. July 29, 2022) (CRC) (finding delay of “around four years” does
+
+“not warrant judicial intervention, standing alone”); Arab v. Blinken, 2022 WL 1184551, at *8
+
+(D.D.C. Apr. 21, 2022) (BAH) (ruling that a thirty-month delay was not unreasonable); see also
+
+Yavari v. Pompeo, 2019 WL 6720995, at *8 (C.D. Cal. Oct. 10, 2019) (“District courts have
+
+generally found that immigration delays in excess of five, six, seven years are unreasonable, while
+
+those between three to five years are often not unreasonable.”).
+
+       In the Court’s show cause order, it directed Plaintiffs to distinguish their case from others
+
+involving unreasonable delay challenges that the Court had sua sponte dismissed. See Order, ECF
+
+No. 3. In their response, Plaintiffs attempt to distinguish their case from the other cases cited in
+
+the Court’s order by emphasizing that the delay in this case “began on January 17, 2019, when the
+
+United States Embassy in Ankara, Turkey, sua sponte cancelled a scheduled visa appointment for
+
+
+
+
+                                                 9
+Plaintiffs.” Pls.’ Resp. at 1. Therefore, according to Plaintiffs, the delay is not “a [fourteen-month]
+
+delay,” but is in fact “a near five-year delay.” Id.
+
+        Notably, Plaintiffs have not cited to a single instance in which a court found that the delay
+
+in an unreasonable delay challenge begins when a U.S. Embassy “sua sponte cancel[s] a scheduled
+
+visa appointment.” Id.; see also id. at 8. Nor is the Court aware of such case law. Rather, Plaintiffs’
+
+applications have been in administrative processing since October 12, 2022, a fact that they
+
+recognize in their Complaint, which would mean that the delay in this case has been approximately
+
+fourteen months. Compl. ¶ 60. Even if, arguendo, the Court concludes that the delay began in
+
+January 2019—the month Defendants “sua sponte cancelled a scheduled visa appointment,” Pls.’
+
+Resp. at 8—“several of this district’s courts have noted that delays between three to five years are
+
+often not unreasonable.” Dastagir v. Blinken, 557 F. Supp. 3d 160, 165 (D.D.C. 2021) (TNM)
+
+(quoting Mirbaha v. Pompeo, 513 F. Supp. 3d 179, 186 (D.D.C. 2021) (TJK)). And the State
+
+Department has, as Plaintiffs concede, taken “some action on the application since [January
+
+2019],” interviewing Plaintiffs in October 2022. Id. Accordingly, “this waiting period stretches
+
+but does not exceed the boundaries of reasonableness under the case law in this district.” Id.
+
+        Plaintiffs also argue that a “strict time-based comparison between lengths of delay, the start
+
+[of] which is not always apparent in the absence of a record, is not in accordance with a TRAC
+
+factor analysis.” Pls.’ Resp. at 9. Plaintiffs maintain that “[t]he Court should not treat [their] claim
+
+for unreasonable delay as [a] matter of arithmetic where, as here, Plaintiffs have set forth detailed
+
+allegations supporting the elements for a claim of unreasonable delay.” Id. at 12. The Court’s
+
+analysis is not so limited. District courts in this jurisdiction, including this Court, review the six
+
+TRAC factors and apply the facts as alleged in the appropriate complaint in determining whether a
+
+plaintiff has sufficiently alleged that agency action has been “unreasonably delayed.” See, e.g.,
+
+
+
+                                                  10
+Sarlak, 2020 WL 3082108, at *5–7 (applying the TRAC factors to the facts of the case at the motion
+
+to dismiss stage); Didban, 435 F. Supp. 3d at 175–77 (same); Palakuru, 521 F. Supp. 3d at 50–53
+
+(same); Skalka, 246 F. Supp. 3d at 153–55 (same); Ghadami, 2020 WL 1308376, at *7–9 (same).
+
+The length of the delay is a factor that district courts, including this Court, must consider when
+
+applying the TRAC methodology. See, e.g., In re Core Commc’ns, Inc., 531 F.3d at 855 (providing
+
+the TRAC factors and stating that these “factors are not ‘ironclad,’” but offer “useful guidance.”)
+
+(quoting TRAC, 750 F.2d at 80).
+
+       Finally, Plaintiffs maintain that Defendants “have not followed a processing rule in this
+
+case and not one that is based on a first in, first out methodology.” Pls.’ Resp. at 1; id. at 8.
+
+According to Plaintiffs, “there is nothing to suggest Defendants are processing Plaintiffs’
+
+immigrant visas using a ‘first in, first out rule.’” Id. at 10 (citing Compl. ¶¶ 61, 68)). And, even
+
+assuming Defendants “have adopted a first-in, first-out approach,” there “is absolutely nothing that
+
+would show Defendants have followed [such an approach in] processing Plaintiffs cases over their
+
+near five-year odyssey to receive an interview and issuance of visas.” Id. at 10.
+
+       As a threshold matter, the Court notes that Plaintiffs fail to take into account certain events
+
+that occurred during the relevant time period in this case: the COVID-19 pandemic and the nine-
+
+month lapse in statutory authorization for the EB-5 program. With respect to the latter, the D.C.
+
+Circuit recently explained:
+
+       Congress created the Regional Center Program in 1992 as a pilot program, Pub. L.
+       No. 102-395, § 610, 106 Stat. at 1874, that it has periodically reauthorized, see,
+       e.g., Pub. L. No. 105-119, § 116, 111 Stat. 2440, 2467 (1997); Pub. L. No. 111-83,
+       § 548, 123 Stat. 2142, 2177 (2009); Pub. L. No. 114-53, § 131, 129 Stat. 502, 509
+       (2015). A 2020 appropriations bill reauthorized the program, extending the visa
+       set-aside period to June 30, 2021. Consolidated Appropriations Act of 2021, Pub.
+       L. No. 116-260, Div. O., § 104, 134 Stat. 1182, 2148 (2020). But by the time that
+       period expired, Congress had yet to reauthorize, causing a lapse from the end of
+       June 2021 until March 2022, when Congress passed the EB-5 Reform and Integrity
+
+
+
+                                                 11
+       Act of 2022, extending authorization through September 2027. Pub. L. No. 117-
+       103, Div. BB, § 103, 136 Stat. 1070, 1075 (2022).
+
+Da Costa v. Immigr. Inv. Prog. Off., 80 F.4th 330, 337–38 (D.C. Cir. 2023). As a result of this lapse
+
+in statutory authorization, the visas Plaintiffs sought under the EB-5 Immigrant Investor Regional
+
+Center Program “were no longer available,” and their interviews scheduled for March 2022 were
+
+consequently cancelled. McNeil Decl. ¶ 11. The Court acknowledges that a wait in adjudication
+
+can be “maddening,” Da Costa, 80 F.4th at 342; however, the period of time that Plaintiffs’ visa
+
+applications have been pending includes “both the nine-month pause in statutory authorization and
+
+the serious practical challenges posed by a global pandemic,” id. Considering these two events,
+
+the Court cannot conclude that the “processing time itself establishes that [the State Department]
+
+lacks a rule of reason.” Id.
+
+       But in any event, Plaintiffs fail to plausibly allege in their Complaint that Defendants are
+
+not operating under a first-in, first-out methodology. Plaintiffs’ theory of a lack of rule of reason
+
+predominantly rests on their belief that approximately five years should be sufficient time to
+
+adjudicate their visa applications. Pls.’ Resp. at 11. However, Plaintiffs do not account for the
+
+possibility, and the likelihood, that earlier-filed applications awaiting adjudication were also
+
+affected by the 9-month lapse in statutory authorization and the global pandemic. See Alshawy v.
+
+U.S. Citizenshp. & Immigr. Servs., 2022 WL 970883, at *6 (D.D.C. Mar. 30, 2022) (FYP)
+
+(addressing the effect of the global pandemic and stating “[d]elays between three to five years
+
+under normal circumstances are often not unreasonable.”) (emphasis in original). Plaintiffs’
+
+conclusory assertions, without more, are insufficient to show that the State Department is not
+
+following a rule of reason by employing a first-in, first-out methodology. See Da Costa, 80 F.4th
+
+at 341 (“Those conclusory allegations are insufficient to show that USCIS is not following its
+
+publicly stated policy.”).
+
+                                                 12
+       Overall, the time period for which Plaintiffs’ applications have been in administrative
+
+processing is within the bounds of that which other courts have found reasonable. Therefore, the
+
+Court finds that the first and second TRAC factors do not lend credence to Plaintiffs’ claims. As
+
+TRAC factor one is considered the “most important” factor, this finding weighs heavily in the
+
+Court’s ultimate holding.
+
+   B. TRAC Factors Three & Five
+
+       The third and fifth TRAC factors are often considered together and require the Court to
+
+consider Plaintiffs’ interests, health, and welfare. Ghadami, 2020 WL 1308376, at *9.
+
+       Plaintiffs allege that they have “spent eight years trying to finish their immigrant journey,”
+
+and that the delay at issue in this case “will cause [Plaintiff] Mottahedan to keep her investment at
+
+risk until she is eligible to remove the conditions on her permanent residency.” Compl. ¶¶ 62–63.
+
+Plaintiffs further state that the delay in processing their visa applications have “caused Plaintiffs
+
+tangible harm from the increased cost, access to capital, and risk to their capital,” and this
+
+“financial harm is compounded” by the “human harms from the delays caused by the cancelled
+
+immigrant interviews, lack of transparency from the Embassy on what processing is being
+
+undertaken, and anxiety from the uncertainty due to a lack of any communication.” Id. ¶¶ 64–65.
+
+       Although the Court recognizes that Plaintiffs most certainly have an interest in the swift
+
+adjudication of their visa applications, “so too do many others facing similar circumstances.”
+
+Palakuru, 521 F. Supp. 3d at 53. Plaintiffs, however, have not pled plausible allegations to their
+
+“health and welfare,” as present in other cases in which courts have weighed these factors in a
+
+plaintiff’s favor. See, e.g., Ghadami, 2020 WL 1308376, at *9 (applicant was “irrevocably
+
+harmed” by separation from his wife and children due to the delay). Rather, Plaintiffs appear to
+
+concede that the harm in this case is primarily, if not entirely, economic. Pls.’ Resp. at 5 (“The
+
+
+
+                                                 13
+delay in processing Plaintiffs’ visa applications have caused Plaintiffs tangible harm from the
+
+increased cost, access to capital, and risk to their capital.”); id. (“The financial harm is compounded
+
+by the human harms from the delays caused by the cancelled immigrant interviews, lack of
+
+transparency from the Embassy . . ., and anxiety from the uncertainty due to a lack of any
+
+communication.”). While the Court is sympathetic to Plaintiffs’ economic harms—as well as any
+
+harm Plaintiffs are experiencing from the uncertainty—such allegations, without more, are
+
+insufficient to weigh TRAC factors three and five in their favor. See, e.g., Da Costa, 80 F.4th at
+
+344–45 (“The financial harms Bega alleges, along with the uncertainty that results any time an
+
+individual must continue to wait to secure a benefit, are insufficient to tip TRAC factors three and
+
+five in his favor.”); Desai, 2021 WL 1110737, at *7 (“purely economic” harm was insufficient to
+
+weigh the TRAC factors in plaintiff’s favor).
+
+       As such, factors three and five do not support Plaintiffs’ case. See, e.g., Da Costa, 80 F.4th
+
+at 344–45.
+
+   C. TRAC Factor Four
+
+       Next, TRAC factor four requires an assessment of “the effect of expediting delayed action
+
+on agency activities of a higher or competing priority.” TRAC, 750 F.2d at 80.
+
+       The D.C. Circuit has emphasized the importance of considering “competing priorities” in
+
+assessing the “reasonableness of an administrative delay”–even “refus[ing] to grant relief when all
+
+the other factors considered in TRAC favored it, where a judicial order putting the petitioner at the
+
+head of the queue [would] simply move[] all others back one space and produce[] no net gain.”
+
+Mashpee Wampanaoag Tribal Council, Inc., 336 F.3d at 1100 (quoting In re Barr, 930 F.2d 72, 75
+
+(D.C. Cir. 1991)); see also Ghadami, 2020 WL 1308376, at *9 (finding that “expediting review in
+
+[the plaintiff’s] case would merely direct government resources from the adjudication of other
+
+
+
+                                                  14
+waiver applications”). Any such order would plainly interfere with the agency’s “unique––and
+
+authoritative––position to view its projects as a whole, estimate the prospects for each, and allocate
+
+its resources in the optimal way.” In re Barr, 930 F.2d at 76.
+
+       In their Complaint, Plaintiffs request that the Court enter an order compelling Defendants
+
+to adjudicate their applications “within a timeline that appreciates the existing queue of applicants,
+
+if any, but no longer than 90 days from the Court’s judgment.” Compl. at 17. Plaintiffs therefore
+
+argue that they “are not seeking relief that would simply reorder a queue of applications seeking
+
+adjudication.” Pls.’ Resp. at 13 (internal quotations marks and citation omitted). Plaintiffs further
+
+state that the Court “does not have before it any evidence indicating whether such a reordering
+
+would occur here.” Id. (citing Tate v. Pompeo, 513 F. Supp. 3d 132, 149 (D.D.C. 2021) (BAH)).
+
+However, the relief Plaintiffs seek—the prompt adjudication of their visa applications—would, as
+
+a practical matter, mean that others waiting for adjudication would be likely displaced, as Plaintiffs
+
+are still requesting that Defendants adjudicate their applications within a specific time frame. See
+
+Compl. at 17. This is precisely what factor four counsels against. See, e.g., Khoshrou v. Blinken,
+
+2023 WL 4930086, at *7 (D.D.C. Aug. 2, 2023) (CKK); Palakuru, 521 F. Supp. 3d at 52 (“Were
+
+the Court to compel the Government to act on Palakuru’s petition, it would simply move him to
+
+the head of queue because he sued.”). While Plaintiffs argue that their applications “must be first
+
+in line” because they “were first in line for an interview in January 2019,” Pls.’ Resp. at 13, their
+
+argument is simply conclusory and further ignores the fact that a court order directing Defendants
+
+to process their applications “would still put [them] ahead in the queue of those similarly situated,”
+
+Desai, 2021 WL 1110737, at *7 (emphasis in original).
+
+       Courts in this jurisdiction, including this Court, routinely decline to grant relief that would
+
+place one prospective visa applicant ahead of others. See, e.g., Xiaobing Liu v. Blinken, 544 F.
+
+
+
+                                                 15
+Supp. 3d 1, 13 (D.D.C. 2021) (TJK) (“This factor not only favors Defendants, but ends up
+
+altogether dooming Plaintiffs’ claims of unreasonable delay.”); Verma v. U.S. Citizenshp. &
+
+Immigr. Servs., 2020 WL 7495286, at *9 (D.D.C. Dec. 18, 2020) (RDM); Dehghanighanatghestani
+
+v. Mesquita, 2022 WL 4379061, at *7 (D.D.C. Sept. 22, 2022) (CKK); Pushkar v. Blinken, 2021
+
+WL 4318116, at *7 (D.D.C. Sept. 23, 2021) (CKK); Manzoor v. USCIS, 2022 WL 1316427, at *5–
+
+6 (D.D.C. May 3, 2022) (CKK). The Court will now do the same here, finding that the fourth
+
+TRAC factor weighs against Plaintiffs.
+
+   D. TRAC Factor Six
+
+       Finally, the sixth TRAC factor states that a “[c]ourt need not find any impropriety lurking
+
+behind agency lassitude in order to hold the agency action is unreasonably delayed.” Ghadami,
+
+2020 WL 1308376, at *9. The Court “must determine whether the agency has acted in bad faith
+
+in delaying action.” Gona v. U.S. Citizenshp. & Immigr. Servs., 2021 WL 736810, at *5 (D.D.C.
+
+Feb. 25, 2021) (RCL).
+
+       Here, Plaintiffs have not alleged any bad faith on the part of Defendants. See generally
+
+Compl. As TRAC directs, however, the lack of plausible allegations of impropriety does not weigh
+
+against Plaintiffs, and therefore does not alter the Court’s analysis.     See Palakuru, 2021 WL
+
+674162, at *6 (considering the sixth TRAC factor “neutral” even though the plaintiff alleged that
+
+the government had engaged in “purposeful delay” and “artificially inflate[d] [] processing
+
+times”).
+
+                                         *       *       *
+
+       Altogether, the Court finds that, based on its analysis under the TRAC factors, it is “patently
+
+obvious” that Plaintiffs cannot prevail on the facts alleged in their Complaint to make out a claim
+
+
+
+
+                                                 16
+for unreasonable delay of their visa applications. Therefore, the Court concludes that Plaintiffs’
+
+Complaint must be dismissed sua sponte for failure to state a claim under Rule 12(b)(6).
+
+                                        IV. CONCLUSION
+
+       For the foregoing reasons, the Court shall sua sponte DISMISS Plaintiffs’ [1] Complaint
+
+for Declaratory and Injunctive Relief. An appropriate Order accompanies this Memorandum
+
+Opinion.
+
+
+                                                     /s/
+                                                    COLLEEN KOLLAR-KOTELLY
+                                                    United States District Judge
+
+
+
+
+                                               17

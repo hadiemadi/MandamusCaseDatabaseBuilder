@@ -1,0 +1,664 @@
+UNITED STATES DISTRICT COURT
+                              FOR THE DISTRICT OF COLUMBIA
+
+ DAN GILIANA,
+
+                        Plaintiff,
+
+                        v.                          Case No. 21-cv-01416 (CRC)
+
+ ANTONY BLINKEN, in his official capacity
+ as Secretary of State, et al.,
+
+                        Defendants.
+
+                                     MEMORANDUM OPINION
+
+       Plaintiff Dan Giliana, a United States citizen, seeks to compel the Department of State to
+
+adjudicate his Iraqi fiancée’s U.S. visa application, which has been pending for nearly four years.
+
+He also challenges the Department of Homeland Security’s (“DHS”) Controlled Application
+
+Review and Resolution Program (“CARRP”), an internal agency policy concerning the
+
+processing of visa applications that present potential national security concerns. The government
+
+has moved to dismiss for failure to state a claim and for lack of subject matter jurisdiction.
+
+Because Giliana has not plausibly alleged that the delay in adjudicating his fiancée’s visa
+
+application is unreasonable, or that she has been injured in any concrete way by CARRP, the
+
+Court will grant the government’s motion and dismiss the case.
+
+ I.    Background
+
+       Mr. Giliana is a United States citizen who resides in Arizona. See Compl. ¶ 6, ECF
+
+No. 1; Decl. of Dan Giliana (“Giliana Decl.”) ¶¶ 1–3, ECF No. 5-1. His fiancée, Sandy Shamon,
+
+lives in Iraq. See Compl. ¶¶ 1, 15; see also Giliana Decl. ¶¶ 4, 7, 16.
+
+       In January 2018, Giliana filed a visa petition (Form I-129F) with the United States
+
+Citizenship and Immigration Services (“USCIS”) to obtain lawful permanent resident status for
+Shamon. Compl. ¶¶ 13–14. USCIS approved that petition in June 2018. Id. ¶ 13. A few
+
+months later, in October 2018, a consular officer at the U.S. Embassy in Baghdad, Iraq
+
+interviewed Shamon and reviewed her visa application. Id. ¶ 15. Following the interview,
+
+according to Giliana, the consular officer informed Shamon that her application was being placed
+
+under “administrative processing” and that she needed to answer additional questions about her
+
+prior occupations and contact information. See id. ¶ 16; Giliana Decl. ¶¶ 8–9. Since then,
+
+Giliana alleges that he and Shamon have repeatedly inquired about the status of her visa
+
+application, but the government has provided “no meaningful responses” and does not “publish
+
+any information on processing times for [applications in] ‘administrative processing.’” See
+
+Compl. ¶¶ 17–18.
+
+       Giliana further alleges “on information and belief” that the government is “intentionally
+
+delaying this immigration case” through a program known as CARRP (the Controlled
+
+Application Review and Resolution Program). Compl. ¶ 41; id. ¶¶ 37–41. Per the complaint,
+
+CARRP is an internal DHS policy that prohibits the approval of any visa application that
+
+presents a “national security concern” and directs consular officers to either deny the application
+
+or delay adjudication, often indefinitely. Id. ¶¶ 38–39. CARRP allegedly targets applications
+
+from predominantly Muslim countries. Id. ¶ 38.
+
+       In May 2021, Giliana brought suit against a host of government officials under the
+
+Administrative Procedure Act’s (“APA”) unreasonable delay provision, 5 U.S.C. § 706(1), and
+
+the Mandamus Act, 28 U.S.C. § 1361. He seeks an order directing the government to process
+
+Shamon’s visa application within fifteen days and declaratory and injunctive relief as to CARRP.
+
+The government moved to dismiss the complaint for lack of subject matter jurisdiction under
+
+Federal Rule of Civil Procedure 12(b)(1) and failure to state a claim under Rule 12(b)(6); Giliana
+
+
+
+                                                 2
+filed an opposition and a motion for summary judgment, attaching a supporting declaration to
+
+both. The matter is now ripe for the Court’s decision.
+
+ II.   Legal Standards
+
+       When analyzing a motion to dismiss under either Rule 12(b)(1) or 12(b)(6), a court “must
+
+treat the complaint’s factual allegations as true, and must grant plaintiff the benefit of all
+
+inferences that can be derived from the facts alleged.” Sparrow v. United Air Lines, Inc., 216
+
+F.3d 1111, 1113 (D.C. Cir. 2000) (cleaned up); see also Am. Nat’l Ins. Co. v. FDIC, 642 F.3d
+
+1137, 1139 (D.C. Cir. 2011). But a court need not accept a plaintiff’s legal conclusions.
+
+Browning v. Clinton, 292 F.3d 235, 242 (D.C. Cir. 2002). When reviewing a challenge under
+
+Rule 12(b)(1), “the court may consider documents outside the pleadings to assure itself that it has
+
+jurisdiction,” Sandoval v. U.S. Dep’t of Justice, 322 F. Supp. 3d 101, 104 (D.D.C. 2018)
+
+(Cooper, J.), and the plaintiff bears the burden of establishing jurisdiction by a preponderance of
+
+the evidence. See Lujan v. Defenders of Wildlife, 504 U.S. 555, 561 (1992). Under Rule
+
+12(b)(6), “a court may ordinarily consider only ‘the facts alleged in the complaint, documents
+
+attached as exhibits or incorporated by reference in the complaint[,] and matters about which the
+
+Court may take judicial notice.’” Sandoval, 322 F. Supp. 3d at 104 (citation omitted).
+
+       Because the Court will grant the government’s motion to dismiss, it need not recite the
+
+summary judgment standard.
+
+ III. Analysis
+
+       The Court first will address, and reject, the government’s argument that the doctrine of
+
+consular non-reviewability precludes the Court from reviewing Giliana’s unreasonable delay
+
+claim. It then will turn to the merits of that claim. The Court will conclude by briefly addressing
+
+Giliana’s challenge to CARRP.
+
+
+
+                                                   3
+       A. Consular Non-Reviewability and “Administrative Processing”
+
+       Under the doctrine of consular non-reviewability, “courts do not typically have subject-
+
+matter jurisdiction to review visa denials because consular officers ‘have complete discretion
+
+over issuance and revocation of visas.’” See Rohrbaugh v. Pompeo, 394 F. Supp. 3d 128, 131
+
+(D.D.C. 2019) (Cooper, J.) (quoting Saavedra Bruno v. Albright, 197 F.3d 1153, 1158 n.2 (D.C.
+
+Cir. 1999)). While the doctrine “clearly applies to final visa determinations, . . . it does not apply
+
+to challenges regarding decisions that are not yet final.” Joorabi v. Pompeo, 464 F. Supp. 3d 93,
+
+100 (D.D.C. 2020).
+
+       After an initial interview, a visa application “must be issued or refused,” but a refusal is
+
+often not final because the application may be subject to “further administrative processing.” See
+
+9 FAM 403.10-2(A), 403.10-3(A)(2)(2)(b); Ramirez v. Blinken, No. 21-cv-1099 (CRC), ECF
+
+No. 14, slip op. at 10 (D.D.C. Mar. 22, 2022) (Cooper, J.). Administrative processing generally
+
+means that additional information is needed before a consular officer can determine whether an
+
+applicant is qualified for the visa for which she has applied. See Administrative Processing
+
+Information, U.S. Dep’t of State, Bureau of Consular Affairs,
+
+https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/administrative-
+
+processing-information.html (last visited Mar. 29, 2022); 9 FAM 306.2-2(A)(a)(2)(a). There is
+
+nothing unusual about this practice, but it means that the initial “refusal” is not the end of the
+
+process. Accordingly, courts have consistently held that when an “‘application is still
+
+undergoing administrative processing, even where a refusal has been relayed, the decision is not
+
+final,’ and thus ‘claims alleging unreasonable delay while a case remains suspended in
+
+‘administrative processing’ are not barred by the doctrine of consular nonreviewability.’” See
+
+Ibrahim v. U.S. Dep’t of State, No. 19-cv-610 (BAH), 2020 WL 1703892, at *5 (D.D.C. Apr. 8,
+
+
+
+                                                  4
+2020) (collecting cases) (quoting Ghadami v. U.S. Dep’t of Homeland Sec., No. 19-cv-00397
+
+(ABJ), 2020 WL 1308376, at *5 (D.D.C. Mar. 19, 2020)). Such is the case here. See Compl.
+
+¶¶ 1, 16, 18, 29.
+
+       The government nonetheless insists that Shamon’s application has been definitively
+
+“refused” and is “not in ‘administrative processing.’” Mot. Dismiss at 8. It points to the State
+
+Department’s Consular Electronic Application Center (“CEAC”) database, where one can check
+
+a visa application’s status. The CEAC system indicates that Shamon’s application is “refused.”
+
+Reading further, however, it also states: “If you were informed by the consular officer that your
+
+case was refused for administrative processing, your case will remain refused while undergoing
+
+such processing. You will receive another adjudication once such processing is complete.” See
+
+Visa Status Check, U.S. Dep’t of State, CEAC, https://ceac.state.gov/ceacstattracker/status.aspx
+
+(search for Shamon’s case as of Mar. 22, 2022). That is exactly the situation Giliana alleges
+
+Shamon is in. 1
+
+       The D.C. Circuit’s decision in Baan Rao Thai Restaurant v. Pompeo, 985 F.3d 1020
+
+(D.C. Cir. 2021), on which the government relies, is not to the contrary. Baan Rao simply
+
+reiterated a line from a prior case that “[c]onsular nonreviewability shields a consular official’s
+
+
+
+
+       1
+          The State Department has independently confirmed that an application marked
+“refused” in the CEAC system may still undergo final adjudication after further administrative
+processing. In March 2020, the Department’s Bureau of Consular Affairs issued a visa update
+explaining that “[a] visa applicant whose case previously displayed as being in ‘Administrative
+Processing’ on his or her case status page now displays as being ‘refused.’” See Visas: CEAC
+Case Status Change, U.S. Dep’t of State, Bureau of Consular Affairs (Mar. 5, 2020),
+https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/visas-news-
+archive/visas-ceac-case-status-change.html?msclkid=2c57e110af7711ec90f12c1f8a11cd2c. This
+“administrative change,” the update continued, does “no[t] change . . . applicants’ actual cases.”
+Id. Given this explicit acknowledgement by the State Department, it is surprising that the
+government continues to insist in litigation that applications in administrative processing have
+been definitively refused.
+
+                                                  5
+decision to issue or withhold a visa from judicial review, at least unless Congress says
+
+otherwise.” Id. at 1024 (citing Saavedra Bruno, 197 F.3d at 1159). It does not mention
+
+“administrative processing” at all. And again, Giliana is challenging the delay in rendering a
+
+decision, not an actual final decision made by a consular officer. In short, nothing in Baan Rao
+
+even hints that it upends the many cases holding that this doctrine does not apply to unreasonable
+
+delay claims for visa applications undergoing administrative processing.
+
+       B. Unreasonable Delay
+
+       Turning to the merits, the Court will assess Giliana’s claim that the government’s delay
+
+in processing Shamon’s visa violates the APA and Mandamus Act. The APA “imposes a general
+
+but nondiscretionary duty” on agencies “to pass upon a matter presented to it ‘within a
+
+reasonable time,’” Mashpee Wampanoag Tribal Council, Inc. v. Norton, 336 F.3d 1094, 1099
+
+(D.C. Cir. 2003) (quoting 5 U.S.C. § 555(b)), and it authorizes courts to “compel agency action
+
+unlawfully withheld or unreasonably delayed.” 5 U.S.C. § 706(1). When courts review this type
+
+of agency inaction, the standard is the same under the APA and Mandamus Act. See Skalka v.
+
+Kelly, 246 F. Supp. 3d 147, 152 (D.D.C. 2017). On a motion to dismiss, “the Court is not
+
+determining whether there has been an unreasonable delay; rather, it is” evaluating whether a
+
+plaintiff’s complaint alleges enough facts “to state a plausible claim for unreasonable
+
+administrative delay.” Jingjing Liu v. Mayorkas, No. 20-cv-654 (CRC), 2021 WL 2115209, at
+
+*3 (D.D.C. May 25, 2021) (Cooper, J.) (quoting Ghadami, 2020 WL 1308376, at *7 n.6).
+
+       Courts undertake this evaluation using the six guiding factors set out in
+
+Telecommunications Research & Action Center v. FCC (‘‘TRAC”), 750 F.2d 70 (D.C. Cir.
+
+1984). The TRAC factors are:
+
+       (1) the time agencies take to make decisions must be governed by a “rule of
+       reason”;
+
+
+                                                 6
+       (2) where Congress has provided a timetable or other indication of the speed with
+       which it expects the agency to proceed in the enabling statute, that statutory
+       scheme may supply content for this rule of reason;
+
+       (3) delays that might be reasonable in the sphere of economic regulation are less
+       tolerable when human health and welfare are at stake;
+
+       (4) the court should consider the effect of expediting delayed action on agency
+       activities of a higher or competing priority;
+
+       (5) the court should also take into account the nature and extent of the interests
+       prejudiced by delay; and
+
+       (6) the court need not “find any impropriety lurking behind agency lassitude in
+       order to hold that agency action is ‘unreasonably delayed.’”
+
+In re United Mine Workers of Am. Int’l Union, 190 F.3d 545, 549 (D.C. Cir. 1999) (quoting
+
+TRAC, 750 F.2d at 80 (citations omitted)). Although “not ‘ironclad,’” these factors “are
+
+intended to provide ‘useful guidance.’” In re Core Commc’ns, Inc., 531 F.3d 849, 855 (D.C. Cir.
+
+2008) (quoting TRAC, 750 F.2d at 80).
+
+       In balancing the TRAC factors, “the [D.C.] Circuit has stressed that determining whether
+
+an agency’s delay is unreasonable ‘cannot be decided in the abstract, by reference to some
+
+number of months or years beyond which agency inaction is presumed to be unlawful,’” but will
+
+largely depend on “the complexity of the task at hand, the significance (and permanence) of the
+
+outcome, and the resources available to the agency.” Didban v. Pompeo, 435 F. Supp. 3d 168,
+
+176 (D.D.C. 2020) (Cooper, J.) (quoting Mashpee Wampanoag Tribal Council, 336 F.3d at
+
+1102). Each unreasonable delay case “must be analyzed according to its own unique
+
+circumstances,” as each “present[s] its own slightly different set of factors to consider.” Air Line
+
+Pilots Ass’n, Int’l v. C.A.B., 750 F.2d 81, 86 (D.C. Cir. 1984).
+
+       Applying the TRAC factors here, the Court finds that Giliana has not stated a plausible
+
+claim for relief. While the length of the alleged processing delay might be concerning if viewed
+
+
+
+
+                                                 7
+in isolation, full consideration of all the circumstances and factors presented clearly forecloses
+
+court-ordered relief.
+
+       The Court will kick off with factors one and two: (1) whether the response time is
+
+governed by a rule of reason, as informed by (2) any congressional timetable. Courts often
+
+consider these two together, Milligan v. Pompeo, 502 F. Supp. 3d 302, 317 (D.D.C. Nov. 19,
+
+2020), though “[t]he first” is the “most important factor.” In re Core Commc’ns, 531 F.3d at
+
+855. Taken together, “these factors get at whether the agency’s response time complies with an
+
+existing specified schedule and whether it is governed by an identifiable rationale.” Ctr. for Sci.
+
+in the Pub. Interest v. FDA, 74 F. Supp. 3d 295, 300 (D.D.C. 2014). Here, they tip in favor of
+
+the government.
+
+       The Court’s analysis on this score is especially informed by “the resources available to
+
+the agency,” Mashpee Wampanoag Tribal Council, 336 F.3d at 1102, which due to recent events
+
+have been strapped. For one, “the State Department suspended visa services in all U.S.
+
+embassies and consulates around the world in response to the COVID-19 pandemic.” Dastagir v.
+
+Blinken, No. 1:20-cv-02286 (TNM), 2021 WL 2894645, at *1 (D.D.C. July 9, 2021); Xiaobing
+
+Liu v. Blinken, 544 F. Supp. 3d 1, 11–15 (D.D.C. 2021) (factoring in “the challenges presented
+
+by the COVID-19 pandemic”); Shen v. Pompeo, No. 20-cv-1263 (ABJ), 2021 WL 1246025, at
+
+*8 (D.D.C. Mar. 24, 2021). 2 While COVID-related constraints are relevant, U.S. Embassies
+
+
+
+
+       2
+         This Court joins others in this district that have taken judicial notice of publicly
+available information related to COVID-19 on government websites. See, e.g., Whitlock v. U.S.
+Dep’t of Homeland Sec., No. 21-cv-807 (DLF), 2022 WL 424983, at *1–2 & n.1 (D.D.C. Feb.
+11, 2022); Dastagir, 2021 WL 2894645, at *1 & n.3; Xiaobing Liu, 544 F. Supp. 3d at 6 n.1.
+These facts are “not subject to reasonable dispute” and “can be accurately and readily determined
+from sources whose accuracy cannot reasonably be questioned.” See Fed. R. Evid. 201(b)(2).
+Indeed, Giliana does not contest these general facts, nor could he. The same applies to the fact
+
+                                                  8
+started “[a] ‘phased resumption of visa services’” four months into the pandemic “as ‘local
+
+conditions and resources allow[ed].’” Dastagir, 2021 WL 2894645, at *1 (second alteration in
+
+original) (quoting U.S. Dep’t of State, Bureau of Consular Affairs, Suspension of Routine Visa
+
+Servs. (July 22, 2020), https://travel.state.gov/content/travel/en/us-visas/visa-information-
+
+resources/visas-news-archive/suspension-of-routine-visa-
+
+services.html?msclkid=cbbb240caf7d11ec99ce2657fe0fe870). As a result, this consideration, by
+
+itself, only partly supports the government’s position.
+
+       More importantly in this case, the U.S. Embassy in Baghdad suspended all public
+
+consular operations in January 2020 because of an attack on the compound. See U.S. Embassy
+
+& Consulates in Iraq, Security Alert – U.S. Embassy Baghdad, Iraq (Jan. 1, 2020),
+
+https://iq.usembassy.gov/security-alert-u-s-embassy-baghdad-iraq-4/. The Embassy’s visa
+
+services remain shuttered for security reasons. U.S. Embassy & Consulates in Iraq, Visas,
+
+https://iq.usembassy.gov/visas/ (last visited Mar. 29, 2022). These circumstances provide a
+
+“rhyme [and] reason” for a portion, and a significant one, of the delay here. See Ctr. for Sci. in
+
+the Pub. Interest, 74 F. Supp. 3d at 300. Excluding the period from the January 2020 suspension
+
+of visa services at the Baghdad Embassy to the present, Giliana is left with a delay of almost
+
+fifteen months (i.e., from Shamon’s October 2018 interview to January 2020).
+
+       The question then becomes whether this shorter delay is unreasonable. Absent another
+
+applicable rule of reason, courts “typically turn to case law as a guide,” Sarlak v. Pompeo, No.
+
+20-cv-35 (BAH), 2020 WL 3082018, at *6 (D.D.C. June 10, 2020), and, in other contexts, have
+
+“generally found that immigration delays in excess of five, six, seven years are unreasonable,
+
+
+
+
+of the suspension of consular services at the U.S. Embassy in Baghdad due to an attack on that
+compound, which the Court discusses next.
+
+                                                 9
+while those between three to five years are often not unreasonable.” Didban, 435 F. Supp. 3d at
+
+176 (citation omitted); see also Mirbaha v. Pompeo, 513 F. Supp. 3d 179, 185 (D.D.C. 2021)
+
+(same for K-1 fiancée visas); Milligan, 502 F. Supp. 3d at 318–19 (same). A fifteen-month delay
+
+falls comfortably within the reasonable range. Of course, without the exclusion of time for
+
+security- and pandemic-related reasons, the delay would be a little under four years, and that
+
+longer delay plausibly stretches the boundaries of reasonableness. But again, it is undisputable
+
+that the security situation at the Baghdad Embassy, resulting in the suspension of its consular
+
+services, provides a justifiable rationale for a large chunk of the delay.
+
+       In opposition, Giliana cites “the sense of Congress that the processing of an immigration
+
+benefit application should be completed not later than 180 days after the initial filing of the
+
+application.” See 8 U.S.C. § 1571(b); but see Pl. Opp’n at 11 (acknowledging “there is no set
+
+deadline”). Although “a sense of Congress resolution is not law,” Emergency Coal. to Defend
+
+Educ. Travel v. U.S. Dep’t of the Treasury, 545 F.3d 4, 14 n.6 (D.C. Cir. 2008), “the second
+
+TRAC factor asks merely whether Congress has provided an ‘indication of the speed with which
+
+it expects the agency to proceed.’” Hulli v. Mayorkas, 549 F. Supp. 3d 95, 101 (D.D.C. 2021)
+
+(Cooper, J.) (citation omitted). At this stage, then, this aspirational, non-mandatory timeline
+
+expressed by Congress nudges the second factor in Giliana’s favor, but only slightly.
+
+       In sum, while both sides have points in their favor, considering all the relevant
+
+circumstances presented here, the Court finds the first two factors support the government.
+
+       The fourth factor also decidedly favors the government, as “a judicial order putting”
+
+Shamon’s application “at the head of the queue” would “move[] all others back one space and
+
+produce[] no net gain.” See In re Barr Labs., Inc., 930 F.2d 72, 75 (D.C. Cir. 1991). “This
+
+factor carries the greatest weight in many cases, and it does so here.” Milligan, 502 F. Supp. 3d
+
+
+
+                                                  10
+at 319; see also Mashpee Wampanoag Tribal Council, 336 F.3d at 1100 (reiterating “the
+
+importance of ‘competing priorities,’” noting the Circuit has “refused to grant relief, even though
+
+all the other [TRAC] factors” favored plaintiff). Giliana has no allegations that Shamon’s
+
+application is being “treated . . . differently from anyone else” who has a similar visa application
+
+before the U.S. Embassy in Baghdad. See Bagherian v. Pompeo, 442 F. Supp. 3d 87, 94–95
+
+(D.D.C. 2020) (citations omitted). And delays due to resource constraints typically do not
+
+warrant a “judicial reordering[] of agency priorities.” See id. at 96 (cleaned up); Didban, 453 F.
+
+Supp. 3d at 176; Milligan, 502 F. Supp. 3d at 319.
+
+       On the other side of the scale, the third and fifth TRAC factors favor Giliana and
+
+Shamon. The third “assesses whether ‘human health and welfare are at stake’ such that judicial
+
+intervention is more justified, and the fifth evaluates the ‘nature and extent of the interests
+
+prejudiced by delay.’” Schwartz v. Dep’t of Homeland Sec., No. 21-cv-378 (JEB), 2021 WL
+
+4133618, at *4 (D.D.C. Sept. 10, 2021) (quoting TRAC, 750 F.2d at 80). Several courts in this
+
+district have found that these factors weigh in favor of plaintiffs when delays force them to
+
+postpone their lives together as married couples. See e.g., Didban 435 F. Supp. 3d at 177;
+
+Bagherian, 442 F. Supp. 3d at 95. No doubt, Giliana and Shamon have suffered from this delay
+
+in “build[ing] their lives together.” Compl. ¶ 1; id. ¶ 19. But these factors do not carry the day.
+
+       The last TRAC factor has no role in this case because, as Giliana acknowledges, he “has
+
+not asserted bad faith.” Pl. Opp’n at 14.
+
+       Balancing all the relevant factors and considerations presented, the Court concludes that
+
+Giliana has failed to state a plausible claim of unreasonable delay. The Court recognizes the
+
+overall delay has been prolonged, and it encourages the government to act on the application as
+
+soon as possible once the U.S. Embassy in Baghdad resumes its visa services. But the Court
+
+
+
+                                                  11
+lacks a basis to reorder the State Department’s priorities by allowing this application to jump in
+
+front of others in line. That, especially in combination with the suspension of services in
+
+Baghdad for security reasons, militate decisively in favor of dismissal. Neither the complaint nor
+
+Giliana’s briefing offers a reason for the Court to depart from this conclusion. Cf. Jingjing Liu,
+
+2021 WL 2115209, at *1, *5 (denying motion to dismiss where complaint plausibly alleged, with
+
+statistical support, that USCIS intentionally increased processing times for an entire category of
+
+petitions, and judicial relief could produce a net gain for those “petitioners as a group”);
+
+Ramirez, No. 21-cv-1099, supra, ECF No. 14, slip op. at 17–21, 23 n.10, 23–25 (permitting
+
+claims related to K-1 fiancé visas to proceed on the narrow ground that the Manila Embassy
+
+failed to follow a “mandatory” system, which both provided the applicable rule of reason for that
+
+case and plausibly gave K-1 visa applications higher priority).
+
+        C. Challenge to CARRP
+
+        Lastly, the Court concludes that Giliana has failed to establish standing to challenge
+
+CARRP, the DHS “internal policy” used to “investigate and adjudicate applications deemed to
+
+present potential ‘national security concerns.’” See Compl. ¶ 39. A plaintiff bears the burden of
+
+demonstrating the three elements of Article III standing: (1) he “must have suffered an ‘injury in
+
+fact’” that is (2) fairly traceable “to the challenged action,” and (3) “it must be ‘likely’ . . . that
+
+the injury will be ‘redressed by a favorable decision.’” See Lujan, 504 U.S. at 560–61 (citations
+
+omitted).
+
+        Giliana alleges that CARRP “intentionally delays the applications of Muslims or those
+
+from predominantly-Muslim countries due to perceived security concerns.” Compl. ¶¶ 5, 38. He
+
+also asserts that the State Department and DHS work together in carrying out delayed
+
+background investigations. Id. ¶ 37. Yet the factual allegations concerning CARRP’s
+
+
+
+                                                   12
+application to Shamon are thin. Giliana alleges only that his “fiancée is from [a] predominantly-
+
+Muslim country” and that, “on information and belief, . . . the Defendants are intentionally
+
+delaying this immigration case because of” CARRP. Id. ¶ 41. He offers “no factual allegations
+
+to support that conclusion,” and “mere speculation” is not enough to state a claim. See Ahmed v.
+
+U.S. Dep’t of Homeland Sec., No. 21-cv-893 (APM), 2022 WL 424967, at *4 (D.D.C. Feb. 11,
+
+2022) (dismissing CARRP challenge); Dastagir, 2021 WL 2894645, at *6 n.7 (same); Ghadami,
+
+2020 WL 1308376, at *6 (same). Nor is the mere presence of delay inherently suggestive of
+
+CARRP being applied, especially since USCIS approved Shamon’s visa petition in June 2018,
+
+six months after Giliana filed it. See Compl. ¶ 13. On these allegations, therefore, Giliana has
+
+not plausibly alleged any concrete injury from CARRP.
+
+       To be clear, individuals challenging CARRP need not have concrete proof that they were
+
+subjected to the program to survive a motion to dismiss. Take Jafarzadeh v. Nielsen, in which
+
+another court refused to dismiss certain CARRP claims, finding that the plaintiff met his burden
+
+to demonstrate standing. 321 F. Supp. 3d 19, 31–35 (D.D.C. 2018). In Jafarzadeh, the plaintiff
+
+alleged certain facts that, if true, would not directly prove that CARRP was at play but would at
+
+least support an inference that it was. He alleged, for example, that he formerly worked for the
+
+Interests Section of the Islamic Republic of Iran; that he was “interviewed or contacted a number
+
+of times by the Federal Bureau of Investigation” while his petition was pending with USCIS;
+
+that, based on the “content and nature of these interviews,” the FBI wanted him to become an
+
+informant and was willing to “use[] its power to remove the roadblocks hindering the
+
+adjudication of his applications before USCIS” if he agreed; and that, in response to FBI
+
+questioning, he “denied ever having provided support to, express[ing] support for, or of having
+
+
+
+
+                                                13
+engaged in, terrorism or terrorist-related activity.” Id. at 24–25. With these allegations, the
+
+plaintiff pled a plausible theory of injury from CARRP.
+
+       By contrast, although this complaint may state some of the same legal conclusions, it
+
+does not offer any allegation that raises a plausible inference that Shamon is being injured by
+
+CARRP. The Court therefore lacks subject matter jurisdiction.
+
+ IV. Conclusion
+
+       For these reasons, the Court will grant the government’s motion to dismiss and deny
+
+Giliana’s motion for summary judgment. A separate Order accompanies this Memorandum
+
+Opinion.
+
+
+
+
+                                                              CHRISTOPHER R. COOPER
+                                                              United States District Judge
+
+Date: March 29, 2022
+
+
+
+
+                                                 14

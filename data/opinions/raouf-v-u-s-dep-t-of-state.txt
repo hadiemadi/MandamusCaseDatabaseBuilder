@@ -1,0 +1,1147 @@
+UNITED STATES DISTRICT COURT
+                   FOR THE DISTRICT OF NEW HAMPSHIRE
+
+
+
+Aya Raouf
+
+       v.                                            Civil No. 23-cv-302-LM
+                                                     Opinion No. 2023 DNH 042 P
+U.S. Department of State, et al.
+
+
+
+
+                                     ORDER
+
+       Plaintiff Aya Raouf brings this action to compel the defendants (the U.S.
+
+Department of State; the U.S. Embassy in Abu Dhabi; the Secretary of State; and
+
+the United States Ambassador to the United Arab Emirates) to issue a final
+
+adjudication with respect to her spouse’s visa application. She alleges that
+
+defendants’ failure to issue a timely, final decision as to whether to grant or deny
+
+her spouse a visa violates the Administrative Procedure Act (“APA”) and her due
+
+process rights. Presently before the court is defendants’ motion to dismiss pursuant
+
+to Federal Rule of Civil Procedure 12(b)(6) (doc. no. 10). Defendants argue that
+
+Raouf lacks standing to pursue relief against the Secretary of State, that the
+
+doctrine of consular nonreviewability bars her claims, that she fails to state an APA
+
+claim, and that she fails to state a due process claim. For the following reasons, the
+
+court grants the motion with respect to Raouf’s due process claim, but otherwise
+
+denies it.
+                             STANDARD OF REVIEW
+
+      The court’s first task is to discern the appropriate standard of review.
+
+Although defendants purport to bring their motion under Rule 12(b)(6), two of the
+
+grounds upon which they seek dismissal at least arguably should be evaluated
+
+under Rule 12(b)(1).
+
+      Defendants’ first argument is that the Secretary of State must be dismissed
+
+because he lacks authority to grant Raouf the relief she seeks. While the precise
+
+legal basis upon which defendants ground this argument is somewhat unclear, the
+
+argument is best understood as challenging Raouf’s standing. See In re Fin.
+
+Oversight & Mgmt. Bd. for P.R., 995 F.3d 18, 21-22 (1st Cir. 2021) (explaining that,
+
+to demonstrate Article III standing, plaintiff must establish that a favorable
+
+resolution would likely redress the complained-of injury); Sierra Club, Inc. v.
+
+Granite Shore Power LLC, Civ. No. 19-cv-216-JL, 2019 WL 8407255, at *4 (D.N.H.
+
+Sept. 13, 2019) (stating that plaintiff must demonstrate standing “with respect to
+
+each defendant”). Standing is an issue of subject-matter jurisdiction, and motions to
+
+dismiss for lack of subject-matter jurisdiction are governed by Rule 12(b)(1). See
+
+Freeman v. City of Keene, 561 F. Supp. 3d 22, 25 n.1 (D.N.H. 2021). Therefore, the
+
+court will analyze defendants’ argument for dismissal of the Secretary of State
+
+under Rule 12(b)(1).
+
+      In addition, there is some authority within the First Circuit for the
+
+proposition that consular nonreviewability—the second basis upon which
+
+defendants seek dismissal—is an issue of subject-matter jurisdiction. See Chiang v.
+
+Skeirik, 582 F.3d 238, 242 (1st Cir. 2009) (“Under the doctrine of consular
+
+                                          2
+nonreviewability, in immigration disputes nonconstitutional issues are generally
+
+outside the jurisdiction of the courts.”); Adams v. Baker, 909 F.2d 643, 649 (1st Cir.
+
+1990) (“[I]n the absence of statutory authorization or mandate from Congress,
+
+factual determinations made by consular officers in the visa issuance process
+
+are . . . not reviewable by courts.”).1 Although defendants do not argue that the
+
+doctrine of consular nonreviewability deprives the court of jurisdiction, the court
+
+considers whether the doctrine is jurisdictional in nature in order to satisfy itself of
+
+its power to proceed. See Steel Co. v. Citizens for a Better Env’t, 523 U.S. 83, 94-95
+
+(1998) (“The requirement that jurisdiction be established as a threshold matter
+
+spring[s] from the nature and limits of the judicial power of the United States and is
+
+inflexible and without exception.” (quotation omitted); One & Ken Valley Hous. Grp.
+
+v. Me. State Hous. Auth., 716 F.3d 218, 224 (1st Cir. 2013).
+
+      The consular nonreviewability doctrine provides that, as a general matter,
+
+courts may not review a decision to exclude a particular alien. See Chiang, 582 F.3d
+
+at 242; United States ex rel. Knauff v. Shaughnessy, 338 U.S. 537, 543 (1950)
+
+(explaining that courts cannot “review the determination of the political branch of
+
+
+
+      1 Whether consular nonreviewability is an issue of subject-matter
+
+jurisdiction, however, was not before the First Circuit in these cases. It may be
+appropriate to consider the First Circuit’s statements in Chiang and Adams as dicta
+with respect to this issue. See Díaz-Rodríguez v. Pep Boys Corp., 410 F.3d 56, 60
+(1st Cir. 2005) (noting that a statement constitutes dicta when it is “unnecessary to
+the decision in the case” (quoting Black’s Law Dictionary (8th ed. 2004)), abrogated
+on other grounds by Hertz Corp. v. Friend, 559 U.S. 77, 92-93 (2010)); see also Reed
+Elsevier, Inc. v. Muchnick, 559 U.S. 154, 161 (2010) (“Courts—including this
+court—have sometimes mischaracterized claim-processing rules or elements of a
+cause of action as jurisdictional limitations, particularly when that characterization
+was not central to the case, and thus did not require close analysis.”).
+
+                                           3
+the Government to exclude a given alien”). While the doctrine is founded upon
+
+constitutional considerations and interpretation of the Immigration and Nationality
+
+Act (“INA”), see Al-Gharawy v. U.S. Dep’t of Homeland Sec., 617 F. Supp. 3d 1, 12
+
+(D.D.C. 2022), it is nonetheless a judicially-created doctrine, see Allen v. Milas, 896
+
+F.3d 1094, 1101 (9th Cir. 2018).
+
+      The First Circuit is not the first court to have discussed consular
+
+nonreviewability as though application of the doctrine deprives the court of
+
+jurisdiction. Indeed, the doctrine traces its roots to the “infamous” Chinese
+
+Exclusion Case. Donald S. Dobkin, Challenging the Doctrine of Consular
+
+Nonreviewability in Immigration Cases, 24 Geo. Immigr. L.J. 113, 116 (2010). That
+
+case’s holding is understood to be sweeping. See Chae Chan Ping v. United States
+
+(The Chinese Exclusion Case), 130 U.S. 581, 609 (1889); Kleindienst v. Mandel, 408
+
+U.S. 753, 765 (1972) (characterizing the Chinese Exclusion Case as having held
+
+“that the power to exclude aliens is inherent in sovereignty, necessary for
+
+maintaining normal international relations and defending the country against
+
+foreign encroachments and dangers—a power to be exercised exclusively by the
+
+political branches of government” (quotation omitted)).
+
+      There is, however, a growing consensus among the Courts of Appeals that,
+
+despite statements in the caselaw suggesting that the doctrine is jurisdictional in
+
+nature, consular nonreviewability is in reality a merits issue. See Del Valle v. Sec’y
+
+of State, 16 F.4th 832, 838 (11th Cir. 2021) (“[W]hen the doctrine of consular non-
+
+reviewability bars review of a consular official’s decision, a district court should
+
+
+
+                                            4
+dismiss a suit challenging the decision under Rule 12(b)(6).”); Baan Rao Thai Rest.
+
+v. Pompeo, 985 F.3d 1020, 1027 (D.C. Cir. 2021) (“Dismissal based on consular
+
+nonreviewability . . . is a merits disposition under Federal Rule of Civil Procedure
+
+12(b)(6).”); Allen, 896 F.3d at 1101 (“The doctrine of consular nonreviewability,
+
+which is judicial in origin, is surely informed by our respect for the separation of
+
+powers, but it is not, for that reason, a constraint on our subject matter jurisdiction;
+
+our deference goes to our willingness, not our power, to hear these cases.” (emphasis
+
+omitted)); Matushkina v. Nielsen, 877 F.3d 289, 294 n.2 (7th Cir. 2017) (“We treat
+
+the doctrine of consular nonreviewability as a matter of a case’s merits rather than
+
+the federal court’s subject matter jurisdiction.”); Am. Acad. of Religion v.
+
+Napolitano, 573 F.3d 115, 123 (2d Cir. 2009) (noting that “the term ‘jurisdiction’ is
+
+often used imprecisely,” and finding that traditional subject matter jurisdiction
+
+existed despite applicability of consular nonreviewability). Many of these cases
+
+reason that, because only Congress may determine the federal courts’ jurisdiction,
+
+see Kontrick v. Ryan, 540 U.S. 443, 452 (2004), the doctrine of consular
+
+nonreviewability—which is a judicial creation—by definition cannot limit a court’s
+
+Article III jurisdiction. See, e.g., Del Valle, 16 F.4th at 838.
+
+       Guidance on this issue is found in the recent case of Trump v. Hawaii, 138 S.
+
+Ct. 2392, 2407 (2018). In that case, the government asserted consular
+
+nonreviewability as a defense but did “not argue that the doctrine . . . goes to the
+
+Court’s jurisdiction.” 138 S. Ct. at 2407. The Supreme Court stated that it would
+
+“assume without deciding that plaintiffs’ statutory claims are reviewable,
+
+
+
+                                             5
+notwithstanding consular nonreviewability.” Id. However, as the Court of Appeals
+
+for the District of Columbia Circuit explained in Baan Rao Thai Restaurant, “[h]ad
+
+the doctrine been jurisdictional, the Court would have had to consider the doctrine
+
+to ensure its jurisdiction.” Baan Rao, 985 F.3d at 1028 (emphasis added); see also
+
+Citizens for a Better Env’t, 523 U.S. at 94-95; Avullija v. Sec’y of State, 839 Fed.
+
+App’x 292, 295 (11th Cir. 2020) (“Although the [Trump v. Hawaii] Court did not
+
+expressly state that the doctrine of consular nonreviewability is not an aspect of
+
+subject matter jurisdiction, its merits analysis is strong support for the conclusion
+
+that the doctrine poses no jurisdictional bar.”).
+
+      For these reasons, the court concludes that the doctrine of consular
+
+nonreviewability does not implicate subject-matter jurisdiction. The court will
+
+therefore honor defendants’ request to analyze their consular nonreviewability
+
+challenge under Rule 12(b)(6).2
+
+      Under that rule, the court must accept the factual allegations in the
+
+complaint as true, construe reasonable inferences in the plaintiff’s favor, and
+
+“determine whether the factual allegations in the plaintiff’s complaint set forth a
+
+plausible claim upon which relief may be granted.” Foley v. Wells Fargo Bank, N.A.,
+
+
+
+      2 With respect to defendants’ standing challenge, the defendants do not
+
+challenge the accuracy of the jurisdictional facts alleged in the complaint to support
+standing; they merely argue that Raouf has failed to show that the Secretary of
+State is empowered to grant the relief she seeks. When a jurisdictional motion to
+dismiss challenges only the sufficiency of the facts relied upon the complaint to
+support jurisdiction, the standard of review is the same as the Rule 12(b)(6)
+standard. See Sevigny v. United States, Civ. No. 13-cv-401-PB, 2014 WL 3573566,
+at *2-3 (D.N.H. July 21, 2014); Valentin v. Hosp. Bella Vista, 254 F.3d 358, 363 (1st
+Cir. 2001).
+
+                                           6
+772 F.3d 63, 68, 71 (1st Cir. 2014) (quotation omitted). A claim is facially plausible
+
+“when the plaintiff pleads factual content that allows the court to draw the
+
+reasonable inference that the defendant is liable for the misconduct alleged.”
+
+Ashcroft v. Iqbal, 556 U.S. 662, 678 (2009). Ordinarily, the court is “forbidden” from
+
+considering documents that are not attached to the complaint, or expressly
+
+incorporated therein, in ruling on a motion to dismiss pursuant to Rule 12(b)(6).
+
+Watterson v. Page, 987 F.2d 1, 3 (1st Cir. 1993). “However, courts have made
+
+narrow exceptions for documents the authenticity of which are not disputed by the
+
+parties; for official public records; for documents central to plaintiff’s claim; or for
+
+documents sufficiently referred to in the complaint.” Id.
+
+       Here, defendants attach a declaration prepared by an employee with the
+
+Office of the Assistant Legal Adviser for Consular Affairs to their motion to dismiss.
+
+See doc. no. 10-2. Defendants’ arguments for dismissal rely in part on factual
+
+information contained in this declaration. However, defendants have not
+
+established that consideration of this declaration is appropriate at this juncture.
+
+The declaration is not a public record; it is not central to Raouf’s claim; it is
+
+nowhere referred to in Raouf’s complaint; and Raouf does not concede the
+
+declaration’s authenticity. Therefore, the court will limit its analysis to the well-
+
+pleaded allegations in Raouf’s complaint.3
+
+
+
+
+       3 For these same reasons, the court declines to consider the affidavit Raouf
+
+attached to her objection to defendant’s motion to dismiss. See doc. no. 11-1.
+
+                                             7
+                                   BACKGROUND
+
+      The court will begin its discussion with a brief summary of relevant law
+
+applicable to visa applications. Then, the court will recite the relevant factual
+
+allegations in plaintiff’s complaint before summarizing this case’s procedural
+
+posture and the defendants’ motion to dismiss.
+
+      Generally speaking, “an alien may not enter and permanently reside in the
+
+United States without a visa.” Kerry v. Din, 576 U.S. 86, 89 (2015) (plurality
+
+opinion) (citing 8 U.S.C. § 1181(a)). However, “[t]he INA creates a special visa-
+
+application process for aliens sponsored by ‘immediate relatives’ in the United
+
+States.” Id. (quoting 8 U.S.C. §§ 1151(b), 1153(a)). “Under this process, the citizen-
+
+relative first files a petition on behalf of the alien living abroad, asking to have the
+
+alien classified as an immediate relative.” Id. “If and when a petition is approved,
+
+the alien may apply for a visa by submitting the required documents and appearing
+
+at a United States Embassy or consulate for an interview with a consular officer.”
+
+Id.
+
+      Raouf is a United States citizen residing in New Hampshire. Raouf’s spouse,
+
+Abdullah A. Al Sammarraie, is an Iraqi citizen residing in the United Arab
+
+Emirates. Raouf filed a petition with United States Citizenship and Immigration
+
+Services (“USCIS”) on April 6, 2020, asking to have Al Sammarraie classified as her
+
+immediate relative. USCIS approved her petition on September 17, 2020. USCIS
+
+then submitted Raouf’s petition to the National Visa Center (“NVC”), an arm of the
+
+State Department, for further processing. NVC subsequently forwarded Raouf’s
+
+petition to the U.S. Embassy in Abu Dhabi, United Arab Emirates.
+
+                                            8
+      The Embassy scheduled Al Sammarraie’s visa interview for August 23, 2022.
+
+Al Sammarraie attended the interview and applied for a visa. Raouf alleges that,
+
+since that time, “the agency has refused to issue a decision on this case,” despite her
+
+numerous attempts to contact the Embassy and obtain a decision. Doc. no. 1 ¶¶ 17-
+
+18.
+
+      Raouf alleges that the Department of Homeland Security “has a policy,
+
+known as the ‘Controlled Application Review and Resolution Program’ (hereinafter
+
+sometimes referred to as ‘the CARRP’) that intentionally delays the applications of
+
+applicants such as Abdullah A. Al Sammarraie due to security concerns.” Id. ¶ 24.
+
+She further alleges that, defendants have used CARRP since 2008 “to investigate
+
+and adjudicate applications deemed to present potential ‘national security
+
+concerns.’” Id. ¶ 27. While Raouf did not attach any materials pertaining to CARRP
+
+to her complaint, she alleges that the program’s “definition of ‘national security
+
+concern’ is far more expansive than the security-related ineligibility criteria for
+
+immigration applications set forth by Congress in the INA.” Id. ¶ 28. She contends
+
+that CARRP’s definition—which has neither been approved by Congress nor subject
+
+to notice and comment—is based on “deeply flawed and expansive government
+
+watchlists, and other vague and overbroad criteria that bear little, if any, relation to
+
+the security-related statutory ineligibility criteria” set forth in the INA. Id. ¶¶ 27-
+
+28. Raouf ultimately contends, “[o]n information and belief,” that defendants “are
+
+intentionally delaying a response . . . in regard to Abdullah A. Al Sammarraie’s visa
+
+application pursuant to the CARRP program.” Id. ¶ 25.
+
+
+
+                                            9
+      Raouf filed the instant complaint in this court on or about June 6, 2023. She
+
+brings two claims. Her first claim is brought under the APA in conjunction with the
+
+Mandamus Act. The APA requires agencies to conclude matters “[w]ith due regard
+
+for the convenience and necessity of the parties or their representatives and within
+
+a reasonable time.” 5 U.S.C. § 555(b). Raouf contends that this statute “creates a
+
+non-discretionary duty to conclude agency matters,” a violation of which is itself is
+
+“a sufficient basis for mandamus relief.” Doc. no. 1 ¶ 20 (citing Litton Microwave
+
+Cooking Prods. v. NLRB, 949 F.2d 249, 253 (8th Cir. 1991)). Moreover, the APA
+
+provides that a court may “compel agency action unlawfully withheld or
+
+unreasonably delayed.” 5 U.S.C. § 706(1). Raouf alleges that defendants’
+
+unreasonable delay in issuing a final adjudication with respect to Al Sammarraie’s
+
+visa application violates 5 U.S.C. § 555(b), entitling her to mandamus relief.
+
+      Raouf’s second claim alleges that the defendants’ delay has violated her due
+
+process rights. She asserts that “[t]he right to fundamental fairness in
+
+administrative adjudication[s] is protected by the Due Process Clause,” and that she
+
+“may seek redress in this Court for Defendants’ combined failures to provide a
+
+reasonable and just framework of adjudication in accordance with applicable law.”
+
+Doc. no. 1 ¶ 35. She further alleges that the defendants’ delay and failure to act “has
+
+irrevocably harmed [her] by causing a loss of consortium between Plaintiff
+
+and . . . Al Sammarraie, among other ways.” Id. ¶ 37.
+
+      Defendants have filed a motion to dismiss. Doc. no. 10. They make four
+
+primary arguments. First, they argue that the Secretary of State must be dismissed
+
+
+
+                                          10
+because he lacks authority to grant Raouf the relief she seeks. Second, defendants
+
+argue that Raouf’s claims are barred by the doctrine of consular nonreviewability.
+
+Third, they argue that Raouf has failed to state an unreasonable delay claim
+
+because she has not identified a clear nondiscretionary duty to act nor sufficiently
+
+alleged an unreasonable delay. Finally, they argue that Raouf has failed to
+
+sufficiently allege a due process claim. The court will consider each of the
+
+defendants’ argument in turn.
+
+
+                                    DISCUSSION
+
+I.    Raouf Has Standing to Pursue Relief Against the Secretary of State
+
+      “Article III of the Constitution limits the jurisdiction of federal courts to
+
+‘Cases’ and ‘Controversies.’” Susan B. Anthony List v. Driehaus, 573 U.S. 149, 157
+
+(2014) (quoting U.S. Const. art. III, § 2). “The doctrine of standing gives meaning to
+
+these constitutional limitations by ‘identifying those disputes which are
+
+appropriately resolved through the judicial process.’” Id. (footnote and brackets
+
+omitted) (quoting Lujan v. Defs. of Wildlife, 504 U.S. 555, 560 (1992)). “To establish
+
+Article III standing, a plaintiff must show ‘(1) [she] has suffered an “injury in fact”
+
+that is (a) concrete and particularized and (b) actual or imminent, not conjectural or
+
+hypothetical; (2) the injury is fairly traceable to the challenged action of the
+
+defendant; and (3) it is likely, as opposed to merely speculative, that the injury will
+
+be redressed by a favorable decision.’” Petrello v. City of Manchester, Civ. No. 16-cv-
+
+008-LM, 2017 WL 3972477, at *16 (D.N.H. Sept. 7, 2017) (quoting Friends of the
+
+Earth, Inc. v. Laidlaw Env’t Servs. (TOC), Inc., 528 U.S. 167, 180-81 (2000)). The
+
+
+
+                                           11
+plaintiff has the burden of demonstrating standing “with respect to each
+
+defendant.” Sierra Club, 2019 WL 8407255, at *4.
+
+      Here, defendants assert that the Secretary of State is not a proper defendant
+
+to this action because he lacks authority to grant Raouf the relief she seeks. In other
+
+words, defendants argue that Raouf lacks standing to pursue her claims against the
+
+Secretary of State because the Secretary cannot redress her complained-of injuries.
+
+In support of their argument, defendants cite Ninth Circuit caselaw wherein that
+
+Court of Appeals recognized that the INA “specifically exempted” the authority to
+
+issue or withhold visas from the Secretary of State. Li Hing of Hong Kong, Inc. v.
+
+Levin, 800 F.2d 970, 971 (9th Cir. 1986) (citing 8 U.S.C. § 1104(a)). Raouf counters
+
+that she is not asking the Secretary of State to issue Al Sammarraie a visa; rather,
+
+she is merely asking that he perform “his duty under the Administrative
+
+Procedure[] Act to adjudicate the petition in a timely manner.” Doc. no. 11 at 8.
+
+Raouf distinguishes Li Hing on this basis, noting that the Ninth Circuit was there
+
+asked to enjoin the denial of a visa application. See Li Hing, 800 F.2d at 970.
+
+      The court agrees with Raouf that the Secretary of State is a proper party at
+
+this juncture. The INA provides that “[t]he Secretary of State shall be charged with
+
+the administration and the enforcement of the provisions of this chapter and all
+
+other immigration and nationality laws relating to . . . the powers duties, and
+
+functions of diplomatic and consular officers of the United States.” 8 U.S.C.
+
+§ 1104(a). While this same statute exempts from the Secretary’s authority “those
+
+powers, duties, and functions conferred upon the consular officers relating to the
+
+
+
+                                          12
+granting or refusal of visas,” id., Raouf has not alleged that defendants have refused
+
+to grant Al Sammarraie’s visa. Rather, she alleges that defendants have simply
+
+failed to make a decision with respect to Al Sammarraie’s visa, and the court is
+
+required to assume the truth of that allegation at this early stage. Raouf asks not
+
+for the Secretary of State to grant Al Sammarraie a visa; she asks only that he
+
+carry out his agency’s duty to issue a timely adjudication of the visa application at
+
+issue.
+
+         “Control over a consular officer’s visa determinations—that is, her decisions
+
+to grant, deny, or revoke immigrant and non-immigrant visas—is not the same as
+
+control over the timing by which the consular officer considers the applications
+
+presented to her.” Al-Gharawy, 617 F. Supp. 3d at 10 (quotation, brackets, ellipses,
+
+and citation omitted). While the Secretary is barred “from directing a particular
+
+outcome with respect to . . . visa adjudications,” he is not barred “from directing
+
+consular officers ‘to conclude . . . matter[s] presented to [them]’ ‘within a reasonable
+
+time.’” Id. (quoting 5 U.S.C. § 555(b)). Because the Secretary has authority to direct
+
+consular officials to adjudicate particular visa applications, the court denies the
+
+motion to dismiss with respect to the Secretary of State.
+
+
+II.      Consular Nonreviewability Does Not Compel Dismissal of Raouf’s Claims
+
+         As noted, the consular nonreviewability doctrine provides that, as a general
+
+matter, courts may not review a decision to exclude a particular alien. See Chiang,
+
+582 F.3d at 242; Shaughnessy, 338 U.S. at 543. There are two primary exceptions to
+
+the doctrine. The first exception allows for judicial review of a claim that the
+
+
+                                            13
+challenged decision “infringes the constitutional rights of a citizen of the United
+
+States,” although this form of review asks only whether there was a “facially
+
+legitimate and bona fide reason” for the allegedly unconstitutional action.
+
+Samandar v. Blinken, 599 F. Supp. 3d 28, 29 (D. Mass. 2022) (quoting Mandel, 408
+
+U.S. at 770).
+
+       The second exception allows for judicial review of claims alleging that a
+
+“consular officer[] fail[ed] to follow nondiscretionary regulatory duties,” i.e., where
+
+the plaintiff seeks to compel an immigration official to take an action he or she is
+
+already required by law to take. Ruston v. U.S. Dep’t of State, 29 F. Supp. 2d 518,
+
+523 (E.D. Ark. 1998), summarily aff’d, 187 F.3d 643 (8th Cir. 1999); see Al-
+
+Gharawy, 617 F. Supp. 3d at 11-13 (identifying a “long line of decisions” holding
+
+that consular nonreviewability “does not bar judicial review of a consular officer’s
+
+delay when a visa application has been provisionally refused pending a final
+
+decision” because the INA does not give immigration officials “discretion [to]
+
+indefinitely . . . delay a decision on a visa application”); Patel v. Reno, 134 F.3d 929,
+
+931-32 (9th Cir. 1997) (holding that court had authority to review consular official’s
+
+decision to “suspend” a visa application, which was not “a decision within the
+
+discretion of the consul”).
+
+       Defendants do not appear to dispute that consular officers are required by
+
+law to act on visa petitions. See 22 C.F.R. § 42.81 (providing that, when faced with a
+
+properly completed visa application, “the consular officer must issue the visa, refuse
+
+the visa . . . , or . . . discontinue granting the visa”). Rather, they argue that the
+
+
+
+                                            14
+consular officer has already acted. Defendants contend that the Embassy has issued
+
+a final decision to “refuse,” or deny, Al Sammarraie’s visa application pursuant to 8
+
+U.S.C. § 1201(g). They contend, therefore, that any relief ordered by the court would
+
+compel the defendants to exercise their discretion to “re-adjudicate” Raouf’s spousal
+
+visa petition—which, defendants assert, the doctrine of consular nonreviewability
+
+bars the court from doing. See 8 U.S.C. § 1201(g) (setting forth bases upon which a
+
+consular officer may deny a visa application).
+
+      However, defendants’ argument relies upon the factual premise that Al
+
+Sammarraie’s application has already been “refused” pursuant to 8 U.S.C.
+
+§ 1201(g). Raouf does not allege in her complaint that Al Sammarraie’s application
+
+has been refused; rather, she alleges that defendants have failed to act on his
+
+application. Doc. no. 1 ¶ 17. Defendants’ assertion that Al Sammarraie’s application
+
+has already been refused is drawn from the declaration that defendants attached to
+
+their motion to dismiss, which the court has already determined is inappropriate to
+
+consider in evaluating this motion brought under Rule 12(b)(6). At this stage, the
+
+court is required to assume the truth of Raouf’s allegation that defendants have not
+
+yet issued a decision on Al Sammarraie’s visa. Given that defendants do not appear
+
+to argue that consular officers lack a nondiscretionary duty to act on visa
+
+applications, the court rejects defendants’ argument for dismissal on the basis of
+
+consular nonreviewability.4
+
+
+
+      4 Defendants may renew their consular nonreviewability argument at
+
+summary judgment.
+
+
+                                          15
+III.   Raouf Adequately States an Unreasonable Delay Claim
+
+       Defendants next move to dismiss Raouf’s unreasonable delay claim. To state
+
+an unreasonable delay claim under the APA, the plaintiff must plausibly allege (1)
+
+that defendants failed to take an action that they are required by law to take,
+
+Norton v. S. Utah Wilderness All., 542 U.S. 55, 64 (2004), and (2) defendants’ delay
+
+in taking this action was unreasonable, Da Costa v. Immigr. Inv. Program Off., 80
+
+F.4th 330, 340 (D.C. Cir. 2023).5 Defendants attack Raouf’s showing on both prongs.
+
+       With respect to the first prong, defendants’ argument mirrors their consular
+
+nonreviewability argument (i.e., Al Sammarraie’s visa application has been refused
+
+pursuant to 8 U.S.C. § 1201(g)). The court rejects this argument for the same reason
+
+it rejected defendants’ consular nonreviewability argument.
+
+       With respect to the second prong, defendants argue that Raouf has failed to
+
+plausibly allege that any delay in this case has been unreasonable. Unreasonable
+
+delay claims are usually evaluated under the nonexclusive six-factor balancing test
+
+set forth in Telecommunications Research and Action Center v. F.C.C., 750 F.2d 70,
+
+80 (D.C. Cir. 1984) (“TRAC”). See Towns of Wellesley, Concord, and Norwood, Mass.
+
+
+
+       5 Raouf’s request for mandamus relief does not meaningfully alter what she
+
+must allege to adequately state an unreasonable delay claim. See Kinuthia v. Biden,
+Civ. No. 21-11684-NMG, 2022 WL 17653503, at *4 n.7 (D. Mass. Nov. 9, 2022)
+(noting that, “where agency action has allegedly been unreasonably delayed, courts
+recognize that a mandamus claim is, effectively, an APA one”); Al-Gharawy, 617 F.
+Supp. 3d at 17 (noting that the standards for obtaining relief under the APA and
+the Mandamus Act on an unreasonable delay claim are “essentially the same”
+(quoting Vietnam Veterans of Am. v. Shinseki, 599 F.3d 654, 659 n.6 (D.C. Cir.
+2010))); In re Core Commc’ns., Inc., 531 F.3d 849, 855 (D.C. Cir. 2008) (explaining
+that, to obtain relief on an unreasonable delay claim, plaintiff must show that
+issuance of writ of mandamus would be justified).
+
+                                         16
+v. FERC, 829 F.2d 275, 277 (1st Cir. 1987); V.U.C. v. U.S. Citizenship and Immigr.
+
+Servs., 557 F. Supp. 3d 218, 223 (D. Mass. 2021). Under this test, the court
+
+considers the following:
+
+      (1) the time agencies take to make decisions must be governed by a
+      rule of reason; (2) where Congress has provided a timetable or other
+      indication of the speed with which it expects the agency to proceed in
+      the enabling statute, that statutory scheme may supply content for
+      this rule of reason; (3) delays that might be reasonable in the sphere of
+      economic regulation are less tolerable when human health and welfare
+      are at stake; (4) the court should consider the effect of expediting
+      delayed action on agency activities of a higher or competing priority;
+      (5) the court should also take into account the nature and extent of the
+      interests prejudiced by delay; and (6) the court need not find any
+      impropriety lurking behind agency lassitude in order to hold that
+      agency action is unreasonably delayed.
+
+TRAC, 750 F.2d at 80 (citations and quotations omitted).
+
+      As the recitation of these factors demonstrates, “addressing an unreasonable
+
+delay claim is ‘ordinarily a complicated and nuanced task requiring consideration of
+
+the particular facts and circumstances before the court.’” Al-Gharawy, 617 F. Supp.
+
+3d at 17 (quoting Mashpee Wampanoag Tribal Council, Inc. v. Norton, 336 F.3d
+
+1094, 1100 (D.C. Cir. 2003)); see also Anversa v. Partners Healthcare Sys., Inc., 835
+
+F.3d 167, 178 (1st Cir. 2016) (“[D]etermining whether a timeframe for agency action
+
+is unreasonable involves more than a matter of simple arithmetic.”). “Because an
+
+analysis of the TRAC factors typically requires the court to wade through the
+
+particular facts and circumstances of an agency’s delay, courts generally conclude
+
+that ‘undertaking such a fact-bound analysis at the motion to dismiss stage is
+
+premature.’” Al-Gharawy, 617 F. Supp 3d at 17-18 (brackets omitted) (quoting
+
+Thomas v. Pompeo, 438 F. Supp. 3d 35, 44 n.6 (D.D.C. 2020)); see, e.g., Roe v.
+
+
+                                         17
+Mayorkas, Civ. No. 22-cv-10808-ADB, 2023 WL 3466327, at *17 (D. Mass. May 12,
+
+2023); Litvin v. Chertoff, 586 F. Supp. 2d 9, 12 (D. Mass. 2008).
+
+      Defendants resist this notion and assert that a motion to dismiss is a proper
+
+vehicle to challenge Raouf’s unreasonable delay claim. In support, they cite the
+
+District of Columbia Circuit’s recent opinion in Da Costa v. Immigration Investor
+
+Program Office, 80 F.4th 330 (D.C. Cir. 2023). There, the Court of Appeals affirmed
+
+the dismissal of unreasonable delay claims challenging USCIS’s failure to act on
+
+plaintiffs’ petitions for classification as “approved investors” in certain job-creating
+
+enterprises, the approval of which would make petitioners eligible to apply for
+
+lawful permanent resident status. Da Costa, 80 F.4th at 334-36, 338. The Da Costa
+
+court explained at length USCIS’s “availability-screened queue” procedure for
+
+processing petitions such as plaintiffs’. See id. at 336-37. Under that procedure,
+
+USCIS conducts initial screens of petitions for approved investor status to
+
+determine whether the petitioner hails from a country for which visas remain
+
+available for issuance. See id.; see also 8 U.S.C. § 1152(a)(2) (capping available visas
+
+in a given year by country). Once this initial screen is complete, USCIS processes
+
+petitions on a “first-in, first-out” basis, meaning that priority is given to petitions
+
+that have been waiting the longest. Da Costa, 80 F.4th at 337.
+
+      In affirming the district court’s dismissal, the Court of Appeals emphasized
+
+the “rule of reason” apparent in USCIS’s procedure for handling petitions such as
+
+plaintiffs’. See id. at 340-41; see also TRAC, 750 F.2d at 80 (first factor to consider is
+
+whether delay is “governed by a rule of reason” (quotation omitted)). By instituting
+
+
+
+                                            18
+its availability-screened queue, USCIS responded to concerns that a simple first-in,
+
+first-out processing format led to the prioritization of petitions from countries which
+
+had already reached their yearly visa cap, such that, in many instances, processing
+
+priority was being given to applicants for whom it was clear no visa would be
+
+issued. See Da Costa, 80 F.4th at 336-37, 340. And, perhaps more critically,
+
+plaintiffs conceded that this process was sensible, i.e., that it was governed by a
+
+“rule of reason.” See id. at 341-42.
+
+      In short, the District of Columbia Circuit had the benefit of a developed
+
+record (and a critical concession) on a key TRAC factor at the motion to dismiss
+
+stage that is absent in this case. See Core Commc’ns., 531 F.3d at 855 (explaining
+
+that the first TRAC factor is the “most important factor”). Here, defendants have
+
+failed to articulate a clear “rule of reason” that would justify the alleged delay in
+
+adjudicating Raouf’s spousal visa petition. In asserting that the first TRAC factor
+
+weighs in their favor—a factor which was critical to the Court of Appeals’ reasoning
+
+in Da Costa—defendants merely argue that the length of the delay in this case is
+
+not unreasonable as a matter of law, without pointing to agency constraints or
+
+procedures that could justify the delay.6 See Xiaobing Liu v. Blinken, 544 F. Supp.
+
+3d 1, 11 (D.D.C. 2021) (“Defendants must show an identifiable rationale governing
+
+
+
+      6 Defendants assert that the length of the delay in this case should be
+
+calculated from the most recent government action on the visa application, which,
+defendants contend, was shortly after Al Sammarraie’s interview in 2022. By
+contrast, Raouf contends that the delay should be calculated from the time she
+submitted her application to have Al Sammarraie classified as her spouse. Because
+the court does not reach the merits of Raouf’s unreasonable delay claim, it does not
+resolve this dispute.
+
+                                           19
+their decisions.” (quotation omitted)). But “[w]hether a ‘rule of reason’ exists for
+
+agency action ‘cannot be decided in the abstract, by reference to some number of
+
+months or years beyond which agency inaction is presumed to be unlawful, but will
+
+depend in large part . . . upon the complexity of the task at hand, the significance
+
+(and permanence) of the outcome, and the resources available to the agency.’” Tate
+
+v. Pompeo, 513 F. Supp. 3d 132, 148 (D.D.C. 2021) (quoting Mashpee Wampanoag,
+
+336 F.3d at 1102).
+
+      Here, Raouf alleges that she submitted a spousal visa petition on April 6,
+
+2020, and that the Embassy interviewed Al Sammarraie on August 23, 2022, but
+
+that no decision with respect to Al Sammarraie’s visa has yet been made. Moreover,
+
+Raouf alleges that this delay is attributable to the CARRP program, which she
+
+claims to be an ultra vires internal policy for intentionally delaying issuance of
+
+visas. Raouf’s allegations are sufficient to withstand a motion to dismiss her
+
+unreasonable delay claim when considered against the complex, fact-laden inquiry
+
+that analysis of such a claim will involve. See, e.g., Mayorkas, 2023 WL 3466327, at
+
+*17; Litvin, 586 F. Supp. 2d at 12. The court therefore denies defendants’ motion to
+
+dismiss with respect to Raouf’s unreasonable delay claim.
+
+
+IV.   Raouf Fails to State a Due Process Claim
+
+      Finally, defendants move to dismiss Raouf’s due process claim, arguing that
+
+she has failed to plead facts upon which relief could be granted. The precise
+
+contours of Raouf’s due process claim are opaque. Based on the complaint alone, it
+
+is difficult to determine whether she alleges a violation of her procedural or
+
+
+                                           20
+substantive due process right. However, Raouf’s objection clarifies that she intends
+
+to bring a procedural due process claim, and that she alleges she has a protected
+
+interest in her spouse’s visa application which has been afforded insufficient
+
+procedural protections by defendants.
+
+      “A procedural due process claim consists of two elements: (i) deprivation by
+
+state action of a protected interest in life, liberty, or property, and (ii) inadequate
+
+state process.” Reed v. Goertz, 598 U.S. 230, 236 (2023). With respect to the first
+
+element, in Kerry v. Din, a plurality of the Supreme Court rejected the claim that a
+
+U.S. citizen has a protected liberty or property interest in a spousal visa
+
+application. 576 U.S. at 88, 101. While this conclusion does not carry the weight of
+
+binding precedent,7 see Rohrbaugh v. Pompeo, 394 F. Supp. 3d 128, 133 n.3 (D.D.C.
+
+2019), “some lower courts have likewise concluded [that] a U.S. citizen has no
+
+liberty interest in a spouse’s visa application,” Aslam v. U.S. Dep’t of State, No.
+
+2:22-cv-701, 2023 WL 6163969, at *14 & n.166 (D. Utah Sept. 21, 2023) (collecting
+
+cases); see, e.g., Rohrbaugh, 394 F. Supp. 3d at 133 (highlighting that “numerous
+
+
+
+
+      7 Justice Scalia, writing for himself, Chief Justice Roberts, and Justice
+
+Thomas, concluded that no protected interest is implicated in this scenario. Din, 576
+U.S. at 87-88. 101. In their concurrence in the judgment, Justice Kennedy and
+Justice Alito assumed without deciding that the plaintiff was deprived of a
+protected interest but found that the State’s deprivation of that interest comported
+with due process. Id. at 101-02. Four justices dissented, arguing that the plaintiff
+was deprived of a protected interest without sufficient process. Id. at 106-07.
+Because “[n]one of the reasonings supporting the three opinions in Din are logical
+subsets of another, . . . ‘there is no controlling opinion’ and the ‘precedent is to be
+read only for its persuasive force.’” Rohrbaugh, 394 F. Supp. 3d at 133 n.3 (quoting
+United States v. Epps, 707 F.3d 337, 349 (D.C. Cir. 2013)); accord Ali v. United
+States, 849 F.3d 510, 515 n.3 (1st Cir. 2017).
+
+                                            21
+courts in this district have ruled that a U.S. citizen has no constitutional right
+
+which is violated by the denial of a spouse’s visa application”). The Ninth Circuit
+
+has reached a contrary conclusion. See Bustamante v. Mukasey, 531 F.3d 1059,
+
+1062 (9th Cir. 2008) (holding that a U.S. citizen has a protected liberty interest in
+
+the adjudication of a noncitizen spouse’s visa application); Muñoz v. U.S. Dep’t of
+
+State, 50 F.4th 906, 915-16 (9th Cir. 2022) (affirming Bustamante’s vitality post-
+
+Din).
+
+        The First Circuit has left open the question of whether a U.S. citizen has a
+
+cognizable due process interest in the procurement of a visa for a noncitizen spouse.
+
+See Ali v. United States, 849 F.3d 510, 515 & n.3 (1st Cir. 2017). But cf. Silverman
+
+v. Rogers, 437 F.2d 102, 107 (1st Cir. 1970) (rejecting argument that deportation of
+
+noncitizen spouse would deprive citizen spouse “of [his] constitutional rights”).
+
+However, “[t]he Supreme Court has explained that ‘[t]o have a [protected] interest
+
+in a benefit, a person clearly must have more than an abstract need or desire and
+
+more than [a] unilateral expectation of it. He must, instead, have a legitimate claim
+
+of entitlement to it.’” Doe v. UMass-Amherst, --- F. Supp. 3d ---, 2023 WL 7195857,
+
+at *26 (D. Mass. Nov. 1, 2023) (quoting Town of Castle Rock v. Gonzales, 545 U.S.
+
+748, 756 (2005)); accord Ky. Dep’t of Corr v. Thompson, 490 U.S. 454, 460 (1989).
+
+“Thus, ‘a benefit is not a protected entitlement if government officials may grant or
+
+deny it in their discretion.’” UMass-Amherst, 2023 WL 7195857, at *26 (quoting
+
+Town of Castle Rock, 545 U.S. at 756). “A reasonable expectation of entitlement is
+
+determined largely by the language of the statute and the extent to which the
+
+
+
+                                           22
+entitlement is couched in mandatory terms.” Wedges/Ledges of Cal., Inc. v. City of
+
+Phoenix, Ariz., 24 F.3d 56, 62 (9th Cir. 1994) (quoting Ass’n of Orange Cnty. Deputy
+
+Sheriffs v. Gates, 716 F.2d 733, 734 (9th Cir. 1983)); see also Bd. of Regents of State
+
+Colls. v. Roth, 408 U.S. 564, 577 (1972) (“Property interests . . . are created and
+
+their dimensions are defined by existing rules or understandings that stem from an
+
+independent source such as state law . . . .”).
+
+      Here, Raouf lacks a legitimate claim of entitlement to the issuance of a visa
+
+to her noncitizen spouse. The INA grants consular officials wide discretion in
+
+granting or denying visas. For example, the INA provides that, “a consular official
+
+may issue” a visa “to an immigrant who has made proper application therefor.” 8
+
+U.S.C. § 1201(a)(1)(A) (emphasis added). Courts have interpreted this provision as
+
+permitting consular officials to deny even properly submitted visa applications. See,
+
+e.g., Al-Gharawy, 617 F. Supp. 3d at 12; see also Saavedra Bruno v. Albright, 197
+
+F.3d 1153, 1158 n.2 (D.C. Cir. 1999) (“Consular officers have complete discretion
+
+over issuance and revocation of visas.”). Consular officers’ discretionary decisions to
+
+grant or deny visa applications are immunized from review by even the Secretary of
+
+State. 8 U.S.C. § 1104(a). Moreover, “[a]fter the issuance of a visa or other
+
+documentation to any alien, the consular officer . . . may at any time, in his
+
+discretion, revoke such visa or other documentation.” 8 U.S.C. § 1201(i); accord 22
+
+C.F.R. § 41.122(a). Given immigration officials’ wide discretion over the substantive
+
+decision to grant, deny, or revoke a visa, Raouf fails to plausibly alleged facts
+
+showing a legitimate claim of entitlement to the issuance of a spousal visa.
+
+
+
+                                           23
+      Raouf’s arguments in support of her position rely upon the Ninth Circuit’s
+
+opinion in Ching v. Mayorkas, 725 F.3d 1149 (9th Cir. 2013). However, Ching
+
+concerned a claim of entitlement to having one’s noncitizen spouse classified as an
+
+“immediate relative”; the plaintiffs in that case did not claim an entitlement to a
+
+visa. Ching, 725 F.3d at 1155-56 (emphasis added). Immigration officials retain
+
+discretion to grant, refuse, or revoke spousal visas even after a noncitizen has been
+
+classified as a U.S. citizen’s immediate relative. See Saavedra Bruno, 197 F.3d at
+
+1158 n.2; Din, 576 U.S. at 89. Here, Raouf alleges that her application for
+
+classification of Al Sammarraie as her immediate relative has already been
+
+approved by USCIS. To the extent she has a legitimate claim of entitlement to
+
+classification of Al Sammarraie as her immediate relative, that entitlement has
+
+already been afforded to her. Nor does Raouf contend that USCIS’s actions in
+
+classifying Al Sammarraie as her spouse failed to comport with due process—
+
+indeed, she has not named USCIS as a party to this action. Therefore, Raouf’s
+
+reliance on Ching is misplaced.
+
+      For the foregoing reasons, Raouf fails to plausibly allege facts in support of
+
+her due process claim, and the court grants defendants’ motion to dismiss with
+
+respect to that claim.
+
+
+
+
+                                          24
+                                   CONCLUSION
+
+      Defendants’ motion to dismiss (doc. no. 10) is granted in part and denied in
+
+part. It is granted with respect to Raouf’s due process claim (Count II). It is denied
+
+in all other respects.
+
+      SO ORDERED.
+
+
+
+                                        __________________________
+                                        Landya McCafferty
+                                        United States District Judge
+
+
+
+November 20, 2023
+
+cc: Counsel of Record.
+
+
+
+
+                                          25

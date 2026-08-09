@@ -1,0 +1,1240 @@
+UNITED STATES DISTRICT COURT
+                              FOR THE DISTRICT OF COLUMBIA
+
+ DANIEL RAMIREZ, et al.,
+
+                        Plaintiffs,
+
+                        v.                          Case No. 21-cv-1099 (CRC)
+
+ ANTONY BLINKEN, et al.,
+
+                        Defendants.
+
+                                      MEMORANDUM OPINION
+
+       The plaintiffs in this case are U.S. citizens and their non-citizen fiancés with K-1 visa
+
+applications pending or soon to be pending at the U.S. Embassy in Manila, Philippines. They
+
+have sued the Department of State and its Secretary under the Administrative Procedure Act and
+
+the Mandamus Act, challenging the delay in adjudicating their applications. In their claims for
+
+relief, the plaintiffs object not only to how long the Department has taken to process their files,
+
+but also to how the Department and the Embassy have prioritized them.
+
+       The Department and the Secretary move to dismiss the complaint. The Court will do so
+
+in part. The plaintiffs have failed to state a claim with Count 2, which challenges as arbitrary
+
+and capricious the Department and Manila Embassy’s alleged deprioritizing of K-1 visa
+
+applications. However, the Court concludes that many of these same allegations about the
+
+Manila Embassy can properly support the plaintiffs’ claims in Counts 1 and 3, which focus on
+
+whether their wait for a visa adjudication has been unreasonable. In particular, the plaintiffs
+
+have plausibly alleged that the Embassy has failed to follow the reasoned, four-tier triage scheme
+
+that the Department imposed on consular posts several months into the COVID-19 pandemic.
+
+Because such an allegation would support a claim that the delay the plaintiffs have experienced
+
+is unreasonable, the Court will deny the motion to dismiss as to Counts 1 and 3.
+ I.    Background
+
+       A. The K-1 Visa Program
+
+       A K-1 visa allows non-citizen fiancés of U.S. citizens to travel to the United States to
+
+marry. See Visas for Fiancé(e)s of U.S. Citizens, U.S. Citizenship & Immigr. Servs.,
+
+https://www.uscis.gov/family/family-of-us-citizens/visas-for-fiancees-of-us-citizens (last visited
+
+Mar. 22, 2022) (“USCIS Visa Information”).1 It is one of several types of K visas, which also
+
+cover non-citizen spouses and eligible children of fiancés and spouses. See 9 FAM 502.7-
+
+3(B)(a)–(b).
+
+       To obtain a K-1 visa, a U.S. citizen who is engaged to be married must first file a Petition
+
+for Alien Fiancé(e)—or Form I-129F—with U.S. Citizenship and Immigration Services
+
+(“USCIS”). See USCIS Visa Information, supra. If USCIS agrees that the fiancé is eligible, it
+
+will approve the petition and send it to the State Department’s National Visa Center (“NVC”) for
+
+further processing. Id. When it receives an approved petition, the NVC assigns a case number,
+
+forwards the petition to the U.S. embassy or consulate where the non-citizen fiancé lives, and
+
+sends the non-citizen fiancé information on how to apply for a K-1 visa. Nonimmigrant Visa for
+
+a Fianc(é)e (K-1), U.S. Dep’t of State Bureau of Consular Affs., https://travel.state.gov/
+
+content/travel/en/us-visas/immigrate/family-immigration/nonimmigrant-visa-for-a-fiance-k-
+
+1.html (last visited Mar. 22, 2022). The non-citizen fiancé must then submit a K-1 visa
+
+application to the appropriate embassy or consulate, pay a fee, and gather specified material for
+
+review by a consular officer at an interview. Id.
+
+
+
+
+       1
+       The Court takes judicial notice of this and other information posted on official
+government websites. See Pharm. Rsch. & Manufacturers of Am. v. U.S. Dep’t of Health &
+Hum. Servs., 43 F. Supp. 3d 28, 33–34 (D.D.C. 2014).
+
+                                                    2
+       “The interview with the consular officer is the most significant part of the visa issuing
+
+process.” 9 FAM 502.7-3(C)(2)(a)(1). An interview can be scheduled once the applicant reports
+
+that all required documents have been collected, and the necessary medical examination has been
+
+completed. 9 FAM 502.7-3(C)(4)(a). At the interview, a consular officer may grant or deny the
+
+K-1 visa. USCIS Visa Information, supra. If granted, the visa is valid for a single entry to the
+
+United States for up to six months. Id. After admission on the visa at a port of entry, a K-1 visa
+
+holder has 90 days to marry the U.S. citizen fiancé. Id. Upon marriage, the visa holder may
+
+apply for adjustment to lawful permanent residence status. Id.
+
+       B. The Plaintiffs’ K-1 Visa Applications
+
+       The plaintiffs are U.S. citizens with an approved I-129F Petition for Alien Fiancé(e),
+
+along with their respective non-citizen fiancés. See Compl. ¶ 9. The complaint included 140
+
+fiancé pairs. Id. Since this case was filed, however, several dozen plaintiffs have voluntarily
+
+dismissed their claims, either because they have received their visas or because they no longer
+
+wish to pursue their claims. See Mot. Voluntarily Dismiss at 1, ECF No. 9; Notice of Voluntary
+
+Dismissal at 2, ECF No. 11. The plaintiffs report that, as of March 1, 2022, a further fourteen
+
+plaintiffs have had their final visa applications adjudicated. See Pl.’s Status Report at 1–2, ECF
+
+No. 12 (“Pl.’s Mar. 2022 Update”). Each remaining non-citizen fiancé plaintiff either has an
+
+application for a K-1 visa pending with the U.S. Embassy in Manila, or is awaiting transfer of his
+
+or her case from the NVC to the Manila Embassy.2 Compl. ¶ 9. The filer of the oldest of the
+
+
+
+
+       2
+         At the time of briefing, the application of one plaintiff had been forwarded to the U.S.
+Embassy in Abu Dhabi, United Arab Emirates, for processing. See Drinkall Aff., ECF No. 7-1
+(noting that application of plaintiff Laila Villaverde had been “forwarded to the incorrect
+embassy”). According to the U.S. Department of State’s Visa Status Check system, that
+application is now pending with the Manila Embassy. See Visa Status Check, U.S. Dep’t of
+State Consular Electronic Application Center, https://ceac.state.gov/ceacstattracker/status.aspx
+
+                                                 3
+still-pending applications has been awaiting a final adjudication since February 2020. See Pl.’s
+
+Mar. 2022 Update at 5 (noting “documentarily complete” date).
+
+       C. Visa Processing and the COVID-19 Pandemic
+
+       The COVID-19 pandemic has upended the State Department’s processing of all visas,
+
+including K-1 visas. In March 2020, the Secretary of State directed all diplomatic and consular
+
+posts to suspend all routine visa services, and to provide only mission-critical and emergency
+
+visa services as necessary. See Compl. Ex. B ¶ 1 (Mar. 20, 2020 State Department Bulletin).
+
+The Department began a phased resumption of routine services in July 2020. Compl. Ex. D ¶ 1
+
+(July 8, 2020 State Department Bulletin). But restrictions imposed by host governments on
+
+travel and capacity, safeguards to reduce the transmission of the coronavirus, and reduced
+
+staffing levels due to illness and quarantine all continue to impact consulates’ ability to fully
+
+resume visa services. See Compl. Ex. D ¶¶ 2–3; Vermillion Decl. ¶ 4.3
+
+       The Manila Embassy—where the plaintiffs’ applications are or will soon be pending—
+
+has experienced these pandemic-induced capacity restrictions. Since the beginning of the
+
+pandemic, the Embassy has had only limited ability to offer visa services, due at least in part to
+
+reduced staffing. Vermillion Decl. ¶¶ 9–10; see also Visa Update: Consular Operations (Visas)
+
+as of October 2021, U.S. Embassy in the Philippines, https://ph.usembassy.gov/visa-update-
+
+consular-operations-visas-as-of-october-2021 (last visited Mar. 22, 2022). As of June 2021,
+
+when the government filed its motion to dismiss, the Manila Embassy was working at
+
+
+
+(search for Ms. Villaverde’s case as of Mar. 22, 2022). Accordingly, the Court need not address
+the government’s discussion of the U.S. Embassy in Abu Dhabi.
+       3
+          The government attached the declaration of Department official Neal Vermillion to its
+motion to dismiss. The Court provides this information as background only, and does not rely on
+it for any substantive holding. See Sierra v. Hayden, 254 F. Supp. 3d 230, 237 (D.D.C. 2017)
+(noting limits of what courts can rely on without converting to summary judgment motion).
+
+                                                  4
+“approximately one-fourth its normal capacity.” Vermillion Decl. ¶ 9. And even as it has
+
+resumed visa processing and regained capacity, the Embassy has had to contend with a
+
+significant backlog of cases: As of June 2021, 3,593 K-1 visa applications were pending at the
+
+Manila Embassy itself, and a further 3,912 K-1 visa cases pending at the NVC were ultimately
+
+destined for processing in Manila. Id. ¶ 11. The Embassy likewise had a large backlog of
+
+immigrant visa cases. Id.
+
+       To address these backlogs in Manila and elsewhere, the State Department “authorized”
+
+consular officials “to give K visa cases high priority” beginning in August 2020. See Important
+
+Notice for K Visa Applicants Affected by COVID-19, U.S. Dep’t of State Bureau of Consular
+
+Affs. (Aug. 31, 2020), https://travel.state.gov/content/travel/en/News/visas-news/important-
+
+notice-for-k-visa-applicants-affected-by-covid-19.html. Months later, the Department adopted a
+
+“tiered approach to triag[ing]” visa applications, including for K-1 fiancé visas. See Defs.’
+
+Mem. in Supp. of Mot. Dismiss (“MTD”) at 5–6, ECF No. 6-1; see also Immigrant Visa
+
+Prioritization, U.S. Dep’t of State Bureau of Consular Affs., http://web.archive.org/web/
+
+20210909040734/https://travel.state.gov/content/travel/en/News/visas-news/immigrant-visa-
+
+prioritization.html (last visited Mar. 22, 2022). Implemented in November 2020 and publicly
+
+announced on April 30, 2021, the policy places fiancé visas in the second priority tier, alongside
+
+immediate-relative and returning-resident visas. MTD at 5–6. Only files with particularly
+
+pressing time concerns—immediate relative international adoptions, applicants who would soon
+
+age out, and certain Special Immigrant Visas for Afghan and Iraqi nationals—were given higher
+
+priority. Id. However, the Department also noted that “consular sections, where possible, [we]re
+
+scheduling some appointments within all four priority tiers every month.” Id.
+
+
+
+
+                                                 5
+       D. Procedural History
+
+       The plaintiffs filed suit on April 21, 2021, naming Secretary of State Antony Blinken and
+
+the State Department as defendants. Compl. ¶¶ 14–15. The complaint contains two sets of
+
+claims. First, the plaintiffs challenge the prioritization of K visa applications, by both the
+
+Department as a whole and the Manila Embassy in particular. Specifically, they allege that “de-
+
+prioritizing” and “suspending the adjudication of” K visas was arbitrary and capricious, in
+
+violation of the Administrative Procedure Act (“APA”), 5 U.S.C. § 706(2)(A). See id. ¶¶ 69–75
+
+(Count 2); id. ¶¶ 44–50 (alleging that the Manila Embassy had unlawfully deviated from the
+
+Department’s stated visa-processing priorities). Second, the plaintiffs claim that the government
+
+unreasonably delayed the adjudication of their visa applications. They ask for a declaration that
+
+this alleged failure to act violates the APA and seek a writ of mandamus to compel the
+
+government to adjudicate their applications. See id. ¶¶ 60–68 (Count 1); id. ¶¶ 76–79 (Count 3).
+
+The government has moved to dismiss all counts for either lack of subject matter jurisdiction
+
+under Federal Rule of Civil Procedure 12(b)(1) or failure to state a claim under Rule 12(b)(6).
+
+ II.   Legal Standards
+
+       A. Dismissal for Lack of Subject Matter Jurisdiction
+
+       A motion under Rule 12(b)(1) “presents a threshold challenge to a court’s jurisdiction.”
+
+Ctr. for Biological Diversity v. Jackson, 815 F. Supp. 2d 85, 89 (D.D.C. 2011) (citing Haase v.
+
+Sessions, 835 F.2d 902, 906 (D.C. Cir. 1987)). A plaintiff opposing such a motion “bears the
+
+burden of demonstrating the court’s subject-matter jurisdiction over its claim by a preponderance
+
+of the evidence.” Marine Wholesale & Warehouse Co. v. United States, 315 F. Supp. 3d 498,
+
+508 (D.D.C. 2018) (citing Lujan v. Defs. of Wildlife, 504 U.S. 555, 561 (1992)). “When
+
+considering a motion to dismiss under Rule 12(b)(1), the court must accept as true all
+
+
+
+                                                  6
+uncontroverted material factual allegations contained in the complaint and ‘construe the
+
+complaint liberally, granting plaintiff the benefit of all inferences that can be derived from the
+
+facts alleged and upon such facts determine jurisdictional questions.’” Id. at 509 (quoting Am.
+
+Nat’l Ins. Co. v. FDIC, 642 F.3d 1137, 1139 (D.C. Cir. 2011)). However, “the court may
+
+consider documents outside the pleadings to assure itself that it has jurisdiction.” Sandoval v.
+
+U.S. Dep’t of Justice, 322 F. Supp. 3d 101, 104 (D.D.C. 2018) (Cooper, J.); see also Haase, 835
+
+F.2d at 906.
+
+         B. Dismissal for Failure to State a Claim
+
+         Rule 12(b)(6) requires the Court to dismiss a complaint that fails “to state a claim upon
+
+which relief can be granted.” To survive a 12(b)(6) motion, “a complaint must contain sufficient
+
+factual matter, accepted as true, to ‘state a claim to relief that is plausible on its face.’” Ashcroft
+
+v. Iqbal, 556 U.S. 662, 678 (2009) (quoting Bell Atl. Corp. v. Twombly, 550 U.S. 544, 570
+
+(2007)). “A claim has facial plausibility when the plaintiff pleads factual content that allows the
+
+court to draw the reasonable inference that the defendant is liable for the misconduct alleged.”
+
+Id. In evaluating a complaint, the Court must “accept as true all of the complaint’s factual
+
+allegations and draw all reasonable inferences in favor of the plaintiffs,” but need not “accept
+
+inferences unsupported by facts or legal conclusions cast in the form of factual allegations.”
+
+Owens v. BNP Paribas, S.A., 897 F.3d 266, 272 (D.C. Cir. 2018) (internal citations and
+
+quotation marks omitted). In addition to the allegations within the four corners of the complaint,
+
+the Court may consider “documents attached thereto or incorporated therein, and matters of
+
+which it may take judicial notice.” Stewart v. Nat’l Educ. Ass’n, 471 F.3d 169, 173 (D.C. Cir.
+
+2006).
+
+
+
+
+                                                   7
+  III. Analysis
+
+        The government has moved to dismiss all three counts in the complaint, for either lack of
+
+subject matter jurisdiction or failure to state a claim. See MTD at 13–32. It also contends that
+
+certain plaintiffs’ claims are moot, now that a consular officer has adjudicated their visa
+
+applications. See id. at 12–13. The plaintiffs do not object to the dismissal of those who have
+
+received a final adjudication, but otherwise oppose the government’s motion.
+
+        As explained below, the Court will grant the motion in part and deny it in part. The
+
+Court will dismiss Count 2—the pure “Prioritization Claim.” The Court agrees with the
+
+government that how to prioritize the review of pending visa applications during an emergency is
+
+committed to the Department’s discretion, and thus unreviewable under the APA. And the
+
+plaintiffs cannot challenge the Manila Embassy’s alleged failure to follow this prioritization
+
+scheme as arbitrary and capricious because they have identified no final agency action amenable
+
+to such an APA claim. But Counts 1 and 3—referred to here as the “Visa Processing Delay
+
+Claims”—survive the motion to dismiss in a narrowed form. With these claims, too, the
+
+plaintiffs assert that the Manila Embassy has “gone rogue,” refusing to follow the reasoned
+
+prioritization scheme the State Department announced. Because the plaintiffs have offered
+
+statistical evidence that lends plausibility to their suggestion that the time it has taken to
+
+adjudicate their applications may not be governed by a “rule of reason,” the Court cannot reject
+
+their claims without a further developed record. Accordingly, the Court will allow the plaintiffs’
+
+delay claims to survive the motion to dismiss insofar as they center on alleged failures by the
+
+Department and its Embassy to follow the governing triage system.
+
+
+
+
+                                                   8
+       A. Mootness
+
+       The government first asks the Court to dismiss as moot the claim of any plaintiff who has
+
+“completed a K-1 nonimmigrant visa interview,” resulting in a consular official’s issuance or
+
+refusal to issue a visa. MTD at 12. Mootness goes to the Court’s subject matter jurisdiction, as
+
+federal courts’ constitutional authority to decide cases extends only to live cases or controversies.
+
+See Iron Arrow Honor Soc’y v. Heckler, 464 U.S. 67, 70 (1983). “A case becomes moot—and
+
+therefore no longer a ‘Case’ or ‘Controversy’ for purposes of Article III—when the issues
+
+presented are no longer live or the parties lack a legally cognizable interest in the outcome.”
+
+Already, LLC v. Nike, Inc., 568 U.S. 85, 91 (2013) (internal quotation marks omitted).
+
+       The Court begins with a group of plaintiffs that all parties agree are left with only moot
+
+claims: those whose applications have been finally adjudicated. The plaintiffs do not oppose
+
+their dismissal, and indeed have dismissed two similar tranches of plaintiffs already. See Opp’n
+
+at 23. Accordingly, the Court will now dismiss the claims of the fourteen remaining plaintiff-
+
+applicants—and those of their fourteen citizen-petitioner partners—whose applications have
+
+been adjudicated.4
+
+       The parties disagree on the viability of a second set of plaintiffs’ claims: those who have
+
+completed a consular interview but are still awaiting a final decision. See Opp’n at 23; Reply at
+
+3–4; Pl.’s Mar. 2022 Update at 5 (noting that at least some plaintiffs have completed interviews
+
+
+
+
+       4
+        Those plaintiffs are Clarance Baker, Cherryl Timkang, Reuel Bornick, Jomarie Rey,
+James Davis, Mary Antonniette Policer, Joselito Espiritu, Ranniza Lyn Casenas, Timothy
+Faulkner, Patrocenia Norombaba, Matthew Johnson, Decemie Quimno, Raymund Labiscase,
+Roesian Marie Ceballos, Ariel Cates Leonado, Uriel Timothy Pineda, Jorelle Pacia, Alyssa
+Louise Nieves, Benjamin Shannon, Sanderlie Mirambel, Cameron Stillson, Vincynth Café,
+Shaun Tuomi, Cherish Arcona, Jeffrey Wishnia, April Riza Joy Ganzon, Jason Wulf, and
+Kimberly Villagracia. See Pl.’s Mar. 2022 Update at 1–2.
+
+                                                 9
+but not had their applications adjudicated). The Court agrees with the plaintiffs that completion
+
+of a consular interview is not enough to moot a claim. While a visa application must be either
+
+granted or refused at an initial interview, that refusal is often not final. Instead, a refusal may be
+
+entered for “administrative processing,” and applicants may have an opportunity to provide
+
+additional information to establish eligibility. See 9 FAM 306.2-2(A)(a)(2)(a); Administrative
+
+Processing Information, U.S. Dep’t of State Bureau of Consular Affs., https://travel.state.gov/
+
+content/travel/en/us-visas/visa-information-resources/administrative-processing-
+
+information.html (last visited Mar. 22, 2022). In similar contexts, courts have found that such
+
+refusals for further “administrative processing” do not constitute a final adjudication of the visa
+
+application. See, e.g., Carter v. U.S. Dep’t of Homeland Sec., No. 21-cv-422, 2021 WL
+
+6062655, at *3 n.3 (D.D.C. Dec. 22, 2021) (“[R]efusals followed by ‘administrative processing’
+
+are not ‘final decisions.’”); Joorabi v. Pompeo, 464 F. Supp. 3d 93, 100 (D.D.C. 2020); Vulupala
+
+v. Barr, 438 F. Supp. 3d 93, 98–99 (D.D.C. 2020); Nine Iraqi Allies v. Kerry, 168 F. Supp. 3d
+
+268, 284–91 (D.D.C. 2016). Accordingly, none of the other plaintiffs’ claims are moot.
+
+       B. Prioritization Claim (Count 2)
+
+       In Count 2, the plaintiffs allege that the Secretary acted arbitrarily and capriciously, in
+
+violation of 5 U.S.C. § 706(2), by deprioritizing and suspending the issuance of K visas during
+
+the pandemic. See Compl. ¶¶ 69–75. Although it is not entirely clear from the complaint and
+
+briefing, in an abundance of caution, the Court will construe this count to encompass two
+
+different complaints about the Department’s prioritization of K visas: one concerns the
+
+Secretary of State’s various visa prioritization decisions over the course of the pandemic; the
+
+other is about the Manila Embassy’s alleged failure to follow the four-tier scheme the Secretary
+
+
+
+
+                                                  10
+eventually laid out. For the reasons below, the Court finds it must dismiss both versions of this
+
+arbitrary and capricious claim.
+
+       The first aspect of this claim relates broadly to the prioritization decisions of the
+
+Secretary. The complaint mentions, among other actions, the Secretary’s suspension of routine
+
+visa adjudications in March 2020, the decision not to designate K visas as “mission-critical” at
+
+that time, and instructions in the summer of 2020 to only process K visas once visa posts entered
+
+a later stage of pandemic reopening. See Compl. ¶¶ 39–42. Because these policies are no longer
+
+in force, the plaintiffs’ claim for injunctive relief relating to them is moot. See Worth v. Jackson,
+
+451 F.3d 854, 861 (D.C. Cir. 2006) (“[T]he Constitution nowhere licenses us to rule on the
+
+legality of an agency policy that no longer exists[.]”). In their motion to dismiss briefing, the
+
+plaintiffs suggest that their prioritization claim also covers the Secretary’s four-tier system for
+
+application processing—announced publicly a week after the filing of the complaint—which
+
+places K visas in the second priority group. See Opp’n at 22. On that challenge, the Court
+
+agrees with the government that such matters are committed to agency discretion, precluding
+
+judicial review here.5
+
+       Although there is “a strong presumption of reviewability” under the APA, “section
+
+701(a) expressly precludes judicial review of ‘agency action . . . committed to agency discretion
+
+by law.’” Physicians for Soc. Resp. v. Wheeler, 956 F.3d 634, 642 (D.C. Cir. 2020) (internal
+
+citation omitted) (quoting 5 U.S.C. § 701(a)(2)). This section precludes review for a subset of
+
+agency actions that are “presumed immune”—including the decision not to institute enforcement
+
+
+
+
+       5
+         Even if the Court had not found the objections to the prior policies moot, the Court
+would likewise dismiss these challenges because the Secretary’s decisions there, too, were
+committed to his discretion by law.
+
+
+                                                  11
+proceedings, allocations from lump-sum appropriations, and similar administrative
+
+determinations that “courts traditionally have regarded” as within the sole province of the
+
+agency. Id. It also precludes review of a separate set of otherwise reviewable actions when the
+
+guiding “statutes are drawn in such broad terms that in a given case there is no law to apply.” Id.
+
+(quoting Citizens to Preserve Overton Park, Inc. v. Volpe, 401 U.S. 402, 410 (1971)). The
+
+exception has been read “quite narrowly, restricting it to those rare circumstances where the
+
+relevant statute is drawn so that a court would have no meaningful standard against which to
+
+judge the agency’s exercise of discretion.” Dep’t of Com. v. New York, 139 S. Ct. 2551, 2568
+
+(2019) (internal quotation marks omitted).
+
+       The Secretary’s prioritization decisions fall into this limited exception, so the Court will
+
+dismiss this portion of Count 2 for failure to state a claim.6 As another court in this district has
+
+noted, when evaluating a similar challenge to the Secretary’s efforts to address visa processing
+
+during the pandemic, “the determination and prioritization of ‘mission critical’ functions during
+
+a time of crisis and administrative triage lies squarely within the discretion of the Secretary of
+
+State, under 22 U.S.C. § 2651a, and [are] not subject to judicial review.” Tate v. Pompeo, 513 F.
+
+Supp. 3d 132, 148 n.8 (D.D.C. 2021); see also 22 U.S.C. § 2651a(a)(3)(A) (“The Secretary shall
+
+administer, coordinate, and direct the Foreign Service of the United States and the personnel of
+
+the Department of State, except where authority is inherent in or vested in the President.”).
+
+
+
+
+       6
+        The government urges the Court to dismiss Count 2 for lack of jurisdiction on this
+ground. But the D.C. Circuit has clarified that whether a complaint has sought “review of
+agency action committed to agency discretion by law” goes to failure to state a claim “under
+Rule 12(b)(6), not . . . the jurisdictional provision of Rule 12(b)(1).” Sierra Club v. Jackson, 648
+F.3d 848, 854 (D.C. Cir. 2011).
+
+                                                 12
+        On occasion, courts have allowed challenges to State Department visa prioritization
+
+schemes past this initial hurdle. But, notably, they have only done so in the context of diversity
+
+visas—where Congress supplied a statutory deadline for adjudication, and the Secretary’s
+
+prioritization scheme ignored that limit or otherwise rested on misinterpretations of law. See
+
+Gomez v. Biden, No. 20-cv-1419, 2021 WL 3663535, at *17 (D.D.C. Aug. 17, 2021);
+
+Filazapovich v. Dep’t of State, No. 21-cv-943, 2021 WL 4127726, at *21 (D.D.C. Sept. 9, 2021).
+
+Here, there are no guiding principles the Court could use to evaluate the propriety of the
+
+Secretary’s triage scheme. The Court therefore dismisses Count 2—to the extent it challenges
+
+decisions by the Secretary—for failure to state a claim.
+
+        The Court construes the plaintiffs’ arbitrary and capricious claim to focus also on the
+
+Manila Embassy, which they characterize as a “rogue consulate that is failing to comply with the
+
+reasoned decision making of the entire Department of State.” Opp’n at 6–7. The government
+
+does not address this version of the prioritization claim in its motion to dismiss, and the
+
+plaintiffs’ opposition brief largely discusses the Manila Embassy in the context of Counts 1 and
+
+3, instead. To the extent the plaintiffs still press this version of the claim, as laid out in their
+
+complaint, the Court will dismiss it sua sponte for failure to state a viable APA claim. See
+
+Cheeks v. Fort Myer Constr. Co., 722 F. Supp. 2d 93, 112 (D.D.C. 2010) (“[I]t is well settled in
+
+this Circuit that a court may dismiss a complaint sua sponte pursuant to Rule 12(b)(6) where it is
+
+patently obvious that the plaintiff cannot prevail on the facts alleged in the complaint.”).
+
+        The “Court’s authority to review the conduct of an administrative agency is limited to
+
+cases challenging ‘final agency action.’” Reliable Automatic Sprinkler Co. v. Consumer Prod.
+
+Safety Comm’n, 324 F.3d 726, 731 (D.C. Cir. 2003) (quoting 5 U.S.C. § 704). “Final agency
+
+action ‘mark[s] the consummation of the agency’s decisionmaking process’ and is ‘one by which
+
+
+
+                                                   13
+rights or obligations have been determined, or from which legal consequences will flow.’” Id.
+
+(quoting Bennett v. Spear, 520 U.S. 154, 178 (1997)). The plaintiffs’ complaints about the
+
+Manila Embassy do not focus on any discrete agency decision or policy. Rather, they criticize
+
+the Embassy for “appear[ing] to . . . deviat[e] from the Department of State’s” policies, and
+
+“failing to follow” its “directive.” Compl. ¶¶ 44, 47. Because the plaintiffs have not “identified
+
+a final agency action that they wish to challenge,” the Court must dismiss this version of their
+
+prioritization claim as well. See Tate, 513 F. Supp. 3d at 148 n.8.
+
+       C. Visa Processing Delay Claims (Counts 1 and 3)
+
+       With Counts 1 and 3, the plaintiffs allege that the defendants have unlawfully delayed the
+
+adjudication of their visa applications, violating the APA and justifying the issuance of a writ of
+
+mandamus to compel the government to act. See Compl. ¶¶ 60–68, 76–79. The government has
+
+moved to dismiss both counts, arguing that they fail to state a claim. The Court disagrees as to a
+
+narrow set of allegations underlying the delay claims—those going to the alleged refusal of the
+
+Department, and especially the Manila Embassy, to follow the stated prioritization policies.
+
+Accordingly, the Court will allow these delay claims to survive the government’s motion.
+
+       The government first argues that the delay claims should be dismissed because, in its
+
+view, the plaintiffs improperly named as defendants the Secretary of State and the Department of
+
+State, rather than the consular officials in charge of their applications at the Embassy. See MTD
+
+at 19. The government points out that the Secretary has left the scheduling of interviews to the
+
+discretion of embassy and consulate chiefs. Id. It also suggests that scheduling interviews is “a
+
+responsibility reserved solely for consular officers,” precluding the Court from ordering the
+
+Secretary of State to do so. Id. The plaintiffs rejoin that the Secretary of State has the authority
+
+to oversee and control the type of overarching policies they challenge here. See Opp’n at 7–11.
+
+
+
+                                                 14
+        The Court sides with the plaintiffs, who can properly challenge the unreasonable delay
+
+they claim to have suffered through suit against the Secretary and Department of State. As even
+
+the government acknowledges, see MTD at 19, the Secretary has the authority to manage the
+
+operations of the State Department and the Foreign Service. See 22 U.S.C. § 2651a(a)(3)(A)
+
+(giving Secretary “any authority vested by law in any office or official of the Department of
+
+State” and tasking him with administering the Foreign Service and Department personnel).
+
+While the Secretary may have “left the discretion of when to conduct interviews” to consular
+
+chiefs, MTD at 19, that is simply a delegation of authority he undoubtedly possesses. See
+
+Filazapovich, 2021 WL 4127726, at *15 (rejecting similar argument in challenge to
+
+deprioritizing of diversity visas).
+
+        Nor does anything in the Immigration and Nationality Act (“INA”) preclude the Court
+
+from ordering the Secretary (through his subordinates at the National Visa Center or the Manila
+
+Embassy) to schedule the plaintiffs’ visa interviews, as the government suggests. The provisions
+
+and caselaw the government cites stand for a far more limited proposition: that the INA reserves
+
+for consular officials the power to evaluate applications on the merits. See Baan Rao Thai Rest.
+
+v. Pompeo, 985 F.3d 1020, 1024 (D.C. Cir. 2021) (noting that INA “grants consular officers
+
+exclusive authority to review applications for visas, precluding even the Secretary of State from
+
+controlling their determinations”); Saavedra Bruno v. Albright, 197 F.3d 1153, 1156 (D.C. Cir.
+
+1999) (explaining that, under INA, only consular officials can grant, deny, or revoke visas).
+
+“Plaintiffs, however, are not challenging a consular officer’s adjudication of their . . . visa
+
+application; they are challenging the . . . deprioritizing” of their applications in the adjudication
+
+queue. Filazapovich, 2021 WL 4127726, at *15. The government’s case law does not “require[]
+
+suit against a consular officer to challenge such policy decisions.” Id.
+
+
+
+                                                  15
+       The Court must therefore determine whether the plaintiffs have stated plausible claims
+
+for relief on their visa processing delay claims. The APA “imposes a general but
+
+nondiscretionary duty upon an administrative agency to pass upon a matter presented to it
+
+‘within a reasonable time,’ 5 U.S.C. § 555(b), and authorizes a reviewing court to ‘compel
+
+agency action unlawfully withheld or unreasonably delayed,’ id. § 706(1).” Mashpee
+
+Wampanoag Tribal Council, Inc. v. Norton, 336 F.3d 1094, 1099 (D.C. Cir. 2003). The
+
+standards for challenging agency inaction under the APA and the Mandamus Act are the same.
+
+See Skalka v. Kelly, 246 F. Supp. 3d 147, 152 (D.D.C. 2017). To evaluate the reasonableness of
+
+agency delay, courts in this Circuit apply the six-factor test established by Telecommunications
+
+Research & Action Center v. FCC, 750 F.2d 70 (D.C. Cir. 1984) (“TRAC”). The TRAC test
+
+asks courts to evaluate the following factors:
+
+       (1) the time agencies take to make decisions must be governed by a rule of
+       reason;
+
+       (2) where Congress has provided a timetable or other indication of the speed with
+       which it expects the agency to proceed in the enabling statute, that statutory
+       scheme may supply content for this rule of reason;
+
+       (3) delays that might be reasonable in the sphere of economic regulation are less
+       tolerable when human health and welfare are at stake;
+
+       (4) the court should consider the effect of expediting delayed action on agency
+       activities of a higher or competing priority;
+
+       (5) the court should also take into account the nature and extent of the interests
+       prejudiced by delay; and
+
+       (6) the court need not find any impropriety lurking behind agency lassitude in
+       order to hold that agency action is unreasonably delayed.
+
+In re United Mine Workers of Am. Int’l Union, 190 F.3d 545, 549 (D.C. Cir. 1999) (quoting
+
+TRAC, 750 F.2d at 80).
+
+
+
+
+                                                 16
+       These factors “are not ironclad, but rather are intended to provide useful guidance in
+
+assessing claims of agency delay.” In re Core Commc’ns, Inc., 531 F.3d 849, 855 (D.C. Cir.
+
+2008) (internal quotation marks omitted). “In evaluating these factors, the Circuit has stressed
+
+that determining whether an agency’s delay is unreasonable ‘cannot be decided in the abstract,
+
+by reference to some number of months or years beyond which agency inaction is presumed to
+
+be unlawful, but will depend in large part . . . upon the complexity of the task at hand, the
+
+significance (and permanence) of the outcome, and the resources available to the agency.’”
+
+Didban v. Pompeo, 435 F. Supp. 3d 168, 176 (D.D.C. 2020) (Cooper, J.) (quoting Mashpee
+
+Wampanoag Tribal Council, Inc., 336 F.3d at 1102). Whether a delay is unreasonable is
+
+ultimately “a fact intensive inquiry,” Nio v. U.S. Dep’t of Homeland Sec., 270 F. Supp. 3d 49, 66
+
+(D.D.C. 2017), which in some cases may be easier to conduct on a developed evidentiary record.
+
+       Applying the TRAC factors here, the Court holds that the plaintiffs have stated a
+
+plausible claim for relief with respect to any alleged delay caused by Department components’
+
+failure to follow the Department’s own triage scheme for visa processing. The factual
+
+allegations underlying this claim overlap significantly with those for the plaintiffs’ prioritization
+
+claim, which the Court dismissed above. But here, the plaintiffs’ allegations about the Manila
+
+Embassy—that it has refused to follow stated Department priorities—could plausibly support a
+
+finding in their favor under the TRAC factors.7 The government has not provided sufficient
+
+
+
+
+       7
+         The majority of the plaintiffs who remain—57 fiancé pairs—have applications pending
+before the NVC, rather than the Manila Embassy. See Pl.’s Mar. 2022 Update at 2–4. Initially,
+it would seem that these plaintiffs have not (at least yet) been injured by the supposedly “rogue”
+Manila Embassy, which has not even received their files. If that were the case, the Court would
+necessarily dismiss them for lack of standing. See Lujan, 504 U.S. at 560–61. The Court will
+not do so on this record, however, given some uncertainty about the relationship between the
+NVC and the Manila Embassy, as alleged in the complaint.
+
+
+                                                 17
+reason to discount these allegations at the pleading stage, so the Court will not dismiss these
+
+claims.
+
+                 1. Factors One and Two
+
+          The Court starts with the first two TRAC factors—whether the agency’s response time is
+
+governed by a rule of reason, and whether Congress has provided any timetable for agency
+
+action. The two are often considered together, see Milligan v. Pompeo, 502 F. Supp. 3d 302, 317
+
+(D.D.C. 2020), as the second factor—congressional judgment—may “supply content for this rule
+
+of reason,” In re Core Commc’ns, 531 F.3d at 855. However, the D.C. Circuit has called the first
+
+factor—the only one phrased as an imperative—the “most important.” Id. The plaintiffs’
+
+discussion of these initial factors centers largely on the experience of those with claims pending
+
+before the Manila Embassy. They say the Embassy is “failing to follow” the rule of reason laid
+
+out by the Secretary of State’s four-tier prioritization scheme, as well as the schedule envisioned
+
+
+
+
+        Crucially, the Court can read the complaint in several ways that would give these
+plaintiffs standing. The plaintiffs allege that the NVC has refused to send K-1 visa applications
+to the Manila Embassy until that Embassy resumes “routine” visa services. See Compl. ¶ 9;
+Opp’n at 14. The Court can conceive of at least three ways to read this allegation: First, the
+plaintiffs could mean that the Manila Embassy is responsible for the backlog of K-1 visas at the
+NVC, too, by directing it not to transmit fiancé visa applications despite the Department’s
+instructions to give them high priority. Second, the plaintiffs may be claiming that the NVC has
+likewise “gone rogue,” independently creating a holdup for K-1 visas despite their purportedly
+high-priority status. Finally, the plaintiffs’ allegations about the NVC may be entirely
+disconnected from either the Manila Embassy or the four-tier priority scheme the Department
+announced. While the first two readings would give plaintiffs with applications at the NVC
+standing to bring the unreasonable delay claims at issue here, the third would not.
+
+        Because the plaintiffs with claims pending before the NVC have at least one viable route
+for invoking this Court’s jurisdiction, for the purposes of this motion, the Court will treat them
+together with those plaintiffs with applications pending at the Manila Embassy. However, on
+summary judgment, the plaintiffs will need to show they all have been injured because some
+component of the Department—whether the Embassy or the NVC—has flouted the rule of
+reason laid out in the centralized priority scheme.
+
+
+                                                18
+by Congress. See Opp’n at 13–16. The Court concludes that the first factor favors the plaintiffs
+
+while the second largely favors the government.
+
+       The plaintiffs have plausibly alleged that the Manila Embassy is failing to follow the
+
+stated priorities of the Department, which provide the applicable rule of reason. As the plaintiffs
+
+explain, in public statements, Department officials have framed the four-tier prioritization
+
+guidelines as mandatory ones that embassies and consulates “must follow.” See Immigrant Visa
+
+Backlog Q&A, U.S. Dep’t of State, https://www.youtube.com/watch?v=S_G7kahqQN0&t=1s at
+
+41:55–42:12 (May 25, 2021). And the plaintiffs offer at least some evidence suggesting that the
+
+Manila Embassy is ignoring this directive. In particular, the plaintiffs point to publicly available
+
+monthly reports of visas issued by type and by consular post over the last few years.8 As the
+
+plaintiffs calculate, before the pandemic, a large percent of the visas issued in Manila were K-1
+
+visas—generally between 15 and 30 percent of the total number of K-1 and immigrant visas.9
+
+See Opp’n at 3–5. But as the Embassy resumed consular services in earnest in the summer of
+
+2020, the absolute number of K-1 visas issued at the Manila Embassy remained relatively flat—
+
+around 50 or 60 each month—even as the number of other visas rebounded. See id. From
+
+
+
+       8
+          The plaintiffs draw data from the Department’s monthly visa issuance statistics for
+immigrant and non-immigrant visas. See Monthly Immigrant Visa Issuance Statistics, U.S.
+Dep’t of State Bureau of Consular Affs., https://travel.state.gov/content/travel/en/legal/visa-
+law0/visa-statistics/immigrant-visa-statistics/monthly-immigrant-visa-issuances.html (last visited
+Mar. 22, 2022) (listing all immigrant visa types); Monthly Nonimmigrant Visa Issuance
+Statistics, U.S. Dep’t of State Bureau of Consular Affs., https://travel.state.gov/content/travel/en/
+legal/visa-law0/visa-statistics/nonimmigrant-visa-statistics/monthly-nonimmigrant-visa-
+issuances.html (last visited Mar. 22, 2022) (listing all nonimmigrant visa types, including K-1
+visas). The Court has replicated and extended these calculations by comparing the number of K-
+1 visas and the number of immigrant visas issued each month through January 2022.
+       9
+          As their denominator, the plaintiffs sum up the total number of K-1 visas and the total
+number of immigrant visas for each month. The plaintiffs contend that this is the appropriate
+total because K-1 visas, though formally nonimmigrant visas, function similarly to immediate
+relative immigrant visas. See Compl. ¶ 19.
+
+                                                 19
+December 2020 through April 2021—the months in the plaintiffs’ data set when the tiered
+
+prioritization scheme was theoretically in place—between 2.5 and 7 percent of the relevant visas
+
+issued in Manila were K-1 visas. See id. These data are at least consistent with the allegation
+
+that the Manila Embassy was not following the reasonable prioritization scheme laid out by the
+
+Department.
+
+       Of course, this limited data set does not definitively establish that the Manila Embassy
+
+has gone rogue, or even that it is failing to prioritize K-1 visas properly. It is possible—as the
+
+government suggests—that the public information the plaintiffs rely on is an imperfect metric.
+
+See Reply at 10–12. Perhaps the Court should be looking at visas adjudicated rather than visas
+
+issued. Or maybe the mix of applications pending before the Manila Embassy has shifted from
+
+before the pandemic—providing a logical explanation why the proportion of them that are K-1
+
+visas has fallen. It is likewise possible that the pattern the plaintiffs have identified was a mere
+
+momentary blip, as the Embassy adjusted to the new scheme. Indeed, the Court has examined
+
+the public data source the plaintiffs rely on, which has been updated through January 2022. In
+
+recent months, the proportion of resources dedicated to K-1 visas seemingly recovered. They
+
+were 20.2, 19, 16.7, and 14.2 percent of the total immigrant and K-1 visas issued in October,
+
+November, December, and January, respectively. The voluntary dismissal of dozens of plaintiffs
+
+from this case—at least some of whom have received the adjudications they sought—indicates
+
+that the pace of K-1 visa adjudication may have rebounded. Still, these questions cannot be
+
+answered on the record here. The government will have ample opportunity to challenge these
+
+statistics and provide alternate explanations for the Manila Embassy’s processing rates at
+
+summary judgment.
+
+
+
+
+                                                 20
+        The government’s contrary arguments on the first factor are all unavailing. It first
+
+contends that the rule of reason “is informed by” a congressional timetable, and argue that
+
+Congress has not provided one here. See Reply at 9. But the TRAC factors only suggest that a
+
+“statutory scheme may supply content for this rule of reason.” In re Core Commc’ns, 531 F.3d at
+
+855 (emphasis added). Here, the alleged rule of reason has been set by the Secretary of State,
+
+and the plaintiffs assert primarily that the Manila Embassy failed to follow that rule. The
+
+government next claims that, under prevailing case law in this district, the plaintiffs’ claims have
+
+not been pending long enough to violate any rule of reason. See Reply at 10. That argument
+
+may have purchase if the plaintiffs were making a pure delay challenge—as the oldest case has
+
+been pending for only 25 months. See Pl.’s Mar. 2022 Update at 5; Hulli v. Mayorkas, 549 F.
+
+Supp. 3d 95, 100 (D.D.C. 2021) (Cooper, J.) (finding no authority for “proposition that delays
+
+ranging from fifteen to twenty-eight months violate the rule-of-reason requirement”). But
+
+plaintiffs do not challenge the pace of the Embassy’s processing; they complain instead about its
+
+failure to order applications as the Department intended, causing them to wait longer than they
+
+otherwise would.
+
+        Finally, the government asserts that “the Secretary of State’s decision-making has
+
+properly balanced the mission of the Department of State” with public health concerns during an
+
+“unprecedented pandemic.” Reply at 12. That may be true. But again, the plaintiffs expressly
+
+do not complain that they are “waiting in a line that is moving slowly due to COVID-19
+
+operational challenges.” Compl. ¶ 56. Rather, they contend that the Embassy is failing to follow
+
+the stated triage plan, and, as a result, is not adhering to the rule of reason that plan sets out. At
+
+this stage, the Court concludes the plaintiffs have plausibly made this allegation. The first factor
+
+thus favors the plaintiffs.
+
+
+
+                                                  21
+       The Court now turns to the second factor—whether Congress has provided a timetable
+
+for that rule of reason. As mentioned above, the plaintiffs’ primary theory does not rely on any
+
+congressional mandate. But they also contend that the Manila Embassy has failed to follow a
+
+congressional directive implicitly prioritizing fiancé and other family-based visas. In particular,
+
+they point out that, in a two-decade old appropriations statute, Congress required the Department
+
+of State to adopt a policy to process K-1 visa applications “within 30 days of the receipt of all
+
+necessary documents.” Consolidated Appropriations Act, Pub. L. No. 106-113, § 237(a), 113
+
+Stat. 1051, 1501A-430 (1999). As even the plaintiffs concede, this is not a statutory deadline.
+
+See Opp’n at 15. Congress never “translate[d] this policy preference into a specific timeline” the
+
+Department must follow. Milligan, 502 F. Supp. 3d at 318. Of course, a non-binding deadline
+
+may still be an “indication of the speed with which” Congress “expects the agency to proceed.”
+
+Hulli, 549 F. Supp. 3d at 101 (quoting In re United Mine Workers, 190 F.3d at 549).
+
+       Crucially, however, even this aspirational processing goal seemingly does not apply to
+
+the vast majority of the plaintiffs’ applications, most of which have not yet progressed to an
+
+interview. See Pl.’s Mar. 2022 Update at 5 (listing only twelve applicants with interviews either
+
+scheduled, postponed, or completed). As the State Department’s Foreign Affairs Manual notes,
+
+the “interview with the consular officer is the most significant part of the visa issuing process”—
+
+where much of the “necessary information from the applicant” is received. 9 FAM 502.7-
+
+3(C)(2)(a)(1); see also 9 FAM 502.7-3(C)(3)(5) (explaining that applicants must provide “[p]roof
+
+of relationship to the petitioner at the time of the interview” (emphasis added)). Because the “30-
+
+day time clock appears to begin only after the consular office has received all information,”
+
+much of which is imparted at the interview, Milligan, 502 F. Supp. 3d at 318, it seems not to
+
+have begun ticking for many of the plaintiffs. For those few who have been interviewed, the
+
+
+
+                                                 22
+Court holds that the second factor slightly favors the plaintiffs. But for the rest, this statutory
+
+guidance cannot support their request for an order to “immediate[ly] schedul[e]” an interview.
+
+See Compl. Request for Relief ¶ 4. The Court thus identifies no firm statutory timetable for
+
+processing most of the plaintiffs’ visa applications, meaning the second factor narrowly favors
+
+the government as to those applicants.10
+
+               2. Factors Three and Five
+
+       The third and fifth TRAC factors often “run together,” Milligan, 502 F. Supp. 3d at 319,
+
+and here favor the plaintiffs. The third instructs that delays may be “less tolerable when human
+
+health and welfare are at stake,” and the fifth tells courts to consider “the nature and extent of the
+
+interests prejudiced by the delay.” In re Core Commc’ns, 531 F.3d at 855. The plaintiffs allege
+
+that the deprioritizing of their applications and the resulting delay has left them “unable to start
+
+their lives together in the United States,” causing “debilitating depression and anxiety” and
+
+complicating their ability “to have children together.” Compl. ¶ 57. As this Court has
+
+previously held, these kinds of personal interests are “undeniably significant.” Didban, 435 F.
+
+Supp. 3d at 177.
+
+       The government offers two responses, neither of which hits the mark. First, it argues that
+
+other applicants awaiting adjudication of immigrant visas are suffering the same kind of harm to
+
+health and welfare. See MTD at 28. Even if true, this argument more properly goes to the fourth
+
+factor—which focuses on whether plaintiffs are seeking to improperly jump in line. Second, the
+
+
+
+
+       10
+          Ordinarily, when there is no “congressionally supplied yardstick,” courts turn to case
+law as a guide for “how long is too long to wait for agency action.” Milligan, 502 F. Supp. 3d at
+318 (internal citation and quotation marks omitted). However, the Court finds it unnecessary to
+do so because, as discussed above, the plaintiffs have provided a separate rule of reason for the
+Court to apply.
+
+                                                  23
+government asserts that the plaintiffs’ health and welfare interests must be balanced against those
+
+of the consular officials the Department seeks to protect with its COVID-19 mitigation policies.
+
+See id. at 28–29. But it cites no case requiring such a balancing of interests within the third and
+
+fifth TRAC factors, and other courts have rejected this exact argument. See, e.g., Tate, 513 F.
+
+Supp. 3d at 150. More to the point, the government’s suggestion sidesteps the framing of the
+
+plaintiffs’ claims. They challenge not the delay caused by the pandemic itself, but rather the
+
+Embassy’s alleged flouting of the triage system put in place to address pandemic-induced
+
+resource constraints.
+
+               3. Factor Four
+
+       The fourth TRAC factor focuses on “the effect of relief on competing agency priorities.”
+
+In re Barr Lab’ys, Inc., 930 F.2d 72, 75 (D.C. Cir. 1991). Under this factor, which often carries
+
+“great[] weight,” courts will “refuse to grant relief, even though all the other factors considered
+
+in TRAC favored it, where a judicial order putting the petitioner at the head of the queue would
+
+simply move all others back one space and produce no net gain.” Milligan, 502 F. Supp. 3d at
+
+319 (cleaned up) (quoting Mashpee Wampanoag Tribal Council, Inc., 336 F.3d at 1100). At first
+
+glance, the fourth factor appears to be in significant tension with the plaintiffs’ challenge, as the
+
+relief they seek “would simply reorder a queue of applicants.” Tate, 513 F. Supp. 3d at 149
+
+(internal quotation marks omitted). If all the plaintiffs challenged were the place in line the
+
+Department gave them, the Court might very well find this factor favored the government,
+
+perhaps dispositively so. But here, the plaintiffs contend that they are the ones the Department
+
+has given a “higher or competing priority,” TRAC, 750 F.2d at 80, and that the Department—by
+
+failing to control the Manila Embassy—has ignored its own preferences. In this context, then,
+
+the Court does not see any evidence that the relief the plaintiffs seek would improperly harm
+
+
+
+                                                  24
+competing agency priorities. At least at the motion to dismiss stage, the Court holds that this
+
+factor narrowly favors the plaintiffs.
+
+                4. Factor Six
+
+        The final TRAC factor asks about the appearance of impropriety. The government
+
+contends that this factor favors them, and the plaintiffs offer no argument in response. See MTD
+
+at 30; Reply at 18. The Court agrees with the government, as the plaintiffs do not allege that any
+
+purported deprioritizing of their applications is nefarious or the result of ill will.
+
+                                                 ***
+
+        In sum, the Court concludes that the majority of the TRAC factors narrowly favor the
+
+plaintiffs, at least on the present record and applying the appropriate standard of review at the
+
+motion to dismiss stage of the case. The scope of these surviving claims, however, is narrow.
+
+The plaintiffs have only stated a claim to the extent that they challenge the Department’s failure
+
+to follow its stated, mandatory triage system—primarily at the Manila Embassy, but potentially
+
+at the NVC or elsewhere. On summary judgment, the government will have an opportunity to
+
+challenge more fully these limited claims and the evidence underlying them. Given this narrow
+
+reading of the surviving claims, however, the Court will not accept on summary judgment any
+
+argument from the plaintiffs about the pace of processing or the Department’s overall allocation
+
+of scarce financial and personnel resources during the pandemic. Because those considerations
+
+are unrelated to the Department’s alleged failure to follow the stated rule of reason, they are
+
+irrelevant to the plaintiffs’ unreasonable delay claims. And more broadly, the Court is mindful
+
+that the COVID-19 pandemic has upended life around the world, creating enormous
+
+“challenges” for the government “in determining how to best deploy scarce resources.” Tate,
+
+
+
+
+                                                   25
+513 F. Supp. 3d at 150. The plaintiffs’ remaining claims are not a vehicle to second-guess those
+
+decisions.
+
+ IV. Conclusion
+
+       For the foregoing reasons, the Court will grant in part and deny in part the Defendants’
+
+Motion to Dismiss. The Court dismisses Count 2, but Counts 1 and 3 survive to be tested at
+
+summary judgment. A separate Order shall accompany this memorandum opinion.
+
+
+
+
+                                                            CHRISTOPHER R. COOPER
+                                                            United States District Judge
+
+Date: March 22, 2022
+
+
+
+
+                                               26

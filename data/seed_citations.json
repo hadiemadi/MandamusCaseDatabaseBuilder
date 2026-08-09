@@ -36,7 +36,8 @@
       "advisory_characterization": "Rejected the government's consular-nonreviewability argument; also placed among the courts holding TRAC review is not suitable at the motion-to-dismiss stage.",
       "direction": "favorable_to_plaintiff",
       "priority_note": "Top-tier: 9th Circuit AND squarely about administrative processing, the exact posture of a 221(g) delay.",
-      "opinion_fetch_status": "pending"
+      "opinion_fetch_status": "not_found",
+      "opinion_fetch_note": "no case-law search hit; may be unreported"
     },
     {
       "case_name": "Davila v. Cohan",
@@ -51,7 +52,8 @@
       "advisory_characterization": "Listed among district courts that GRANTED the government's motion to dismiss after applying the TRAC factors.",
       "direction": "unfavorable_to_plaintiff",
       "priority_note": "Top-tier despite being adverse: 9th Circuit, same administrative-processing posture. Must be understood and distinguished.",
-      "opinion_fetch_status": "pending"
+      "opinion_fetch_status": "not_found",
+      "opinion_fetch_note": "no case-law search hit; may be unreported"
     },
     {
       "case_name": "Akbar v. Blinken",
@@ -66,7 +68,8 @@
       "advisory_characterization": "Held that TRAC-factor review is fact-intensive and not appropriate at the motion-to-dismiss stage before discovery.",
       "direction": "favorable_to_plaintiff",
       "priority_note": "9th Circuit authority for defeating an early TRAC-based dismissal.",
-      "opinion_fetch_status": "pending"
+      "opinion_fetch_status": "not_found",
+      "opinion_fetch_note": "no case-law search hit; may be unreported"
     },
     {
       "case_name": "Salihi v. Blinken",
@@ -81,7 +84,8 @@
       "advisory_characterization": "Also held TRAC review inappropriate at the motion-to-dismiss stage pending factual development.",
       "direction": "favorable_to_plaintiff",
       "priority_note": "9th Circuit; reinforces Akbar on the same procedural point.",
-      "opinion_fetch_status": "pending"
+      "opinion_fetch_status": "not_found",
+      "opinion_fetch_note": "no case-law search hit; may be unreported"
     },
     {
       "case_name": "Iqbal v. Blinken",
@@ -97,7 +101,8 @@
       "advisory_characterization": "Found a nondiscretionary duty to adjudicate within a reasonable time under 5 U.S.C. 555(b), and held TRAC review inappropriate at the MTD stage.",
       "direction": "favorable_to_plaintiff",
       "priority_note": "9th Circuit, favorable on BOTH the duty question and the TRAC-timing question.",
-      "opinion_fetch_status": "pending"
+      "opinion_fetch_status": "not_found",
+      "opinion_fetch_note": "no case-law search hit; may be unreported"
     },
     {
       "case_name": "Ghalambor v. Blinken",
@@ -112,7 +117,8 @@
       "advisory_characterization": "Found a nondiscretionary duty to schedule visa interviews within a reasonable time.",
       "direction": "favorable_to_plaintiff",
       "priority_note": "9th Circuit; directly answers the government's 'no duty to act' argument.",
-      "opinion_fetch_status": "pending"
+      "opinion_fetch_status": "not_found",
+      "opinion_fetch_note": "no case-law search hit; may be unreported"
     },
     {
       "case_name": "Infracost Inc. v. Blinken",
@@ -127,7 +133,8 @@
       "advisory_characterization": "Dismissed the mandamus claim on the ground that the APA provides an adequate remedy at law.",
       "direction": "mixed",
       "priority_note": "9th Circuit. Practical lesson: plead the APA claim, do not rely on the Mandamus Act alone.",
-      "opinion_fetch_status": "pending"
+      "opinion_fetch_status": "not_found",
+      "opinion_fetch_note": "no case-law search hit; may be unreported"
     },
     {
       "case_name": "Kamat v. USCIS",
@@ -142,7 +149,8 @@
       "advisory_characterization": "Granted the government's motion to dismiss after applying the TRAC factors.",
       "direction": "unfavorable_to_plaintiff",
       "priority_note": "9th Circuit but different visa category; useful mainly to see what TRAC reasoning persuades a 9th Cir. district judge.",
-      "opinion_fetch_status": "pending"
+      "opinion_fetch_status": "not_found",
+      "opinion_fetch_note": "no case-law search hit; may be unreported"
     },
     {
       "case_name": "Giliana v. Blinken",
@@ -158,7 +166,14 @@
       "advisory_characterization": "Rejected the argument that a visa 'refusal' is a final decision triggering consular nonreviewability; agreed that while an application is still in administrative processing, even where a refusal has been relayed, the decision is not final, so unreasonable-delay claims are not barred.",
       "direction": "favorable_to_plaintiff",
       "priority_note": "Arguably THE central case for a 221(g) administrative-processing posture -- it defeats the government's most common threshold argument. Out-of-circuit but heavily cited.",
-      "opinion_fetch_status": "pending"
+      "opinion_fetch_status": "found_free_opinion",
+      "opinion_text_path": "data/opinions/giliana-v-blinken.txt",
+      "opinion_text_chars": 28181,
+      "opinion_text_source_field": "plain_text",
+      "matched_case_name": "Giliana v. Blinken",
+      "match_confidence": 1.0,
+      "opinion_absolute_url": "/opinion/6455692/giliana-v-blinken/",
+      "fetched_at": "2026-08-09T16:58:08.133661+00:00"
     },
     {
       "case_name": "Al-Gharawy v. DHS",
@@ -175,7 +190,15 @@
       "advisory_characterization": "Rejected consular nonreviewability where no final decision has been rendered, so long as the plaintiff merely asks the court to require a decision regardless of its content. Also rejected the argument that plaintiffs lack standing against the Secretary of State as to the timing of adjudication, while dismissing claims against DHS/USCIS for lack of standing once the petition had moved to the NVC.",
       "direction": "favorable_to_plaintiff",
       "priority_note": "Extended analysis of nonreviewability (opinion pages 11-17). Also a caution on naming the right defendants.",
-      "opinion_fetch_status": "pending"
+      "opinion_fetch_status": "found_free_opinion",
+      "opinion_text_path": "data/opinions/al-gharawy-v-dhs.txt",
+      "opinion_text_chars": 56482,
+      "opinion_text_source_field": "plain_text",
+      "matched_case_name": "Al Ihsan Al-Gharawy v. United States Department of Homeland Security",
+      "match_confidence": 0.5,
+      "opinion_absolute_url": "/opinion/7453782/al-ihsan-al-gharawy-v-united-states-department-of-homeland-security/",
+      "fetched_at": "2026-08-09T16:57:40.454984+00:00",
+      "needs_manual_match_check": true
     },
     {
       "case_name": "Ramirez v. Blinken",
@@ -191,7 +214,14 @@
       "advisory_characterization": "Rejected mootness for plaintiffs whose visas had been 'refused' after interview, finding such refusal often not final because a refusal may be entered for administrative processing. Also found a plausible claim of unreasonable delay under the TRAC factors.",
       "direction": "favorable_to_plaintiff",
       "priority_note": "Directly on point for 221(g): answers the 'your case is moot, it was already refused' argument.",
-      "opinion_fetch_status": "pending"
+      "opinion_fetch_status": "found_free_opinion",
+      "opinion_text_path": "data/opinions/ramirez-v-blinken.txt",
+      "opinion_text_chars": 54479,
+      "opinion_text_source_field": "plain_text",
+      "matched_case_name": "Ramirez v. Blinken",
+      "match_confidence": 1.0,
+      "opinion_absolute_url": "/opinion/6453543/ramirez-v-blinken/",
+      "fetched_at": "2026-08-09T16:59:04.725136+00:00"
     },
     {
       "case_name": "Sharifymoghaddam v. Blinken",
@@ -206,7 +236,14 @@
       "advisory_characterization": "Among the courts rejecting the consular-nonreviewability bar in delay cases.",
       "direction": "favorable_to_plaintiff",
       "priority_note": "Recent D.D.C. reaffirmation.",
-      "opinion_fetch_status": "pending"
+      "opinion_fetch_status": "found_free_opinion",
+      "opinion_text_path": "data/opinions/sharifymoghaddam-v-blinken.txt",
+      "opinion_text_chars": 27096,
+      "opinion_text_source_field": "plain_text",
+      "matched_case_name": "Sharifymoghaddam v. Blinken",
+      "match_confidence": 1.0,
+      "opinion_absolute_url": "/opinion/9481227/sharifymoghaddam-v-blinken/",
+      "fetched_at": "2026-08-09T16:59:31.899270+00:00"
     },
     {
       "case_name": "Arab v. Blinken",
@@ -221,7 +258,14 @@
       "advisory_characterization": "Found the claim against DHS and USCIS moot where USCIS had completed its processing before suit was filed.",
       "direction": "mixed",
       "priority_note": "Defendant-selection lesson: do not sue agencies that no longer hold the file.",
-      "opinion_fetch_status": "pending"
+      "opinion_fetch_status": "found_free_opinion",
+      "opinion_text_path": "data/opinions/arab-v-blinken.txt",
+      "opinion_text_chars": 41011,
+      "opinion_text_source_field": "plain_text",
+      "matched_case_name": "Arab v. Blinken",
+      "match_confidence": 1.0,
+      "opinion_absolute_url": "/opinion/6461819/arab-v-blinken/",
+      "fetched_at": "2026-08-09T17:00:27.376748+00:00"
     },
     {
       "case_name": "Mohammad v. Blinken",
@@ -236,7 +280,15 @@
       "advisory_characterization": "Granted the government's motion to dismiss after applying the TRAC factors.",
       "direction": "unfavorable_to_plaintiff",
       "priority_note": "Adverse D.D.C. TRAC analysis -- needs to be understood and distinguished.",
-      "opinion_fetch_status": "pending"
+      "opinion_fetch_status": "found_free_opinion",
+      "opinion_text_path": "data/opinions/mohammad-v-blinken.txt",
+      "opinion_text_chars": 24821,
+      "opinion_text_source_field": "plain_text",
+      "matched_case_name": "Zoroofchi v. Blinken",
+      "match_confidence": 0.5,
+      "opinion_absolute_url": "/opinion/10365451/zoroofchi-v-blinken/",
+      "fetched_at": "2026-08-09T17:01:48.824814+00:00",
+      "needs_manual_match_check": true
     },
     {
       "case_name": "Mottahedan v. Oudkirk",
@@ -251,7 +303,14 @@
       "advisory_characterization": "States that in the D.C. District Court the majority view is that it IS appropriate to apply the TRAC factors at the motion-to-dismiss stage.",
       "direction": "unfavorable_to_plaintiff",
       "priority_note": "Important contrast with the 9th Circuit cases above (Akbar, Salihi, Taherian, Iqbal), which hold the opposite. This split is a reason the 9th Circuit may be the better venue.",
-      "opinion_fetch_status": "pending"
+      "opinion_fetch_status": "found_free_opinion",
+      "opinion_text_path": "data/opinions/mottahedan-v-oudkirk.txt",
+      "opinion_text_chars": 34918,
+      "opinion_text_source_field": "plain_text",
+      "matched_case_name": "Mottahedan v. Oudkirk",
+      "match_confidence": 1.0,
+      "opinion_absolute_url": "/opinion/9459462/mottahedan-v-oudkirk/",
+      "fetched_at": "2026-08-09T17:02:16.120065+00:00"
     },
     {
       "case_name": "Raouf v. U.S. Dep't of State",
@@ -266,7 +325,14 @@
       "advisory_characterization": "Among the courts rejecting consular nonreviewability as a bar to delay claims.",
       "direction": "favorable_to_plaintiff",
       "priority_note": "Shows the nonreviewability holding is not confined to D.D.C.",
-      "opinion_fetch_status": "pending"
+      "opinion_fetch_status": "found_free_opinion",
+      "opinion_text_path": "data/opinions/raouf-v-u-s-dep-t-of-state.txt",
+      "opinion_text_chars": 44831,
+      "opinion_text_source_field": "plain_text",
+      "matched_case_name": "Aya Raouf v. P U.S. Department of State, et al.",
+      "match_confidence": 0.8,
+      "opinion_absolute_url": "/opinion/10698168/aya-raouf-v-p-us-department-of-state-et-al/",
+      "fetched_at": "2026-08-09T17:03:51.039968+00:00"
     },
     {
       "case_name": "Mahmood v. Blinken",
@@ -282,7 +348,8 @@
       "advisory_characterization": "Found a nondiscretionary duty for embassies and the NVC to adjudicate visa petitions within a reasonable time; applied the Third Circuit's four-factor OCAWU test rather than TRAC and found analysis inappropriate at the MTD stage.",
       "direction": "favorable_to_plaintiff",
       "priority_note": "Useful for the duty argument; note the different circuit test.",
-      "opinion_fetch_status": "pending"
+      "opinion_fetch_status": "not_found",
+      "opinion_fetch_note": "no case-law search hit; may be unreported"
     },
     {
       "case_name": "Akhter v. Blinken",
@@ -298,7 +365,8 @@
       "advisory_characterization": "Found a nondiscretionary duty to review and adjudicate visa applications, that the pace is not committed to agency discretion by law, and a sufficient unreasonable-delay claim under TRAC -- noting discovery would matter especially for the first and fourth factors.",
       "direction": "favorable_to_plaintiff",
       "priority_note": "One of the more thoroughly favorable recent decisions.",
-      "opinion_fetch_status": "pending"
+      "opinion_fetch_status": "not_found",
+      "opinion_fetch_note": "no case-law search hit; may be unreported"
     },
     {
       "case_name": "Jahangiri v. Blinken",
@@ -359,7 +427,8 @@
       "advisory_characterization": "Found the nondiscretionary duty to adjudicate attaches only after the agency's investigation of the facts is complete.",
       "direction": "unfavorable_to_plaintiff",
       "priority_note": "This reasoning is dangerous in an administrative-processing case, since the government will argue the investigation is ongoing. Worth reading closely.",
-      "opinion_fetch_status": "pending"
+      "opinion_fetch_status": "not_found",
+      "opinion_fetch_note": "no case-law search hit; may be unreported"
     },
     {
       "case_name": "Ahmed v. Bitter",
@@ -376,7 +445,8 @@
       "advisory_characterization": "Found jurisdiction over the claim to compel observance of the reasonable-time mandate, dismissed the separate mandamus claim as duplicative of the APA remedy, and granted dismissal on the TRAC factors.",
       "direction": "mixed",
       "priority_note": "Illustrates surviving the threshold arguments but still losing on TRAC.",
-      "opinion_fetch_status": "pending"
+      "opinion_fetch_status": "not_found",
+      "opinion_fetch_note": "no case-law search hit; may be unreported"
     },
     {
       "case_name": "Azam v. Bitter",
@@ -391,7 +461,8 @@
       "advisory_characterization": "Found a nondiscretionary duty to review and adjudicate visa applications, but no duty to do so within a certain time frame absent claims of bad faith or abdication of responsibility.",
       "direction": "unfavorable_to_plaintiff",
       "priority_note": "Suggests pleading bad faith / abdication where the facts support it.",
-      "opinion_fetch_status": "pending"
+      "opinion_fetch_status": "not_found",
+      "opinion_fetch_note": "no case-law search hit; may be unreported"
     },
     {
       "case_name": "Noori v. Blinken",
@@ -406,7 +477,14 @@
       "advisory_characterization": "Listed among recent D.D.C. consular-processing delay decisions.",
       "direction": "unknown",
       "priority_note": "Advisory lists it without characterizing the holding -- read to classify.",
-      "opinion_fetch_status": "pending"
+      "opinion_fetch_status": "found_free_opinion",
+      "opinion_text_path": "data/opinions/noori-v-blinken.txt",
+      "opinion_text_chars": 18674,
+      "opinion_text_source_field": "plain_text",
+      "matched_case_name": "Noori v. Blinken",
+      "match_confidence": 1.0,
+      "opinion_absolute_url": "/opinion/9481249/noori-v-blinken/",
+      "fetched_at": "2026-08-09T17:02:43.635493+00:00"
     },
     {
       "case_name": "Lee v. Blinken",
@@ -421,7 +499,14 @@
       "advisory_characterization": "Listed among recent D.D.C. consular-processing delay decisions.",
       "direction": "unknown",
       "priority_note": "Advisory lists it without characterizing the holding -- read to classify.",
-      "opinion_fetch_status": "pending"
+      "opinion_fetch_status": "found_free_opinion",
+      "opinion_text_path": "data/opinions/lee-v-blinken.txt",
+      "opinion_text_chars": 33893,
+      "opinion_text_source_field": "plain_text",
+      "matched_case_name": "Lee v. Blinken",
+      "match_confidence": 1.0,
+      "opinion_absolute_url": "/opinion/9475216/lee-v-blinken/",
+      "fetched_at": "2026-08-09T17:00:55.670613+00:00"
     },
     {
       "case_name": "Ahmadi v. Scharpf",
@@ -436,7 +521,14 @@
       "advisory_characterization": "Listed among recent D.D.C. consular-processing delay decisions.",
       "direction": "unknown",
       "priority_note": "Advisory lists it without characterizing the holding -- read to classify.",
-      "opinion_fetch_status": "pending"
+      "opinion_fetch_status": "found_free_opinion",
+      "opinion_text_path": "data/opinions/ahmadi-v-scharpf.txt",
+      "opinion_text_chars": 31789,
+      "opinion_text_source_field": "plain_text",
+      "matched_case_name": "Ahmadi v. Scharpf",
+      "match_confidence": 1.0,
+      "opinion_absolute_url": "/opinion/9474350/ahmadi-v-scharpf/",
+      "fetched_at": "2026-08-09T16:59:58.844759+00:00"
     },
     {
       "case_name": "Patel v. Reno",
@@ -452,8 +544,16 @@
       "advisory_characterization": "Ordered the U.S. Consulate in Bombay to adjudicate immigrant visa applications, finding the consular officer had a duty to act (issue or refuse) under the regulations. Foundational 9th Circuit consular-mandamus precedent -- also cited elsewhere in the same advisory for dismissing claims against non-consulate defendants lacking power to issue visas.",
       "direction": "favorable_to_plaintiff",
       "priority_note": "One of the two 9th Circuit consular-nonreviewability precedents found in the 2021 advisory -- directly on point and binding-adjacent for the user's venue.",
-      "opinion_fetch_status": "pending",
-      "source": "NILA/AIC 2021-02-19 advisory, Section II.C"
+      "opinion_fetch_status": "found_free_opinion",
+      "source": "NILA/AIC 2021-02-19 advisory, Section II.C",
+      "opinion_text_path": "data/opinions/patel-v-reno.txt",
+      "opinion_text_chars": 22827,
+      "opinion_text_source_field": "html_with_citations",
+      "matched_case_name": "United States v. City & County of San Francisco",
+      "match_confidence": 0.0,
+      "opinion_absolute_url": "/opinion/9038153/united-states-v-city-county-of-san-francisco/",
+      "fetched_at": "2026-08-09T16:55:36.603419+00:00",
+      "needs_manual_match_check": true
     },
     {
       "case_name": "Rivas v. Napolitano",
@@ -469,8 +569,16 @@
       "advisory_characterization": "Ordered the U.S. Consulate in Ciudad Juarez to adjudicate a regulatory request for reconsideration of a visa refusal.",
       "direction": "favorable_to_plaintiff",
       "priority_note": "Second 9th Circuit consular-nonreviewability precedent -- builds on Patel v. Reno within the same circuit.",
-      "opinion_fetch_status": "pending",
-      "source": "NILA/AIC 2021-02-19 advisory, Section II.C"
+      "opinion_fetch_status": "found_free_opinion",
+      "source": "NILA/AIC 2021-02-19 advisory, Section II.C",
+      "opinion_text_path": "data/opinions/rivas-v-napolitano.txt",
+      "opinion_text_chars": 36398,
+      "opinion_text_source_field": "html_with_citations",
+      "matched_case_name": "Candor v. United States",
+      "match_confidence": 0.0,
+      "opinion_absolute_url": "/opinion/7304925/candor-v-united-states/",
+      "fetched_at": "2026-08-09T16:56:03.445786+00:00",
+      "needs_manual_match_check": true
     },
     {
       "case_name": "Nine Iraqi Allies Under Serious Threat Because of Their Faithful Serv. to the United States v. Kerry",
@@ -486,8 +594,15 @@
       "advisory_characterization": "Held the doctrine of consular nonreviewability 'does not preclude Plaintiffs from challenging the Government's failure to decide.' Also found unreasonable delay where the statute provided a clear nine-month adjudication timeline (relevant to TRAC factors 1-2).",
       "direction": "favorable_to_plaintiff",
       "priority_note": "Frequently cited by later favorable D.D.C. decisions (Al-Gharawy, Giliana) as part of the same reasoning chain already in this seed list.",
-      "opinion_fetch_status": "pending",
-      "source": "NILA/AIC 2021-02-19 advisory, Section II.C"
+      "opinion_fetch_status": "found_free_opinion",
+      "source": "NILA/AIC 2021-02-19 advisory, Section II.C",
+      "opinion_text_path": "data/opinions/nine-iraqi-allies-under-serious-threat-because-of-their-faithful-serv-to-the-uni.txt",
+      "opinion_text_chars": 119633,
+      "opinion_text_source_field": "plain_text",
+      "matched_case_name": "Nine Iraqi Allies Under Serious Threat Because of Their Faithful Service to the United States v. Kerry",
+      "match_confidence": 0.94,
+      "opinion_absolute_url": "/opinion/3173178/nine-iraqi-allies-under-serious-threat-because-of-their-faithful-service-to/",
+      "fetched_at": "2026-08-09T16:58:37.184478+00:00"
     },
     {
       "case_name": "Assad v. Holder",
@@ -503,8 +618,9 @@
       "advisory_characterization": "Found jurisdiction over a mandamus claim seeking to compel the U.S. Embassy in Guyana to adjudicate an immigrant visa application.",
       "direction": "favorable_to_plaintiff",
       "priority_note": "Adds a 3rd Circuit data point showing the nonreviewability carve-out for delay claims is not confined to D.D.C. or the 9th Circuit.",
-      "opinion_fetch_status": "pending",
-      "source": "NILA/AIC 2021-02-19 advisory, Section II.C"
+      "opinion_fetch_status": "not_found",
+      "source": "NILA/AIC 2021-02-19 advisory, Section II.C",
+      "opinion_fetch_note": "no case-law search hit; may be unreported"
     }
   ],
   "foundational_authorities": {
@@ -517,7 +633,14 @@
         "circuit": "DC",
         "date_decided": "1984",
         "why_it_matters": "The source of the six-factor 'TRAC factors' test that every single case in this seed list argues about. We had 27+ cases applying TRAC and never had TRAC itself. Essential background reading before drafting any TRAC-factor argument.",
-        "opinion_fetch_status": "pending"
+        "opinion_fetch_status": "found_free_opinion",
+        "opinion_text_path": "data/opinions/telecommunications-research-action-center-v-fcc-trac.txt",
+        "opinion_text_chars": 73386,
+        "opinion_text_source_field": "html_with_citations",
+        "matched_case_name": "Telecommunications Research & Action Center v. Federal Communications Commission",
+        "match_confidence": 0.67,
+        "opinion_absolute_url": "/opinion/7906773/telecommunications-research-action-center-v-federal-communications/",
+        "fetched_at": "2026-08-09T16:53:06.322350+00:00"
       },
       {
         "case_name": "Kerry v. Din",
@@ -526,7 +649,14 @@
         "circuit": "SCOTUS",
         "date_decided": "2015",
         "why_it_matters": "Supreme Court case the government's consular-nonreviewability argument typically rests on. Know what the other side will cite. Note: this was a due-process notice case about a visa denial, not a pure delay case -- later courts (Al-Gharawy, Giliana, Patel, Rivas, already in this seed) have distinguished delay claims from it.",
-        "opinion_fetch_status": "pending"
+        "opinion_fetch_status": "found_free_opinion",
+        "opinion_text_path": "data/opinions/kerry-v-din.txt",
+        "opinion_text_chars": 76958,
+        "opinion_text_source_field": "plain_text",
+        "matched_case_name": "Kerry v. Din",
+        "match_confidence": 1.0,
+        "opinion_absolute_url": "/opinion/2808292/kerry-v-din/",
+        "fetched_at": "2026-08-09T16:53:33.313941+00:00"
       },
       {
         "case_name": "Kleindienst v. Mandel",
@@ -535,7 +665,14 @@
         "circuit": "SCOTUS",
         "date_decided": "1972",
         "why_it_matters": "The older Supreme Court foundation of consular nonreviewability, cited alongside Kerry v. Din. Same purpose: understand the doctrine's roots before arguing why it doesn't bar a delay claim.",
-        "opinion_fetch_status": "pending"
+        "opinion_fetch_status": "found_free_opinion",
+        "opinion_text_path": "data/opinions/kleindienst-v-mandel.txt",
+        "opinion_text_chars": 28777,
+        "opinion_text_source_field": "html_with_citations",
+        "matched_case_name": "Kleindienst v. Mandel",
+        "match_confidence": 1.0,
+        "opinion_absolute_url": "/opinion/108612/kleindienst-v-mandel/",
+        "fetched_at": "2026-08-09T16:54:01.698055+00:00"
       },
       {
         "case_name": "Saavedra Bruno v. Albright",
@@ -544,7 +681,14 @@
         "circuit": "DC",
         "date_decided": "1999",
         "why_it_matters": "D.C. Circuit case establishing the nonreviewability doctrine, but also cited approvingly (at 1159-60) by the favorable cases in this seed as consistent with allowing delay claims to proceed. Read both readings before relying on it either way.",
-        "opinion_fetch_status": "pending"
+        "opinion_fetch_status": "found_free_opinion",
+        "opinion_text_path": "data/opinions/saavedra-bruno-v-albright.txt",
+        "opinion_text_chars": 79452,
+        "opinion_text_source_field": "html_with_citations",
+        "matched_case_name": "Roberto Saavedra Bruno,appellants v. Madeleine K. Albright, Secretary of State,appellees",
+        "match_confidence": 0.67,
+        "opinion_absolute_url": "/opinion/766940/roberto-saavedra-brunoappellants-v-madeleine-k-albright-secretary-of/",
+        "fetched_at": "2026-08-09T16:54:29.085047+00:00"
       }
     ]
   }

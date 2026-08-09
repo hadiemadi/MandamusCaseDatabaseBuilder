@@ -1,0 +1,916 @@
+<?xml version="1.0" encoding="utf-8"?>
+<opinion type="majority">
+<p id="b1183-5">
+  Opinion for the Court filed by Circuit Judge RANDOLPH.
+ </p>
+<author id="b1183-6">
+  RANDOLPH, Circuit Judge:
+ </author>
+<p id="b1183-7">
+  This is an appeal from the judgment of the district court dismissing an action for judicial review of the decision of the American Consulate in Panama refusing to issue a visa to Roberto Saavedra Bruno, and the decision of the American Consulate in La Paz, Bolivia, revoking another visa Saave-dra held. Both consular decisions rested on information, not revealed to Saavedra, that he had engaged in illicit drug trafficking. Saavedra unequivocally denies the charge and complains that he has never had an opportunity to confront and counter the evidence relied upon by the consular officers. He insists that the Administrative Procedure Act, and the grant of jurisdiction over cases arising under federal law, entitles him to put the government to its proof.
+ </p>
+<p id="b1183-8">
+  I
+ </p>
+<p id="b1183-9">
+  Saavedra is a Bolivian national. He moved to Washington, D.C. with his family in 1993. At the time, he held an F-l visa (student) and a B-l/B-2 visa (temporary visitor for business or pleasure) set to expire in May 2002. Shortly after settling in Washington, Saavedra and his family moved again, to Coral Gables, Florida. There he formed a corporation — Musican-ga, Inc. — for the purpose of recording and promoting Latin American music. Sauce-do Wichtendahl, a United States citizen, was hired as the company’s artistic director and interim manager.
+ </p>
+<p id="b1183-10">
+  In May 1995, Saavedra’s company filed a petition for a nonimmigrant worker with the INS, seeking to have Saavedra classified as a managerial employee qualified for an L-l visa. The INS approved the classification for a one-year period, until May 17, 1996. A month before this was to expire, the company filed a petition to extend the classification for another year, which the INS granted. Saavedra then traveled abroad to seek the renewal of his visa, as is required, presenting himself to the American consul in Panama City on May 16, 1996.
+  <em>
+   See
+  </em>
+  <span class="citation no-link">8 U.S.C. § 1201</span>(a).
+ </p>
+<p id="b1183-12">
+  Upon finding Saavedra listed in the State Department’s computer “lookout” system, the American consul in Panama City denied his visa application. Saave-dra’s name had been entered by the U.S. Consul General in Bolivia, who had received classified reports from federal agencies that Saavedra had been involved in narcotics trafficking. Saavedra quickly returned to the United States. He was detained briefly at the border but allowed to enter after an immigration hearing had been scheduled. At the hearing the following week, the immigration officer told him to leave the country and to resolve the matter with the United States Embassy in Bolivia. He. therefore departed on June 11, 1996. In the meantime, Saavedra’s lawyer provided information to the Consul General in Bolivia, trying to persuade her of his client’s eligibility for a visa. The Consul General reviewed this information along with the classified reports and made a formal determination that Saavedra was ineligible to be admitted to the United States under § 212 of the Immigration and Nationality Act (“INA”), <span class="citation no-link">8 U.S.C. § 1182</span>(a)(2)(C), because there was reason to believe that he had been an illicit trafficker of controlled substances, or had knowingly assisted and abetted, or conspired and colluded with, others in the illicit trafficking of controlled substances. The Consul General sent a letter to Saave-dra at his Florida address revoking his Bl/B-2 visa.
+ </p>
+<p id="b1183-14">
+  Thereafter, the State Department issued an advisory opinion supporting the Consul General’s finding that Saavedra was ineligible for a visa under § 212(a)(2)(C) of the INA. The State Department issued a
+  <span citation-index="1" class="star-pagination" label="1156"> 
+   *1156
+   </span>
+  Certificate of Revocation on August 1, 1996, providing that the revocation of the B-l/B-2 visa would be effective as of Saavedra’s next departure from the United States. Saavedra wrote to the Consul General requesting her and the Department of State to recommend that the Attorney- General grant him a waiver pursuant to <span class="citation no-link">8 U.S.C. § 1182</span>(d)(3), which would allow Saavedra to return temporarily to the United States. No action was taken on the waiver request until April 1998 when the State Department notified Saavedra that it had been denied.
+ </p>
+<p id="b1184-4">
+  In January 1998, Saavedra, his company, and its officer, Wichtendahl, filed suit in the district court seeking review under the Administrative Procedure Act (“APA”), <span class="citation no-link">5 U.S.C. § 701</span>
+  <em>
+   et seq.,
+  </em>
+  of the revocation of his B-l/B-2 visa and the refusal to renew his L-l visa. The complaint also challenged the State Department’s failure to act on the request for a waiver of inadmissibility under § 212(d)(3) of the INA, <span class="citation no-link">8 U.S.C. § 1182</span>(d)(3). The district court dismissed the complaint, finding that the doctrine of consular nonreviewability barred the first two claims and that the third claim was moot.
+  <em>
+   Bruno v. Albright,
+  </em>
+  <span class="citation" data-id="2423575"><a href="/opinion/2423575/saavedra-bruno-v-albright/" aria-description="Citation for case: Saavedra Bruno v. Albright">20 F.Supp.2d 51</a></span> (D.D.C.1998).
+ </p>
+<p id="b1184-5">
+  II
+ </p>
+<p id="b1184-6">
+  The main question is whether, under the Administrative Procedure Act, an alien is entitled to judicial review of a consul’s denial of his application for a visa, and of the revocation of a visa he already held. To put the question in perspective, we must begin with some history.
+ </p>
+<p id="b1184-7">
+  A
+ </p>
+<p id="b1184-8">
+  After a century of unimpeded alien migration to the United States, Congress in 1875 established grounds upon which aliens might be refused entry, and, seven years later, enacted the first general immigration statute.
+  <em>
+   See
+  </em>
+  Act of Mar. 3, 1875, ch. 141, <span class="citation no-link">18 Stat. 477</span> (barring prostitutes and convicts); Act of Aug. 3, 1882, ch. 376, <span class="citation no-link">22 Stat. 214</span>. Further legislation soon followed, including a general revision of the immigration laws in 1903, enlarging the classes of aliens ineligible for entry, and another general revision in 1917.
+  <em>
+   See
+  </em>
+  Act of Mar. 3, 1903, ch. 1012, <span class="citation no-link">32 Stat. 1213</span>; Act of Feb. 5, 1917, ch. 29, <span class="citation no-link">39 Stat. 874</span>. In the same year, 1917, the Departments of State and Labor issued a Joint Order to Diplomatic, Consular and Immigration Officers requiring for the first time that aliens coming to the United States have visas issued by an American consulate.
+  <em>
+   See generally
+  </em>
+  3 Green Haywood Hack-worth, Digest of International Law 741 (1942); Leon Wildes,
+  <em>
+   Review of Visa Denials: The American Consul as 20th Century Absolute Monarch,
+  </em>
+  26 San Diego L.Rev. 887, 892 (1989). In the next year, while the country was at war, the President designated the Secretary of State as the official in charge of granting permission to aliens to enter.
+  <em>
+   See
+  </em>
+  3 Hackworth
+  <em>
+   supra,
+  </em>
+  at 741. In implementing this system, American consuls in foreign countries simply advised aliens of the various exclusionary provisions of the immigration laws, leaving the determination of excludability to immigration officers at the port of entry.
+  <em>
+   See
+  </em>
+  Wildes,
+  <em>
+   supra,
+  </em>
+  at 892. This resulted in large numbers of foreigners making the arduous trip to the United States only to be detained at the border and then excluded.
+  <em>
+   See
+  </em>
+  3 Hackworth,
+  <em>
+   supra,
+  </em>
+  at 741-42. To cure this problem, Congress passed the Act of 1924 (ch. 190, <span class="citation no-link">43 Stat. 153</span>), transferring the responsibility for determining the admissibility of aliens from the Secretary of State to consular officers.
+  <em>
+   See
+  </em>
+  3 Hackworth,
+  <em>
+   supra,
+  </em>
+  at 742.
+ </p>
+<p id="b1184-10">
+  The Immigration and Nationality Act of 1952, <span class="citation no-link">8 U.S.C. § 1101</span>
+  <em>
+   et seq.,
+  </em>
+  now governs visa processing. The INA confers upon consular officers exclusive authority to review applications for visas, precluding even the Secretary of State from controlling their determinations.
+  <span class="citation no-link"><em>
+   See 8
+  </em>
+  U.S.C. §§ 1104</span>(a), 1201(a). The powers afforded to consular officers include, in particular, the granting, denying and revoking of immigrant and non-immigrant visas.
+  <em>
+   See
+  </em>
+  8
+  <span citation-index="1" class="star-pagination" label="1157"> 
+   *1157
+   </span>
+  U.S.C. § 1201(a), (i). Consular officers exercise this authority subject to the eligibility requirements in the statute and corresponding regulations. <span class="citation no-link">22 C.F.R. §§ 41.121</span>-.122.
+ </p>
+<p id="b1185-5">
+  Obtaining a visa from an American consul has never guaranteed an alien’s entry into the United States. A' visa merely gives the alien permission to .arrive at a port of entry and have an immigration officer independently examine the alien’s eligibility for admission.
+  <span class="citation no-link"><em>
+   See 8
+  </em>
+  U.S.C. § 1201</span>(h).
+  <em>
+   See generally
+  </em>
+  James A.R. Nafziger,
+  <em>
+   Review of Visa Denials by Consular Officers,
+  </em>
+  66 Wash. L.Rev. 1, 14 (1991). It is the immigration officer’s responsibility to make certain that the alien does not fall within any of the statutory categories barring admission. Among the categories are past criminal behavior.
+  <span class="citation no-link"><em>
+   See 8
+  </em>
+  U.S.C. § 1182</span>. Since 1952, the law has specifically excluded aliens engaged in the illicit drug trade.
+  <em>
+   See
+  </em>
+  5 Charles Gordon et al., Immigration Law and Procedure § 68.03[1][a] (1997).
+ </p>
+<p id="b1185-6">
+  The following provision, barring drug traffickers, led the consular officer to determine that Saavedra was ineligible for a visa: “any alien who the consular or immigration officer knows or has reason to believe is or has been an illicit trafficker in any such controlled substance or is or has been a knowing assister, abettor, conspirator, or eolluder with others” in the illicit trafficking in drugs is ineligible for entry. <span class="citation no-link">8 U.S.C. § 1182</span>(a)(2)(C). In order to exclude an alien on this basis, the consular officer “must have more than a mere suspicion — there must exist a probability, supported by evidence, that the alien is or has been engaged in trafficking.” 9 U.S. Department of State, Foreign Affairs Manual § 40.23 (1999). Consular officers possessing such evidence enter the alien’s name in the worldwide visa lookout system as “P2C”, possible narcotics trafficker. When visa denials are based on an applicant’s listing in the lookout system, the consular officer informs the applicant that the denial rested on a finding of ineligibility, but the officer is not required to disclose the existence or details of the INS lookout entry.
+  <em>
+   See id.
+  </em>
+</p>
+<p id="b1185-8">
+  B
+ </p>
+<p id="b1185-9">
+  Saavedra’s argument against the district court’s dismissal of his action proceeds as follows: under the Administrative Procedure Act, judicial review of agency action is the norm, preclusion of review the exception; consular discretion in determining whether to deny or revoke a visa is not unbounded; Congress has not expressly barred judicial review of visa decisions; no statute strips the federal courts of jurisdiction over such cases; and this court’s decision in
+  <em>
+   Abourezk v. Reagan,
+  </em>
+  <span class="citation" data-id="7851238"><a href="/opinion/7902727/abourezk-v-reagan/#1049" aria-description="Citation for case: Abourezk v. Reagan">785 F.2d 1043, 1049-52</a></span> (D.C.Cir.1986), stands for the proposition that consular visa determinations are subject to judicial scrutiny.
+ </p>
+<p id="b1185-10">
+  Saavedra’s general description of the APA is quite correct. Numerous opinions, of. the Supreme Court and of the lower federal courts, speak in terms of the APA’s “presumption” of judicial review of agency action.
+  <em>
+   See, e.g., Lincoln v. Vigil,
+  </em>
+  <span class="citation" data-id="112864"><a href="/opinion/112864/lincoln-v-vigil/#190" aria-description="Citation for case: Lincoln v. Vigil">508 U.S. 182, 190</a></span>, <span class="citation" data-id="112864"><a href="/opinion/112864/lincoln-v-vigil/" aria-description="Citation for case: Lincoln v. Vigil">113 S.Ct. 2024</a></span>, <span class="citation" data-id="112864"><a href="/opinion/112864/lincoln-v-vigil/" aria-description="Citation for case: Lincoln v. Vigil">124 L.Ed.2d 101</a></span> (1993);
+  <em>
+   Abbott Lab. v. Gardner,
+  </em>
+  <span class="citation" data-id="107451"><a href="/opinion/107451/abbott-laboratories-v-gardner/#140" aria-description="Citation for case: Abbott Laboratories v. Gardner">387 U.S. 136, 140</a></span>, <span class="citation" data-id="107451"><a href="/opinion/107451/abbott-laboratories-v-gardner/" aria-description="Citation for case: Abbott Laboratories v. Gardner">87 S.Ct. 1507</a></span>, <span class="citation" data-id="107451"><a href="/opinion/107451/abbott-laboratories-v-gardner/" aria-description="Citation for case: Abbott Laboratories v. Gardner">18 L.Ed.2d 681</a></span> (1967);
+  <em>
+   Dixie Fuel Co. v. Commissioner of Social Security,
+  </em>
+  <span class="citation" data-id="6982036"><a href="/opinion/7077218/dixie-fuel-co-v-commissioner-of-social-security/#1057" aria-description="Citation for case: Dixie Fuel Co. v. Commissioner of Social Security">171 F.3d 1052, 1057</a></span> (6th Cir.1999);
+  <em>
+   Ball, Ball &amp; Brosamer, Inc. v. Reich,
+  </em>
+  <span class="citation" data-id="670650"><a href="/opinion/670650/ball-ball-brosamer-inc-v-robert-b-reich-secretary-of-labor/#1450" aria-description="Citation for case: Ball, Ball &amp; Brosamer, Inc. v. Robert B. Reich, Secretary...">24 F.3d 1447, 1450</a></span> (D.C.Cir.1994). The presumption is said to derive from APA § 702: a “person suffering legal wrong because of agency action, or adversely affected or aggrieved by agency action ... is entitled to judicial review thereof,” <span class="citation no-link">5 U.S.C. § 702</span>. There are two notable qualifications. The validity of agency action may not be tested in court if “statutes preclude judicial review” or if “agency action is committed to agency discretion by law.” <span class="citation no-link">5 U.S.C. § 701</span>(a)(1)-(2).
+ </p>
+<p id="b1185-11">
+  Sometimes it is suggested that § 701(a)(1) and (2) are the only exceptions to review under § 702.
+  <em>
+   See Bennett v. Spear,
+  </em>
+  <span class="citation" data-id="118096"><a href="/opinion/118096/bennett-v-spear/#175" aria-description="Citation for case: Bennett v. Spear">520 U.S. 154, 175</a></span>, <span class="citation" data-id="118096"><a href="/opinion/118096/bennett-v-spear/" aria-description="Citation for case: Bennett v. Spear">117 S.Ct. 1154</a></span>,
+  <span citation-index="1" class="star-pagination" label="1158"> 
+   *1158
+   </span>
+  <span class="citation" data-id="118096"><a href="/opinion/118096/bennett-v-spear/" aria-description="Citation for case: Bennett v. Spear">137 L.Ed.2d 281</a></span> (1997);
+  <em>
+   Florida Power &amp; Light Co. v. EPA,
+  </em>
+  <span class="citation" data-id="755132"><a href="/opinion/755132/florida-power-light-company-v-environmental-protection-agency/#1420" aria-description="Citation for case: Florida Power &amp; Light Company v. Environmental Protection...">145 F.3d 1414, 1420</a></span> (D.C.Cir.1998);
+  <em>
+   COMSAT Corp. v. FCC,
+  </em>
+  <span class="citation" data-id="741051"><a href="/opinion/741051/comsat-corporation-v-federal-communications-commission-and-united-states/#226" aria-description="Citation for case: Comsat Corporation v. Federal Communications Commission...">114 F.3d 223, 226</a></span> (D.C.Cir.1997). The suggestion is, we think, not entirely accurate. As revised in 1976, § 702 itself contains another qualifying clause. It provides that “Nothing herein” — which includes the portion of § 702 from which the presumption of reviewability is derived — “affects other limitations on judicial review or the power or duty of the court to dismiss any action or deny relief on any other appropriate legal or equitable ground,” <span class="citation no-link">5 U.S.C. § 702</span>(1). The House Report accompanying this amendment described these “other limitations” as including “express or implied preclusion of judicial review.” H.R.Rep. No. 94-1656, at 12 (1976).
+  <a class="footnote" href="#fn1" id="fn1_ref">
+   1
+  </a>
+  The Administrative Conference of the United States, which had proposed the specific language enacted as § 702(1), explained that the courts would still refuse “to decide issues about foreign affairs, military policy and other subjects inappropriate for judicial action.” 1 Recommendations and Reports of the Administrative Conference 191, 225. On the same subject, the Administrative Conference pointed out that “much of the law of unreviewability consists of marking out areas in which legislative action or traditional practice indicate that courts are unqualified or that issues are inappropriate for judicial determination.”
+  <em>
+   Id.
+  </em>
+</p>
+<p id="b1186-11">
+  Whether analyzed in terms of § 702(1), or in terms of § 701(a)(1), the conclusion is the same — the district court rightly held that it could not entertain Saavedra’s lawsuit. The overriding consideration is the nature of consular visa decisions.
+  <a class="footnote" href="#fn2" id="fn2_ref">
+   2
+  </a>
+  To the history just discussed, more must be added.
+ </p>
+<p id="b1186-12">
+  In prescribing the conditions for allowing aliens to enter the country, Congress acted in accordance with the ancient principle of international law that a nation state has the inherent right to exclude or admit foreigners and to prescribe applicable terms and conditions.
+  <a class="footnote" href="#fn3" id="fn3_ref">
+   3
+  </a>
+  This firmly-established principle, dating from Roman times,
+  <a class="footnote" href="#fn4" id="fn4_ref">
+   4
+  </a>
+  received recognition during the Constitutional Convention
+  <a class="footnote" href="#fn5" id="fn5_ref">
+   5
+  </a>
+  and has eontin-
+  <span citation-index="1" class="star-pagination" label="1159"> 
+   *1159
+   </span>
+  ued to be an important postulate in the foreign relations of this country and other members of the international community.
+  <a class="footnote" href="#fn6" id="fn6_ref">
+   6
+  </a>
+  For more than a century, the Supreme Court has thus recognized the power to exclude aliens as “ ‘inherent in sovereignty, necessary for maintaining normal international relations and defending the country against foreign encroachments and dangers — a power to be exercised exclusively by the political branches of government’ ”
+  <a class="footnote" href="#fn7" id="fn7_ref">
+   7
+  </a>
+  and not “granted away or restrained on behalf of anyone.”
+  <em>
+   The Chinese Exclusion Case, 130
+  </em>
+  U.S. 581, 609, <span class="citation" data-id="92500"><a href="/opinion/92500/the-chinese-exclusion-case/" aria-description="Citation for case: The Chinese Exclusion Case">9 S.Ct. 623</a></span>, 32 LJEd. 1068 (1889).
+ </p>
+<p id="b1187-4">
+  These considerations underlie the Court’s long-standing recognition that “any policy toward aliens is vitally and intricately interwoven with contemporaneous policies in regard to the conduct of foreign relations, the war power, and the maintenance of a republican form of government. Such matters are so exclusively entrusted to the political branches of government as to be largely immune from judicial inquiry or interference.”
+  <em>
+   Hari-siades v. Shaughnessy,
+  </em>
+  <span class="citation" data-id="9420696"><a href="/opinion/104980/harisiades-v-shaughnessy/#588" aria-description="Citation for case: Harisiades v. Shaughnessy">342 U.S. 580, 588-89</a></span>, <span class="citation" data-id="9420696"><a href="/opinion/104980/harisiades-v-shaughnessy/" aria-description="Citation for case: Harisiades v. Shaughnessy">72 S.Ct. 512</a></span>, <span class="citation no-link">96 L.Ed. 586</span> (1952);
+  <em>
+   see also Reno v. American-Arab Comm.,
+  </em>
+  <span class="citation" data-id="9433748"><a href="/opinion/118264/reno-v-american-arab-anti-discrimination-committee/" aria-description="Citation for case: Reno v. American-Arab Anti-Discrimination Committee">525 U.S. 471</a></span>, <span class="citation" data-id="9433748"><a href="/opinion/118264/reno-v-american-arab-anti-discrimination-committee/#947" aria-description="Citation for case: Reno v. American-Arab Anti-Discrimination Committee">119 S.Ct. 936, 947</a></span>, <span class="citation" data-id="9433748"><a href="/opinion/118264/reno-v-american-arab-anti-discrimination-committee/" aria-description="Citation for case: Reno v. American-Arab Anti-Discrimination Committee">142 L.Ed.2d 940</a></span> (1999). Though it may be “error to suppose that every case or controversy which touches foreign relations lies beyond judicial cognizance,”
+  <em>
+   Baker v. Carr,
+  </em>
+  <span class="citation" data-id="9422369"><a href="/opinion/106366/baker-v-carr/#211" aria-description="Citation for case: Baker v. Carr">369 U.S. 186, 211</a></span>, <span class="citation" data-id="9422369"><a href="/opinion/106366/baker-v-carr/" aria-description="Citation for case: Baker v. Carr">82 S.Ct. 691</a></span>, <span class="citation" data-id="9422369"><a href="/opinion/106366/baker-v-carr/" aria-description="Citation for case: Baker v. Carr">7 L.Ed.2d 663</a></span> (1962), it is nevertheless “not within the province of any court, unless expressly authorized by law, to review the determination of the political branch of the Government to exclude a given alien.”
+  <em>
+   United States ex rel. Knauff v. Shaughnessy,
+  </em>
+  <span class="citation" data-id="9420426"><a href="/opinion/104751/united-states-ex-rel-knauff-v-shaughnessy/#543" aria-description="Citation for case: United States Ex Rel. Knauff v. Shaughnessy">338 U.S. 537, 543</a></span>, <span class="citation" data-id="9420426"><a href="/opinion/104751/united-states-ex-rel-knauff-v-shaughnessy/" aria-description="Citation for case: United States Ex Rel. Knauff v. Shaughnessy">70 S.Ct. 309</a></span>, <span class="citation no-link">94 L.Ed. 317</span> (1950).
+  <a class="footnote" href="#fn8" id="fn8_ref">
+   8
+  </a>
+</p>
+<p id="b1187-10">
+  In view of the political nature of visa determinations and of the lack of any statute expressly authorizing judicial review of consular officers’ actions, courts have applied what has become known as the doctrine of consular nonreviewability. The doctrine holds that a consular official’s decision to issue or withhold a visa is not subject to judicial review, at least unless Congress says otherwise.
+  <a class="footnote" href="#fn9" id="fn9_ref">
+   9
+  </a>
+  For the great
+  <span citation-index="1" class="star-pagination" label="1160"> 
+   *1160
+   </span>
+  er part of this century, our court has therefore refused to review visa decisions of consular officials.
+  <em>
+   United States ex rel. Ulrich v. Kellogg,
+  </em>
+  <span class="citation" data-id="6839142"><a href="/opinion/6942259/united-states-ex-rel-ulrich-v-kellogg/#986" aria-description="Citation for case: United States ex rel. Ulrich v. Kellogg">30 F.2d 984, 986</a></span> (D.C.Cir.1929), held that the then-current immigration law did not provide for an official review of a consular officer’s denial of a visa. Under succeeding incarnations of federal immigration law through to the present, this court and other federal courts have adhered to the view that consular visa determinations are not subject to judicial review.
+  <em>
+   See, e.g., Castaneda-Gonzalez v. INS,
+  </em>
+  <span class="citation" data-id="350064"><a href="/opinion/350064/nazario-castaneda-gonzalez-v-immigration-and-naturalization-service/" aria-description="Citation for case: Nazario Castaneda-Gonzalez v. Immigration and...">564 F.2d 417</a></span>, 428 n. 25 (D.C.Cir. 1977);
+  <em>
+   Chi Doan v. INS,
+  </em>
+  <span class="citation" data-id="759191"><a href="/opinion/759191/hung-chi-doan-lanh-thi-nguyen-huy-duc-doan-hoang-minh-doan-nhi-yen-doan-v/#509" aria-description="Citation for case: Hung Chi Doan Lanh Thi Nguyen Huy Duc Doan Hoang Minh...">160 F.3d 508, 509</a></span> (8th Cir.1998);
+  <em>
+   Centeno v. Shultz,
+  </em>
+  <span class="citation" data-id="487786"><a href="/opinion/487786/romeo-v-centeno-and-bruce-a-coane-v-george-p-shultz-secretary-of-state/#1213" aria-description="Citation for case: Romeo v. Centeno and Bruce A. Coane v. George P. Shultz,...">817 F.2d 1212, 1213</a></span> (5th Cir.1987) (per curiam);
+  <em>
+   Li Hing of Hong Kong, Inc. v. Levin,
+  </em>
+  <span class="citation" data-id="475841"><a href="/opinion/475841/li-hing-of-hong-kong-inc-and-yee-lee-soon-v-burton-levin-counsel/" aria-description="Citation for case: Li Hing of Hong Kong, Inc., and Yee Lee Soon v. Burton...">800 F.2d 970</a></span> (9th Cir.1986);
+  <em>
+   Rivera de Gomez v. Kissinger,
+  </em>
+  <span class="citation" data-id="335059"><a href="/opinion/335059/marcelina-diaz-rivera-de-gomez-v-henry-a-kissinger-secretary-of-state-of/#518" aria-description="Citation for case: Marcelina Diaz Rivera De Gomez v. Henry A. Kissinger,...">534 F.2d 518, 518</a></span> (2d Cir. 1976) (per curiam);
+  <em>
+   Romero v. Consulate of the United States, Barranquilla, Colombia,
+  </em>
+  <span class="citation" data-id="2159346"><a href="/opinion/2159346/romero-v-consulate-of-us-barranquilla-colombia/#322" aria-description="Citation for case: Romero v. Consulate of US, Barranquilla, Colombia">860 F.Supp. 319, 322-24</a></span> (E.D.Va. 1994);
+  <em>
+   Kummer v. Shultzt
+  </em>
+  <span class="citation" data-id="2363178"><a href="/opinion/2363178/kummer-v-shultz/#342" aria-description="Citation for case: Kummer v. Shultz">578 F.Supp. 341, 342</a></span> (N.D.Tex.1984);
+  <em>
+   Licea-Gomez v. Pilliod,
+  </em>
+  <span class="citation" data-id="1733679"><a href="/opinion/1733679/licea-gomez-v-pilliod/#582" aria-description="Citation for case: Licea-Gomez v. Pilliod">193 F.Supp. 577, 582</a></span> (N.D.Ill. 1960). In
+  <em>
+   <span class="citation" data-id="350064"><a href="/opinion/350064/nazario-castaneda-gonzalez-v-immigration-and-naturalization-service/" aria-description="Citation for case: Nazario Castaneda-Gonzalez v. Immigration and...">Castaneda-Gonzalez</a></span>,
+  </em>
+  we dealt with the subject tersely, in a footnote, because the law was so settled: a consular officer, we wrote, could refuse to issue a visa to an alien “without fear of reversal since visa decisions are nonreviewable.” <span class="citation" data-id="350064"><a href="/opinion/350064/nazario-castaneda-gonzalez-v-immigration-and-naturalization-service/" aria-description="Citation for case: Nazario Castaneda-Gonzalez v. Immigration and...">564 F.2d at 428</a></span> n. 25.
+ </p>
+<p id="b1188-8">
+  In terms of APA § 702(1), the doctrine of consular nonreviewability — the origin of which predates passage of the APA — thus represents one of the “limitations on judicial review” unaffected by § 702’s opening clause granting a right of review to persons suffering “legal wrong” from agency action.
+  <a class="footnote" href="#fn10" id="fn10_ref">
+   10
+  </a>
+  As the report of the Administrative Conference on § 702(1) put it, this is an area “in which legislative action [and] traditional practice indicate that courts are unqualified or that issues are inappropriate for judicial determination.”
+  <a class="footnote" href="#fn11" id="fn11_ref">
+   11
+  </a>
+</p>
+<p id="b1188-9">
+  Or from the principles just discussed we may infer that, in the words of APA § 701(a)(1), the immigration laws “preclude judicial review” of the consular visa decisions. The inference is, we believe, unmistakable in light of the severe limitation of remedies afforded aliens who — unlike Saavedra — are physically present at the United States border when they are denied entry. Again, some history needs to be recounted.
+ </p>
+<p id="b1188-10">
+  Until the Supreme Court’s decision in
+  <em>
+   Brownell v. We Shung,
+  </em>
+  <span class="citation" data-id="105434"><a href="/opinion/105434/brownell-v-tom-we-shung/" aria-description="Citation for case: Brownell v. Tom We Shung">352 U.S. 180</a></span>, 77
+  <span citation-index="1" class="star-pagination" label="1161"> 
+   *1161
+   </span>
+  S.Ct. 252, <span class="citation" data-id="105434"><a href="/opinion/105434/brownell-v-tom-we-shung/" aria-description="Citation for case: Brownell v. Tom We Shung">1 L.Ed.2d 225</a></span> (1956), aliens detained by immigration officials at ports of entry had but one legal recourse — habe-as corpus.
+  <em>
+   See Heikkila v. Barber,
+  </em>
+  <span class="citation" data-id="9420912"><a href="/opinion/105104/heikkila-v-barber/" aria-description="Citation for case: Heikkila v. Barber">345 U.S. 229</a></span>, <span class="citation" data-id="9420912"><a href="/opinion/105104/heikkila-v-barber/" aria-description="Citation for case: Heikkila v. Barber">73 S.Ct. 603</a></span>, <span class="citation no-link">97 L.Ed. 972</span> (1953);
+  <em>
+   Ekiu v. United States,
+  </em>
+  <span class="citation" data-id="93243"><a href="/opinion/93243/nishimura-ekiu-v-united-states/#660" aria-description="Citation for case: Nishimura Ekiu v. United States">142 U.S. 651, 660</a></span>, <span class="citation" data-id="93243"><a href="/opinion/93243/nishimura-ekiu-v-united-states/" aria-description="Citation for case: Nishimura Ekiu v. United States">12 S.Ct. 336</a></span>, <span class="citation" data-id="93243"><a href="/opinion/93243/nishimura-ekiu-v-united-states/" aria-description="Citation for case: Nishimura Ekiu v. United States">35 L.Ed. 1146</a></span> (1892). The right to seek habeas relief arose as a consequence of the alien’s being in custody; it did not rest on any right to entry. In
+  <em>
+   We Shung,
+  </em>
+  the Court considered whether, in addition to habeas corpus, an alien could challenge an exclusion order under the APA. The Court held that the 1952 INA, unlike the prior Immigration Act of 1917, did not limit detained aliens to habeas corpus.
+  <em>
+   See We Shung,
+  </em>
+  <span class="citation" data-id="105434"><a href="/opinion/105434/brownell-v-tom-we-shung/#184" aria-description="Citation for case: Brownell v. Tom We Shung">352 U.S. at 184-86</a></span>, <span class="citation" data-id="105434"><a href="/opinion/105434/brownell-v-tom-we-shung/" aria-description="Citation for case: Brownell v. Tom We Shung">77 S.Ct. 252</a></span>. Citing the legislative history of the 1952 Act, the Court concluded that Congress had intended the APA to apply both to exclusion and to deportation proceedings.
+  <span class="citation" data-id="105434"><a href="/opinion/105434/brownell-v-tom-we-shung/#186" aria-description="Citation for case: Brownell v. Tom We Shung"><em>
+   See id.
+  </em>
+  at 186</a></span>, <span class="citation" data-id="105434"><a href="/opinion/105434/brownell-v-tom-we-shung/" aria-description="Citation for case: Brownell v. Tom We Shung">77 S.Ct. 252</a></span>;
+  <em>
+   see also
+  </em>
+  H.R.Rep. No. 82-2096, at 127 (1952). The Court limited its ruling to aliens present in the United States, stating: “We do not suggest, of course, that an alien who has never presented himself at the borders of this country may avail himself of the declaratory judgment action by bringing the action from abroad.” <span class="citation" data-id="105434"><a href="/opinion/105434/brownell-v-tom-we-shung/" aria-description="Citation for case: Brownell v. Tom We Shung">352 U.S. at 184</a></span> n. 3, <span class="citation" data-id="105434"><a href="/opinion/105434/brownell-v-tom-we-shung/" aria-description="Citation for case: Brownell v. Tom We Shung">77 S.Ct. 252</a></span>.
+ </p>
+<p id="b1189-5">
+  In 1961, Congress overruled
+  <em>
+   We Shung,
+  </em>
+  amending the INA to make clear that ha-beas corpus was the only method for judicial review of exclusion orders. The House Report explained:
+ </p>
+<blockquote id="b1189-6">
+  For three-quarters of a century, prior to the decision in the
+  <em>
+   Shung
+  </em>
+  case, habeas corpus was the sole and exclusive method for testing in court an administrative determination that an alien was not entitled to enter the United States____
+ </blockquote>
+<blockquote id="b1189-7">
+  * * *
+ </blockquote>
+<blockquote id="b1189-8">
+  ... Such a restriction to habeas corpus does not deprive the alien of any constitutional rights. It is well settled that aliens seeking admission to the United States cannot demand that their applications for entry be determined in a particular manner or by use of a particular type of proceedings. For those aliens, the procedure fixed by Congress is deemed to be due process of law.
+  <em>
+   (Knauff v. Shaughnessy,
+  </em>
+  <span class="citation" data-id="9420426"><a href="/opinion/104751/united-states-ex-rel-knauff-v-shaughnessy/" aria-description="Citation for case: United States Ex Rel. Knauff v. Shaughnessy">338 U.S. 537</a></span>, <span class="citation" data-id="9420426"><a href="/opinion/104751/united-states-ex-rel-knauff-v-shaughnessy/" aria-description="Citation for case: United States Ex Rel. Knauff v. Shaughnessy">70 S.Ct. 309</a></span>, <span class="citation no-link">94 L.Ed. 317</span> (1950)).
+ </blockquote>
+<p id="b1189-10">
+  H.R.Rep. No. 87-1086, at 31-32 (1961). Under the INA amendments, “any alien against whom a final order of exclusion has been made heretofore or hereafter under the provisions of [this Act] may obtain judicial review of such order by habeas corpus proceedings and not otherwise.” <span class="citation no-link">Pub.L. No. 87-301, § 5</span>(b), <span class="citation no-link">75 Stat. 651</span> (1961); 8 U.S.C. § 1105a(b).
+ </p>
+<p id="b1189-11">
+  By restoring habeas corpus as the sole remedy, Congress ensured that only aliens in custody could challenge exclusion orders, a legislative decision implicitly precluding review to aliens located abroad, such as Saavedra.
+  <em>
+   See
+  </em>
+  H.R.Rep. No. 87-1086,
+  <em>
+   supra,
+  </em>
+  at 33. The House Report pointed out that “habeas corpus actions are necessarily determined in the locality where the alien is, where he has been excluded, and where he is ‘knocking at the door.’ ”
+  <em>
+   Id.
+  </em>
+  The amendments reflect Congress’s sense that habeas provided “a full, complete, and adequate method for judicial review of an exclusion order.”
+  <em>
+   Id.
+  </em>
+  at 32-33. To allow APA review would “give recognition to a fallacious doctrine that an alien has a ‘right’ to enter this country which he may litigate in the courts of the United States against the United States as a defendant.”
+  <em>
+   Id.
+  </em>
+  at 33. Moreover, the amended statute provided that “an order of deportation or of exclusion shall not be reviewed by a court if the alien has not exhausted [his] administrative remedies ...
+  <em>
+   or if he has departed from the United States.” Id.
+  </em>
+  at 3, 28 (emphasis added).
+ </p>
+<p id="b1189-12">
+  It is not plausible then, that in restricting review of exclusion orders to habeas corpus, Congress intended to allow aliens residing abroad to have greater remedies than those detained by immigration officials at United States ports of en
+  <span citation-index="1" class="star-pagination" label="1162"> 
+   *1162
+   </span>
+  try. To put the matter in terms of ÁPA § 701(a)(1), we may infer that the immigration laws preclude judicial review of consular visa decisions. There was no reason for Congress to say as much expressly. Given the historical background against which it has legislated over the years, including even the congressionally-overruled
+  <em>
+   We Shung
+  </em>
+  decision, <span class="citation" data-id="105434"><a href="/opinion/105434/brownell-v-tom-we-shung/" aria-description="Citation for case: Brownell v. Tom We Shung">352 U.S. at 184</a></span> n. 3, <span class="citation" data-id="105434"><a href="/opinion/105434/brownell-v-tom-we-shung/" aria-description="Citation for case: Brownell v. Tom We Shung">77 S.Ct. 252</a></span>, Congress could safely assume that aliens residing abroad were barred from challenging consular visa decisions in federal court unless legislation specifically permitted such actions. The presumption, in other words, is the opposite of what the APA normally supposes. In this respect the case is similar to
+  <em>
+   Department of the Navy v. Egan,
+  </em>
+  <span class="citation" data-id="9431176"><a href="/opinion/111990/department-of-the-navy-v-egan/#527" aria-description="Citation for case: Department of the Navy v. Egan">484 U.S. 518, 527</a></span>, <span class="citation" data-id="9431176"><a href="/opinion/111990/department-of-the-navy-v-egan/" aria-description="Citation for case: Department of the Navy v. Egan">108 S.Ct. 818</a></span>, <span class="citation" data-id="9431176"><a href="/opinion/111990/department-of-the-navy-v-egan/" aria-description="Citation for case: Department of the Navy v. Egan">98 L.Ed.2d 918</a></span> (1988).
+  <em>
+   See Peoples v. United States Dep’t of Agric.,
+  </em>
+  <span class="citation" data-id="9455707"><a href="/opinion/290583/arlett-peoples-v-united-states-department-of-agriculture/#567" aria-description="Citation for case: Arlett Peoples v. United States Department of Agriculture">427 F.2d 561, 567</a></span> (D.C.Cir.1970). When it comes to matters touching on national security or foreign affairs — and visa determinations are such matters — the presumption of review “runs aground.” <span class="citation" data-id="9431176"><a href="/opinion/111990/department-of-the-navy-v-egan/#527" aria-description="Citation for case: Department of the Navy v. Egan">484 U.S. at 527</a></span>, <span class="citation" data-id="9431176"><a href="/opinion/111990/department-of-the-navy-v-egan/" aria-description="Citation for case: Department of the Navy v. Egan">108 S.Ct. 818</a></span>. This much follows from the Court’s instruction that APA review may be foreclosed by virtue of “the collective import of legislative and judicial history behind a particular statute ... [or] by inferences of intent drawn from the statutory scheme as a whole.”
+  <em>
+   Block v. Community Nutrition Inst.,
+  </em>
+  <span class="citation" data-id="111200"><a href="/opinion/111200/block-v-community-nutrition-institute/#349" aria-description="Citation for case: Block v. Community Nutrition Institute">467 U.S. 340, 349</a></span>, <span class="citation" data-id="111200"><a href="/opinion/111200/block-v-community-nutrition-institute/" aria-description="Citation for case: Block v. Community Nutrition Institute">104 S.Ct. 2450</a></span>, <span class="citation" data-id="111200"><a href="/opinion/111200/block-v-community-nutrition-institute/" aria-description="Citation for case: Block v. Community Nutrition Institute">81 L.Ed.2d 270</a></span> (1984), relied upon in
+  <em>
+   Egan
+  </em>
+  (<span class="citation" data-id="9431176"><a href="/opinion/111990/department-of-the-navy-v-egan/#530" aria-description="Citation for case: Department of the Navy v. Egan">484 U.S. at 530</a></span>, <span class="citation" data-id="9431176"><a href="/opinion/111990/department-of-the-navy-v-egan/" aria-description="Citation for case: Department of the Navy v. Egan">108 S.Ct. 818</a></span>). It follows as well from the Court’s recurring statements, of which
+  <em>
+   United States ex rel. Knauff v. Shaughnessy,
+  </em>
+  <span class="citation" data-id="9420426"><a href="/opinion/104751/united-states-ex-rel-knauff-v-shaughnessy/#543" aria-description="Citation for case: United States Ex Rel. Knauff v. Shaughnessy">338 U.S. at 543</a></span>, <span class="citation" data-id="9420426"><a href="/opinion/104751/united-states-ex-rel-knauff-v-shaughnessy/" aria-description="Citation for case: United States Ex Rel. Knauff v. Shaughnessy">70 S.Ct. 309</a></span>, is an example, that there may be no judicial review of the decisions to exclude aliens unless Congress has “expressly authorized” this.
+ </p>
+<p id="b1190-4">
+  For many of the reasons just given and for another about to be discussed, the government maintains that federal courts have no jurisdiction over actions such as Saavedra’s. We agree, of course, that in light of
+  <em>
+   Califano v. Sanders,
+  </em>
+  <span class="citation" data-id="9426695"><a href="/opinion/109606/califano-v-sanders/#105" aria-description="Citation for case: Califano v. Sanders">430 U.S. 99, 105, 107</a></span>, <span class="citation" data-id="9426695"><a href="/opinion/109606/califano-v-sanders/" aria-description="Citation for case: Califano v. Sanders">97 S.Ct. 980</a></span>, <span class="citation" data-id="9426695"><a href="/opinion/109606/califano-v-sanders/" aria-description="Citation for case: Califano v. Sanders">51 L.Ed.2d 192</a></span> (1977), APA § 702 cannot be considered a jurisdictional grant and that Saavedra must therefore rest on the general federal question statute, <span class="citation no-link">28 U.S.C. § 1331</span>. But this general jurisdictional provision, the government tells us, is subject to preclusion-of-review legislation and the Illegal Immigration Reform and Immigrant Responsibility Act of 1996 (“IIRI-RA”), <span class="citation no-link">Pub.L. No. 104-208, § 306</span>(a)(2), <span class="citation no-link">110 Stat. 3009</span>, 546, is such legislation. There Congress further restricted judicial review of exclusion orders, now called removal orders, in actions brought by aliens present in the United States. As matters now stand, federal courts have no jurisdiction “to review any final order of removal against an alien who is removable by reason of having committed [certain] criminal offense[s]” — including trafficking in controlled substances. <span class="citation no-link">8 U.S.C. § 1252</span>(a)(2)(c);
+  <em>
+   cf. Yang v. INS,
+  </em>
+  <span class="citation" data-id="6945351"><a href="/opinion/7042228/yang-v-immigration-naturalization-service/#1192" aria-description="Citation for case: Yang v. Immigration &amp; Naturalization Service">109 F.3d 1185, 1192</a></span> (7th Cir.1997). The IIRIRA also amended the immigration law provision giving general jurisdiction to the district courts. The amended provision now reads: the “district courts, of the United States shall have jurisdiction of all causes, civil and criminal, brought by the United States that arise under the provisions of this subchapter,” <span class="citation no-link">8 U.S.C. § 1329</span>, thus making clear that district court jurisdiction founded on the immigration statute is confined to actions brought by the government.
+  <em>
+   See Reno v. Americam-Arab Comm.,
+  </em>
+  <span class="citation" data-id="9433748"><a href="/opinion/118264/reno-v-american-arab-anti-discrimination-committee/" aria-description="Citation for case: Reno v. American-Arab Anti-Discrimination Committee">119 S.Ct. at 940</a></span> n. 4. The “provisions of this subchapter,” to which § 1329 refers, include the provisions dealing with consular visa decisions. Read in light of the long history of judicial noninterference with the judgments of consular officers regarding visas, one might characterize IIRIRA § 1329 as a restriction on district court jurisdiction to review claims such as those set forth in Saavedra’s complaint, a restriction superseding general federal question jurisdiction. Or one might view this recent legislative history as reinforcing the judgment, to which we subscribe, that the immigration laws preclude judicial review of consular visa decisions and that the doctrine of consular nonreviewability
+  <span citation-index="1" class="star-pagination" label="1163"> 
+   *1163
+   </span>
+  remains intact, until Congress provides otherwise. Both views amount to the same thing and lead to the same conclusion — namely, that Saavedra’s claims cannot be heard.
+ </p>
+<p id="b1191-5">
+  C
+ </p>
+<p id="b1191-6">
+  All that remains of this aspect of the case is Saavedra’s argument that our decision in
+  <em>
+   Abourezk v. Reagan, 785
+  </em>
+  F.2d 1043 (D.C.Cir.1986),
+  <em>
+   aff'd by an equally divided Court,
+  </em>
+  <span class="citation multiple-matches"><a href="/c/U.S./484/1/">484 U.S. 1</a></span>, <span class="citation multiple-matches"><a href="/c/S.Ct./108/252/">108 S.Ct. 252</a></span>, <span class="citation" data-id="111961"><a href="/opinion/111961/reagan-v-abourezk/" aria-description="Citation for case: Reagan v. Abourezk">98 L.Ed.2d 1</a></span> (1987), forecloses any contention that consular visa decisions are immune from judicial review. We think Saavedra reads more into the
+  <em>
+   <span class="citation" data-id="7851238"><a href="/opinion/7902727/abourezk-v-reagan/" aria-description="Citation for case: Abourezk v. Reagan">Abourezk</a></span>
+  </em>
+  opinion than the court intended.
+ </p>
+<p id="b1191-7">
+  Each plaintiff in the three consolidated actions on appeal in
+  <em>
+   <span class="citation" data-id="7851238"><a href="/opinion/7902727/abourezk-v-reagan/" aria-description="Citation for case: Abourezk v. Reagan">Abourezk</a></span>
+  </em>
+  was an American citizen. On constitutional and statutory grounds, they contested the denial of visas to foreigners they had invited to come to the United States and give speeches. <span class="citation" data-id="7851238"><a href="/opinion/7902727/abourezk-v-reagan/#1048" aria-description="Citation for case: Abourezk v. Reagan">785 F.2d at 1048-49</a></span>. In that respect the case was akin to, but different from,
+  <em>
+   Kleindienst v. Mandel,
+  </em>
+  <span class="citation" data-id="9425024"><a href="/opinion/108612/kleindienst-v-mandel/" aria-description="Citation for case: Kleindienst v. Mandel">408 U.S. 753</a></span>, <span class="citation" data-id="9425024"><a href="/opinion/108612/kleindienst-v-mandel/" aria-description="Citation for case: Kleindienst v. Mandel">92 S.Ct. 2576</a></span>, <span class="citation" data-id="9425024"><a href="/opinion/108612/kleindienst-v-mandel/" aria-description="Citation for case: Kleindienst v. Mandel">33 L.Ed.2d 683</a></span> (1972). Different because in
+  <em>
+   <span class="citation" data-id="9425024"><a href="/opinion/108612/kleindienst-v-mandel/" aria-description="Citation for case: Kleindienst v. Mandel">Mandel</a></span>,
+  </em>
+  professors in this country, claiming a First Amendment right to hear a Belgian journalist talk in the United States, challenged not the consular officer’s denial of the journalist’s request for a visa, but the Attorney General’s refusal to waive his ineligibility for a visa (he was a Marxist).
+  <a class="footnote" href="#fn12" id="fn12_ref">
+   12
+  </a>
+<span class="citation" data-id="9425024"><a href="/opinion/108612/kleindienst-v-mandel/#756" aria-description="Citation for case: Kleindienst v. Mandel"><em>
+   See id.
+  </em>
+  at 756-59</a></span>, <span class="citation" data-id="9425024"><a href="/opinion/108612/kleindienst-v-mandel/" aria-description="Citation for case: Kleindienst v. Mandel">92 S.Ct. 2576</a></span>. The Supreme Court held in
+  <em>
+   <span class="citation" data-id="9425024"><a href="/opinion/108612/kleindienst-v-mandel/" aria-description="Citation for case: Kleindienst v. Mandel">Mandel</a></span>
+  </em>
+  that so long as the Attorney General gave a “facially legitimate and bona fide reason,” as he did, the courts will not test the decision by balancing the justification against the supposed First Amendment interests of those who wished to converse with the alien face-to-face.
+  <span class="citation" data-id="9425024"><a href="/opinion/108612/kleindienst-v-mandel/#770" aria-description="Citation for case: Kleindienst v. Mandel"><em>
+   Id.
+  </em>
+  at 770</a></span>, <span class="citation" data-id="9425024"><a href="/opinion/108612/kleindienst-v-mandel/" aria-description="Citation for case: Kleindienst v. Mandel">92 S.Ct. 2576</a></span>.
+ </p>
+<p id="b1191-10">
+  Citing
+  <em>
+   <span class="citation" data-id="9425024"><a href="/opinion/108612/kleindienst-v-mandel/" aria-description="Citation for case: Kleindienst v. Mandel">Mandel</a></span>,
+  </em>
+  the court in
+  <em>
+   <span class="citation" data-id="7851238"><a href="/opinion/7902727/abourezk-v-reagan/" aria-description="Citation for case: Abourezk v. Reagan">Abourezk</a></span>
+  </em>
+  rejected the State Department’s contention that the district court lacked subject matter jurisdiction. Judicial review was proper, the court held, when United States sponsors of a foreign individual claim that the State Department’s denial of a visa to an alien violated their constitutional rights.
+  <span class="citation" data-id="7851238"><a href="/opinion/7902727/abourezk-v-reagan/#1050" aria-description="Citation for case: Abourezk v. Reagan"><em>
+   See id.
+  </em>
+  at 1050</a></span>. As a decision of a panel,
+  <em>
+   <span class="citation" data-id="7851238"><a href="/opinion/7902727/abourezk-v-reagan/" aria-description="Citation for case: Abourezk v. Reagan">Abourezk</a></span>
+  </em>
+  cannot be treated as an overruling of
+  <em>
+   Castaneda-Gonzalez,
+  </em>
+  <span class="citation" data-id="350064"><a href="/opinion/350064/nazario-castaneda-gonzalez-v-immigration-and-naturalization-service/" aria-description="Citation for case: Nazario Castaneda-Gonzalez v. Immigration and...">564 F.2d at 428</a></span> n. 25,
+  <a class="footnote" href="#fn13" id="fn13_ref">
+   13
+  </a>
+  and it cannot be read as expressing disagreement with other decisions recognizing the doctrine of consular nonreviewability. The
+  <em>
+   <span class="citation" data-id="7851238"><a href="/opinion/7902727/abourezk-v-reagan/" aria-description="Citation for case: Abourezk v. Reagan">Abourezk</a></span>
+  </em>
+  court went out of its way to distinguish those decisions, and it did so on grounds that are against Saavedra Thus, the
+  <em>
+   <span class="citation" data-id="7851238"><a href="/opinion/7902727/abourezk-v-reagan/" aria-description="Citation for case: Abourezk v. Reagan">Abourezk</a></span>
+  </em>
+  court did not take issue with the “longstanding judicial practice of refusing to review [visa denial] claims like those raised here” at the behest of a disappointed alien. <span class="citation" data-id="7851238"><a href="/opinion/7902727/abourezk-v-reagan/" aria-description="Citation for case: Abourezk v. Reagan">785 F.2d at 1051</a></span> n. 6 (citations omitted). Instead, the court found this judicial practice inapplicable to the cases before it, because they involved “claims by United States citizens rather than by aliens ... and statutory claims that are accompanied by constitutional ones.”
+  <em>
+   <span class="citation" data-id="7851238"><a href="/opinion/7902727/abourezk-v-reagan/" aria-description="Citation for case: Abourezk v. Reagan">Id.</a></span>
+  </em>
+<a class="footnote" href="#fn14" id="fn14_ref">
+<em>
+    14
+   </em>
+</a>
+</p>
+<p id="b1191-11">
+  Whatever one might think of these distinctions, they serve to undermine Saavedra’s position. Unlike
+  <em>
+   <span class="citation" data-id="7851238"><a href="/opinion/7902727/abourezk-v-reagan/" aria-description="Citation for case: Abourezk v. Reagan">Abourezk</a></span>,
+  </em>
+  Saavedra’s American sponsors — Musican-ga, Inc. and Wichtendahl — asserted no constitutional claims. Furthermore, in our view, neither Musicanga, Inc., nor its officer Wichtendahl, have standing to challenge the denial or the revocation of
+  <span citation-index="1" class="star-pagination" label="1164"> 
+   *1164
+   </span>
+  Saavedra’s visa. With respect to purely statutory claims, courts have made no distinction between aliens seeking review of adverse consular decisions and the United States citizens sponsoring their admission; neither is entitled to judicial review.
+  <em>
+   See Li Hing of Hong Kong, Inc.,
+  </em>
+  <span class="citation" data-id="475841"><a href="/opinion/475841/li-hing-of-hong-kong-inc-and-yee-lee-soon-v-burton-levin-counsel/#970" aria-description="Citation for case: Li Hing of Hong Kong, Inc., and Yee Lee Soon v. Burton...">800 F.2d at 970</a></span>. Saavedra’s American sponsors are attempting to assert rights not afforded to them by the INA. The INA permitted them to file a petition with the Attorney General to have Saavedra classified as a managerial employee so that he might qualify for an L-l visa.
+  <em>
+   See
+  </em>
+  <span class="citation no-link">8 U.S.C. § 1154</span>(a)(1)(D). When their petition was granted and Saavedra received that classification, their cognizable interest terminated. Because their interest has already been satisfied, the citizen sponsors have not been aggrieved “within the meaning of the relevant statute” and have no right of review under the APA even if APA review were available.
+  <em>
+   National Credit Union Admin, v. First Nat’l Bank &amp; Trust Co.,
+  </em>
+  <span class="citation" data-id="9433580"><a href="/opinion/118174/national-credit-union-administration-v-first-national-bank-trust-co/" aria-description="Citation for case: National Credit Union Administration v. First National...">522 U.S. 479</a></span>, <span class="citation" data-id="9433580"><a href="/opinion/118174/national-credit-union-administration-v-first-national-bank-trust-co/#933" aria-description="Citation for case: National Credit Union Administration v. First National...">118 S.Ct. 927, 933</a></span>, <span class="citation" data-id="9433580"><a href="/opinion/118174/national-credit-union-administration-v-first-national-bank-trust-co/" aria-description="Citation for case: National Credit Union Administration v. First National...">140 L.Ed.2d 1</a></span> (1998); <span class="citation no-link">5 U.S.C. § 702</span>.
+ </p>
+<p id="b1192-4">
+  Thus, Saavedra cannot by any stretch bring himself within the narrow holding of
+  <em>
+   <span class="citation" data-id="7851238"><a href="/opinion/7902727/abourezk-v-reagan/" aria-description="Citation for case: Abourezk v. Reagan">Abourezk</a></span>.
+  </em>
+  Any doubts on this score are laid to rest by
+  <em>
+   City of Neto York v. Baker,
+  </em>
+  <span class="citation" data-id="525550"><a href="/opinion/525550/city-of-new-york-bruce-cronin-v-james-a-baker-iii-secretary-of-state/" aria-description="Citation for case: City of New York Bruce Cronin v. James A. Baker Iii,...">878 F.2d 507</a></span> (D.C.Cir.1989), an appeal from the judgment of the district court rendered on remand from
+  <em>
+   <span class="citation" data-id="7851238"><a href="/opinion/7902727/abourezk-v-reagan/" aria-description="Citation for case: Abourezk v. Reagan">Abourezk</a></span>.
+  </em>
+  Ci-
+  <em>
+   tingCastaneda-Gonzalez,
+  </em>
+  the court held that neither it nor the district court has the “power to serve as a proxy consular officer”: “This circuit has recognized, as has every circuit to consider the issue, that the courts are without authority to displace the consular function in the issuance of visas.” <span class="citation" data-id="525550"><a href="/opinion/525550/city-of-new-york-bruce-cronin-v-james-a-baker-iii-secretary-of-state/#512" aria-description="Citation for case: City of New York Bruce Cronin v. James A. Baker Iii,...">878 F.2d at 512</a></span>.
+  <a class="footnote" href="#fn15" id="fn15_ref">
+   15
+  </a>
+</p>
+<p id="b1192-5">
+  In addition,
+  <em>
+   <span class="citation" data-id="7851238"><a href="/opinion/7902727/abourezk-v-reagan/" aria-description="Citation for case: Abourezk v. Reagan">Abourezk</a></span>
+  </em>
+  rested in large measure on the provision of the INA-<span class="citation no-link">8 U.S.C. § 1329</span> (1982) — then giving federal district courts jurisdiction over “all causes, civil and criminal, arising under any of the provisions” of the immigration statutes.
+  <em>
+   See
+  </em>
+  <span class="citation" data-id="7851238"><a href="/opinion/7902727/abourezk-v-reagan/#1049" aria-description="Citation for case: Abourezk v. Reagan">785 F.2d at 1049-50</a></span>. In light of § 1329, the
+  <em>
+   <span class="citation" data-id="7851238"><a href="/opinion/7902727/abourezk-v-reagan/" aria-description="Citation for case: Abourezk v. Reagan">Abourezk</a></span>
+  </em>
+  court determined that APA § 701(a)(1) did not apply: “the Immigration Act, far from precluding review, affirmatively provides for it.” <span class="citation" data-id="7851238"><a href="/opinion/7902727/abourezk-v-reagan/#1051" aria-description="Citation for case: Abourezk v. Reagan">785 F.2d at 1051</a></span>. No such statement can be made today. As we have discussed (pp. 1162-63
+  <em>
+   supra),
+  </em>
+  the amendment to § 1329 now makes clear that district courts do not have general jurisdiction over claims arising under the immigration laws and that their jurisdiction extends only to actions brought by the government.
+ </p>
+<p id="b1192-8">
+  Ill
+ </p>
+<p id="b1192-9">
+  The remaining portion of Saave-dra’s complaint sought an injunction compelling the State Department to act on Saavedra’s request for a waiver of inadmissibility pursuant to <span class="citation no-link">8 U.S.C. § 1182</span>(d)(3). Though the State Department has since denied the waiver request, Saavedra maintains that the claim is not moot because “voluntary cessation of challenged conduct” does not render the controversy ended. Brief for Appellants at 42, citing
+  <em>
+   United States v. W.T. Grant Co.,
+  </em>
+  <span class="citation" data-id="9420958"><a href="/opinion/105132/united-states-v-w-t-grant-co/#632" aria-description="Citation for case: United States v. W. T. Grant Co.">345 U.S. 629, 632</a></span>, <span class="citation" data-id="9420958"><a href="/opinion/105132/united-states-v-w-t-grant-co/" aria-description="Citation for case: United States v. W. T. Grant Co.">73 S.Ct. 894</a></span>, <span class="citation" data-id="9420958"><a href="/opinion/105132/united-states-v-w-t-grant-co/" aria-description="Citation for case: United States v. W. T. Grant Co.">97 L.Ed. 1303</a></span> (1953). Saavedra now seeks a declaration that the government must respond in a timely fashion to waiver requests that he is likely to file in the future. The State Department’s one-time delay in acting on Saavedra’s request does not satisfy this court that such relief is necessary. Because Saavedra has not shown a “cognizable danger of recurrent violation,” we decline to issue the declaration he requests.
+  <em>
+   Madsen v. Women’s Health Center, Inc.,
+  </em>
+  <span class="citation" data-id="9433041"><a href="/opinion/117871/madsen-v-womens-health-center-inc/" aria-description="Citation for case: Madsen v. Women&#x27;s Health Center, Inc.">512 U.S. 753</a></span>, 765 n. 3, <span class="citation" data-id="9433041"><a href="/opinion/117871/madsen-v-womens-health-center-inc/" aria-description="Citation for case: Madsen v. Women&#x27;s Health Center, Inc.">114 S.Ct. 2516</a></span>, <span class="citation" data-id="9433041"><a href="/opinion/117871/madsen-v-womens-health-center-inc/" aria-description="Citation for case: Madsen v. Women&#x27;s Health Center, Inc.">129 L.Ed.2d 593</a></span> (1994) (citing
+  <em>
+   United States v.
+  </em>
+<span citation-index="1" class="star-pagination" label="1165"> 
+   *1165
+   </span>
+<em>
+   W.T. Grant Co.,
+  </em>
+  345 U.S. at 633, <span class="citation" data-id="9420958"><a href="/opinion/105132/united-states-v-w-t-grant-co/" aria-description="Citation for case: United States v. W. T. Grant Co.">73 S.Ct. 894</a></span>).
+ </p>
+<p id="b1193-4">
+<em>
+   Affirmed.
+  </em>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="footnotes"><div class="footnote" id="fn1" label="1">
+<a class="footnote" href="#fn1_ref">
+   1
+  </a>
+<p id="b1186-5">
+   . For the most part, the Department of Justice supported the amendment of APA § 702, the main purpose of which was to eliminate the defense of sovereign immunity of the United States in actions in federal court seeking relief other than money damages. Then-Assistant Attorney General Antonin Scalia told the Senate subcommittee that "one of the very premises of the proposal” was that actions seeking judicial review could still be disposed of on grounds such as "lack of standing; lack of ripeness; availability of an alternative remedy in another court; express or implied statutory preclusion of judicial review; commission of the matter by law to agency discretion; privileged nature of the defendant's conduct; failure to exhaust administrative remedies; discretionary power to refuse equitable relief; and the political question’ doctrine.” H.R.Rep. No. 94-1656,
+   <em>
+    supra,
+   </em>
+   Exh. C, at 26-27.
+  </p>
+</div><div class="footnote" id="fn2" label="2">
+<a class="footnote" href="#fn2_ref">
+   2
+  </a>
+<p id="b1186-6">
+   .Our discussion in this part applies both to the revocation of Saavedra’s B-l/B-2 visa and the denial of his L-l visa. Consular officers have complete discretion over issuance and revocation of visas.
+   <em>
+    See
+   </em>
+   <span class="citation no-link">8 U.S.C. §§ 1104</span>(a), 1201(i). The INA provides, "After the issuance of a visa or other documentation to any alien, the consular officer or the Secretary of State may at any time, in his discretion, revoke such visa or documentation.” <span class="citation no-link">8 U.S.C. § 1201</span> (i);
+   <em>
+    see also
+   </em>
+   <span class="citation no-link">22 C.F.R. § 41.122</span>. The same eligibility criteria apply whether the consular officer refuses to renew a visa or decides to revoke a previously issued one.
+   <em>
+    See
+   </em>
+   <span class="citation no-link">8 U.S.C. § 1182</span>(a)(2)(C). In Saavedra's case, once the Consul General in La Paz received information rendering him ineligible for an L-l visa, that same information resulted in the revocation of his B-l/B-2 visa.
+  </p>
+</div><div class="footnote" id="fn3" label="3">
+<a class="footnote" href="#fn3_ref">
+   3
+  </a>
+<p id="b1186-14">
+   .
+   <em>
+    See, e.g., Ekiu v. United States,
+   </em>
+   <span class="citation" data-id="93243"><a href="/opinion/93243/nishimura-ekiu-v-united-states/#659" aria-description="Citation for case: Nishimura Ekiu v. United States">142 U.S. 651, 659</a></span>, <span class="citation" data-id="93243"><a href="/opinion/93243/nishimura-ekiu-v-united-states/" aria-description="Citation for case: Nishimura Ekiu v. United States">12 S.Ct. 336</a></span>, <span class="citation" data-id="93243"><a href="/opinion/93243/nishimura-ekiu-v-united-states/" aria-description="Citation for case: Nishimura Ekiu v. United States">35 L.Ed. 1146</a></span> (1892);
+   <em>
+    Harisiades v. Shaughnessy,
+   </em>
+   <span class="citation" data-id="9420696"><a href="/opinion/104980/harisiades-v-shaughnessy/#596" aria-description="Citation for case: Harisiades v. Shaughnessy">342 U.S. 580, 596</a></span>, <span class="citation" data-id="9420696"><a href="/opinion/104980/harisiades-v-shaughnessy/" aria-description="Citation for case: Harisiades v. Shaughnessy">72 S.Ct. 512</a></span>, <span class="citation no-link">96 L.Ed. 586</span> (1952) (Justice Frankfurter, concurring); C. Bouvé, Exclusion and Expulsion of Aliens, 4 &amp; n.3 (1912), and authorities there cited; II Emerlich de Vattel, Le Droit Des Gens §§ 94, 100 (1758).
+  </p>
+</div><div class="footnote" id="fn4" label="4">
+<a class="footnote" href="#fn4_ref">
+   4
+  </a>
+<p id="b1186-15">
+   . E. Borchard, Diplomatic Protection of Citizens Abroad 33, 44^-8 (1915).
+  </p>
+</div><div class="footnote" id="fn5" label="5">
+<a class="footnote" href="#fn5_ref">
+   5
+  </a>
+<p id="b1186-16">
+   .
+   <em>
+    See
+   </em>
+   3 Papers of James Madison 1277 (1840), in which Madison reports Gouverneur Morris’ observation during the debates that "every society, from a great nation down to a club,
+   <span citation-index="1" class="star-pagination" label="1159"> 
+    *1159
+    </span>
+   ha[s] the right of declaring the conditions on which new members should be admitted.” Article I, Section 9, Clause 1, of the Constitution is an implicit recognition of Congress’s authority to regulate immigration. In addition, Article III of the Jay Treaty of 1794, <span class="citation no-link">8 Stat. 116</span>, 117, provided that British and American subjects could freely cross the Canadian border.
+   <em>
+    See Kamuth v. United States,
+   </em>
+   <span class="citation" data-id="101410"><a href="/opinion/101410/karnuth-v-united-states-ex-rel-albro/" aria-description="Citation for case: Karnuth v. United States Ex Rel. Albro">279 U.S. 231</a></span>, <span class="citation" data-id="101410"><a href="/opinion/101410/karnuth-v-united-states-ex-rel-albro/" aria-description="Citation for case: Karnuth v. United States Ex Rel. Albro">49 S.Ct. 274</a></span>, <span class="citation" data-id="101410"><a href="/opinion/101410/karnuth-v-united-states-ex-rel-albro/" aria-description="Citation for case: Karnuth v. United States Ex Rel. Albro">73 L.Ed. 677</a></span> (1929). As to the Colonial understanding of the sovereign's power to control the admission of aliens,
+   <em>
+    see
+   </em>
+   Thomas Jefferson, Notes on the State of Virginia 83-85 (Peden ed.1955).
+  </p>
+</div><div class="footnote" id="fn6" label="6">
+<a class="footnote" href="#fn6_ref">
+   6
+  </a>
+<p id="b1187-6">
+   .
+   <em>
+    See, e.g., Convention Between the United States of America and other American Republics Regarding the Status of Aliens,
+   </em>
+   art. I, <span class="citation no-link">46 Stat. 2753</span>, 2754 (1928); Constitution of the Intergovernmental Committee for European Migration, 6 U.S.T. 603, 604 (1955);
+   <em>
+    Hines v. Davidowitz,
+   </em>
+   <span class="citation" data-id="9419136"><a href="/opinion/103438/hines-v-davidowitz/" aria-description="Citation for case: Hines v. Davidowitz">312 U.S. 52</a></span>, <span class="citation" data-id="9419136"><a href="/opinion/103438/hines-v-davidowitz/" aria-description="Citation for case: Hines v. Davidowitz">61 S.Ct. 399</a></span>, <span class="citation" data-id="9419136"><a href="/opinion/103438/hines-v-davidowitz/" aria-description="Citation for case: Hines v. Davidowitz">85 L.Ed. 581</a></span> (1941); 3 Hackworth, supra, at 725-29; W. Hall, International Law 211-12 (6th ed.1909); 4 John Bassett Moore, International Law Digest 151-74 (1906); Borchard,
+   <em>
+    supra
+   </em>
+   note 5, at 44-48.
+  </p>
+</div><div class="footnote" id="fn7" label="7">
+<a class="footnote" href="#fn7_ref">
+   7
+  </a>
+<p id="b1187-7">
+   .
+   <em>
+    Kleindienst v. Mandel,
+   </em>
+   <span class="citation" data-id="9425024"><a href="/opinion/108612/kleindienst-v-mandel/#765" aria-description="Citation for case: Kleindienst v. Mandel">408 U.S. 753, 765</a></span>, <span class="citation" data-id="9425024"><a href="/opinion/108612/kleindienst-v-mandel/" aria-description="Citation for case: Kleindienst v. Mandel">92 S.Ct. 2576</a></span>, <span class="citation" data-id="9425024"><a href="/opinion/108612/kleindienst-v-mandel/" aria-description="Citation for case: Kleindienst v. Mandel">33 L.Ed.2d 683</a></span> (1972), quoting the Solicitor General’s brief;
+   <em>
+    see Fiallo v. Bell,
+   </em>
+   <span class="citation" data-id="9426759"><a href="/opinion/109642/fiallo-ex-rel-rodriguez-v-bell/#792" aria-description="Citation for case: Fiallo Ex Rel. Rodriguez v. Bell">430 U.S. 787, 792</a></span>, <span class="citation" data-id="9426759"><a href="/opinion/109642/fiallo-ex-rel-rodriguez-v-bell/" aria-description="Citation for case: Fiallo Ex Rel. Rodriguez v. Bell">97 S.Ct. 1473</a></span>, <span class="citation" data-id="9426759"><a href="/opinion/109642/fiallo-ex-rel-rodriguez-v-bell/" aria-description="Citation for case: Fiallo Ex Rel. Rodriguez v. Bell">52 L.Ed.2d 50</a></span> (1977) (quoting
+   <em>
+    Shaughnessy v. Mezei,
+   </em>
+   <span class="citation" data-id="9420909"><a href="/opinion/105103/shaughnessy-v-united-states-ex-rel-mezei/#210" aria-description="Citation for case: Shaughnessy v. United States Ex Rel. Mezei">345 U.S. 206, 210</a></span>, <span class="citation" data-id="9420909"><a href="/opinion/105103/shaughnessy-v-united-states-ex-rel-mezei/" aria-description="Citation for case: Shaughnessy v. United States Ex Rel. Mezei">73 S.Ct. 625</a></span>, <span class="citation" data-id="9420909"><a href="/opinion/105103/shaughnessy-v-united-states-ex-rel-mezei/" aria-description="Citation for case: Shaughnessy v. United States Ex Rel. Mezei">97 L.Ed. 956</a></span> (1953)).
+  </p>
+</div><div class="footnote" id="fn8" label="8">
+<a class="footnote" href="#fn8_ref">
+   8
+  </a>
+<p id="b1187-12">
+   . Justice Harlan put it this way in
+   <em>
+    Lem Moon Sing v. United States,
+   </em>
+   <span class="citation" data-id="94236"><a href="/opinion/94236/lem-moon-sing-v-united-states/#547" aria-description="Citation for case: Lem Moon Sing v. United States">158 U.S. 538, 547</a></span>, <span class="citation" data-id="94236"><a href="/opinion/94236/lem-moon-sing-v-united-states/" aria-description="Citation for case: Lem Moon Sing v. United States">15 S.Ct. 967</a></span>, <span class="citation" data-id="94236"><a href="/opinion/94236/lem-moon-sing-v-united-states/" aria-description="Citation for case: Lem Moon Sing v. United States">39 L.Ed. 1082</a></span> (1895); "The power of Congress to exclude aliens altogether from the United States, or to prescribe the terms and conditions upon which they may come to this country, and to have its declared policy in that regard enforced exclusively through executive officers, without judicial intervention, is settled by our previous adjudications.”
+  </p>
+</div><div class="footnote" id="fn9" label="9">
+<a class="footnote" href="#fn9_ref">
+   9
+  </a>
+<p id="b1187-13">
+   . Historically, disputes arising from the denial of a visa application have been handled through diplomatic channels, not by courts. In
+   <em>
+    United States ex rel. London v. Phelps,
+   </em>
+   <span class="citation" data-id="1474894"><a href="/opinion/1474894/united-states-ex-rel-london-v-phelps/" aria-description="Citation for case: United States Ex Rel. London v. Phelps">22 F.2d 288</a></span> (2d Cir. 1927), a British subject challenged the denial of a visa, which prevented her from traveling from Montreal to visit her children in New York. The Second Circuit, holding the denial nonreviewable, noted that the "[ujnjustifiable refusal to vise a passport may be ground for diplomatic complaint by the nation whose subject has been discrimi
+   <span citation-index="1" class="star-pagination" label="1160"> 
+    *1160
+    </span>
+   nated against [but is] beyond the jurisdiction of the court.”
+   <em>
+    See <span class="citation" data-id="1474894"><a href="/opinion/1474894/united-states-ex-rel-london-v-phelps/" aria-description="Citation for case: United States Ex Rel. London v. Phelps">id.</a></span>
+   </em>
+   at 290 (citing 3 John Bassett Moore, A Digest of International Law 995-97 (1906)).
+  </p>
+</div><div class="footnote" id="fn10" label="10">
+<a class="footnote" href="#fn10_ref">
+   10
+  </a>
+<p id="b1188-5">
+   . The same result would follow if "legal wrong” in § 702 were interpreted, as the Attorney General’s Manual suggested in 1947, to mean "such wrong as ... the courts have recognized as constituting ground for judicial review.” United States Department of Justice, Attorney General’s Manual on the Administrative Procedure Act 96 (1947). Hence, in certain areas — and visa determinations are one of them — judicial non-intervention is the norm and the presumption of review "runs aground.”
+   <em>
+    Department of the Navy v. Egan,
+   </em>
+   <span class="citation" data-id="9431176"><a href="/opinion/111990/department-of-the-navy-v-egan/#527" aria-description="Citation for case: Department of the Navy v. Egan">484 U.S. 518, 527</a></span>, <span class="citation" data-id="9431176"><a href="/opinion/111990/department-of-the-navy-v-egan/" aria-description="Citation for case: Department of the Navy v. Egan">108 S.Ct. 818</a></span>, <span class="citation" data-id="9431176"><a href="/opinion/111990/department-of-the-navy-v-egan/" aria-description="Citation for case: Department of the Navy v. Egan">98 L.Ed.2d 918</a></span> (1988);
+   <em>
+    Peoples v. United States Dep’t of Agric.,
+   </em>
+   <span class="citation" data-id="9455707"><a href="/opinion/290583/arlett-peoples-v-united-states-department-of-agriculture/#567" aria-description="Citation for case: Arlett Peoples v. United States Department of Agriculture">427 F.2d 561, 567</a></span> (D.C.Cir.1970).
+  </p>
+</div><div class="footnote" id="fn11" label="11">
+<a class="footnote" href="#fn11_ref">
+   11
+  </a>
+<p id="b1188-6">
+   . As to § 701(a)(2) — ."agency action committed to agency discretion by law” — the Supreme Court has not as yet adopted Justice Scalia’s view, expressed in his dissenting opinion in
+   <em>
+    Webster v. Doe,
+   </em>
+   <span class="citation" data-id="9431344"><a href="/opinion/112097/webster-v-doe/#608" aria-description="Citation for case: Webster v. Doe">486 U.S. 592, 608-10</a></span>, <span class="citation" data-id="9431344"><a href="/opinion/112097/webster-v-doe/" aria-description="Citation for case: Webster v. Doe">108 S.Ct. 2047</a></span>, <span class="citation" data-id="9431344"><a href="/opinion/112097/webster-v-doe/" aria-description="Citation for case: Webster v. Doe">100 L.Ed.2d 632</a></span> (1988), that § 701(a)(2) was meant to incorporate the common law of judicial review " — a body of jurisprudence that had marked out, with more or less precision, certain issues and certain areas that were beyond the range of judicial review.”
+   <em>
+    Id.
+   </em>
+   at 608, <span class="citation" data-id="9431344"><a href="/opinion/112097/webster-v-doe/" aria-description="Citation for case: Webster v. Doe">108 S.Ct. 2047</a></span>. Rather, in
+   <em>
+    Webster v. Doe, id.
+   </em>
+   at 599-600, <span class="citation" data-id="9431344"><a href="/opinion/112097/webster-v-doe/" aria-description="Citation for case: Webster v. Doe">108 S.Ct. 2047</a></span>, as in
+   <em>
+    Heckler v. Chaney,
+   </em>
+   <span class="citation" data-id="9429969"><a href="/opinion/111383/heckler-v-chaney/" aria-description="Citation for case: Heckler v. Chaney">470 U.S. 821</a></span>, <span class="citation" data-id="9429969"><a href="/opinion/111383/heckler-v-chaney/" aria-description="Citation for case: Heckler v. Chaney">105 S.Ct. 1649</a></span>, <span class="citation" data-id="9429969"><a href="/opinion/111383/heckler-v-chaney/" aria-description="Citation for case: Heckler v. Chaney">84 L.Ed.2d 714</a></span> (1985), the Court interpreted § 701(a)(1) to preclude judicial review when statutes are written so broadly that "there is no law to apply”
+   <em>
+    (Citizens to Preserve Overton Park, Inc. v. Volpe,
+   </em>
+   <span class="citation" data-id="9424477"><a href="/opinion/108283/citizens-to-preserve-overton-park-inc-v-volpe/#410" aria-description="Citation for case: Citizens to Preserve Overton Park, Inc. v. Volpe">401 U.S. 402, 410</a></span>, <span class="citation" data-id="9424477"><a href="/opinion/108283/citizens-to-preserve-overton-park-inc-v-volpe/" aria-description="Citation for case: Citizens to Preserve Overton Park, Inc. v. Volpe">91 S.Ct. 814</a></span>, <span class="citation" data-id="9424477"><a href="/opinion/108283/citizens-to-preserve-overton-park-inc-v-volpe/" aria-description="Citation for case: Citizens to Preserve Overton Park, Inc. v. Volpe">28 L.Ed.2d 136</a></span> (1971)). In
+   <em>
+    Abourezk v. Reagan,
+   </em>
+   <span class="citation" data-id="7851238"><a href="/opinion/7902727/abourezk-v-reagan/#1051" aria-description="Citation for case: Abourezk v. Reagan">785 F.2d 1043, 1051</a></span> (D.C.Cir. 1986),
+   <em>
+    aff'd by an equally divided Court,
+   </em>
+   <span class="citation multiple-matches"><a href="/c/U.S./484/1/">484 U.S. 1</a></span>, <span class="citation multiple-matches"><a href="/c/S.Ct./108/252/">108 S.Ct. 252</a></span>, <span class="citation" data-id="111961"><a href="/opinion/111961/reagan-v-abourezk/" aria-description="Citation for case: Reagan v. Abourezk">98 L.Ed.2d 1</a></span> (1987), this court held that "the Immigration Act emphatically did not commit the decision to exclude an. alien to standard-less agency discretion....”
+  </p>
+</div><div class="footnote" id="fn12" label="12">
+<a class="footnote" href="#fn12_ref">
+   12
+  </a>
+<p id="b1191-8">
+   . The INA authorizes the Attorney General to grant a waiver of ineligibility upon recommendation of the Secretary of State or of the consular officer that the alien be admitted temporarily despite his inadmissibility.
+   <em>
+    See
+   </em>
+   <span class="citation no-link">8 U.S.C. § 1182</span>(d)(3).
+  </p>
+</div><div class="footnote" id="fn13" label="13">
+<a class="footnote" href="#fn13_ref">
+   13
+  </a>
+<p id="b1191-13">
+   . One panel cannot overrule another panel.
+   <em>
+    See LaShawn v. Barry,
+   </em>
+   <span class="citation" data-id="9489289"><a href="/opinion/721294/lashawn-a-v-marion-s-barry-jr/" aria-description="Citation for case: Lashawn A. v. Marion S. Barry, Jr.">87 F.3d 1389</a></span> (D.C.Cir. 1996).
+  </p>
+</div><div class="footnote" id="fn14" label="14">
+<a class="footnote" href="#fn14_ref">
+   14
+  </a>
+<p id="b1191-12">
+   . We take note of Judge Bork’s point that plaintiffs' statutory claims had to be reviewed in order for the court to reach their constitutional claims.
+   <em>
+    See <span class="citation" data-id="9489289"><a href="/opinion/721294/lashawn-a-v-marion-s-barry-jr/" aria-description="Citation for case: Lashawn A. v. Marion S. Barry, Jr.">id.</a></span>
+   </em>
+   at 1062 n. 1 (Bork, J., dissenting).
+  </p>
+</div><div class="footnote" id="fn15" label="15">
+<a class="footnote" href="#fn15_ref">
+   15
+  </a>
+<p id="b1192-6">
+   . Given the fact that
+   <em>
+    <span class="citation" data-id="7851238"><a href="/opinion/7902727/abourezk-v-reagan/" aria-description="Citation for case: Abourezk v. Reagan">Abourezk</a></span>
+   </em>
+   was the “law of the case,” the court in
+   <em>
+    Baker
+   </em>
+   engaged in no discussion regarding preclusion of judicial review. The statement we quote dealt with the question of remedy, but is important nonetheless in light of the court's citation, with approval, to this court's opinion in
+   <em>
+    <span class="citation" data-id="350064"><a href="/opinion/350064/nazario-castaneda-gonzalez-v-immigration-and-naturalization-service/" aria-description="Citation for case: Nazario Castaneda-Gonzalez v. Immigration and...">Castaneda-Gonzalez</a></span>
+   </em>
+   and the opinions of other courts sustaining the doctrine of consular nonre-viewability.
+  </p>
+</div></div></opinion>
