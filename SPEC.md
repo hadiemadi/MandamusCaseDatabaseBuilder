@@ -64,6 +64,19 @@ CourtListener API  <---- (scheduled fetch) ----  GitHub Actions (the "harness")
   noticed, and (2) resilience against a single huge rate-limit backoff
   consuming an entire run's timeout unproductively (see §8's max-backoff
   cap).
+- **Only one run at a time** (`concurrency: group: mandamus-collection,
+  cancel-in-progress: false`, added 2026-08-09). Every-4-hours scheduling
+  makes overlapping runs a real possibility (e.g. runner-queue delays);
+  a new run queues behind an in-progress one rather than racing it or
+  killing its in-progress collection.
+- **The final commit rebases onto `main` before pushing**
+  (`git pull --rebase origin main`, added 2026-08-09). If any other
+  commit lands on `main` while a run is executing — a manual push during
+  active development, or, in principle, an overlapping run — a plain
+  `git push` would be rejected as non-fast-forward, and since the runner
+  is destroyed right after, that run's entire collected dataset would be
+  lost, not just delayed. Rebasing first (onto the isolated `data/` path
+  the bot owns) avoids that.
 - **State across runs:** a checkpoint file, committed back to the GitHub
   repo after every run. This is what lets independent, temporary runs behave
   like one continuous collection process. `seen_ids` is derived from both
@@ -328,3 +341,5 @@ repository.** Reasoning for the change:
 | Sort by termination date directly (2026-08-08) | Not possible — confirmed via live API test that CourtListener's search only supports `order_by` on `score`, `dateFiled`, and `entry_date_filed`; no termination-date sort exists. Worked around by filtering the query on `dateTerminated:[2020-01-01 TO *]` instead of trying to sort by it |
 | Run frequency (2026-08-09) | Every 4 hours, not once/day — same 125/day ceiling either way, but fresher data (a case concluding mid-day isn't noticed a day late) and avoids one run wasting its timeout sleeping through a single huge backoff |
 | Max backoff tolerance (2026-08-09) | Capped at 1800s (30 min) — a live run hit a 66,019s (~18.3h) `Retry-After`; sleeping through that wastes almost an entire run for no benefit once runs happen every 4 hours, since a later run picks up the retry at no cost to the daily total |
+| Overlapping runs (2026-08-09) | Guarded with a `concurrency` group (queue, don't cancel) — more-frequent scheduling makes overlap a real possibility, and two runs racing on `data/` and the git push is worse than one waiting its turn |
+| Rebase before push (2026-08-09) | Added `git pull --rebase` before the final push — a plain push failing as non-fast-forward (e.g. a manual commit landing mid-run) would silently lose that entire run's collected data, since the runner is destroyed immediately after |

@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write   # needed for the final "commit data back to the repo" step
 
+concurrency:
+  group: mandamus-collection
+  cancel-in-progress: false   # queue, don't kill an in-progress run's collected data
+
 jobs:
   collect:
     runs-on: ubuntu-latest
@@ -52,4 +56,5 @@ jobs:
           git config user.email "actions@github.com"
           git add data/
           git diff --quiet --cached || git commit -m "Automated data collection run"
+          git pull --rebase origin main
           git push
