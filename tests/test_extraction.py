@@ -125,6 +125,7 @@ def test_full_record_build_and_validation():
         "docketNumber": "3:23-cv-01234",
         "dateFiled": "2023-03-01",
         "dateTerminated": "2023-11-15",
+        "docket_absolute_url": "/docket/111/doe-v-blinken/",
     }
     entries = [
         {"description": "MOTION to Dismiss filed.", "short_description": ""},
@@ -138,6 +139,8 @@ def test_full_record_build_and_validation():
     check("built record: pacer_fetch_needed (no opinion text)", record["pacer_fetch_needed"], True)
     check("built record: relevance_score (settled, cand=9th cir, no similarity match)",
           record["relevance_score"], 2)
+    check("built record: source_url uses docket_absolute_url's slug, not a bare ID",
+          record["source_url"], "https://www.courtlistener.com/docket/111/doe-v-blinken/")
 
     issues = validate_record(record, seen_docket_ids=set())
     check("valid record has no issues", issues, [])
@@ -145,6 +148,17 @@ def test_full_record_build_and_validation():
     # now check duplicate detection
     issues_dup = validate_record(record, seen_docket_ids={111})
     check("duplicate docket_id is flagged", "duplicate_docket_id" in issues_dup, True)
+
+
+def test_source_url_falls_back_when_docket_absolute_url_missing():
+    docket = {
+        "docket_id": 999, "caseName": "Fallback Case", "court_id": "dcd",
+        "docketNumber": "1:1", "dateFiled": "2023-01-01", "dateTerminated": "2023-06-01",
+        # no docket_absolute_url -- shouldn't normally happen, but must not crash
+    }
+    record = build_case_record(docket, entries=[], has_full_opinion_text=False)
+    check("source_url falls back to bare docket_id URL when slug is unavailable",
+          record["source_url"], "https://www.courtlistener.com/docket/999/")
 
 
 def test_validation_catches_missing_fields():

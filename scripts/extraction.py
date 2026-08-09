@@ -162,6 +162,15 @@ def _citation(docket):
             f"({docket.get('court_id', '?')})")
 
 
+def _source_url(docket):
+    # CourtListener docket URLs require a case-name slug after the ID
+    # (e.g. /docket/16645609/khazaaleh-v-us-department-of-state/) -- a bare
+    # ID-only URL 404s. docket_absolute_url from the search API already has
+    # the correct path; only fall back to constructing one if it's missing.
+    path = docket.get("docket_absolute_url") or f"/docket/{docket.get('docket_id')}/"
+    return f"https://www.courtlistener.com{path}"
+
+
 def build_case_record(docket, entries, has_full_opinion_text=False):
     """docket: dict from CourtListener docket search result.
     entries: list of dicts with 'description' / 'short_description' keys."""
@@ -182,7 +191,7 @@ def build_case_record(docket, entries, has_full_opinion_text=False):
         "date_terminated": date_terminated,
         "days_to_resolution": compute_days_to_resolution(date_filed, date_terminated),
         "citation": _citation(docket),
-        "source_url": f"https://www.courtlistener.com/docket/{docket.get('docket_id')}/",
+        "source_url": _source_url(docket),
 
         "procedural_posture": determine_procedural_posture(entries_text_blob),
         "outcome": determine_outcome(entries_text_blob),
