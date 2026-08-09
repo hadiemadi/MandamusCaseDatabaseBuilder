@@ -5,3 +5,13 @@ __pycache__/
 # These belong in GitHub Actions secrets (see SPEC.md section 12), not in git.
 secrets/*
 !secrets/.gitkeep
+
+# The user's OWN case facts. This repo is public (SPEC.md section 12), so
+# personal immigration details must never land in it -- they live outside the
+# repo entirely, in C:\temp\MandamusCaseDatabaseBuliderData\case_details\.
+# These patterns are belt-and-braces in case a file is ever copied in here by
+# mistake: a public commit of this data is not something a later commit can undo.
+case_details/
+case_profile*.md
+my_case*
+

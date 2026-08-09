@@ -207,10 +207,64 @@ being split with search pagination.
 
 A much larger, free, nationwide **Opinions bulk file** (~54.5GB compressed,
 full text for essentially every opinion CourtListener has) was identified
-during the same research pass but deliberately scoped out of this change —
-see §13 decision log. It would enable full-text case-law discovery beyond
-the 31 curated seed cases, but at 10x the size/time/disk cost; flagged as a
-future option, not built.
+during the same research pass but deliberately scoped out of that change.
+It has since been built out — see §5.3.
+
+### 5.3 Bulk opinion corpus — replacing the API opinion fetcher (added 2026-08-09)
+
+`scripts/opinion_fetcher.py` fetched published opinion text through the
+CourtListener API: ~2 requests per case, 13s apart, capped at 120/day, for
+the 35 hand-curated seed citations. Its first real run exposed two problems
+at once — it produced only 18 hits, and 3 of the 4 low-confidence matches
+were entirely the wrong case, because API search matches on a *guessed case
+name* (§13). Meanwhile the same text sat locally, in full, in a bulk file
+that costs nothing to read.
+
+**Three bulk files, joined offline, replace that entirely:**
+
+| File | Size | Supplies |
+|---|---|---|
+| `opinions-YYYY-MM-DD.csv.bz2` | 54.5 GB | `plain_text` (and HTML/XML fallbacks) + `cluster_id` |
+| `opinion-clusters-YYYY-MM-DD.csv.bz2` | 2.46 GB | `case_name`, `date_filed`, `precedential_status`, `citation_count`, `docket_id` |
+| `dockets-YYYY-MM-DD.csv.bz2` | 5.01 GB | `court_id` (already downloaded for §5.2) |
+
+Join chain, confirmed against the live `schema-2026-06-30.sql`:
+`search_opinion.cluster_id` → `search_opinioncluster.id` →
+`.docket_id` → `search_docket.id` → `.court_id`. The clusters file is the
+load-bearing middle link: without it an opinion's text has no court, so
+venue ranking (§15) is impossible.
+
+**`scripts/build_opinion_index.py`** streams clusters and dockets into a
+disk-backed SQLite index. SQLite rather than in-memory dicts deliberately —
+the dockets table is ~71.7M rows, which would be several GB of Python
+objects. Indexes are built after bulk insert, not during.
+
+**`scripts/mine_opinion_corpus.py`** streams the 54.5GB opinions file once,
+keeping an opinion only if its text hits **both** keyword groups: delay
+language (`mandamus`, `unreasonable delay`, `TRAC`, `1361`, `706(1)`, …)
+**and** visa language (`visa`, `consular`, `221(g)`, `administrative
+processing`, …). Either group alone is far too broad nationwide —
+"mandamus" alone sweeps in prisoner petitions, "visa" alone sweeps in
+credit-card disputes. All keyword matching uses word-boundary regex, not
+substring, after the `"visa"`-inside-`"Divisadero"` false positive the
+sibling docket filter hit for real (§13).
+
+Ranking is transparent and rule-based, same philosophy as §6.4's
+`relevance_score` — court tier (`ca9`/`scotus` binding > 9th Cir. districts
+> `dcd`/`cadc` > rest), published status, citation count, recency, and
+doctrine signals (TRAC, consular nonreviewability, 221(g)).
+
+**Still no AI in the pipeline.** Consistent with §6.5, these scripts rank
+and tag mechanically and store opinion text verbatim; they never summarize
+or interpret. Analysis of the resulting corpus happens in conversation with
+a human reading and verifying, not as a generated field in the data.
+
+**Cost:** zero API requests — the daily budget (§8) is untouched, freeing it
+entirely for `collector.py`'s docket-entries work. The one real cost is
+time: bz2 decompression is inherently single-threaded (measured 17.6 MB/s
+on this hardware), so the full pass takes roughly 4–5 hours. It is a
+one-time, offline, unattended job per quarterly snapshot, and is **not** on
+the 4-hour schedule.
 
 ## 6. Data schema
 
@@ -423,6 +477,10 @@ repository.** Reasoning for the change:
 | First real bulk-filter run found a false-positive bug (2026-08-09) | Ran `bulk_docket_filter.py` against the real 71.7M-row `dockets-2026-06-30.csv.bz2` -- spot-checking a random sample of matches (per this file's own "verify before trusting" rule) caught `"visa"` matching as a plain substring inside unrelated words, e.g. `"Garcia v. Divisadero Sports Bar LLC"` (an ADA case, di-**visa**-dero). Fixed by switching all keyword matching to word-boundary regex (mirroring the `\b...\b` style already used in `extraction.py`'s marker lists), with a regression test locking in the exact case. Filter rerun after the fix; this is the kind of thing the mandated spot-check step exists to catch |
 | RECAP checker built but not wired live (2026-08-09) | `scripts/recap_checker.py` (SPEC §14 tier 3) built and unit-tested during the same parallel-safe window as the dashboard/Drive fixes, following the same test-first pattern as `opinion_fetcher.py`. Deliberately NOT added to `collect.yml` yet: its docket-scoped filter parameter is CourtListener's documented convention, not something confirmed against a live response. Wiring an unverified param into an unattended 4-hour cron risks silently burning budget on an endpoint that returns nothing -- verify with one real call first |
 | Drive uploader switched to OAuth (2026-08-09) | A live run hit `storageQuotaExceeded` creating a new file via the service account -- Google service accounts have zero storage quota and can only ever update pre-existing files, never create new ones, in a regular (non-Shared-Drive) folder. Personal Gmail doesn't support Shared Drives (Workspace-only), so switched `drive_uploader.py` to OAuth as the user's own account instead, scoped to `drive.file` (not the broader `drive` scope) so the credential can only ever touch files it created itself, not the rest of the user's personal Drive. One-time local consent flow lives in `scripts/oauth_setup.py` (never run in CI). Caveat: because `drive.file` scope only sees files the app itself created, files the old service account created won't be visible to the new identity -- `find_existing_file` will create fresh duplicates for those specific filenames until the old ones are manually deleted from the Drive folder |
+| Bulk corpus replaces the API opinion fetcher (2026-08-09) | User challenged why we fetch opinion text through the API at all when the 54.5GB opinions bulk file sits locally holding the same text. They were right, and the framing I'd given earlier ("the bulk file covers different data than the scheduled runs") was wrong for half the pipeline -- true of `collector.py`, false of `opinion_fetcher.py`, which was re-fetching data we already had. Verified the missing link is `opinion-clusters` (2.46GB, downloaded), confirmed no `docket-entries` bulk file exists (so `collector.py`'s API path is genuinely irreplaceable), and built §5.3 to mine the corpus offline instead. Bonus: exact `cluster_id` joins eliminate the wrong-opinion failure mode that name-guessing search produced |
+| No AI fields in the corpus output (2026-08-09) | Asked directly whether "AI" meant an LLM-generated field inside the pipeline's own output or me analyzing on request in conversation. User chose the latter, so §6.5's no-AI-in-pipeline rule stands unchanged: scripts rank and tag mechanically and store text verbatim; interpretation happens in conversation with a human verifying, never as a written-back data field. Avoided a real SPEC violation by asking rather than assuming |
+| bz2 mining cannot be parallelized here (2026-08-09) | User asked to use ~80% of CPU to speed up the 54.5GB pass. Measured actual throughput (17.6 MB/s) and checked options honestly rather than promising a speedup: bzip2 is a continuous stream, `pbzip2`/`lbzip2` are not installed (and installing an unvetted binary is off-limits), and pre-decompressing to disk needs ~250-300GB against ~96GB free. Machine has 4 cores/8 threads, but this stage stays single-threaded at ~4-5 hours. Accepted as an unattended background cost since it blocks nothing |
+| Case profile is the real missing input (2026-08-09) | Strategic review surfaced that SPEC.md records the venue (9th Circuit) but never the user's own case facts -- visa category, delay duration, 221(g) status, principal vs derivative. Without those, "find cases similar to mine" has no definition of "mine". Highest-value remaining input and it costs zero compute. Collected into `C:\temp\...\case_details\` deliberately OUTSIDE the repo, since the repo is public (§12) |
 | First real opinion_fetcher run validated the match-confidence safety net (2026-08-09) | The rate-limit cooldown cleared and the ~16:13 UTC scheduled run (delayed to 16:52 by GitHub's queue) made real calls for the first time: 18/35 seed items resolved to `found_free_opinion`, 4 flagged `needs_manual_match_check`. Content-verified all 4 by reading the actual fetched text, not just trusting the flag: 3 were genuinely wrong opinions (`Patel v. Reno` matched an unrelated SF firefighters sanctions case, `Rivas v. Napolitano` matched an IRS tax-lien case, `Mohammad v. Blinken` matched `Zoroofchi v. Rubio`) and 1 was a false alarm (`Al-Gharawy v. DHS` matched correctly, just under the 0.6 threshold because of the fuller legal name). No code bug -- the flag caught every real problem and over-flagged by exactly one, the safe direction. Notable: both of the only two 9th Circuit matches this run were the wrong-opinion cases, so 9th Circuit opinion coverage is still effectively zero pending a resolved rerun |
 
 ## 14. Budget allocation and spend order (added 2026-08-09)
