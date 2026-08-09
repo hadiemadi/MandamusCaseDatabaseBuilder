@@ -12,6 +12,7 @@ DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 CASES_FILE = DATA_DIR / "cases.json"
 ISSUES_FILE = DATA_DIR / "issues.json"
 RUN_LOG_FILE = DATA_DIR / "run_log.json"
+SEED_FILE = DATA_DIR / "seed_citations.json"
 OUTPUT_FILE = DATA_DIR / "dashboard.html"
 
 
@@ -23,6 +24,14 @@ def build_dashboard():
     cases = load(CASES_FILE, [])
     issues = load(ISSUES_FILE, [])
     run_log = load(RUN_LOG_FILE, [])
+    seed = load(SEED_FILE, {})
+
+    seed_cases = seed.get("cases", [])
+    foundational = seed.get("foundational_authorities", {}).get("entries", [])
+    seed_items = foundational + seed_cases
+
+    opinions_found_count = sum(1 for c in seed_items if c.get("opinion_fetch_status") == "found_free_opinion")
+    match_check_count = sum(1 for c in seed_items if c.get("needs_manual_match_check"))
 
     last_run = run_log[-1] if run_log else None
     stale_warning = False
@@ -39,6 +48,48 @@ def build_dashboard():
 
     pacer_needed_count = sum(1 for c in cases if c.get("pacer_fetch_needed"))
     review_needed_count = sum(1 for c in cases if c.get("disposition_confidence") == "needs_manual_review")
+
+    # Same priority order opinion_fetcher.py fetches in: foundational authorities
+    # first (universally relevant), then 9th Circuit, then D.D.C., then the rest.
+    circuit_priority = {"9th": 0, "DC": 1}
+
+    def seed_sort_key(item, is_foundational):
+        return (0 if is_foundational else 1, circuit_priority.get(item.get("circuit"), 2), item.get("case_name", ""))
+
+    seed_ordered = (
+        sorted(((c, True) for c in foundational), key=lambda t: seed_sort_key(t[0], t[1]))
+        + sorted(((c, False) for c in seed_cases), key=lambda t: seed_sort_key(t[0], t[1]))
+    )
+
+    STATUS_BADGE = {
+        "found_free_opinion": "settled",
+        "not_found": "unknown",
+        "not_free_needs_pacer": "mtd_granted",
+        "budget_exhausted": "review",
+        "pending": "unknown",
+    }
+
+    def seed_row(item, is_foundational):
+        status = item.get("opinion_fetch_status", "pending")
+        badge_cls = STATUS_BADGE.get(status, "unknown")
+        flags = ' <span class="badge review">check match</span>' if item.get("needs_manual_match_check") else ""
+        link = ""
+        if item.get("opinion_absolute_url"):
+            link = f'<a href="https://www.courtlistener.com{item["opinion_absolute_url"]}" target="_blank">read →</a>'
+        direction = item.get("why_it_matters", "") if is_foundational else item.get("direction", "")
+        return (
+            "    <tr>"
+            f"<td>{item.get('case_name','')}</td>"
+            f"<td>{item.get('citation','')}</td>"
+            f"<td>{item.get('court','')}</td>"
+            f"<td>{item.get('circuit','')}</td>"
+            f"<td>{direction}</td>"
+            f"<td><span class=\"badge {badge_cls}\">{status}</span>{flags}</td>"
+            f"<td>{link}</td>"
+            "</tr>"
+        )
+
+    seed_rows = "\n".join(seed_row(item, is_f) for item, is_f in seed_ordered) or "    <tr><td colspan=\"7\">No seed data yet.</td></tr>"
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -89,6 +140,8 @@ def build_dashboard():
   <div class="stat-card"><div class="num">{pacer_needed_count}</div><div class="label">Need PACER purchase for full text</div></div>
   <div class="stat-card"><div class="num">{review_needed_count}</div><div class="label">Settlement/mootness needs manual review</div></div>
   <div class="stat-card"><div class="num">{last_run['new_cases_this_run'] if last_run else 0}</div><div class="label">New cases in last run</div></div>
+  <div class="stat-card"><div class="num">{opinions_found_count}/{len(seed_items)}</div><div class="label">Seed &amp; foundational opinions found (free)</div></div>
+  {f'<div class="stat-card"><div class="num">{match_check_count}</div><div class="label">Opinion matches need manual check</div></div>' if match_check_count else ''}
 </div>
 
 <div class="controls">
@@ -112,6 +165,20 @@ def build_dashboard():
     </tr>
   </thead>
   <tbody id="tableBody"></tbody>
+</table>
+
+<h2 style="font-size:16px; margin-top:28px;">Curated seed cases &amp; foundational authorities</h2>
+<div class="subtitle">From advisory-sourced citations (SPEC.md section 14, tier 2) — full opinion text fetched free from CourtListener where available. 9th Circuit and foundational authorities are fetched first.</div>
+<table id="seedTable">
+  <thead>
+    <tr>
+      <th>Case</th><th>Citation</th><th>Court</th><th>Circuit</th><th>Direction</th>
+      <th>Opinion status</th><th>Text</th>
+    </tr>
+  </thead>
+  <tbody>
+{seed_rows}
+  </tbody>
 </table>
 
 <footer>Schema and rules defined in SPEC.md. No AI is used to generate any field in this table.</footer>
