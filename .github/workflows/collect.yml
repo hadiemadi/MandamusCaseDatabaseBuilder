@@ -1,8 +1,8 @@
-name: Daily mandamus case collection
+name: Mandamus case collection
 
 on:
   schedule:
-    - cron: "0 3 * * *"   # 03:00 UTC daily
+    - cron: "13 */4 * * *"   # every 4 hours, offset from :00 to avoid GitHub's top-of-hour scheduling delays
   workflow_dispatch: {}    # allows manual "Run workflow" trigger, no code needed
 
 permissions:

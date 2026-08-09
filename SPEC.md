@@ -54,9 +54,16 @@ CourtListener API  <---- (scheduled fetch) ----  GitHub Actions (the "harness")
                                           (the place the user actually opens)
 ```
 
-- **Execution environment:** GitHub Actions, scheduled (cron). Runs whether
-  the user's laptop is on or off. Each run is a fresh, temporary machine —
-  no persistent server, no continuous process.
+- **Execution environment:** GitHub Actions, scheduled (cron), **every 4
+  hours** (not once/day — revised 2026-08-09). Runs whether the user's
+  laptop is on or off. Each run is a fresh, temporary machine — no
+  persistent server, no continuous process. Running more often does not
+  increase total daily API volume (still capped at 125/day by
+  CourtListener, see §8) — it exists for two reasons: (1) fresher data,
+  since a case that concludes mid-day no longer waits up to 24h to be
+  noticed, and (2) resilience against a single huge rate-limit backoff
+  consuming an entire run's timeout unproductively (see §8's max-backoff
+  cap).
 - **State across runs:** a checkpoint file, committed back to the GitHub
   repo after every run. This is what lets independent, temporary runs behave
   like one continuous collection process. `seen_ids` is derived from both
@@ -233,20 +240,29 @@ auto-corrected.
 
 - Floor throttle: 13 seconds between every API call (keeps well under the
   5/minute cap)
-- Daily cap: stop cleanly at 120 requests/run (under the 125/day limit,
-  leaving headroom for retries)
+- Daily cap: stop cleanly at 120 requests **per calendar day** (under the
+  125/day limit, leaving headroom for retries) — shared across all runs
+  that day via the checkpoint's `date_of_counter`/`requests_made_today`,
+  not reset per run. Now that runs happen every 4 hours (§4), this is
+  what actually prevents exceeding CourtListener's real daily limit.
 - Each run fetches up to `MAX_SEARCH_PAGES_PER_RUN` (5) consecutive search
-  pages before mining, using most of the 120-request budget rather than
-  stopping after one page (see §5)
-- HTTP 429: back off using the `Retry-After` header, then continue
+  pages before mining, using most of the remaining daily budget rather
+  than stopping after one page (see §5)
+- HTTP 429: back off using the `Retry-After` header, then continue —
+  **unless** it exceeds `MAX_BACKOFF_SECONDS` (1800 / 30 minutes,
+  revised 2026-08-09), in which case the run stops cleanly instead of
+  sleeping through it. One real case hit a 66,019-second (~18.3 hour)
+  backoff; sleeping through that would waste nearly an entire run's
+  timeout doing nothing. Since runs now happen every 4 hours, giving up
+  and letting a later run retry costs nothing — the daily total is
+  capped either way.
 - All of the above is enforced in one single function that every API call
   goes through — there is no code path that can bypass it
-- Workflow job timeout: 90 minutes. A single bad-luck `Retry-After` (one
-  hit 1600 seconds / ~27 minutes in testing) combined with ~120 requests
-  at the 13-second floor throttle (~26 minutes) can legitimately exceed
-  60 minutes even with nothing broken — 90 minutes gives a run room to
-  reach its own natural stopping point (the request cap) instead of being
-  cut off early by an arbitrary shorter ceiling.
+- Workflow job timeout: 90 minutes. A single bad-luck `Retry-After` under
+  the 30-minute cap, combined with ~120 requests at the 13-second floor
+  throttle (~26 minutes), can still take a while even with nothing
+  broken — 90 minutes gives a run room to reach its own natural stopping
+  point instead of being cut off early by an arbitrary shorter ceiling.
 
 ## 9. Storage locations — exact roles
 
@@ -310,3 +326,5 @@ repository.** Reasoning for the change:
 | What counts as "concluded" (2026-08-08) | `date_terminated` is not null (CourtListener's own PACER-close signal) — the only signal available *before* mining. A stricter definition (real substantive ruling, e.g. `outcome != "unknown"`) can't be known until after the entries fetch, so it's used post-hoc for relevance scoring (§6.4) instead |
 | Relevance score weighting (2026-08-08) | `mtd_denied`/`mtd_granted`/summary-judgment-stage outweigh `settled` — a real ruling on the government's defense is far more useful than a plain settlement, which usually has no substantive reasoning (government relented before any ruling) |
 | Sort by termination date directly (2026-08-08) | Not possible — confirmed via live API test that CourtListener's search only supports `order_by` on `score`, `dateFiled`, and `entry_date_filed`; no termination-date sort exists. Worked around by filtering the query on `dateTerminated:[2020-01-01 TO *]` instead of trying to sort by it |
+| Run frequency (2026-08-09) | Every 4 hours, not once/day — same 125/day ceiling either way, but fresher data (a case concluding mid-day isn't noticed a day late) and avoids one run wasting its timeout sleeping through a single huge backoff |
+| Max backoff tolerance (2026-08-09) | Capped at 1800s (30 min) — a live run hit a 66,019s (~18.3h) `Retry-After`; sleeping through that wastes almost an entire run for no benefit once runs happen every 4 hours, since a later run picks up the retry at no cost to the daily total |

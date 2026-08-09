@@ -55,6 +55,7 @@ SEARCH_QUERY = (
 FLOOR_THROTTLE_SECONDS = 13
 DAILY_REQUEST_CAP = 120
 MAX_SEARCH_PAGES_PER_RUN = 5  # SPEC.md section 8 — use most of the daily budget
+MAX_BACKOFF_SECONDS = 1800  # give up cleanly rather than sleep through a huge Retry-After; a later run (every 4h) retries
 
 TOKEN = os.environ.get("COURTLISTENER_TOKEN")
 if not TOKEN:
@@ -112,6 +113,10 @@ def throttled_get(url, params, checkpoint):
 
     if resp.status_code == 429:
         retry_after = int(resp.headers.get("Retry-After", "60"))
+        if retry_after > MAX_BACKOFF_SECONDS:
+            print(f"429 received, Retry-After={retry_after}s exceeds max tolerated backoff "
+                  f"({MAX_BACKOFF_SECONDS}s) -- stopping cleanly, a later run will retry")
+            return None
         print(f"429 received, backing off {retry_after}s")
         time.sleep(retry_after)
         return throttled_get(url, params, checkpoint)

@@ -266,8 +266,62 @@ def run_multi_cycle_test():
         shutil.rmtree(tmpdir, ignore_errors=True)
 
 
+def run_max_backoff_test():
+    """A huge Retry-After (a real run hit 66019s / ~18.3h) must not be slept
+    through -- the run should stop cleanly instead, since a later run (every
+    4h, see SPEC.md section 4) retries at no cost to the daily total."""
+    tmpdir = tempfile.mkdtemp()
+    try:
+        os.environ["COURTLISTENER_TOKEN"] = "fake-token-for-testing"
+
+        import collector
+        collector.DATA_DIR = __import__("pathlib").Path(tmpdir)
+        collector.CASES_FILE = collector.DATA_DIR / "cases.json"
+        collector.ISSUES_FILE = collector.DATA_DIR / "issues.json"
+        collector.CHECKPOINT_FILE = collector.DATA_DIR / "checkpoint.json"
+        collector.RUN_LOG_FILE = collector.DATA_DIR / "run_log.json"
+
+        single_page = {
+            "results": [{
+                "docket_id": 3001, "caseName": "Huge Backoff Case", "court_id": "dcd",
+                "cause": "mandamus", "docketNumber": "1:1",
+                "dateFiled": RECENT_DATE, "dateTerminated": "2026-07-01",
+            }],
+            "next": None,
+        }
+
+        def huge_backoff_fake_get(url, headers=None, params=None, timeout=None):
+            if "search" in url:
+                return make_fake_response(single_page)
+            if "docket-entries" in url:
+                resp = mock.Mock()
+                resp.status_code = 429
+                resp.headers = {"Retry-After": "66019"}  # matches the real value seen live
+                return resp
+            raise ValueError(f"Unexpected URL in test: {url}")
+
+        sleep_calls = []
+        with mock.patch("collector.requests.get", side_effect=huge_backoff_fake_get), \
+             mock.patch("collector.time.sleep", side_effect=lambda s: sleep_calls.append(s)):
+            collector.run()
+
+        assert 66019 not in sleep_calls, "Must not sleep through a backoff exceeding MAX_BACKOFF_SECONDS"
+        assert all(s <= collector.MAX_BACKOFF_SECONDS for s in sleep_calls), \
+            f"No sleep call should exceed the max backoff cap, got {sleep_calls}"
+
+        # cases.json is only ever written after a case is successfully mined, so with
+        # zero cases mined it may not exist at all -- that's correct, not a crash.
+        cases = json.loads(collector.CASES_FILE.read_text()) if collector.CASES_FILE.exists() else []
+        assert len(cases) == 0, "Run should stop cleanly with zero cases mined, not crash"
+        print("PASS: a Retry-After exceeding MAX_BACKOFF_SECONDS stops the run cleanly instead of sleeping through it")
+
+    finally:
+        shutil.rmtree(tmpdir, ignore_errors=True)
+
+
 if __name__ == "__main__":
     run_test()
     run_crash_resilience_test()
     run_multi_cycle_test()
-    print("\nALL COLLECTOR INTEGRATION TESTS PASSED (including crash-resilience and multi-cycle)")
+    run_max_backoff_test()
+    print("\nALL COLLECTOR INTEGRATION TESTS PASSED (including crash-resilience, multi-cycle, and max-backoff)")
