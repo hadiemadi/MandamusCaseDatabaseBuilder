@@ -27,8 +27,8 @@ extracts fields with fixed rules, validates, and stores.**
 |---|---|---|
 | 1 | No AI/LLM calls anywhere in the runtime pipeline | Data collection must be deterministic, auditable, and free of hallucination risk |
 | 2 | Must run with laptop off | User is not always online; a scheduled cloud job is required |
-| 3 | Must be free / near-zero cost | GitHub Actions free tier (public or private, see §4) + free CourtListener tier |
-| 4 | Must respect CourtListener free-tier limits | 5 requests/min, 50/hour, 125/day, rolling windows |
+| 3 | **Hard budget ceiling of $50 total** (revised 2026-08-09; was $0) | Money is allowed, but only where it buys *reasoning* that is unavailable free. Free sources must be exhausted first — see §14. Runner cost is $0 because the repo is public (§12). |
+| 4 | Must respect CourtListener rate limits | Free tier: 5/min, 50/hour, 125/day. Tier 1 membership ($10/mo): 10/min, 75/hour, 300/day — also the only way to reach the PACER APIs. Rolling windows either way. |
 | 5 | User does not write or manage code | All code is delivered pre-built; user only does one-time, no-code setup clicks |
 | 6 | Full case text stored for ALL cases, not just a shortlist | Settled cases (no published opinion) may be the most strategically valuable; excluding them by default is wrong |
 | 7 | PACER purchases (paid) are never automatic | Cost decisions are made later, manually, once cases can be ranked |
@@ -321,7 +321,18 @@ repository.** Reasoning for the change:
   GitHub encrypted secrets, never in code or in this chat
 - The Google service account has access to exactly one Drive folder, not
   the user's whole Drive
-- The GitHub repo is private
+- **The GitHub repo is public** (revised 2026-08-09; was private). Private
+  repos get only 2,000 free Actions minutes/month and bill $0.006/min
+  after; at the every-4-hours cadence (§4) that is ~$10–20/month of pure
+  runner overage, much of it spent sleeping through rate-limit backoffs.
+  Public repos get unlimited free minutes. Nothing in this repo is
+  sensitive: it holds public federal court records, code, and docs. Before
+  the switch, the full git history was audited for committed credentials
+  (all blobs, all commits) — the only match was a placeholder string in
+  SETUP.md, and `secrets/` has always been gitignored.
+- Verify before every future commit that no real credential has entered
+  the working tree — the repo being public makes any leak immediate and
+  permanent, not merely risky.
 
 ## 13. Decision log (for traceability — every ambiguity resolved during design)
 
@@ -343,3 +354,39 @@ repository.** Reasoning for the change:
 | Max backoff tolerance (2026-08-09) | Capped at 1800s (30 min) — a live run hit a 66,019s (~18.3h) `Retry-After`; sleeping through that wastes almost an entire run for no benefit once runs happen every 4 hours, since a later run picks up the retry at no cost to the daily total |
 | Overlapping runs (2026-08-09) | Guarded with a `concurrency` group (queue, don't cancel) — more-frequent scheduling makes overlap a real possibility, and two runs racing on `data/` and the git push is worse than one waiting its turn |
 | Rebase before push (2026-08-09) | Added `git pull --rebase` before the final push — a plain push failing as non-fast-forward (e.g. a manual commit landing mid-run) would silently lose that entire run's collected data, since the runner is destroyed immediately after |
+| Repo visibility (2026-08-09) | Public, not private — private repos bill $0.006/min past 2,000 Actions minutes/month, which at a 4-hourly cadence is ~$10–20/month of pure runner overage. Public is unlimited and free. The repo holds only public court records; git history was audited for credentials before the switch |
+| Budget ceiling (2026-08-09) | Raised from $0 to $50, but spend order is enforced: exhaust free sources (curated advisories → free full-text opinions → free RECAP documents) before any purchase. Money buys *reasoning*, never data that is already free |
+| CourtListener membership (2026-08-09) | Tier 1 at $10/month — the single highest-leverage spend available. Raises 125→300 requests/day and is the only route to the PACER APIs (closed to free accounts since May 2026). Cancellable once collection completes |
+| Primary substance source (2026-08-09) | Reported decisions via the free Opinions API (`type=o`, `plain_text`), **not** the PACER-gated RECAP dockets used for discovery. This is what closes the "we can see *what* happened but not *why*" gap that limited the original design |
+
+## 14. Budget allocation and spend order (added 2026-08-09)
+
+Total ceiling: **$50** (§2, constraint 3). Money is spent only on what is
+provably unavailable for free, and only in this order. Each tier must be
+exhausted before the next is touched.
+
+| Tier | Source | Cost | What it yields |
+|---|---|---|---|
+| 0 | GitHub Actions on a public repo | $0 | All automation runtime |
+| 1 | Curated practice advisories (NILA / American Immigration Council) | $0 | ~23 consular-processing cases already analyzed by practicing litigators, grouped by which government argument they answer |
+| 2 | CourtListener Opinions API (`type=o` → `plain_text`) | $0 | Full text of *reported* decisions — the actual judicial reasoning |
+| 3 | RECAP documents where `is_available=True` | $0 | Filed documents another user already purchased and donated |
+| 4 | CourtListener Tier 1 membership | ~$10–20 | 300 req/day (2.4×) + PACER API access; enables tier 5 at all |
+| 5 | Targeted PACER purchases | ~$25–30 | Only motion-to-dismiss rulings that are (a) 9th Circuit, (b) high relevance, (c) provably absent from tiers 1–3 |
+
+**Tier 5 is never automatic** (§2, constraint 7). Every purchase requires
+explicit per-document approval, and the running total is tracked in
+`data/spend_log.json` with a hard stop before the ceiling.
+
+## 15. Venue targeting (added 2026-08-09)
+
+The user's case will be filed in the **9th Circuit**. This changes what
+counts as valuable, and the scoring must reflect it:
+
+- **9th Circuit district decisions are binding-adjacent** — most persuasive
+  for the eventual complaint, and the top priority for any paid acquisition.
+- **D.D.C. decisions carry outsized weight despite being out-of-circuit**,
+  because the majority of consular-delay mandamus litigation is filed there
+  and its TRAC-factor case law is the most developed. Persuasive, not
+  binding — but unavoidable as context.
+- All other districts are background signal only.
