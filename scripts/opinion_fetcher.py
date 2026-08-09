@@ -184,10 +184,19 @@ def run():
 
     checkpoint = load_checkpoint()
     cases = seed["cases"]
-    pending = [c for c in cases if c.get("opinion_fetch_status") == "pending"]
-    pending.sort(key=sort_key)
+    # Foundational authorities (TRAC itself, the SCOTUS nonreviewability cases)
+    # are few and universally relevant to every case in the seed, so they're
+    # fetched first, ahead of even the 9th Circuit priority cases below.
+    foundational = seed.get("foundational_authorities", {}).get("entries", [])
+    all_items = foundational + cases
 
-    print(f"{len(pending)} case(s) pending of {len(cases)} total. "
+    pending_foundational = [c for c in foundational if c.get("opinion_fetch_status") == "pending"]
+    pending_cases = [c for c in cases if c.get("opinion_fetch_status") == "pending"]
+    pending_cases.sort(key=sort_key)
+    pending = pending_foundational + pending_cases
+
+    print(f"{len(pending)} item(s) pending of {len(all_items)} total "
+          f"({len(pending_foundational)} foundational, {len(pending_cases)} cases). "
           f"Budget used today: {checkpoint['requests_made_today']}")
 
     tally = {}
@@ -212,7 +221,7 @@ def run():
     save_checkpoint(checkpoint)
 
     print("\nSummary:", tally if tally else "nothing processed")
-    remaining = sum(1 for c in cases if c.get("opinion_fetch_status") == "pending")
+    remaining = sum(1 for c in all_items if c.get("opinion_fetch_status") == "pending")
     print(f"{remaining} still pending; rerun after the daily window resets.")
 
 

@@ -364,6 +364,7 @@ repository.** Reasoning for the change:
 | Rate limiter location (2026-08-09) | Moved out of collector.py into api_client.py once opinion_fetcher.py became a second consumer. SPEC 8 forbids a second parallel implementation, and both scripts must share one daily budget via the same checkpoint file |
 | Seed vs discovery priority (2026-08-09) | opinion_fetcher runs BEFORE collector in the workflow. A curated seed opinion (already vetted by practicing litigators) outranks another arbitrary discovered docket when they compete for the same request budget. Self-balancing: once the seed resolves, the fetcher no-ops and the collector reclaims the full budget |
 | Wrong-opinion safety (2026-08-09) | opinion_fetcher flags any case-name match below 0.6 word overlap as `needs_manual_match_check` rather than trusting or discarding it. A misattributed opinion feeding a legal filing is a worse failure than a missing one |
+| Foundational authorities (2026-08-09) | Added a separate `foundational_authorities` section to the seed list -- TRAC v. FCC itself, Kerry v. Din, Kleindienst v. Mandel, Saavedra Bruno v. Albright. These define the legal standard rather than serving as case-outcome analogs, so they don't fit the `direction` field and get their own schema. Fetched first in every run, ahead of even 9th Circuit priority cases, since they are few (4) and relevant to every other case regardless of circuit |
 
 ## 14. Budget allocation and spend order (added 2026-08-09)
 

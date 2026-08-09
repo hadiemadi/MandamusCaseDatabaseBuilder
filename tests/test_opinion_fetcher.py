@@ -141,6 +141,46 @@ def test_sort_puts_ninth_circuit_first():
     check("out-of-circuit case sorts last", ordered[-1]["circuit"], "DC")
 
 
+def test_foundational_authorities_processed_before_ninth_circuit_cases():
+    """Foundational authorities (TRAC itself, etc.) are few and universally
+    relevant -- they should be fetched before even 9th Circuit priority
+    cases, not sorted in among them by circuit."""
+    tmpdir = tempfile.mkdtemp()
+    try:
+        os.environ["COURTLISTENER_TOKEN"] = "fake-token-for-testing"
+        of = setup_module_paths(tmpdir)
+
+        seed_with_foundational = json.loads(json.dumps(SEED))  # deep copy
+        seed_with_foundational["foundational_authorities"] = {
+            "entries": [{
+                "case_name": "Telecommunications Research & Action Center v. FCC",
+                "citation": "750 F.2d 70", "court": "cadc", "circuit": "DC",
+                "opinion_fetch_status": "pending",
+            }]
+        }
+        (Path(tmpdir) / "seed_citations.json").write_text(
+            json.dumps(seed_with_foundational), encoding="utf-8")
+
+        call_order = []
+        def order_tracking_get(url, headers=None, params=None, timeout=None):
+            if "search" in url:
+                call_order.append((params or {}).get("q", ""))
+            return fake_get(url, headers=headers, params=params, timeout=timeout)
+
+        with mock.patch("api_client.requests.get", side_effect=order_tracking_get), \
+             mock.patch("api_client.time.sleep", return_value=None):
+            of.run()
+
+        check_true("TRAC (foundational) is searched before any seeded case",
+                    call_order and "Telecommunications" in call_order[0])
+
+        seed_after = json.loads((Path(tmpdir) / "seed_citations.json").read_text(encoding="utf-8"))
+        trac_status = seed_after["foundational_authorities"]["entries"][0]["opinion_fetch_status"]
+        check("TRAC resolved to a status other than pending", trac_status != "pending", True)
+    finally:
+        shutil.rmtree(tmpdir, ignore_errors=True)
+
+
 def test_budget_exhaustion_leaves_case_pending():
     tmpdir = tempfile.mkdtemp()
     try:
