@@ -86,7 +86,9 @@ def test_seed_citations_and_opinions_are_synced():
         (du.OPINIONS_DIR / "trac-v-fcc.txt").write_text("opinion text", encoding="utf-8")
 
         uploaded = []
-        os.environ["GOOGLE_SERVICE_ACCOUNT_JSON"] = json.dumps({"type": "service_account"})
+        os.environ["GOOGLE_OAUTH_CLIENT_ID"] = "fake-client-id"
+        os.environ["GOOGLE_OAUTH_CLIENT_SECRET"] = "fake-client-secret"
+        os.environ["GOOGLE_OAUTH_REFRESH_TOKEN"] = "fake-refresh-token"
         os.environ["GDRIVE_FOLDER_ID"] = "fake-folder-id"
 
         with mock.patch("drive_uploader.get_drive_service",
@@ -112,7 +114,9 @@ def test_missing_files_are_skipped_not_errors():
         # where the collector hasn't produced any data yet.
 
         uploaded = []
-        os.environ["GOOGLE_SERVICE_ACCOUNT_JSON"] = json.dumps({"type": "service_account"})
+        os.environ["GOOGLE_OAUTH_CLIENT_ID"] = "fake-client-id"
+        os.environ["GOOGLE_OAUTH_CLIENT_SECRET"] = "fake-client-secret"
+        os.environ["GOOGLE_OAUTH_REFRESH_TOKEN"] = "fake-refresh-token"
         os.environ["GDRIVE_FOLDER_ID"] = "fake-folder-id"
 
         with mock.patch("drive_uploader.get_drive_service",

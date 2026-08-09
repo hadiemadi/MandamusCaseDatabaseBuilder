@@ -2,26 +2,38 @@
 """
 Uploads the collector's output files to a Google Drive folder.
 SPEC.md section 9 and 12 — the Drive copy is a convenience copy, NOT the
-source of truth (that's the GitHub repo). Uses a restricted service account
-that can only touch the one shared folder.
+source of truth (that's the GitHub repo).
+
+Uses OAuth as the user's own Google account, not a service account. Service
+accounts have a hard zero-byte storage quota and cannot CREATE new files in
+a regular (non-Shared-Drive) folder -- confirmed by a live storageQuotaExceeded
+failure (SPEC.md section 13, 2026-08-09). Scoped to drive.file (not the
+broader drive scope) so this can only ever touch files it created itself,
+not the rest of the user's Drive -- see scripts/oauth_setup.py for the
+one-time local consent flow that mints the refresh token.
 
 USAGE
   pip install -r requirements.txt
-  export GOOGLE_SERVICE_ACCOUNT_JSON='{...}'
+  export GOOGLE_OAUTH_CLIENT_ID="..."
+  export GOOGLE_OAUTH_CLIENT_SECRET="..."
+  export GOOGLE_OAUTH_REFRESH_TOKEN="..."
   export GDRIVE_FOLDER_ID="..."
   python scripts/drive_uploader.py
 """
 
-import json
 import os
 import sys
 from pathlib import Path
 
-from google.oauth2 import service_account
+from google.auth.transport.requests import Request
+from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 
-SCOPES = ["https://www.googleapis.com/auth/drive"]
+TOKEN_URI = "https://oauth2.googleapis.com/token"
+# drive.file, not the broader drive scope: this identity can only ever see
+# files it created itself, never the rest of the user's personal Drive.
+SCOPES = ["https://www.googleapis.com/auth/drive.file"]
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 OPINIONS_DIR = DATA_DIR / "opinions"
 FILES_TO_SYNC = [
@@ -47,13 +59,22 @@ def discover_opinion_files():
 
 
 def get_drive_service():
-    key_json = os.environ.get("GOOGLE_SERVICE_ACCOUNT_JSON")
-    if not key_json:
-        print("FATAL: GOOGLE_SERVICE_ACCOUNT_JSON not set.", file=sys.stderr)
+    client_id = os.environ.get("GOOGLE_OAUTH_CLIENT_ID")
+    client_secret = os.environ.get("GOOGLE_OAUTH_CLIENT_SECRET")
+    refresh_token = os.environ.get("GOOGLE_OAUTH_REFRESH_TOKEN")
+    if not (client_id and client_secret and refresh_token):
+        print("FATAL: GOOGLE_OAUTH_CLIENT_ID / GOOGLE_OAUTH_CLIENT_SECRET / "
+              "GOOGLE_OAUTH_REFRESH_TOKEN not all set.", file=sys.stderr)
         sys.exit(1)
-    creds = service_account.Credentials.from_service_account_info(
-        json.loads(key_json), scopes=SCOPES
+    creds = Credentials(
+        token=None,  # no access token yet -- refreshed below on first use
+        refresh_token=refresh_token,
+        token_uri=TOKEN_URI,
+        client_id=client_id,
+        client_secret=client_secret,
+        scopes=SCOPES,
     )
+    creds.refresh(Request())
     return build("drive", "v3", credentials=creds)
 
 
