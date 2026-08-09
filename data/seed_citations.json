@@ -382,7 +382,8 @@
       "advisory_characterization": "Rejected consular nonreviewability, but held that courts CAN consider the TRAC factors at the motion-to-dismiss stage.",
       "direction": "mixed",
       "priority_note": "Split result -- favorable on threshold, adverse on TRAC timing.",
-      "opinion_fetch_status": "pending"
+      "opinion_fetch_status": "not_found",
+      "opinion_fetch_note": "no case-law search hit; may be unreported"
     },
     {
       "case_name": "Niknam v. U.S. Dep't of State",
@@ -397,7 +398,8 @@
       "advisory_characterization": "Found that the Department of State does NOT have a nondiscretionary duty to schedule a visa interview for a family-based petition.",
       "direction": "unfavorable_to_plaintiff",
       "priority_note": "Direct counterpoint to Ghalambor (9th Cir.) on the identical question.",
-      "opinion_fetch_status": "pending"
+      "opinion_fetch_status": "not_found",
+      "opinion_fetch_note": "no case-law search hit; may be unreported"
     },
     {
       "case_name": "Mueller v. Blinken",
@@ -412,7 +414,8 @@
       "advisory_characterization": "Found no statutory or regulatory duty for the Department of State to review every visa petition.",
       "direction": "unfavorable_to_plaintiff",
       "priority_note": "Government relies on this line of authority.",
-      "opinion_fetch_status": "pending"
+      "opinion_fetch_status": "not_found",
+      "opinion_fetch_note": "no case-law search hit; may be unreported"
     },
     {
       "case_name": "Heidarnejad v. USCIS",
