@@ -47,14 +47,25 @@ TERMINATED_AFTER = "2020-01-01"
 # dateTerminated is a query-string range filter, not an order_by option (confirmed
 # against the live API -- see SPEC.md section 13 decision log). This guarantees
 # every result is already concluded, regardless of when it was originally filed.
-SEARCH_QUERY = (
-    '("writ of mandamus" OR "mandamus" OR "unreasonable delay") '
-    'AND ("221(g)" OR "administrative processing" OR "consular") '
-    'AND ("visa") '
-    f'AND dateTerminated:[{TERMINATED_AFTER} TO *]'
-)
 
-MAX_SEARCH_PAGES_PER_RUN = 5  # SPEC.md section 8 — use most of the daily budget
+
+def build_search_query(terminated_after):
+    return (
+        '("writ of mandamus" OR "mandamus" OR "unreasonable delay") '
+        'AND ("221(g)" OR "administrative processing" OR "consular") '
+        'AND ("visa") '
+        f'AND dateTerminated:[{terminated_after} TO *]'
+    )
+
+
+# Historically the search API was the ONLY discovery source, so it used most
+# of the daily budget (SPEC.md section 8). Now that data/bulk_discovered_dockets.json
+# (scripts/bulk_docket_filter.py) supplies the bulk of candidates for free,
+# live search only needs to catch cases newer than that quarterly snapshot --
+# a small gap-filler, not a full crawl. Falls back to the old full-crawl page
+# count when no bulk snapshot exists yet (SPEC.md section 13).
+MAX_SEARCH_PAGES_PER_RUN = 5  # used only when there's no bulk snapshot to lean on
+INCREMENTAL_SEARCH_MAX_PAGES = 1  # used once a bulk snapshot exists
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 DATA_DIR.mkdir(exist_ok=True)
@@ -62,6 +73,7 @@ CASES_FILE = DATA_DIR / "cases.json"
 ISSUES_FILE = DATA_DIR / "issues.json"
 CHECKPOINT_FILE = DATA_DIR / "checkpoint.json"
 RUN_LOG_FILE = DATA_DIR / "run_log.json"
+BULK_DISCOVERED_FILE = DATA_DIR / "bulk_discovered_dockets.json"
 
 
 def load_checkpoint():
@@ -70,6 +82,25 @@ def load_checkpoint():
 
 def save_checkpoint(cp):
     save_json(CHECKPOINT_FILE, cp)
+
+
+def load_bulk_candidates():
+    """Returns (candidates, snapshot_date). Empty/None when
+    scripts/bulk_docket_filter.py hasn't been run yet -- collector.py then
+    behaves exactly as it did before bulk discovery existed."""
+    data = load_json(BULK_DISCOVERED_FILE, None)
+    if not data:
+        return [], None
+    return data.get("candidates", []), data.get("snapshot_date")
+
+
+def effective_terminated_after(bulk_snapshot_date):
+    """Once a bulk snapshot exists, every matching docket as of that date is
+    already in data/bulk_discovered_dockets.json -- live search only needs to
+    find what's newer than the snapshot, not re-crawl everything since 2020."""
+    if bulk_snapshot_date and bulk_snapshot_date > TERMINATED_AFTER:
+        return bulk_snapshot_date
+    return TERMINATED_AFTER
 
 
 def fetch_docket_entries(docket_id, checkpoint):
@@ -86,9 +117,9 @@ def fetch_docket_entries(docket_id, checkpoint):
     return entries, True
 
 
-def search_dockets(offset, checkpoint):
+def search_dockets(offset, checkpoint, terminated_after):
     params = {
-        "q": SEARCH_QUERY,
+        "q": build_search_query(terminated_after),
         "type": "d",
         "order_by": "dateFiled desc",  # stable pagination order only, see SPEC.md section 5
     }
@@ -97,16 +128,16 @@ def search_dockets(offset, checkpoint):
     return throttled_get(SEARCH_ENDPOINT, params, checkpoint)
 
 
-def gather_candidates(offset, checkpoint):
-    """Fetch up to MAX_SEARCH_PAGES_PER_RUN consecutive search pages.
+def gather_candidates(offset, checkpoint, terminated_after, max_pages):
+    """Fetch up to max_pages consecutive search pages.
     Returns (candidates, next_offset, reached_end, hit_cap)."""
     candidates = []
     pages_fetched = 0
     reached_end = False
     hit_cap = False
 
-    while pages_fetched < MAX_SEARCH_PAGES_PER_RUN:
-        search_results = search_dockets(offset, checkpoint)
+    while pages_fetched < max_pages:
+        search_results = search_dockets(offset, checkpoint, terminated_after)
         if search_results is None:
             hit_cap = True
             break
@@ -135,13 +166,25 @@ def run():
     run_started = datetime.now(timezone.utc).isoformat()
     new_cases_this_run = 0
 
-    candidates, next_offset, reached_end, hit_cap_during_search = gather_candidates(
-        checkpoint["last_search_offset"], checkpoint
+    # Bulk discovery (scripts/bulk_docket_filter.py) is the primary, free
+    # candidate source. Live search only needs to fill the gap between the
+    # bulk snapshot's date and today -- see SPEC.md section 5.2.
+    bulk_candidates, bulk_snapshot_date = load_bulk_candidates()
+    terminated_after = effective_terminated_after(bulk_snapshot_date)
+    max_search_pages = INCREMENTAL_SEARCH_MAX_PAGES if bulk_snapshot_date else MAX_SEARCH_PAGES_PER_RUN
+
+    live_candidates, next_offset, reached_end, hit_cap_during_search = gather_candidates(
+        checkpoint["last_search_offset"], checkpoint, terminated_after, max_search_pages
     )
+    candidates = bulk_candidates + live_candidates
 
     if not candidates and hit_cap_during_search:
         _log_run(run_started, 0, "daily_cap_reached_before_search")
         return
+
+    if bulk_snapshot_date:
+        print(f"Using bulk snapshot {bulk_snapshot_date}: {len(bulk_candidates)} candidate(s) "
+              f"+ {len(live_candidates)} from live search (gap-filler only).")
 
     # SPEC.md 5.1 — mine highest-priority candidates first, not raw search order
     unseen = [d for d in candidates if d.get("docket_id") not in seen_ids]

@@ -163,6 +163,55 @@ Starts at 0. Add:
 Highest score mined first within the run. This score is not stored on the
 final record — it only controls processing order within a single run.
 
+### 5.2 Bulk discovery — two-tier candidate sourcing (added 2026-08-09)
+
+Discovery no longer relies solely on the live search API. CourtListener
+publishes its entire `search_docket` table as a free, unlimited, no-
+membership-required bulk CSV snapshot, refreshed quarterly (last day of
+Mar/Jun/Sep/Dec) — confirmed by directly browsing wiki.free.law and the
+live S3 bucket (`com-courtlistener-storage`), not assumed (§13). Before
+this, `collector.py` spent a meaningful share of the shared daily request
+budget (§8) on paginated search requests just to *discover* candidates —
+budget that never went toward the one step bulk data can't replace
+(`docket-entries`, PACER-gated, not included in the bulk export).
+
+**Tier 1 — bulk snapshot (free, offline, quarterly):**
+`scripts/bulk_docket_filter.py` streams and filters a downloaded
+`dockets-YYYY-MM-DD.csv.bz2` (~5GB compressed) in one pass — the full
+uncompressed CSV (~15–25GB) is never materialized on disk. Filters on
+`court_id` (9th Circuit ∪ `dcd`, same set as §6.4/§15), `date_terminated >=
+2020-01-01`, and a keyword/`nature_of_suit` match (deliberately broader
+than the live query — over-matching here is the safe failure mode, same
+philosophy as "store everything" in §13's decision log). Output:
+`data/bulk_discovered_dockets.json`, with `caseName`, `court_id`,
+`docketNumber`, `dateFiled`, `dateTerminated`, `docket_absolute_url`, and
+`cause` fields matching the live search API's result schema exactly, so
+`compute_priority_score`/`build_case_record` (extraction.py) need no
+changes to consume either source. **Not part of the 4-hour schedule** — run
+manually whenever a new quarterly dump lands, since the source itself only
+refreshes that often.
+
+**Tier 2 — live search (gap-filler only):** `collector.py` reads the bulk
+file as its primary candidate source, then runs a small live search capped
+at `INCREMENTAL_SEARCH_MAX_PAGES` (1 page, down from `MAX_SEARCH_PAGES_PER_RUN`
+= 5) scoped to `dateTerminated >= <bulk snapshot date>` — catching only
+cases newer than the snapshot, not re-crawling everything since 2020. If no
+bulk snapshot exists yet, `collector.py` falls back to the original
+full-crawl behavior unchanged (graceful degradation).
+
+**What bulk data does NOT replace:** `docket-entries` (PACER-gated, not in
+the bulk export) — every bulk- or search-discovered candidate still needs
+this per-docket API call, which is why moving discovery off the budget
+matters: the full daily budget now goes toward entries fetches instead of
+being split with search pagination.
+
+A much larger, free, nationwide **Opinions bulk file** (~54.5GB compressed,
+full text for essentially every opinion CourtListener has) was identified
+during the same research pass but deliberately scoped out of this change —
+see §13 decision log. It would enable full-text case-law discovery beyond
+the 31 curated seed cases, but at 10x the size/time/disk cost; flagged as a
+future option, not built.
+
 ## 6. Data schema
 
 One JSON record per case. Every field below is either pulled directly from
@@ -367,6 +416,12 @@ repository.** Reasoning for the change:
 | Foundational authorities (2026-08-09) | Added a separate `foundational_authorities` section to the seed list -- TRAC v. FCC itself, Kerry v. Din, Kleindienst v. Mandel, Saavedra Bruno v. Albright. These define the legal standard rather than serving as case-outcome analogs, so they don't fit the `direction` field and get their own schema. Fetched first in every run, ahead of even 9th Circuit priority cases, since they are few (4) and relevant to every other case regardless of circuit |
 | Drive sync gap (2026-08-09) | drive_uploader.py never synced seed_citations.json or data/opinions/*.txt -- found while doing parallel-safe local dev during the rate-limit wait. Fixed: both now sync, opinion filenames discovered fresh each run (not hardcoded, since new ones appear as opinion_fetcher.py resolves more cases). Without this, fetched opinions would sit in the git repo but never reach Drive, the user's actual interface (section 9) |
 | Dashboard visibility gap (2026-08-09) | dashboard.py had zero awareness of seed_citations.json -- another parallel-safe fix found the same way. Added a stat card (opinions found / total seed+foundational items) and a second table listing every seed case and foundational authority, sorted 9th Circuit/foundational first (matching opinion_fetcher.py's own fetch order), with a `needs_manual_match_check` flag surfaced inline rather than only visible in the raw JSON |
+| Bulk data is free, no membership needed (2026-08-09) | User asked whether pairing a paid membership with the bulk CSV would be more efficient. Verified live (browsed wiki.free.law + the actual `com-courtlistener-storage` S3 bucket, zero auth required) that bulk data is unlimited/free regardless of membership tier -- membership only raises REST API rate limits, unrelated to bulk-data access. This reframed the ask: the real lever is moving discovery off the API budget entirely, not paying for a higher rate limit |
+| Bulk file sizes (2026-08-09) | Confirmed directly from the S3 bucket listing, not estimated: `dockets-2026-06-30.csv.bz2` = 5.01GB compressed; `opinions-2026-06-30.csv.bz2` = 54.5GB compressed. Schema pulled from the matching `schema-2026-06-30.sql` confirmed `search_docket` has `court_id`, `case_name`, `cause`, `nature_of_suit`, `date_filed`, `date_terminated`, `slug` -- everything live search discovery needs -- but no entries/document-text columns, confirming bulk data replaces discovery only, not the PACER-gated docket-entries step |
+| Opinions bulk file scoped out (2026-08-09) | User chose to keep this change scoped to the 5GB Dockets file only; the 54.5GB Opinions file (nationwide full-text case-law mining, beyond the 31 curated seed cases) was downloaded in parallel for future use but is not processed or wired into the pipeline by this change |
+| Membership tier decision deferred (2026-08-09) | Whether any paid tier is worth it now depends on the real candidate count the bulk filter produces, not a guess -- see §5.2. Compute backlog-clearing time at each tier's daily cap once that number exists, and only spend if the free-tier timeline is unreasonable, per the existing spend-order rule below |
+| First real bulk-filter run found a false-positive bug (2026-08-09) | Ran `bulk_docket_filter.py` against the real 71.7M-row `dockets-2026-06-30.csv.bz2` -- spot-checking a random sample of matches (per this file's own "verify before trusting" rule) caught `"visa"` matching as a plain substring inside unrelated words, e.g. `"Garcia v. Divisadero Sports Bar LLC"` (an ADA case, di-**visa**-dero). Fixed by switching all keyword matching to word-boundary regex (mirroring the `\b...\b` style already used in `extraction.py`'s marker lists), with a regression test locking in the exact case. Filter rerun after the fix; this is the kind of thing the mandated spot-check step exists to catch |
+| RECAP checker built but not wired live (2026-08-09) | `scripts/recap_checker.py` (SPEC §14 tier 3) built and unit-tested during the same parallel-safe window as the dashboard/Drive fixes, following the same test-first pattern as `opinion_fetcher.py`. Deliberately NOT added to `collect.yml` yet: its docket-scoped filter parameter is CourtListener's documented convention, not something confirmed against a live response. Wiring an unverified param into an unattended 4-hour cron risks silently burning budget on an endpoint that returns nothing -- verify with one real call first |
 
 ## 14. Budget allocation and spend order (added 2026-08-09)
 
@@ -379,7 +434,7 @@ exhausted before the next is touched.
 | 0 | GitHub Actions on a public repo | $0 | All automation runtime |
 | 1 | Curated practice advisories (NILA / American Immigration Council) | $0 | ~23 consular-processing cases already analyzed by practicing litigators, grouped by which government argument they answer |
 | 2 | CourtListener Opinions API (`type=o` → `plain_text`) | $0 | Full text of *reported* decisions — the actual judicial reasoning |
-| 3 | RECAP documents where `is_available=True` | $0 | Filed documents another user already purchased and donated |
+| 3 | RECAP documents where `is_available=True` | $0 | Filed documents another user already purchased and donated. **`scripts/recap_checker.py` built and unit-tested (2026-08-09), not yet wired into `collect.yml`** — the docket-scoped filter param it uses (`docket_entry__docket_id`) is CourtListener's documented convention but unverified against a live response; confirm with one real API call before enabling on the schedule |
 | 4 | CourtListener Tier 1 membership | ~$10–20 | **Deferred, not yet purchased.** Buys 300 req/day (2.4×) and opens the PACER *endpoints* — it does NOT unlock any content non-members cannot see, and does NOT make PACER documents free. Only worth buying if tier 5 turns out to be necessary. |
 | 5 | Targeted PACER purchases | ~$25–30 | Only motion-to-dismiss rulings that are (a) 9th Circuit, (b) high relevance, (c) provably absent from tiers 1–3 |
 

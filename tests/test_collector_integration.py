@@ -112,6 +112,7 @@ def run_test():
         collector.ISSUES_FILE = collector.DATA_DIR / "issues.json"
         collector.CHECKPOINT_FILE = collector.DATA_DIR / "checkpoint.json"
         collector.RUN_LOG_FILE = collector.DATA_DIR / "run_log.json"
+        collector.BULK_DISCOVERED_FILE = collector.DATA_DIR / "bulk_discovered_dockets.json"
 
         with mock.patch("api_client.requests.get", side_effect=fake_requests_get), \
              mock.patch("api_client.time.sleep", return_value=None):
@@ -166,6 +167,7 @@ def run_crash_resilience_test():
         collector.ISSUES_FILE = collector.DATA_DIR / "issues.json"
         collector.CHECKPOINT_FILE = collector.DATA_DIR / "checkpoint.json"
         collector.RUN_LOG_FILE = collector.DATA_DIR / "run_log.json"
+        collector.BULK_DISCOVERED_FILE = collector.DATA_DIR / "bulk_discovered_dockets.json"
 
         # Pre-seed cases.json as if a prior run mined docket 1001 successfully,
         # but was killed before checkpoint.json got written to reflect it.
@@ -212,6 +214,7 @@ def run_multi_cycle_test():
         collector.ISSUES_FILE = collector.DATA_DIR / "issues.json"
         collector.CHECKPOINT_FILE = collector.DATA_DIR / "checkpoint.json"
         collector.RUN_LOG_FILE = collector.DATA_DIR / "run_log.json"
+        collector.BULK_DISCOVERED_FILE = collector.DATA_DIR / "bulk_discovered_dockets.json"
         original_max_pages = collector.MAX_SEARCH_PAGES_PER_RUN
         collector.MAX_SEARCH_PAGES_PER_RUN = 1  # force each run to only see one page
 
@@ -266,6 +269,66 @@ def run_multi_cycle_test():
         shutil.rmtree(tmpdir, ignore_errors=True)
 
 
+def run_bulk_discovery_primary_source_test():
+    """When data/bulk_discovered_dockets.json exists (scripts/bulk_docket_filter.py
+    has been run), it should supply candidates for free -- live search should
+    shrink to a single gap-filler page scoped to dates after the bulk
+    snapshot, not the old full multi-page crawl since 2020."""
+    tmpdir = tempfile.mkdtemp()
+    try:
+        os.environ["COURTLISTENER_TOKEN"] = "fake-token-for-testing"
+
+        import collector
+        from pathlib import Path
+        collector.DATA_DIR = Path(tmpdir)
+        collector.CASES_FILE = collector.DATA_DIR / "cases.json"
+        collector.ISSUES_FILE = collector.DATA_DIR / "issues.json"
+        collector.CHECKPOINT_FILE = collector.DATA_DIR / "checkpoint.json"
+        collector.RUN_LOG_FILE = collector.DATA_DIR / "run_log.json"
+        collector.BULK_DISCOVERED_FILE = collector.DATA_DIR / "bulk_discovered_dockets.json"
+
+        collector.BULK_DISCOVERED_FILE.write_text(json.dumps({
+            "snapshot_date": "2026-06-30",
+            "generated_at": "2026-06-30T09:03:56+00:00",
+            "candidates": [{
+                "docket_id": 5001, "caseName": "Bulk v. Blinken", "court_id": "cand",
+                "cause": "5:706 Mandamus: Unreasonable delay", "docketNumber": "3:23-cv-05001",
+                "dateFiled": RECENT_DATE, "dateTerminated": "2026-07-01",
+            }],
+        }), encoding="utf-8")
+
+        search_call_queries = []
+
+        def fake_get_with_bulk(url, headers=None, params=None, timeout=None):
+            if "search" in url:
+                search_call_queries.append((params or {}).get("q", ""))
+                return make_fake_response({"results": [], "next": None})
+            if "docket-entries" in url:
+                return make_fake_response(FAKE_ENTRIES)
+            raise ValueError(f"Unexpected URL in test: {url}")
+
+        with mock.patch("api_client.requests.get", side_effect=fake_get_with_bulk), \
+             mock.patch("api_client.time.sleep", return_value=None):
+            collector.run()
+
+        cases = json.loads(collector.CASES_FILE.read_text())
+        assert len(cases) == 1 and cases[0]["docket_id"] == 5001, (
+            f"Bulk-discovered candidate should be mined without any live search hit, got {cases}"
+        )
+        assert len(search_call_queries) == 1, (
+            f"Live search should shrink to INCREMENTAL_SEARCH_MAX_PAGES (1) once a bulk "
+            f"snapshot exists, got {len(search_call_queries)} search call(s)"
+        )
+        assert "2026-06-30" in search_call_queries[0], (
+            "Live gap-filler search should scope dateTerminated to the bulk snapshot's date, "
+            f"not the old 2020 floor -- got query: {search_call_queries[0]}"
+        )
+        print("PASS: bulk-discovered candidates are mined for free, live search shrinks to a "
+              "snapshot-scoped gap-filler")
+    finally:
+        shutil.rmtree(tmpdir, ignore_errors=True)
+
+
 def run_max_backoff_test():
     """A huge Retry-After (a real run hit 66019s / ~18.3h) must not be slept
     through -- the run should stop cleanly instead, since a later run (every
@@ -281,6 +344,7 @@ def run_max_backoff_test():
         collector.ISSUES_FILE = collector.DATA_DIR / "issues.json"
         collector.CHECKPOINT_FILE = collector.DATA_DIR / "checkpoint.json"
         collector.RUN_LOG_FILE = collector.DATA_DIR / "run_log.json"
+        collector.BULK_DISCOVERED_FILE = collector.DATA_DIR / "bulk_discovered_dockets.json"
 
         single_page = {
             "results": [{
@@ -324,5 +388,6 @@ if __name__ == "__main__":
     run_test()
     run_crash_resilience_test()
     run_multi_cycle_test()
+    run_bulk_discovery_primary_source_test()
     run_max_backoff_test()
-    print("\nALL COLLECTOR INTEGRATION TESTS PASSED (including crash-resilience, multi-cycle, and max-backoff)")
+    print("\nALL COLLECTOR INTEGRATION TESTS PASSED (including crash-resilience, multi-cycle, bulk-discovery, and max-backoff)")
