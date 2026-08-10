@@ -260,11 +260,31 @@ or interpret. Analysis of the resulting corpus happens in conversation with
 a human reading and verifying, not as a generated field in the data.
 
 **Cost:** zero API requests — the daily budget (§8) is untouched, freeing it
-entirely for `collector.py`'s docket-entries work. The one real cost is
-time: bz2 decompression is inherently single-threaded (measured 17.6 MB/s
-on this hardware), so the full pass takes roughly 4–5 hours. It is a
-one-time, offline, unattended job per quarterly snapshot, and is **not** on
-the 4-hour schedule.
+entirely for `collector.py`'s docket-entries work. The only real cost is
+wall-clock time, and it is a one-time, offline, unattended job per quarterly
+snapshot — **not** on the 4-hour schedule.
+
+**Performance, measured rather than assumed** (all on the real 54.5GB file,
+this hardware, 4 cores / 8 threads):
+
+| Attempt | Rate | Projected full pass |
+|---|---|---|
+| stdlib `csv` module | ~17 rows/sec | ~5.5 days |
+| pandas C parser | ~139 rows/sec | ~20 hours |
+| + single alternation, lowercase-once, case-sensitive gates | see run log | — |
+
+The stdlib `csv` module cannot use its fast path once `escapechar` is set,
+so it walked ~250GB character-by-character in pure Python — that, not
+decompression, was the original bottleneck. `pandas` is therefore a
+**local-only dependency** for this script; it is deliberately *not* added to
+`requirements.txt`, because CI never runs this script and would just pay a
+slower install for nothing.
+
+Why it can't simply be parallelized, checked rather than assumed: bzip2 is a
+continuous stream, so decompression is single-threaded (measured 17.6 MB/s,
+a hard floor of ~4 hours for this file); `pbzip2`/`lbzip2` are not installed
+and installing an unvetted binary is out of scope; and pre-decompressing to
+disk would need ~250–300GB against ~96GB free.
 
 ## 6. Data schema
 
