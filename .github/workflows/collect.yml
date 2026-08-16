@@ -6,7 +6,9 @@ on:
   workflow_dispatch: {}    # allows manual "Run workflow" trigger, no code needed
 
 permissions:
-  contents: write   # needed for the final "commit data back to the repo" step
+  contents: read   # SPEC.md section 16 (2026-08-11): the run no longer commits
+    # data back to the repo -- Drive is the durable store now, not git -- so
+    # this only ever needs to read the code, never write to the repo.
 
 concurrency:
   group: mandamus-collection
@@ -33,6 +35,24 @@ jobs:
           python tests/test_dashboard.py
           python tests/test_opinion_fetcher.py
           python tests/test_drive_uploader.py
+          python tests/test_drive_downloader.py
+
+      # SPEC.md section 16 (2026-08-11): data/ is no longer committed to git
+      # between runs, so this ephemeral checkout starts with none of the
+      # previous run's state. Pull it down from Drive first -- cases.json,
+      # checkpoint.json, etc. -- so the collector resumes instead of
+      # silently restarting from empty every 4 hours.
+      - name: Download state from Google Drive
+        continue-on-error: true  # a fresh Drive folder (first run ever) has
+          # nothing to download yet; every downstream script already treats
+          # a missing file as "start from empty" (see collector.py's
+          # load_checkpoint/load_json calls), so this must never block the run.
+        env:
+          GOOGLE_OAUTH_CLIENT_ID: ${{ secrets.GOOGLE_OAUTH_CLIENT_ID }}
+          GOOGLE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}
+          GOOGLE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_OAUTH_REFRESH_TOKEN }}
+          GDRIVE_FOLDER_ID: ${{ secrets.GDRIVE_FOLDER_ID }}
+        run: python scripts/drive_downloader.py
 
       # Runs BEFORE the collector deliberately. Both share one daily request
       # budget (SPEC.md section 8), and a curated seed opinion is worth more
@@ -58,25 +78,14 @@ jobs:
 
       - name: Upload results to Google Drive
         if: always()
-        continue-on-error: true  # SPEC.md section 4: a Drive hiccup (e.g. the
-          # service-account storageQuotaExceeded issue, section 13) must never
-          # fail the whole run -- GitHub is the source of truth, this is only
-          # a convenience copy. Without this, a Drive-only failure marks the
-          # entire job "failed" and emails a false alarm even though the real
-          # commit below still succeeds.
+        continue-on-error: true  # a Drive hiccup (e.g. the service-account
+          # storageQuotaExceeded issue, SPEC.md section 13) must never fail
+          # the whole run. This step matters more than it used to, though --
+          # SPEC.md section 16: Drive is now the durable store, not a
+          # convenience copy, since data/ is no longer committed to git.
         env:
           GOOGLE_OAUTH_CLIENT_ID: ${{ secrets.GOOGLE_OAUTH_CLIENT_ID }}
           GOOGLE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}
           GOOGLE_OAUTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_OAUTH_REFRESH_TOKEN }}
           GDRIVE_FOLDER_ID: ${{ secrets.GDRIVE_FOLDER_ID }}
         run: python scripts/drive_uploader.py
-
-      - name: Commit data back to the repo
-        if: always()
-        run: |
-          git config user.name "mandamus-collector-bot"
-          git config user.email "actions@github.com"
-          git add data/
-          git diff --quiet --cached || git commit -m "Automated data collection run"
-          git pull --rebase origin main
-          git push

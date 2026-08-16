@@ -82,6 +82,8 @@ def test_seed_citations_and_opinions_are_synced():
         (d / "run_log.json").write_text("[]", encoding="utf-8")
         (d / "dashboard.html").write_text("<html></html>", encoding="utf-8")
         (d / "seed_citations.json").write_text(json.dumps({"cases": []}), encoding="utf-8")
+        (d / "bulk_discovered_dockets.json").write_text(json.dumps({"candidates": []}), encoding="utf-8")
+        (d / "opinion_corpus_index.json").write_text(json.dumps({"results": []}), encoding="utf-8")
         (du.OPINIONS_DIR / "taherian-v-blinken.txt").write_text("opinion text", encoding="utf-8")
         (du.OPINIONS_DIR / "trac-v-fcc.txt").write_text("opinion text", encoding="utf-8")
 
@@ -96,9 +98,13 @@ def test_seed_citations_and_opinions_are_synced():
             du.run()
 
         check_true("seed_citations.json was uploaded", "seed_citations.json" in uploaded)
+        check_true("bulk_discovered_dockets.json was uploaded (SPEC.md 16)",
+                   "bulk_discovered_dockets.json" in uploaded)
+        check_true("opinion_corpus_index.json was uploaded (SPEC.md 16)",
+                   "opinion_corpus_index.json" in uploaded)
         check_true("first opinion file was uploaded", "taherian-v-blinken.txt" in uploaded)
         check_true("second opinion file was uploaded", "trac-v-fcc.txt" in uploaded)
-        check("exactly the expected file count uploaded", len(uploaded), 7)  # 5 FILES_TO_SYNC + 2 opinions
+        check("exactly the expected file count uploaded", len(uploaded), 9)  # 7 FILES_TO_SYNC + 2 opinions
     finally:
         shutil.rmtree(tmpdir, ignore_errors=True)
 

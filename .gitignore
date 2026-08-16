@@ -20,3 +20,11 @@ my_case*
 # appended mid-run so a shutdown can't lose them (SPEC.md section 5.3).
 data/opinion_corpus_index.jsonl
 
+# SPEC.md section 16 (2026-08-11): Google Drive is the durable store for all
+# collected case data now, not this repo. Ignoring the whole data/ folder
+# (except a couple of things that ARE meant to be code-adjacent) so the
+# collector workflow's local outputs never get re-tracked by accident.
+data/*.json
+data/*.html
+data/opinions/
+

@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """
 Uploads the collector's output files to a Google Drive folder.
-SPEC.md section 9 and 12 — the Drive copy is a convenience copy, NOT the
-source of truth (that's the GitHub repo).
+SPEC.md section 16 (supersedes section 9/12 on this point, 2026-08-11):
+Drive is the durable long-term store. GitHub hosts the code and runs the
+automation, but is not meant to hold the data past the 30-day collection
+window -- see SPEC.md section 16 for the removal plan.
 
 Uses OAuth as the user's own Google account, not a service account. Service
 accounts have a hard zero-byte storage quota and cannot CREATE new files in
@@ -46,6 +48,20 @@ FILES_TO_SYNC = [
     # syncing them here they'd sit in the git repo but never reach Drive,
     # the user's actual interface (SPEC.md section 9).
     ("seed_citations.json", "application/json"),
+    # Added 2026-08-11 (SPEC.md section 16): Drive is being promoted from
+    # convenience copy to the actual long-term store, since GitHub is not
+    # meant to hold this data past the run window. These two were the only
+    # data/ outputs missing from the sync -- without them the bulk-discovery
+    # candidate list and the mined opinion corpus index would never leave
+    # the repo at all.
+    ("bulk_discovered_dockets.json", "application/json"),
+    ("opinion_corpus_index.json", "application/json"),
+    # checkpoint.json is resumption state, not really a user-facing output,
+    # but it MUST round-trip through Drive too now that git no longer holds
+    # it between runs (drive_downloader.py fetches it back down at the start
+    # of the next run) -- without this the request budget / dedup state
+    # would silently reset every single run.
+    ("checkpoint.json", "application/json"),
 ]
 
 

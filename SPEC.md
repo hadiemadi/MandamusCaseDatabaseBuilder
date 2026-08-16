@@ -543,3 +543,45 @@ counts as valuable, and the scoring must reflect it:
   and its TRAC-factor case law is the most developed. Persuasive, not
   binding — but unavoidable as context.
 - All other districts are background signal only.
+
+## 16. Google Drive is now the durable store, not GitHub (added 2026-08-11)
+
+**Reversed from §9/§12.** Those sections called the Drive copy a
+"convenience copy, NOT the source of truth (that's the GitHub repo)." The
+user overrode that directly: *"GitHub is not my storage."* Case data —
+`cases.json`, `checkpoint.json`, `run_log.json`, `issues.json`,
+`dashboard.html`, `seed_citations.json`, `bulk_discovered_dockets.json`,
+`opinion_corpus_index.json`, and every fetched opinion `.txt` file — now
+lives **only** on Google Drive. The public repo holds code, tests, docs, and
+workflows, not case data.
+
+**Mechanism (round trip, both directions through Drive):**
+- `scripts/drive_downloader.py` (new) runs **first** in `collect.yml`,
+  before `opinion_fetcher.py`/`collector.py`, and pulls the previous run's
+  state down into `data/`. Necessary because the workflow no longer commits
+  `data/` back to git between runs, so each run's checkout starts empty —
+  without this step, `checkpoint.json` and everything else would silently
+  reset every 4 hours instead of resuming.
+- `scripts/drive_uploader.py` still runs last, pushing the updated state
+  back up. `checkpoint.json` was added to its `FILES_TO_SYNC` for this
+  change — it wasn't there before (nothing needed it downloadable), and
+  without it the round trip would silently break: nothing to download means
+  nothing to resume from.
+- The workflow's final "Commit data back to the repo" step was **removed**
+  entirely, along with the `contents: write` permission it required (now
+  `contents: read`).
+- The 27 data files previously tracked in git (`data/*.json`, `dashboard.html`,
+  `data/opinions/*.txt`) were removed from the live branch in the same
+  change. Git history still contains old snapshots of them — inherent to
+  anything that was ever committed to a public repo, and not something a
+  later commit can undo — but they are no longer part of the repo's current
+  state, and nothing will re-add them going forward.
+- `drive_downloader.py` deliberately imports `FILES_TO_SYNC` from
+  `drive_uploader.py` rather than duplicating the list, so upload and
+  download can never drift out of sync with each other.
+
+**Not done, and deliberately not decided unilaterally:** purging the data
+from git *history* (as opposed to the live branch) was raised as an option
+and explicitly not chosen — it would require a destructive history rewrite
+and force-push, breaking any existing clones/forks, and needs its own
+explicit confirmation if ever wanted.
